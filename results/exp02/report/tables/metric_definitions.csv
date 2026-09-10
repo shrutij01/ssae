@@ -1,0 +1,11 @@
+metric,display_name,definition,real_data_protocol,synthetic_protocol
+mcc_p,MCC-P,Mean absolute Pearson correlation under a one-to-one assignment.,assignment learned on cfc_train and held fixed on cfc_test,mapping selected on synthetic train data and fixed on held-out test data
+mcc_s,MCC-S,Mean absolute Spearman correlation under a one-to-one assignment.,assignment learned on cfc_train and held fixed on cfc_test,mapping selected on synthetic train data and fixed on held-out test data
+dci_c,DCI-C,Completeness from gradient-boosted-tree feature importances.,probe fit on cfc_train responses and evaluated on cfc_test,continuous factors; probe fit on train and evaluated on held-out test data
+dci_i,DCI-I,Held-out gradient-boosted-tree informativeness.,probe fit on cfc_train responses and evaluated on cfc_test,continuous factors; probe fit on train and evaluated on held-out test data
+r2,R²,Linear explicitness of factor changes from the full response.,linear map fit on cfc_train and evaluated on cfc_test,linear map fit on train and evaluated on held-out test data
+sae_auc,Feature ROC-AUC,One-to-one feature ROC-AUC for factor support.,factor support is factor != 0; feature magnitude is selected on cfc_train and evaluated on cfc_test,binary planted support (factor != 0); |code| mapping selected on train and fixed on held-out test data
+decoder_projection_mcc_p,Decoder-projection MCC-P,Pearson MCC after projecting delta-z onto decoder axes.,axis assignment learned on cfc_train and held fixed on cfc_test,decoder mapping selected on train and fixed on held-out test differences
+support_precision,Support precision,Precision of the Pearson-matched response's active support.,factor != 0 versus |response| > 0.1,planted support (factor != 0); |code| > 0.1
+support_recall,Support recall,Recall of the Pearson-matched response's active support.,factor != 0 versus |response| > 0.1,planted support (factor != 0); |code| > 0.1
+support_f1,Support F1,F1 of the Pearson-matched response's active support.,factor != 0 versus |response| > 0.1,planted support (factor != 0); |code| > 0.1

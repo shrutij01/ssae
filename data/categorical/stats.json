@@ -1,0 +1,52 @@
+{
+  "dataset_name": "categorical_contrastive",
+  "created_at": "2025-09-24T11:44:29.985098",
+  "total_samples": 10500,
+  "train_samples": 7349,
+  "val_samples": 1575,
+  "test_samples": 1576,
+  "attributes": [
+    "shape",
+    "color",
+    "object"
+  ],
+  "codebook": {
+    "shape": [
+      "spherical",
+      "cuboidal",
+      "conical",
+      "circular",
+      "squarish",
+      "toroidal",
+      "pyramidal",
+      "cylindrical",
+      "prismatic",
+      "hemispherical"
+    ],
+    "color": [
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "orange",
+      "purple",
+      "pink",
+      "cyan",
+      "teal",
+      "lavender"
+    ],
+    "object": [
+      "button",
+      "shoe",
+      "mug",
+      "vase",
+      "bead",
+      "cushion",
+      "toy",
+      "statue",
+      "drawing",
+      "window"
+    ]
+  },
+  "label_format": "[color_changed, shape_changed, object_changed]"
+}

@@ -1,0 +1,8 @@
+family,method,input_regime,concept_assigned_matches,response_effect_matches_r_ge_0_50,geometry_effect_matches_cos_ge_0_80,strict_atom_identity_both_effect_sizes,empirical_coupling_q_le_0_05,stable_2_of_3_strict_components
+SAE,JumpReLU,raw,21612,5240,0,0,14,0
+SAE,ReLU,raw,137,109,108,97,93,40
+SAE,TopK,raw,665,344,8,7,304,4
+SSAE,JumpReLU,diff,36165,12192,0,0,0,0
+SSAE,Linear const.,diff,16319,11420,54,53,68,32
+SSAE,ReLU,diff,41059,39081,6191,6085,4776,2387
+SSAE,TopK,diff,907,343,8,8,191,5

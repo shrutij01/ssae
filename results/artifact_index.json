@@ -1,0 +1,121 @@
+{
+  "builder": {
+    "entry_point": "experiments.build_results",
+    "path": "experiments/build_results.py",
+    "sha256": "73fe7d2b9e2ed4eb4b14512086b9ac8f6f2366294857fe7e3cef7f774843497a"
+  },
+  "experiment_count": 7,
+  "experiments": [
+    {
+      "conclusion": "Across 39 separately scaled dataset, LLM, and reconstruction-target cells, SAE JumpReLU (penalized) has the lowest mean NMSE in 18; raw-activation and delta_z targets are never compared on one axis.",
+      "experiment_id": "exp01",
+      "manifest": "results/exp01/report/artifact_manifest.json",
+      "manifest_sha256": "643c7b65b46f0c21186fec5de39c79d41bc9f71ffd7118f18e42450a7c1d109a",
+      "result_counts": {
+        "figures": 3,
+        "model_dataset_llm_cells": 168,
+        "separately_scaled_target_cells": 39,
+        "source_runs": 516
+      },
+      "title": "Reconstruction error"
+    },
+    {
+      "conclusion": "No method leads every available held-out identification cell: SSAE Linear (constrained sigmoid-L0) is the most frequent leader in 42/162 separately evaluated dataset, LLM, and metric cells. Direct best-family comparisons are gemma: SSAE 52, SAE 11, ties 3 across 66 best-family cells; most frequent within-SSAE leader SSAE Linear (constrained sigmoid-L0); matched nonlinear SSAE 93, SAE 96, ties 9, pythia: SSAE 49, SAE 16, ties 1 across 66 best-family cells; most frequent within-SSAE leader SSAE Linear (constrained sigmoid-L0); matched nonlinear SSAE 90, SAE 99, ties 9. LLM metric values are not pooled. Frozen nonlinear SSAE realized active-axis capacity is gemma mean 33.1%, range 8.7% (sycophancy, SSAE ReLU (penalized)) to 100.0% (bias-in-bios, SSAE JumpReLU (penalized)); pythia mean 83.1%, range 17.9% (sycophancy, SSAE TopK (penalized)) to 100.0% (bias-in-bios, SSAE JumpReLU (penalized)) across separately retained dataset and method cells.",
+      "experiment_id": "exp02",
+      "manifest": "results/exp02/report/artifact_manifest.json",
+      "manifest_sha256": "276d3d35277d8d0516b89f4b54eba502853b816aecd9591556e179942b84bf73",
+      "result_counts": {
+        "direct_family_comparison_cells": 180,
+        "figures": 13,
+        "matched_activation_comparison_cells": 540,
+        "model_dataset_llm_cells": 168,
+        "realized_capacity_checkpoint_rows": 180,
+        "realized_capacity_dataset_llm_method_cells": 60,
+        "reported_metric_cells": 1680,
+        "representation_concept_seed_rows": 2106,
+        "source_runs": 516
+      },
+      "title": "Identifiability and representation checks"
+    },
+    {
+      "conclusion": "The complete matrix contains 90/90 dataset \u00d7 LLM \u00d7 method cells. Positive steering exceeds baseline in 78/90 cells, negative steering falls below baseline in 87/90, and the expected signed ordering holds in 78/90; Gemma and Pythia are reported separately.",
+      "experiment_id": "exp03",
+      "manifest": "results/exp03/report/artifact_manifest.json",
+      "manifest_sha256": "c931f007537e6cb7935dc434a7254bdb81af812051e9526151a04e917b1f3159",
+      "result_counts": {
+        "aggregate_cells": 90,
+        "checkpoint_count": 270,
+        "concept_seed_rows": 378,
+        "datasets": 5,
+        "llms": 2,
+        "matched_random_directions": 37800,
+        "methods": 9
+      },
+      "title": "Complete held-out signed endpoint steering"
+    },
+    {
+      "conclusion": "On the clean, lexically disjoint corr-binary-occupation \u2192 eng-french transfer, direct family comparison gives gemma: SSAE leads (SSAE JumpReLU (penalized) versus SAE ReLU (penalized), SSAE\u2212SAE +0.0071), pythia: SSAE leads (SSAE TopK (penalized) versus SAE JumpReLU (penalized), SSAE\u2212SAE +0.0003). Across all source regimes the lead counts are gemma: best-family SSAE 3, SAE 0, ties 0, pythia: best-family SSAE 2, SAE 1, ties 0. Matched-activation counts are gemma: matched nonlinear SSAE 8, SAE 1, ties 0, pythia: matched nonlinear SSAE 4, SAE 5, ties 0; LLMs are not pooled. The legacy corr-binary regime remains a pair-mixture diagnostic because its household vocabulary overlaps the target.",
+      "experiment_id": "exp04",
+      "manifest": "results/exp04/report/artifact_manifest.json",
+      "manifest_sha256": "b48b62259e88b211a86b1a6d49834c5860de78c59fabac3022c132e84398eea9",
+      "result_counts": {
+        "aggregate_cells": 66,
+        "direct_family_comparison_cells": 6,
+        "llms": 2,
+        "matched_activation_comparison_cells": 18,
+        "methods": 11,
+        "regimes": 3,
+        "source_result_rows": 174
+      },
+      "title": "Source-only OOD steering transfer"
+    },
+    {
+      "conclusion": "JumpReLU responses recur across seeds (33.7% for SSAE and 24.2% for SAE), but both variants have zero concept-conditioned pairs with response correlation at least 0.5 and decoder cosine at least 0.8, and therefore zero stable 2-of-3 atom identities. Concept FDR alone remains architecture-sensitive; atom-level cards should require the separate cross-seed identity criterion.",
+      "experiment_id": "exp05",
+      "manifest": "results/exp05/report/artifact_manifest.json",
+      "manifest_sha256": "328b305f75f2de465fe3ebc1cb8f9cb8c7dd4d3df1581a0e9481cb559e4a15e3",
+      "result_counts": {
+        "latent_instances": 295680,
+        "model_groups": 70,
+        "negative_control_selected_instances": 8,
+        "seed_pair_matches": 412544,
+        "selected_feature_instances": 118697,
+        "stable_cross_seed_components": 2468,
+        "workers": 210
+      },
+      "title": "Semi-synthetic feature selection and cross-seed stability"
+    },
+    {
+      "conclusion": "Constrained SSAE has higher MCC-P on 3/3 dataset means and 14/15 paired dataset-seed comparisons than the affine baseline (mean paired delta 0.256); the worst dataset-level constrained relative MSE is 0.00416. This establishes recovery only for the frozen synthetic linear DGP.",
+      "experiment_id": "exp06",
+      "manifest": "results/exp06/report/artifact_manifest.json",
+      "manifest_sha256": "22776057da7eec8b9185973a9b898fc9dfc2458085cda37be083a8f473db0962",
+      "result_counts": {
+        "datasets": 3,
+        "identifiability_metrics": 10,
+        "methods": 2,
+        "runs": 30,
+        "seeds": 5
+      },
+      "title": "Synthetic concept identification"
+    },
+    {
+      "conclusion": "At 2\u03b1, 18/18 LLM \u00d7 method cells match or exceed their unsteered French-classifier retention and 18/18 exceed their matched-random mean on that diagnostic. Median cosine to the original French activation is 0.870, yet 18/18 have lower within-French geometry correlation than matched random; these semantic diagnostics remain representation-level proxies rather than generated-text evidence.",
+      "experiment_id": "exp07",
+      "manifest": "results/exp07/report/artifact_manifest.json",
+      "manifest_sha256": "c0bac74c279fc75c26af1418fcc211f3761db6441ea2c6b25ba6cc6c7aa2d273",
+      "result_counts": {
+        "heldout_french_examples_per_llm": 20,
+        "learned_model_seed_cells": 54,
+        "learned_strength_points": 270,
+        "llms": 2,
+        "matched_random_direction_strength_evaluations": 27000,
+        "matched_random_directions": 5400,
+        "methods": 9,
+        "seeds": 3
+      },
+      "title": "Target-side English\u2192French steering overshoot"
+    }
+  ],
+  "schema_version": "ssae-result-artifacts-v1"
+}

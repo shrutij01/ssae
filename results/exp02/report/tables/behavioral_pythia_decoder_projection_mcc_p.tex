@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Held-out Decoder-projection MCC-P for behavioral data (pythia).}
+\label{tab:behavioral-pythia-decoder-projection-mcc-p}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+bias-in-bios & 0.186 ± 0.002 & 0.118 ± 0.001 & 0.132 ± 0.006 & 0.218 ± 0.004 & 0.153 ± 0.004 & 0.214 ± 0.006 & 0.248 ± 0.002 & 0.159 ± 0.003 & 0.227 ± 0.004 \\
+refusal & 0.437 ± 0.085 & 0.143 ± 0.004 & 0.456 ± 0.109 & 0.129 ± 0.000 & 0.559 ± 0.117 & 0.454 ± 0.083 & 0.514 ± 0.004 & 0.269 ± 0.129 & 0.395 ± 0.125 \\
+sycophancy & 0.512 ± 0.000 & 0.519 ± 0.000 & 0.677 ± 0.088 & 0.529 ± 0.042 & 0.695 ± 0.054 & 0.615 ± 0.100 & 0.619 ± 0.116 & 0.759 ± 0.026 & 0.617 ± 0.080 \\
+truthful-qa & 0.442 ± 0.030 & 0.449 ± 0.063 & 0.408 ± 0.072 & 0.419 ± 0.043 & 0.402 ± 0.090 & 0.452 ± 0.061 & 0.370 ± 0.134 & 0.355 ± 0.081 & 0.371 ± 0.063 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,322 @@
+{
+  "code_dependencies": [
+    {
+      "path": "experiments/common/reporting.py",
+      "role": "shared_result_helpers",
+      "sha256": "7939e92e772e230a3a44bb95f114c58c7f2b7d2e28eeb4aba57696c16ddf9d89",
+      "size_bytes": 14105
+    },
+    {
+      "path": "experiments/common/style.py",
+      "role": "shared_plot_style",
+      "sha256": "24d0c9155b2f354897736a72a9a36073ba3d1d353f414f32315025190572507d",
+      "size_bytes": 10562
+    },
+    {
+      "path": "ssae/model_spec.py",
+      "role": "canonical_model_identity",
+      "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345",
+      "size_bytes": 11206
+    },
+    {
+      "path": "experiments/common/__init__.py",
+      "role": "result_package_setup",
+      "sha256": "a6c17b00c4efe264e91d07197908fd8b26992ce7ae1eed4761a181a957983686",
+      "size_bytes": 365
+    }
+  ],
+  "commands": {
+    "build": "python3 -m experiments.exp07.report --build",
+    "check": "python3 -m experiments.exp07.report --check"
+  },
+  "conclusion": "At 2\u03b1, 18/18 LLM \u00d7 method cells match or exceed their unsteered French-classifier retention and 18/18 exceed their matched-random mean on that diagnostic. Median cosine to the original French activation is 0.870, yet 18/18 have lower within-French geometry correlation than matched random; these semantic diagnostics remain representation-level proxies rather than generated-text evidence.",
+  "entry_point": "experiments.exp07.report",
+  "experiment_id": "exp07",
+  "figures": [
+    {
+      "caption": "Gemma-2-2B held-out French activations receive the same train-selected, least-squares-calibrated English\u2192French vector again at m = 0, 0.25, 0.5, 1, and 2. Curves are means across three trained seeds with population-SD error bars. Purple identifies SSAEs and teal identifies SAEs; marker and dash identify variants. The neutral matched-random ribbon is the equal-weight mixture of 100 norm-matched directions per model/seed cell; the mean-difference control is train-derived. The broad unsteered reference is not uncertainty. The mean-difference control has zero off-axis drift by construction because it defines that reference axis. Paired retrieval, within-French geometry, and off-axis drift are representation-level proxies, not generated-text semantic evaluations.",
+      "id": "target_overshoot_gemma",
+      "title": "Gemma-2-2B target-side English\u2192French steering overshoot",
+      "variants": [
+        "figures/target-overshoot-gemma.pdf"
+      ]
+    },
+    {
+      "caption": "Pythia-70M held-out French activations receive the same train-selected, least-squares-calibrated English\u2192French vector again at m = 0, 0.25, 0.5, 1, and 2. Curves are means across three trained seeds with population-SD error bars. Purple identifies SSAEs and teal identifies SAEs; marker and dash identify variants. The neutral matched-random ribbon is the equal-weight mixture of 100 norm-matched directions per model/seed cell; the mean-difference control is train-derived. The broad unsteered reference is not uncertainty. The mean-difference control has zero off-axis drift by construction because it defines that reference axis. Paired retrieval, within-French geometry, and off-axis drift are representation-level proxies, not generated-text semantic evaluations.",
+      "id": "target_overshoot_pythia",
+      "title": "Pythia-70M target-side English\u2192French steering overshoot",
+      "variants": [
+        "figures/target-overshoot-pythia.pdf"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/conclusion.txt",
+      "role": "conclusion",
+      "sha256": "83f10b3b219931f3c4ca58976d6705117f504245b6144ed59c85ece90d3aa1a3",
+      "size_bytes": 392
+    },
+    {
+      "path": "data/summary.json",
+      "role": "summary",
+      "sha256": "83025114110365854f97ee70a86f3bb5fbf84e247d673bff0d09f0c8e6df93e0",
+      "size_bytes": 1337750
+    },
+    {
+      "path": "figures/target-overshoot-gemma.pdf",
+      "role": "figure",
+      "sha256": "4069911eb74c6784bef2be4a7a892239f5456e43beacf500dc8063239f375393",
+      "size_bytes": 42472
+    },
+    {
+      "path": "figures/target-overshoot-pythia.pdf",
+      "role": "figure",
+      "sha256": "c6e0647c7711df10ad1c9da513f58ec7b7382df6ec95c0b4492b5bdd680f0053",
+      "size_bytes": 42480
+    },
+    {
+      "path": "tables/endpoint_comparison.csv",
+      "role": "table",
+      "sha256": "9cb5eb1ee8e6926b1446d043c1392efbff3a6bf19b535745f0c83a87aa964aa2",
+      "size_bytes": 10418
+    },
+    {
+      "path": "tables/language_probe_audit.csv",
+      "role": "table",
+      "sha256": "5e719eb8d01918aa8dd9721e519116c8e832f76003f35338ef46741de7139368",
+      "size_bytes": 740
+    },
+    {
+      "path": "tables/learned_seed_points.csv",
+      "role": "table",
+      "sha256": "918eb48a95961ab69730c988124574d507cc5fc8a1076b21a34683f6ddb8c2d3",
+      "size_bytes": 110992
+    },
+    {
+      "path": "tables/learned_summary.csv",
+      "role": "table",
+      "sha256": "54d85acf441284e8dc0be85b3f8cd7e1c27f08e61a1d39383aaf10ad64e4a2c7",
+      "size_bytes": 57047
+    },
+    {
+      "path": "tables/matched_random_family_summary.csv",
+      "role": "table",
+      "sha256": "ac4786752e26430ba8b20b99b5b6c07ee9f5058f0db16d2acfd5e8a71d7404f9",
+      "size_bytes": 11485
+    },
+    {
+      "path": "tables/matched_random_method_summary.csv",
+      "role": "table",
+      "sha256": "5c1a85c9a745402a2dbf2ae5d270062ced6ee8360641551b0bdcf5d96005d36c",
+      "size_bytes": 54133
+    },
+    {
+      "path": "tables/matched_random_seed_points.csv",
+      "role": "table",
+      "sha256": "e82431e4f01f3895388f812d89696a395fab7b35bc509fd75f2684d9571ce973",
+      "size_bytes": 167676
+    },
+    {
+      "path": "tables/mean_difference_control.csv",
+      "role": "table",
+      "sha256": "90f3d77d04f79367ee2719579c53ff4022754f07f7ab8f9999ec0e20aeafdf9e",
+      "size_bytes": 3487
+    },
+    {
+      "path": "tables/metric_definitions.csv",
+      "role": "table",
+      "sha256": "ce9e4fbc753b9095b973ef15edb26b56962801f3a7d2d575daba4b0261509aeb",
+      "size_bytes": 1139
+    },
+    {
+      "path": "tables/overshoot_at_2alpha.tex",
+      "role": "table",
+      "sha256": "4c01bc7ff15cf001c1ade1c1cea32ddbc2a8bccac3ef5296153f27903eb8661c",
+      "size_bytes": 1401
+    }
+  ],
+  "result_counts": {
+    "heldout_french_examples_per_llm": 20,
+    "learned_model_seed_cells": 54,
+    "learned_strength_points": 270,
+    "llms": 2,
+    "matched_random_direction_strength_evaluations": 27000,
+    "matched_random_directions": 5400,
+    "methods": 9,
+    "seeds": 3
+  },
+  "schema_version": "ssae-result-artifacts-v1",
+  "script": {
+    "path": "experiments/exp07/report.py",
+    "role": "result_builder",
+    "sha256": "fcd96983b03ab7596a3bc0805ab934a8a76972fdb348823c68a36e0c257d6364",
+    "size_bytes": 28495
+  },
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "source_provenance": {
+    "data_sources": [
+      {
+        "endpoint_order": "English then French",
+        "pair_label_contract": "language=true",
+        "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_gemma-2-2b-it_25_last_token.h5",
+        "representation_width": 2304,
+        "sha256": "8ff489b52b7ad03d0788394f6a9050bded48f35748a498018e577b4cd8d62460",
+        "test_label_sha256": "918e953f4ee35c70105bccb8d70df1c6357269b191352a8614e8dc1dfb0338c8",
+        "test_pair_count": 20,
+        "test_text_sha256": "804d1a291e3357cef9421dcea942949c01ffa4a2a67a8c300298cdde353f7af9",
+        "train_label_sha256": "f48f82c474f83d226b5f3f766d2831b7f2cfd2c398177d5b01a1d62a8dabd772",
+        "train_pair_count": 80,
+        "train_text_sha256": "9e8118de59ff27c1740aabf977391e7bedbbbc8c001c4751a13ab29c8cada31b"
+      },
+      {
+        "endpoint_order": "English then French",
+        "pair_label_contract": "language=true",
+        "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_pythia70m_5_last_token.h5",
+        "representation_width": 512,
+        "sha256": "fb492ded59db89732382abb67d0c080a4809802b5002ba8ad8da521737091e54",
+        "test_label_sha256": "918e953f4ee35c70105bccb8d70df1c6357269b191352a8614e8dc1dfb0338c8",
+        "test_pair_count": 20,
+        "test_text_sha256": "804d1a291e3357cef9421dcea942949c01ffa4a2a67a8c300298cdde353f7af9",
+        "train_label_sha256": "f48f82c474f83d226b5f3f766d2831b7f2cfd2c398177d5b01a1d62a8dabd772",
+        "train_pair_count": 80,
+        "train_text_sha256": "9e8118de59ff27c1740aabf977391e7bedbbbc8c001c4751a13ab29c8cada31b"
+      }
+    ],
+    "inventory": {
+      "path": "results/shared/identification/ssae_rms_v3/results_bundle.json",
+      "protocol_id": "ssae_delta_rms_antipodal_v2",
+      "sha256": "496f393d26cfd4a30044ea2d9a628fbda84bab0147565fbde9f59db2b947d797",
+      "study_id": "ssae_rms_global_matrix_v3"
+    },
+    "language_probes": [
+      {
+        "C": 1.0,
+        "baseline_french_probability_mean": 0.9153299239149628,
+        "baseline_french_retention_accuracy": 0.9,
+        "class_weight": "balanced",
+        "coefficient_sha256": "e5332563b0a99621221da3bbef9cfc6856d8b4cadbe4df3523373012cf0d482d",
+        "intercept": -0.6556545102670014,
+        "llm": "gemma",
+        "penalty": "l2",
+        "protocol": "StandardScaler plus fixed-C L2 logistic regression; train endpoints only",
+        "random_state": 20260901,
+        "representation_width": 2304,
+        "solver": "liblinear",
+        "test_accuracy": 0.925,
+        "test_endpoint_count": 40,
+        "train_accuracy": 0.99375,
+        "train_endpoint_count": 160
+      },
+      {
+        "C": 1.0,
+        "baseline_french_probability_mean": 0.9254889676150443,
+        "baseline_french_retention_accuracy": 0.95,
+        "class_weight": "balanced",
+        "coefficient_sha256": "a079d10c943dbc285aa5dd5a255881061def0f85ec92bc19cb40115180b18cb2",
+        "intercept": 3.8174211179459507,
+        "llm": "pythia",
+        "penalty": "l2",
+        "protocol": "StandardScaler plus fixed-C L2 logistic regression; train endpoints only",
+        "random_state": 20260901,
+        "representation_width": 512,
+        "solver": "liblinear",
+        "test_accuracy": 0.875,
+        "test_endpoint_count": 40,
+        "train_accuracy": 0.99375,
+        "train_endpoint_count": 160
+      }
+    ],
+    "llm_aggregation": "none",
+    "protocol": {
+      "direction_selection": "decoder column and sign maximizing absolute cosine with the cfc_train mean English-to-French activation difference",
+      "evaluation_split": "cfc_test",
+      "intervention": "French activation + strength \u00d7 calibrated English-to-French vector",
+      "language_retention": "train-only fixed-C L2 logistic regression probe",
+      "llm_aggregation": "none",
+      "off_axis_drift": "intervention component orthogonal to the cfc_train supervised mean English-to-French activation difference, normalized by mean held-out French activation norm",
+      "random_control": "isotropic Gaussian direction independently matched to each learned calibrated-vector norm",
+      "random_seed": 20260901,
+      "scale": "train least-squares scalar projected onto the selected decoder column",
+      "semantic_geometry_proxy": "correlation and mean absolute change of within-French pairwise cosine geometry",
+      "semantic_pair_proxy": "rank of the paired English activation among all held-out English activations under cosine similarity",
+      "source_hash_verification_performed": true,
+      "source_split": "cfc_train",
+      "target_endpoint": "French endpoint (pair column 1)"
+    },
+    "semantic_scope": "representation-level paired-retrieval and geometry proxies; no claim of generated-text semantic preservation",
+    "study_id": "exp07_target_overshoot_v1",
+    "uncertainty": {
+      "learned": "population standard deviation across three trained seeds",
+      "matched_random": "population standard deviation of the equal-weight mixture of 100 norm-matched directions per source model/seed cell",
+      "sample_level": "descriptive held-out-example standard deviations are retained in the machine-readable tables but are not confidence intervals"
+    }
+  },
+  "sources": [
+    {
+      "path": "results/exp07/frozen/target_overshoot_v1/bundle.json",
+      "role": "frozen_target_overshoot_bundle",
+      "sha256": "94b3b5e11ff314f2d9b916578371ade571289349e0a470bed8173d1312d4dc7f",
+      "size_bytes": 744007
+    },
+    {
+      "path": "experiments/exp07/run.py",
+      "role": "target_overshoot_evaluator",
+      "sha256": "4394e300a8084f8aff507dd0f8954f2821cf511d0bc9ddde3f7b4e6bb2f198e3",
+      "size_bytes": 34988
+    },
+    {
+      "path": "results/shared/identification/ssae_rms_v3/results_bundle.json",
+      "role": "frozen_checkpoint_inventory",
+      "sha256": "496f393d26cfd4a30044ea2d9a628fbda84bab0147565fbde9f59db2b947d797",
+      "size_bytes": 5535550
+    }
+  ],
+  "tables": [
+    {
+      "id": "learned_seed_points",
+      "path": "tables/learned_seed_points.csv"
+    },
+    {
+      "id": "matched_random_seed_points",
+      "path": "tables/matched_random_seed_points.csv"
+    },
+    {
+      "id": "learned_summary",
+      "path": "tables/learned_summary.csv"
+    },
+    {
+      "id": "matched_random_method_summary",
+      "path": "tables/matched_random_method_summary.csv"
+    },
+    {
+      "id": "matched_random_family_summary",
+      "path": "tables/matched_random_family_summary.csv"
+    },
+    {
+      "id": "mean_difference_control",
+      "path": "tables/mean_difference_control.csv"
+    },
+    {
+      "id": "language_probe_audit",
+      "path": "tables/language_probe_audit.csv"
+    },
+    {
+      "id": "endpoint_comparison",
+      "path": "tables/endpoint_comparison.csv"
+    },
+    {
+      "id": "metric_definitions",
+      "path": "tables/metric_definitions.csv"
+    },
+    {
+      "id": "overshoot_at_2alpha",
+      "path": "tables/overshoot_at_2alpha.tex"
+    }
+  ],
+  "title": "Target-side English\u2192French steering overshoot"
+}

@@ -1,0 +1,10 @@
+study_family,llm,input_regime,reconstruction_target,dataset_cells,leading_variants,leading_variant_cells
+behavioral,gemma,diff,paired difference (delta_z),4,SSAE JumpReLU (penalized),3
+behavioral,gemma,raw,raw activation (z),4,SAE JumpReLU (penalized),4
+behavioral,pythia,diff,paired difference (delta_z),4,SSAE JumpReLU (penalized),4
+behavioral,pythia,raw,raw activation (z),4,SAE JumpReLU (penalized),4
+semi-synthetic,gemma,diff,paired difference (delta_z),5,SSAE JumpReLU (penalized),5
+semi-synthetic,gemma,raw,raw activation (z),5,SAE JumpReLU (penalized),5
+semi-synthetic,pythia,diff,paired difference (delta_z),5,SSAE JumpReLU (penalized),5
+semi-synthetic,pythia,raw,raw activation (z),5,SAE JumpReLU (penalized),5
+synthetic,not applicable,diff,synthetic observed difference (delta_z),3,SSAE Affine (reconstruction-only control),3

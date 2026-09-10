@@ -1,0 +1,179 @@
+{
+  "analysis": "train_validation_test_all_identifiability_metrics",
+  "artifacts": [
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/identifiability_train_validation_test_eng_french.pdf",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/identifiability_train_validation_test_eng_french.png",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/identifiability_train_validation_test_eng_french.svg",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/per_seed_split_metrics.csv",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/seedwise_mcc.csv",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/summary_split_metrics.csv",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/dci_validation_grid.csv",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/dci_predictor_selection.csv",
+    "results/findings/identifiability_overfitting_v1/report/split_metrics/protocol.json"
+  ],
+  "checkpoint_audit": [
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p02/seed0",
+      "constraint_value": 0.022914688875891924,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 0,
+      "target": 0.02,
+      "weights_sha256": "b34e158fff6a8d4efffc48da5e252fa3b5bb9870a50cd69575bb100ddf1a40b2"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p02/seed1",
+      "constraint_value": 0.0229013648824729,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 1,
+      "target": 0.02,
+      "weights_sha256": "4766657526e019cdb2a1b23bc55dbee6e2fe4d9391d4a855a6cbc3ba0eee513d"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p02/seed2",
+      "constraint_value": 0.02290646688704222,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 2,
+      "target": 0.02,
+      "weights_sha256": "f6b6fe0f9f35fa331ede940786736eab8aae302594060a3c7e910e70ecab2920"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p05/seed0",
+      "constraint_value": 0.050032340511220144,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 0,
+      "target": 0.05,
+      "weights_sha256": "111b2a274b46d06a73793dd5bbd94efba9f26f969250839d6415da87d977512a"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p05/seed1",
+      "constraint_value": 0.05000509343214882,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 1,
+      "target": 0.05,
+      "weights_sha256": "8d3d21118e232545124df1fa35483523c07e4511419e08a451b8d0434e6c3ef7"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p05/seed2",
+      "constraint_value": 0.04963094128138416,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 2,
+      "target": 0.05,
+      "weights_sha256": "516d6d07bf04c31a66c59ecc977b962e9221e048e1f20a1eda714dfc4f28e690"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p1/seed0",
+      "constraint_value": 0.09989321013276276,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 0,
+      "target": 0.1,
+      "weights_sha256": "f6ae96d7b493d019aa9bad88df5665eff0881dc0a207cb82340da7429db22243"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p1/seed1",
+      "constraint_value": 0.09997324493318038,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 1,
+      "target": 0.1,
+      "weights_sha256": "7a646158402ff9ef62982e167582aad760adf88ed4053ddcd8ba63c1fa18a632"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p1/seed2",
+      "constraint_value": 0.09993325835608692,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 2,
+      "target": 0.1,
+      "weights_sha256": "244f5a37740d106ffffd697ffd2704af442c66b94d316cb6cbb1f5ed3640e93f"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p2/seed0",
+      "constraint_value": 0.1964075872276256,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 0,
+      "target": 0.2,
+      "weights_sha256": "c01dbe34b974de2e6671a4942287e01f250d6842ee98c0475d3c78c737a31791"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p2/seed1",
+      "constraint_value": 0.19501948798237356,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 1,
+      "target": 0.2,
+      "weights_sha256": "3add014d05b2c1782575cb613b0980fb1726c50131c0c49d4bc0f2739612d8ae"
+    },
+    {
+      "checkpoint": "ssae-data://studies/test_identifiability_overfitting_v1/checkpoints/target_0p2/seed2",
+      "constraint_value": 0.1965961304978318,
+      "decoder_norm_max_abs_error": 1.1920928955078125e-07,
+      "seed": 2,
+      "target": 0.2,
+      "weights_sha256": "26a8b6db6fd39dbfb70009b0a974c7431144348af854842446cbe1c57b9e9f71"
+    }
+  ],
+  "dataset": "eng-french",
+  "dci_predictor_selection": {
+    "candidates": [
+      "elastic_net",
+      "gam",
+      "gbt"
+    ],
+    "criterion": "highest mean validation DCI-I across all 12 SSAE runs",
+    "mean_validation_dci_i": {
+      "elastic_net": 0.8854166666666666,
+      "gam": 1.0,
+      "gbt": 0.7786458333333334
+    },
+    "selected": "gam",
+    "selected_label": "Spline GAM",
+    "tie_breaker": "declared candidate order"
+  },
+  "embedding_path": "ssae-data://studies/test_identifiability_overfitting_v1/data/eng-french_pythia70m_5_last_token.h5",
+  "embedding_sha256": "f19b1cba7457ccca922a11b7405775d3c389f54cc1115f268e7e4baf5ee6eca0",
+  "metric_order": [
+    "mcc_p",
+    "dci_c",
+    "dci_i",
+    "mcc_s",
+    "r2",
+    "seedwise_mcc"
+  ],
+  "metric_protocol": {
+    "dci_c": "identifiability_guard completeness applied to nonnegative mean accuracy drops from pair-blocked coordinate permutations in the named split",
+    "dci_i": "accuracy of the fixed globally validation-selected predictor in the named split",
+    "dci_predictor": "Elastic Net, spline GAM, and GBT fit on train; one family selected globally by highest mean validation DCI-I; within-family hyperparameters selected on validation accuracy",
+    "mcc_p": "Pearson coordinate assignment fit on train, frozen for every split",
+    "mcc_s": "Spearman coordinate assignment fit on train, frozen for every split",
+    "r2": "identifiability_guard R2 linear map fit on train, scored on named split",
+    "seedwise_mcc": "absolute-Pearson Hungarian alignment between encoder response coordinates fit on train and frozen for every split"
+  },
+  "pair_counts": {
+    "test": 20,
+    "train": 64,
+    "validation": 16
+  },
+  "permutation_repeats": 32,
+  "permutation_seed": 20260831,
+  "predictor_jobs": 4,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "selection_disclosure": {
+    "test": "untouched until final scoring",
+    "train": "metric mappings and predictors fit here",
+    "validation": "DCI predictor family and within-family hyperparameters selected here"
+  },
+  "software": {
+    "numpy": "1.26.4",
+    "python": "3.10.12",
+    "scikit_learn": "1.7.2",
+    "torch": "2.11.0+cu130"
+  },
+  "study_id": "test_identifiability_overfitting_v1",
+  "targets": [
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ]
+}

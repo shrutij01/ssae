@@ -1,0 +1,367 @@
+{
+  "code_dependencies": [
+    {
+      "path": "experiments/common/reporting.py",
+      "role": "shared_result_helpers",
+      "sha256": "7939e92e772e230a3a44bb95f114c58c7f2b7d2e28eeb4aba57696c16ddf9d89",
+      "size_bytes": 14105
+    },
+    {
+      "path": "experiments/common/style.py",
+      "role": "shared_plot_style",
+      "sha256": "24d0c9155b2f354897736a72a9a36073ba3d1d353f414f32315025190572507d",
+      "size_bytes": 10562
+    },
+    {
+      "path": "ssae/model_spec.py",
+      "role": "canonical_model_identity",
+      "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345",
+      "size_bytes": 11206
+    },
+    {
+      "path": "experiments/common/__init__.py",
+      "role": "result_package_setup",
+      "sha256": "a6c17b00c4efe264e91d07197908fd8b26992ce7ae1eed4761a181a957983686",
+      "size_bytes": 365
+    }
+  ],
+  "commands": {
+    "build": "python3 -m experiments.exp04.report --build",
+    "check": "python3 -m experiments.exp04.report --check"
+  },
+  "conclusion": "On the clean, lexically disjoint corr-binary-occupation \u2192 eng-french transfer, direct family comparison gives gemma: SSAE leads (SSAE JumpReLU (penalized) versus SAE ReLU (penalized), SSAE\u2212SAE +0.0071), pythia: SSAE leads (SSAE TopK (penalized) versus SAE JumpReLU (penalized), SSAE\u2212SAE +0.0003). Across all source regimes the lead counts are gemma: best-family SSAE 3, SAE 0, ties 0, pythia: best-family SSAE 2, SAE 1, ties 0. Matched-activation counts are gemma: matched nonlinear SSAE 8, SAE 1, ties 0, pythia: matched nonlinear SSAE 4, SAE 5, ties 0; LLMs are not pooled. The legacy corr-binary regime remains a pair-mixture diagnostic because its household vocabulary overlaps the target.",
+  "entry_point": "experiments.exp04.report",
+  "experiment_id": "exp04",
+  "figures": [
+    {
+      "caption": "Source-selected directions are applied to eng-french without refitting. Bars include every frozen autoencoder plus the factor-aligned mean-difference and matched-norm random controls. Each grey tick is the matched no-steering endpoint cosine. Purple hatching denotes SSAEs, teal hatching denotes SAEs, and neutral hatching denotes controls; pattern identifies the model variant. \u2020 clean lexically disjoint OOD; \u2021 overlapping-vocabulary pair-mixture diagnostic. LLMs are not pooled.",
+      "id": "ood_transfer_cosine",
+      "title": "OOD steering endpoint cosine",
+      "variants": [
+        "figures/ood-transfer-cosine.svg",
+        "figures/ood-transfer-cosine.pdf"
+      ]
+    },
+    {
+      "caption": "Source-selected directions are applied to eng-french without refitting. \u2020 clean lexically disjoint semantic-domain OOD; \u2021 overlapping-vocabulary pair-mixture diagnostic. LLMs are not pooled.",
+      "id": "ood_transfer_improvement",
+      "title": "OOD steering improvement",
+      "variants": [
+        "figures/ood-transfer-improvement.svg",
+        "figures/ood-transfer-improvement.pdf"
+      ]
+    },
+    {
+      "caption": "Separate panels report target endpoint cosine, the no-steering baseline, direction cosine, and the exact improved-pair fraction. \u2020 clean disjoint OOD; \u2021 overlapping pair-mixture diagnostic.",
+      "id": "ood_transfer_diagnostics",
+      "title": "OOD steering diagnostics",
+      "variants": [
+        "figures/ood-transfer-diagnostics.svg",
+        "figures/ood-transfer-diagnostics.pdf"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/conclusion.txt",
+      "role": "conclusion",
+      "sha256": "bacfc8a29a223fe3f2b769255b43e1507db3bcacff33ba02ca8c4354dcb4b17d",
+      "size_bytes": 700
+    },
+    {
+      "path": "data/summary.json",
+      "role": "summary",
+      "sha256": "e82de8bfa1f056a699fe0ecaf8deab28fd626e6a99a448ae8bea21533cf2a992",
+      "size_bytes": 129249
+    },
+    {
+      "path": "figures/ood-transfer-cosine.pdf",
+      "role": "figure",
+      "sha256": "c9aa943344ecec69e90de51e862322348c04b23b920213054dd9c7b938e53745",
+      "size_bytes": 81409
+    },
+    {
+      "path": "figures/ood-transfer-cosine.svg",
+      "role": "figure",
+      "sha256": "3202880b784ba53cb3f97db02851b2c8886d2ed2f4b21b35aff63d7048b02082",
+      "size_bytes": 428359
+    },
+    {
+      "path": "figures/ood-transfer-diagnostics.pdf",
+      "role": "figure",
+      "sha256": "edf130d70312aea067610bcd59d1e2ddb0ce2dfe30b8aae8edc27bcf4fa9f1ca",
+      "size_bytes": 52219
+    },
+    {
+      "path": "figures/ood-transfer-diagnostics.svg",
+      "role": "figure",
+      "sha256": "bf8f2e5fb1b833e3d1c211951941eebf59890d9e56818e1c5efc08bafbe101b4",
+      "size_bytes": 241156
+    },
+    {
+      "path": "figures/ood-transfer-improvement.pdf",
+      "role": "figure",
+      "sha256": "b5af09c875464c086afdf5cda4d60bd20d9c3c2f397fb687bbb4893ab7d719c6",
+      "size_bytes": 25915
+    },
+    {
+      "path": "figures/ood-transfer-improvement.svg",
+      "role": "figure",
+      "sha256": "f23f0260a865d1e84e8b209c2317276dd5a49f33a7aa3f57305d7fe7dcf7d566",
+      "size_bytes": 68480
+    },
+    {
+      "path": "tables/family_comparison.csv",
+      "role": "table",
+      "sha256": "232c356d366b7fde0958a24afcc942c0bd57d114ad33428e4bd0f82715b54232",
+      "size_bytes": 2597
+    },
+    {
+      "path": "tables/family_lead_summary.csv",
+      "role": "table",
+      "sha256": "f8a9c1f82ce4f8f521fa393776445bd811aa324dcc734f57695a71a8255f7591",
+      "size_bytes": 328
+    },
+    {
+      "path": "tables/improvement_winners.csv",
+      "role": "table",
+      "sha256": "68252e2c54133a35b62a765ccaaffbbe94910e6c84d7c8a5b6e27b0f588caf30",
+      "size_bytes": 1204
+    },
+    {
+      "path": "tables/improvement_winners.tex",
+      "role": "table",
+      "sha256": "0f9bd57f71b7216feb2558211f48833c91bdda2f630e4ee83ae551c7827261ee",
+      "size_bytes": 790
+    },
+    {
+      "path": "tables/matched_activation_comparison.csv",
+      "role": "table",
+      "sha256": "ee2db17fdeae83bdf6d7533b9a6bf7fadbc43ead438513c27a87f2b8a406d12b",
+      "size_bytes": 6632
+    },
+    {
+      "path": "tables/matched_activation_lead_summary.csv",
+      "role": "table",
+      "sha256": "99ca150819d508c3f1f9fd758e1ae9299130f994bcd82a80e94a90e1bc927049",
+      "size_bytes": 179
+    },
+    {
+      "path": "tables/regime_metadata.csv",
+      "role": "table",
+      "sha256": "28e2111c6ed7f64721af6de69e5a671aecb04f576f7a65ad536c6770e5d793a3",
+      "size_bytes": 390
+    },
+    {
+      "path": "tables/transfer_summary.csv",
+      "role": "table",
+      "sha256": "ddd5d580db555e47d303db1a03b5ffd1859c6384c5b6f9991ea3a98e2479e16a",
+      "size_bytes": 31533
+    }
+  ],
+  "result_counts": {
+    "aggregate_cells": 66,
+    "direct_family_comparison_cells": 6,
+    "llms": 2,
+    "matched_activation_comparison_cells": 18,
+    "methods": 11,
+    "regimes": 3,
+    "source_result_rows": 174
+  },
+  "schema_version": "ssae-result-artifacts-v1",
+  "script": {
+    "path": "experiments/exp04/report.py",
+    "role": "result_builder",
+    "sha256": "29189ea28388bd20d8a2489a70152641c9e81f49f9a9acae943abef0e07adaec",
+    "size_bytes": 31906
+  },
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "source_provenance": {
+    "evaluation_provenance": {
+      "code": {
+        "evaluator": {
+          "path": "ssae-data://studies/ssae_rms_global_matrix_v3/source_snapshot/scripts/evaluate_semisynth_ood_transfer.py",
+          "sha256": "8eda8555df7d8e365642b251b1b15cca931eca6ddb71f3b217292c7f9fd1075d"
+        },
+        "model_loading": {
+          "path": "ssae-data://studies/ssae_rms_global_matrix_v3/source_snapshot/evals/model_loading.py",
+          "sha256": "bdbcc938aba07dd3a2082eb759c8affcc18f71612044dc3be53283963b4297be"
+        }
+      },
+      "data_sources": [
+        {
+          "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_gemma-2-2b-it_25_last_token.h5",
+          "sha256": "8ff489b52b7ad03d0788394f6a9050bded48f35748a498018e577b4cd8d62460",
+          "size_bytes": 1868480
+        },
+        {
+          "path": "ssae-data://semisynth_heldout_2k_v1/2-binary/2-binary_gemma-2-2b-it_25_last_token.h5",
+          "sha256": "2ac7771f0c9f70f2f4a86955a0a1186bd39f41dd3554cfbc0eb3e1ba4be85048",
+          "size_bytes": 8516992
+        },
+        {
+          "path": "ssae-data://semisynth_heldout_2k_v1/corr-binary/corr-binary_gemma-2-2b-it_25_last_token.h5",
+          "sha256": "1c7cda640cdc604c132598cb791da603d499aef4d4478267c25276472d51e2d4",
+          "size_bytes": 3726672
+        },
+        {
+          "path": "ssae-data://corr-binary-occupation/corr-binary-occupation_gemma-2-2b-it_25_last_token.h5",
+          "sha256": "10371b2a3b0f0d033f2bf9f5a5367aa9939f30024175ff6cdf53f41731602f44",
+          "size_bytes": 3720576
+        },
+        {
+          "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_pythia70m_5_last_token.h5",
+          "sha256": "fb492ded59db89732382abb67d0c080a4809802b5002ba8ad8da521737091e54",
+          "size_bytes": 434880
+        },
+        {
+          "path": "ssae-data://semisynth_heldout_2k_v1/2-binary/2-binary_pythia70m_5_last_token.h5",
+          "sha256": "14e8083936ba18c651628032bb384e931901d697a24596a15ce333d62024be41",
+          "size_bytes": 1979776
+        },
+        {
+          "path": "ssae-data://semisynth_heldout_2k_v1/corr-binary/corr-binary_pythia70m_5_last_token.h5",
+          "sha256": "dcac1b994744fd857eb31426009d73dce4b05b8ca20e68efd0cc6ea1af17e35a",
+          "size_bytes": 873808
+        },
+        {
+          "path": "ssae-data://corr-binary-occupation/corr-binary-occupation_pythia70m_5_last_token.h5",
+          "sha256": "cd56bc4eb3769326b0120a850fdd8a01a9f63ee0766dc37892b39565c0eeb1c3",
+          "size_bytes": 853376
+        }
+      ],
+      "freezer": {
+        "path": "scripts/freeze_semisynth_ood_transfer.py",
+        "sha256": "bd5a46dba2d413780894eb0bc72e6406615745b742a08214c24469d83d13b9fb"
+      },
+      "model_manifest": {
+        "path": "ssae-data://studies/ssae_rms_global_matrix_v3/manifests/frozen_training_manifest.jsonl",
+        "sha256": "fd281987e1d7a1b768cdf99430531f6a3a544958a990b97563b474e13f9a1d60",
+        "size_bytes": 1658538,
+        "training_audit": {
+          "path": "ssae-data://studies/ssae_rms_global_matrix_v3/manifests/training_audit.json",
+          "sha256": "811fb8bd1ec472a0b9d4aba06ae18a057b50280634db180ddc01fa46d8146a09"
+        }
+      },
+      "raw_evaluator_output": {
+        "path": "results/exp04/runs/semisynth_ood_transfer_v3/raw_results.json",
+        "sha256": "255436302eb8f9c4ed14d88ed2327a10e9d28d272f28bb0f22a772321deef2b5",
+        "size_bytes": 944024
+      }
+    },
+    "llm_aggregation": "none",
+    "protocol": {
+      "feature_selection": "source mean-delta alignment only",
+      "mean_difference_definition": "sum_i(delta_c_i * delta_z_i) / sum_i(delta_c_i^2); delta_c_i=1 for the canonically oriented source rows",
+      "model_manifest": "ssae-data://studies/ssae_rms_global_matrix_v3/manifests/frozen_training_manifest.jsonl",
+      "model_matrix": [
+        "ssae_linear_l1",
+        "ssae_linear_step_l0",
+        "ssae_linear_sigmoid_l0",
+        "ssae_relu",
+        "ssae_jumprelu",
+        "ssae_topk",
+        "sae_relu",
+        "sae_jumprelu",
+        "sae_topk"
+      ],
+      "orientation": "source only",
+      "primary_metric": "cosine improvement over the no-steering baseline",
+      "scale": "source least-squares scalar",
+      "source_label_selection": "persisted source factor labels; only rows where the requested factor changes alone",
+      "source_split": "cfc_train",
+      "target_split": "cfc_test from semisynth_heldout_2k_v1",
+      "warning": "corr_to_lang is not semantic-domain OOD in the stored data; it is a pair-mixture shift with overlapping household pairs. corr_occupation_to_lang is the clean, disjoint replacement"
+    },
+    "regime_metadata": {
+      "binary_to_lang": {
+        "interpretation": "semantic-domain OOD transfer",
+        "label": "2-binary \u2192 eng-french",
+        "warning": null
+      },
+      "corr_occupation_to_lang": {
+        "interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+        "label": "corr-binary-occupation \u2192 eng-french",
+        "warning": null
+      },
+      "corr_to_lang": {
+        "interpretation": "pair-mixture diagnostic",
+        "label": "corr-binary \u2192 eng-french",
+        "warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD."
+      }
+    },
+    "study_id": "exp04_semisynth_rms_ood_transfer_v2",
+    "uncertainty": "population SD across training seeds"
+  },
+  "sources": [
+    {
+      "path": "results/exp04/frozen/semisynth_rms_v3/bundle.json",
+      "role": "frozen_transfer_bundle",
+      "sha256": "0140726733d40c0d0811517281d1c21783f8baa434ed5625e4fc78d16d60c49b",
+      "size_bytes": 389424
+    },
+    {
+      "path": "scripts/evaluate_semisynth_ood_transfer.py",
+      "role": "transfer_evaluator",
+      "sha256": "79a8e02a9f553c17022ffb7754cacbabf3927d0b05bfc7f75fde77af2881875b",
+      "size_bytes": 37186
+    },
+    {
+      "path": "scripts/freeze_semisynth_ood_transfer.py",
+      "role": "bundle_freezer",
+      "sha256": "7e269f361789b3e18c298a6a69c621b07f152abf66c6ace82a6ee5643f11ae12",
+      "size_bytes": 14198
+    },
+    {
+      "path": "scripts/job_scripts/job_semisynth_ood_transfer_results.sh",
+      "role": "cluster_result_pipeline",
+      "sha256": "794b37ebb42f7894a6e9d0d7bc0a937a1f76351ddf033505d0958b57f5223e4f",
+      "size_bytes": 1838
+    },
+    {
+      "path": "scripts/run_ssae_rms_matrix.py",
+      "role": "training_matrix_runner",
+      "sha256": "ea9278513b9e5a92abc57aab308d0406914c0162b512323c91141b2a93547986",
+      "size_bytes": 72889
+    }
+  ],
+  "tables": [
+    {
+      "id": "transfer_summary",
+      "path": "tables/transfer_summary.csv"
+    },
+    {
+      "id": "regime_metadata",
+      "path": "tables/regime_metadata.csv"
+    },
+    {
+      "id": "improvement_winners",
+      "path": "tables/improvement_winners.csv"
+    },
+    {
+      "id": "improvement_winners_latex",
+      "path": "tables/improvement_winners.tex"
+    },
+    {
+      "id": "family_comparison",
+      "path": "tables/family_comparison.csv"
+    },
+    {
+      "id": "family_lead_summary",
+      "path": "tables/family_lead_summary.csv"
+    },
+    {
+      "id": "matched_activation_comparison",
+      "path": "tables/matched_activation_comparison.csv"
+    },
+    {
+      "id": "matched_activation_lead_summary",
+      "path": "tables/matched_activation_lead_summary.csv"
+    }
+  ],
+  "title": "Source-only OOD steering transfer"
+}

@@ -1,0 +1,1 @@
+JumpReLU responses recur across seeds (33.7% for SSAE and 24.2% for SAE), but both variants have zero concept-conditioned pairs with response correlation at least 0.5 and decoder cosine at least 0.8, and therefore zero stable 2-of-3 atom identities. Concept FDR alone remains architecture-sensitive; atom-level cards should require the separate cross-seed identity criterion.

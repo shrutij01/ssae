@@ -1,0 +1,4 @@
+dataset,SSAE Linear (constrained L1),SSAE Affine (reconstruction-only control)
+"synth(3,2)",0.907 ± 0.056,0.821 ± 0.058
+"synth(4,3)",0.933 ± 0.003,0.720 ± 0.067
+"synth(10,7)",0.885 ± 0.002,0.524 ± 0.031

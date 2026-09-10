@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Concept-conditioned cross-seed response and atom stability.}
+\label{tab:feature-atlas-cross-seed-stability}
+\begin{tabular}{lrrr}
+\toprule
+Method & Response (\textbackslash{}\%) & Strict geometry (\textbackslash{}\%) & Stable atoms \\
+\midrule
+SSAE Linear (constrained L1) & 70.0 & 0.5 & 32 \\
+SSAE ReLU (penalized) & 95.2 & 15.6 & 2387 \\
+SSAE TopK (penalized) & 37.8 & 2.3 & 5 \\
+SSAE JumpReLU (penalized) & 33.7 & 0.0 & 0 \\
+SAE ReLU (penalized) & 79.6 & 89.0 & 40 \\
+SAE TopK (penalized) & 51.7 & 2.0 & 4 \\
+SAE JumpReLU (penalized) & 24.2 & 0.0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

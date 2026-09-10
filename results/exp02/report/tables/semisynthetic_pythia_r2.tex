@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Held-out R² for semi-synthetic data (pythia).}
+\label{tab:semisynthetic-pythia-r2}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+eng-french & 0.685 ± 0.025 & 0.741 ± 0.048 & 0.848 ± 0.009 & 0.628 ± 0.045 & 0.700 ± 0.018 & 0.337 ± 0.064 & 0.550 ± 0.011 & 0.715 ± 0.018 & 0.565 ± 0.018 \\
+eng-german & 0.634 ± 0.074 & 0.709 ± 0.050 & 0.859 ± 0.013 & 0.561 ± 0.012 & 0.705 ± 0.006 & 0.411 ± 0.036 & 0.533 ± 0.025 & 0.703 ± 0.004 & 0.550 ± 0.049 \\
+masc-fem-eng & 0.446 ± 0.317 & 0.728 ± 0.026 & 0.730 ± 0.023 & 0.736 ± 0.026 & 0.755 ± 0.011 & 0.556 ± 0.021 & 0.411 ± 0.006 & 0.755 ± 0.029 & 0.658 ± 0.081 \\
+2-binary & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.370 ± 0.263 & 0.000 ± 0.000 & 0.043 ± 0.061 & 0.183 ± 0.114 & 0.000 ± 0.000 & 0.000 ± 0.000 \\
+corr-binary & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.084 ± 0.119 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

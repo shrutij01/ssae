@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Held-out Support precision for behavioral data (gemma).}
+\label{tab:behavioral-gemma-support-precision}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+bias-in-bios & 0.055 ± 0.004 & 0.134 ± 0.008 & 0.073 ± 0.001 & 0.320 ± 0.004 & 0.078 ± 0.000 & 0.359 ± 0.008 & 0.414 ± 0.005 & 0.082 ± 0.000 & 0.230 ± 0.013 \\
+refusal & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+sycophancy & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+truthful-qa & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+\bottomrule
+\end{tabular}
+\end{table}

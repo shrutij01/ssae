@@ -1,0 +1,210 @@
+{
+  "code_dependencies": [
+    {
+      "path": "experiments/common/reporting.py",
+      "role": "shared_result_helpers",
+      "sha256": "7939e92e772e230a3a44bb95f114c58c7f2b7d2e28eeb4aba57696c16ddf9d89",
+      "size_bytes": 14105
+    },
+    {
+      "path": "experiments/common/style.py",
+      "role": "shared_plot_style",
+      "sha256": "24d0c9155b2f354897736a72a9a36073ba3d1d353f414f32315025190572507d",
+      "size_bytes": 10562
+    },
+    {
+      "path": "ssae/model_spec.py",
+      "role": "canonical_model_identity",
+      "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345",
+      "size_bytes": 11206
+    },
+    {
+      "path": "experiments/common/__init__.py",
+      "role": "result_package_setup",
+      "sha256": "a6c17b00c4efe264e91d07197908fd8b26992ce7ae1eed4761a181a957983686",
+      "size_bytes": 365
+    }
+  ],
+  "commands": {
+    "build": "python3 -m experiments.exp01.report --build",
+    "check": "python3 -m experiments.exp01.report --check"
+  },
+  "conclusion": "Across 39 separately scaled dataset, LLM, and reconstruction-target cells, SAE JumpReLU (penalized) has the lowest mean NMSE in 18; raw-activation and delta_z targets are never compared on one axis.",
+  "entry_point": "experiments.exp01.report",
+  "experiment_id": "exp01",
+  "figures": [
+    {
+      "caption": "Held-out mean NMSE with population standard deviation across three seeds. LLMs and reconstruction targets are faceted; no LLM or target pooling.",
+      "id": "behavioral_reconstruction",
+      "title": "Behavioral reconstruction error",
+      "variants": [
+        "figures/behavioral_reconstruction.svg",
+        "figures/behavioral_reconstruction.pdf"
+      ]
+    },
+    {
+      "caption": "Held-out mean NMSE with population standard deviation across three seeds. LLMs and reconstruction targets are faceted; no LLM or target pooling.",
+      "id": "semisynthetic_reconstruction",
+      "title": "Semi-synthetic reconstruction error",
+      "variants": [
+        "figures/semisynthetic_reconstruction.svg",
+        "figures/semisynthetic_reconstruction.pdf"
+      ]
+    },
+    {
+      "caption": "Held-out mean NMSE with population standard deviation over five seeds.",
+      "id": "synthetic_reconstruction",
+      "title": "Synthetic reconstruction error",
+      "variants": [
+        "figures/synthetic_reconstruction.svg",
+        "figures/synthetic_reconstruction.pdf"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/conclusion.txt",
+      "role": "conclusion",
+      "sha256": "ea77015db5a198a400cc30dd4f02f7c61322bfa6987532682e693172682e38ed",
+      "size_bytes": 199
+    },
+    {
+      "path": "data/summary.json",
+      "role": "summary",
+      "sha256": "15867e1cb00f0fccaf450af958e7c58dc06ef88ac8cd0de99f0a61a25f98f20c",
+      "size_bytes": 446541
+    },
+    {
+      "path": "figures/behavioral_reconstruction.pdf",
+      "role": "figure",
+      "sha256": "580d5b0f2b51daa97fa899bb2aa8b04f0f09c431ba646ee5ce54e0e655eb3e0a",
+      "size_bytes": 26694
+    },
+    {
+      "path": "figures/behavioral_reconstruction.svg",
+      "role": "figure",
+      "sha256": "5e1b0738747d193c7541d79a2afbb299d3f5c9318458e8e345c70d73324677c0",
+      "size_bytes": 83012
+    },
+    {
+      "path": "figures/semisynthetic_reconstruction.pdf",
+      "role": "figure",
+      "sha256": "769837651d5152afff4d4f9145324492662a8c7f44c1d2a26ea95ed769aeb35b",
+      "size_bytes": 27360
+    },
+    {
+      "path": "figures/semisynthetic_reconstruction.svg",
+      "role": "figure",
+      "sha256": "874f10d4b568362cfde12b042a6319e4bc95d4fa7fc2f89d767adf5ee46d9e14",
+      "size_bytes": 90723
+    },
+    {
+      "path": "figures/synthetic_reconstruction.pdf",
+      "role": "figure",
+      "sha256": "0fc84c4e74004ac5704b037fa5c136420fdd8c0f8507c1c923c93d18b86358db",
+      "size_bytes": 14996
+    },
+    {
+      "path": "figures/synthetic_reconstruction.svg",
+      "role": "figure",
+      "sha256": "21824f03e2b119c25d1eeb2cd442c476c590b520cf5248e156f826b2b0ac3ec3",
+      "size_bytes": 17027
+    },
+    {
+      "path": "tables/lowest_nmse.csv",
+      "role": "table",
+      "sha256": "bb00baa094c96b6874710729e26af93f54c07b219c275b65a165aec4a790991e",
+      "size_bytes": 5280
+    },
+    {
+      "path": "tables/lowest_nmse.tex",
+      "role": "table",
+      "sha256": "b3e3ec3aaa7cb7ea1ea4cba20d5f5fe9d3cb6b603c1967600c382fc66be8c41a",
+      "size_bytes": 3819
+    },
+    {
+      "path": "tables/reconstruction_runs.csv",
+      "role": "table",
+      "sha256": "c80ee13c8d77b1f4e957a7b1236361d2ef82117b5e9933629673d611e1876711",
+      "size_bytes": 92157
+    },
+    {
+      "path": "tables/reconstruction_summary.csv",
+      "role": "table",
+      "sha256": "42a1d0fa27723a9f44438f8a8459832213eb08c891811c6616a7015a71391465",
+      "size_bytes": 39274
+    },
+    {
+      "path": "tables/variant_lead_summary.csv",
+      "role": "table",
+      "sha256": "5d78a7eedcbf567205bad2175bdd93287d98778e546e36374901257f11c8acb3",
+      "size_bytes": 837
+    }
+  ],
+  "result_counts": {
+    "figures": 3,
+    "model_dataset_llm_cells": 168,
+    "separately_scaled_target_cells": 39,
+    "source_runs": 516
+  },
+  "schema_version": "ssae-result-artifacts-v1",
+  "script": {
+    "path": "experiments/exp01/report.py",
+    "role": "result_builder",
+    "sha256": "f255de57441622e7c863dbd6116ea99c1f3ad15c5e66d8ea88e666d80bdf0a13",
+    "size_bytes": 20989
+  },
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "source_provenance": {
+    "audit_metric": "reconstruction_mse",
+    "cross_family_comparison": "unavailable: SSAEs reconstruct delta_z while SAEs reconstruct raw z; variants are ranked only within reconstruction target",
+    "heldout_evaluation": "ssae_rms_heldout_identification_v1",
+    "llm_aggregation": "none",
+    "missing_cells": "unavailable; never encoded as zero",
+    "plotted_metric": "reconstruction_nmse",
+    "synthetic_study": "exp06_synthetic_identification",
+    "target_separation": "raw activations and paired differences occupy separate panels",
+    "uncertainty": "population standard deviation across training seeds"
+  },
+  "sources": [
+    {
+      "path": "results/shared/identification/ssae_rms_v3/results_bundle.json",
+      "role": "heldout_scalar_rms_metrics",
+      "sha256": "496f393d26cfd4a30044ea2d9a628fbda84bab0147565fbde9f59db2b947d797",
+      "size_bytes": 5535550
+    },
+    {
+      "path": "results/exp06/frozen/synthetic_identification_v1/bundle.json",
+      "role": "synthetic_metrics",
+      "sha256": "4b600d2e3ff5a6a0a0c5810027542304ee8c812bad4775732e8b390083ba9ef6",
+      "size_bytes": 475827
+    }
+  ],
+  "tables": [
+    {
+      "id": "reconstruction_runs",
+      "path": "tables/reconstruction_runs.csv"
+    },
+    {
+      "id": "reconstruction_summary",
+      "path": "tables/reconstruction_summary.csv"
+    },
+    {
+      "id": "lowest_nmse",
+      "path": "tables/lowest_nmse.csv"
+    },
+    {
+      "id": "lowest_nmse_latex",
+      "path": "tables/lowest_nmse.tex"
+    },
+    {
+      "id": "variant_lead_summary",
+      "path": "tables/variant_lead_summary.csv"
+    }
+  ],
+  "title": "Reconstruction error"
+}

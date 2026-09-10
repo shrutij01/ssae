@@ -1,0 +1,6 @@
+dataset,SSAE Linear (constrained L1),SSAE Linear (constrained Step-L0),SSAE Linear (constrained sigmoid-L0),SSAE ReLU (penalized),SSAE JumpReLU (penalized),SSAE TopK (penalized),SAE ReLU (penalized),SAE JumpReLU (penalized),SAE TopK (penalized)
+eng-french,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+eng-german,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+masc-fem-eng,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+2-binary,0.000 ± 0.000,0.000 ± 0.000,0.442 ± 0.152,0.247 ± 0.023,0.668 ± 0.011,0.676 ± 0.015,0.456 ± 0.026,0.674 ± 0.027,0.671 ± 0.014
+corr-binary,0.000 ± 0.000,0.000 ± 0.000,0.231 ± 0.164,0.277 ± 0.067,0.667 ± 0.005,0.715 ± 0.007,0.475 ± 0.036,0.679 ± 0.018,0.643 ± 0.000

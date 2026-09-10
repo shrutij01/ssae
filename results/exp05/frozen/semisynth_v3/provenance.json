@@ -1,0 +1,51 @@
+{
+  "excluded_large_artifacts": [
+    "cache/arrays",
+    "cache/runs",
+    "results/stability/seed_pair_matches.csv",
+    "source_snapshot",
+    "logs"
+  ],
+  "published_at_utc": "2026-08-12T21:39:38.474569+00:00",
+  "published_file_sha256": {
+    "README.md": "6fda7c4043591c121c4ab2589b8cf2aba400a8a2dbc722f8fe84fc75eb5e0239",
+    "audit/audit.json": "d3945c5db1e26e2ac47b2ad1c99884031d32b6a30855386c6aad135808df4353",
+    "concept_selection/group_summary.csv": "13907a0e7acab43f34476ea7015f7fcfc49ced54f3cf2d392ad474aaf6893c2d",
+    "concept_selection/method_summary.csv": "b4cb483049fd134cfa1e59356fca36272242f76eef37078efb4b6a0c180177d8",
+    "results_bundle.json": "5e4bc6d696183731108dd4a1f3d820c47eba976c6cf3ab9d389699ff99bce298",
+    "stability/aggregate_concept_directions.csv": "6e289488319a7183da20418d5b0603c6f914fd9687e33bcccb363b2b864addcc",
+    "stability/group_summary.csv": "13907a0e7acab43f34476ea7015f7fcfc49ced54f3cf2d392ad474aaf6893c2d",
+    "stability/legacy_vs_empirical.csv": "6e55cd4834257d1de9a3d8980a51df26097d75cee848c9aba2ce515aac9292b3",
+    "stability/method_summary.csv": "b4cb483049fd134cfa1e59356fca36272242f76eef37078efb4b6a0c180177d8",
+    "stability/seed_pair_summary.csv": "f61acc34cea793e40b0b3f5866f7f4c1feab1c8f801b077206c108a570782d2d"
+  },
+  "source_study_root": "ssae-data://studies/semisynth_feature_atlas_v3_attempt2",
+  "study_metadata": {
+    "created_at_utc": "2026-08-12T19:28:11.232773+00:00",
+    "frozen_manifest_sha256": "7b9c9275e9bfc82f6a8354b5c8f75ce2f26cdb1a8e2c2560e53c00efaf805e7a",
+    "git": {
+      "commit": "f18ef027ff17c92251e6f8f83e2b1e4f9780c1ab",
+      "relevant_status": [
+        "?? experiments/feature_atlas/",
+        "?? scripts/run_semisynth_feature_atlas_study.py"
+      ],
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "untracked_file_sha256": {
+        "experiments/feature_atlas/README.md": "5977129e2111ae82f7d832b228273a1f56edee8277127620679118ef596d9479",
+        "experiments/feature_atlas/__init__.py": "122910dd3a2da1af6592c40b35aa1924bd1e52b39baf676837aba0a82ba12deb",
+        "experiments/feature_atlas/configs/semisynth_v3.json": "8fdf5bc059ddf6c707c31effdf14b3d8870beee4ee0914c26942477b629f5ade",
+        "experiments/feature_atlas/selection.py": "d6fab774e4c1f18d036d7d071035d4b4e881ff8f374530999999a1caeecca69e",
+        "experiments/feature_atlas/stability.py": "3e325fdb07d62e0874d5ffb545b4f217ddafdb52ab1a48d4abc11367451def02",
+        "scripts/run_semisynth_feature_atlas_study.py": "0a9a5fb18dd74b739bbd895f6b367329ef7c4ca32efe2154480f15872a2fe608"
+      }
+    },
+    "model_group_count": 70,
+    "record_count": 210,
+    "schema_version": "semisynth-feature-atlas-study-v3",
+    "selection_config_sha256": "8fdf5bc059ddf6c707c31effdf14b3d8870beee4ee0914c26942477b629f5ade",
+    "source_manifest": "repo://results/shared/semisynth_heldout_2k/manifests/frozen_manifest.jsonl",
+    "source_manifest_sha256": "f23fe106b5fb89f27eead4d7230ad9ad3a1e20625bbb0e2bc50ead644fe022cf",
+    "study_id": "semisynth_feature_atlas_v3",
+    "v2_browser_preserved": false
+  }
+}

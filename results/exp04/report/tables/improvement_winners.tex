@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Source-only steering improvement over the no-steering baseline.}
+\label{tab:ood-transfer-improvement}
+\begin{tabular}{lrrr}
+\toprule
+Source → target & LLM & Best method & Improvement \\
+\midrule
+2-binary → eng-french & gemma & Mean-difference control & +0.1199 ± 0.0000 \\
+2-binary → eng-french & pythia & SAE ReLU (penalized) & +0.0045 ± 0.0000 \\
+corr-binary → eng-french & gemma & Mean-difference control & +0.1471 ± 0.0000 \\
+corr-binary → eng-french & pythia & Mean-difference control & +0.0179 ± 0.0000 \\
+corr-binary-occupation → eng-french & gemma & Mean-difference control & +0.1235 ± 0.0000 \\
+corr-binary-occupation → eng-french & pythia & SSAE TopK (penalized) & -0.0033 ± 0.0061 \\
+\bottomrule
+\end{tabular}
+\end{table}

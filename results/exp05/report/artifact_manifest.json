@@ -1,0 +1,231 @@
+{
+  "code_dependencies": [
+    {
+      "path": "experiments/common/reporting.py",
+      "role": "shared_result_helpers",
+      "sha256": "7939e92e772e230a3a44bb95f114c58c7f2b7d2e28eeb4aba57696c16ddf9d89",
+      "size_bytes": 14105
+    },
+    {
+      "path": "experiments/common/style.py",
+      "role": "shared_plot_style",
+      "sha256": "24d0c9155b2f354897736a72a9a36073ba3d1d353f414f32315025190572507d",
+      "size_bytes": 10562
+    },
+    {
+      "path": "ssae/model_spec.py",
+      "role": "canonical_model_identity",
+      "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345",
+      "size_bytes": 11206
+    },
+    {
+      "path": "experiments/common/__init__.py",
+      "role": "result_package_setup",
+      "sha256": "a6c17b00c4efe264e91d07197908fd8b26992ce7ae1eed4761a181a957983686",
+      "size_bytes": 365
+    }
+  ],
+  "commands": {
+    "build": "python3 -m experiments.exp05.report --build",
+    "check": "python3 -m experiments.exp05.report --check"
+  },
+  "conclusion": "JumpReLU responses recur across seeds (33.7% for SSAE and 24.2% for SAE), but both variants have zero concept-conditioned pairs with response correlation at least 0.5 and decoder cosine at least 0.8, and therefore zero stable 2-of-3 atom identities. Concept FDR alone remains architecture-sensitive; atom-level cards should require the separate cross-seed identity criterion.",
+  "entry_point": "experiments.exp05.report",
+  "experiment_id": "exp05",
+  "figures": [
+    {
+      "caption": "Concept eligibility is estimated on cfc_train with a joint factorial model and BH FDR. Response recurrence requires |r| \u2265 0.5; strong decoder geometry requires |cosine| \u2265 0.8; stable atoms span at least two of three seeds through edges satisfying both thresholds. JumpReLU has response recurrence but no strong decoder agreement. Panels a and d use log-like scales to keep low-count methods visible.",
+      "id": "selection_and_stability",
+      "title": "Semi-synthetic feature selection and cross-seed stability",
+      "variants": [
+        "figures/selection_and_stability.svg",
+        "figures/selection_and_stability.pdf"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/conclusion.txt",
+      "role": "conclusion",
+      "sha256": "4a69a8022c8ab3dede75de5d1807071dc9ab1b4e7f80dcd88e18a4e96fe1e8a0",
+      "size_bytes": 376
+    },
+    {
+      "path": "data/summary.json",
+      "role": "summary",
+      "sha256": "ca644748de0841b07c6b39afcf16863ae7ef9314b9fd55cc462742e53e416dcb",
+      "size_bytes": 121633
+    },
+    {
+      "path": "figures/selection_and_stability.pdf",
+      "role": "figure",
+      "sha256": "065b6b85a166e38caba88abd0809d6d1b7d340966f681dc8d3e288c799efe7fd",
+      "size_bytes": 22536
+    },
+    {
+      "path": "figures/selection_and_stability.svg",
+      "role": "figure",
+      "sha256": "8b09c7f45e39b274e5f0f3bab935a3ea2ad239ff5a9b664ce3f2db072a1a2045",
+      "size_bytes": 51156
+    },
+    {
+      "path": "tables/cross_seed_stability.csv",
+      "role": "table",
+      "sha256": "c77d4dd50f4ddd12d15a1bbb0df0f64f78d9d3ac959f7d563e56f53734fe7f16",
+      "size_bytes": 1077
+    },
+    {
+      "path": "tables/cross_seed_stability.tex",
+      "role": "table",
+      "sha256": "67864b5bbc72d0f68553751922cc82a704c89f9c89c0bd92c6fb1a982a92cbdf",
+      "size_bytes": 632
+    },
+    {
+      "path": "tables/identity_definitions.csv",
+      "role": "table",
+      "sha256": "26272143d9887349b3e01716fbf48ecb4ea8db0d916b2ab116bf8a8ec8ca88a5",
+      "size_bytes": 933
+    },
+    {
+      "path": "tables/model_group_diagnostics.csv",
+      "role": "table",
+      "sha256": "ec505a188acbb528a38f50e5e684c26038d9a7ca4fbc79385e56cb267f4ac996",
+      "size_bytes": 22911
+    },
+    {
+      "path": "tables/selection_summary.csv",
+      "role": "table",
+      "sha256": "50f34675e7b73e63dd7920b5a48d02015c4b049b53a1cfc87ec86ecc4c4f09b9",
+      "size_bytes": 783
+    }
+  ],
+  "result_counts": {
+    "latent_instances": 295680,
+    "model_groups": 70,
+    "negative_control_selected_instances": 8,
+    "seed_pair_matches": 412544,
+    "selected_feature_instances": 118697,
+    "stable_cross_seed_components": 2468,
+    "workers": 210
+  },
+  "schema_version": "ssae-result-artifacts-v1",
+  "script": {
+    "path": "experiments/exp05/report.py",
+    "role": "result_builder",
+    "sha256": "0596f5661af2f1586abb6acddb918ba71863014d6936f33647ee26c1c616b5fb",
+    "size_bytes": 24554
+  },
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "source_provenance": {
+    "audit_completed_at_utc": "2026-08-12T19:51:11.198697+00:00",
+    "decoder_effect_min": 0.8,
+    "frozen_git_commit": "f18ef027ff17c92251e6f8f83e2b1e4f9780c1ab",
+    "required_seed_count": 2,
+    "response_effect_min": 0.5,
+    "schema_version": "semisynth-feature-atlas-study-v3",
+    "selection_split": "cfc_train",
+    "source_generated_at_utc": "2026-08-12T19:51:11.193813+00:00",
+    "study_id": "semisynth_feature_atlas_v3"
+  },
+  "sources": [
+    {
+      "path": "results/exp05/frozen/semisynth_v3/results_bundle.json",
+      "role": "study_results",
+      "sha256": "5e4bc6d696183731108dd4a1f3d820c47eba976c6cf3ab9d389699ff99bce298",
+      "size_bytes": 96010
+    },
+    {
+      "path": "results/exp05/frozen/semisynth_v3/audit/audit.json",
+      "role": "study_audit",
+      "sha256": "d3945c5db1e26e2ac47b2ad1c99884031d32b6a30855386c6aad135808df4353",
+      "size_bytes": 397
+    },
+    {
+      "path": "results/exp05/frozen/semisynth_v3/provenance.json",
+      "role": "study_provenance",
+      "sha256": "3c85408b3ccf7f12d246ee03979299ae06a9f51a454a2c1dcd93ca617ea21e53",
+      "size_bytes": 3116
+    },
+    {
+      "path": "results/exp05/frozen/semisynth_v3/concept_selection/group_summary.csv",
+      "role": "concept_group_source",
+      "sha256": "13907a0e7acab43f34476ea7015f7fcfc49ced54f3cf2d392ad474aaf6893c2d",
+      "size_bytes": 15020
+    },
+    {
+      "path": "results/exp05/frozen/semisynth_v3/concept_selection/method_summary.csv",
+      "role": "concept_method_source",
+      "sha256": "b4cb483049fd134cfa1e59356fca36272242f76eef37078efb4b6a0c180177d8",
+      "size_bytes": 2248
+    },
+    {
+      "path": "results/exp05/frozen/semisynth_v3/stability/seed_pair_summary.csv",
+      "role": "seed_pair_source",
+      "sha256": "f61acc34cea793e40b0b3f5866f7f4c1feab1c8f801b077206c108a570782d2d",
+      "size_bytes": 111963
+    },
+    {
+      "path": "results/exp05/frozen/semisynth_v3/stability/aggregate_concept_directions.csv",
+      "role": "concept_direction_source",
+      "sha256": "6e289488319a7183da20418d5b0603c6f914fd9687e33bcccb363b2b864addcc",
+      "size_bytes": 41156
+    },
+    {
+      "path": "experiments/exp05/configs/semisynth_v3.json",
+      "role": "selection_config",
+      "sha256": "8fdf5bc059ddf6c707c31effdf14b3d8870beee4ee0914c26942477b629f5ade",
+      "size_bytes": 851
+    },
+    {
+      "path": "experiments/exp05/selection.py",
+      "role": "selection_implementation",
+      "sha256": "ff789cba38ebc03c89325ec2913b72d80dbd734591b931e34051f8afa2826ef8",
+      "size_bytes": 10004
+    },
+    {
+      "path": "experiments/exp05/stability.py",
+      "role": "stability_implementation",
+      "sha256": "d5dc1029b35dd836e904ff0bfb11ac0ec674cf2a1177bf6ad9312eb311116ba1",
+      "size_bytes": 9242
+    },
+    {
+      "path": "scripts/run_semisynth_feature_atlas_study.py",
+      "role": "study_runner",
+      "sha256": "62adf279181c5114850ed56843cb6e1596af3acf5344be771ac1b13c86a57a48",
+      "size_bytes": 46601
+    },
+    {
+      "path": "results/shared/semisynth_heldout_2k/manifests/frozen_manifest.jsonl",
+      "role": "training_manifest",
+      "sha256": "f23fe106b5fb89f27eead4d7230ad9ad3a1e20625bbb0e2bc50ead644fe022cf",
+      "size_bytes": 482886
+    }
+  ],
+  "tables": [
+    {
+      "id": "selection_summary",
+      "path": "tables/selection_summary.csv"
+    },
+    {
+      "id": "cross_seed_stability",
+      "path": "tables/cross_seed_stability.csv"
+    },
+    {
+      "id": "model_group_diagnostics",
+      "path": "tables/model_group_diagnostics.csv"
+    },
+    {
+      "id": "identity_definitions",
+      "path": "tables/identity_definitions.csv"
+    },
+    {
+      "id": "cross_seed_stability_latex",
+      "path": "tables/cross_seed_stability.tex"
+    }
+  ],
+  "title": "Semi-synthetic feature selection and cross-seed stability"
+}

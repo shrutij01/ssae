@@ -1,0 +1,171 @@
+{
+  "mcc_p": {
+    "display_name": "MCC-P",
+    "higher_is_better": true,
+    "definition": "Hungarian-matched absolute Pearson correlation.",
+    "protocol": "code(raw the manifest-selected embedding split z) vs pooled base/counterfactual factor",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "mcc_s": {
+    "display_name": "MCC-S",
+    "higher_is_better": true,
+    "definition": "Hungarian-matched absolute Spearman correlation.",
+    "protocol": "code(raw the manifest-selected embedding split z) vs pooled base/counterfactual factor",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "dci_d": {
+    "display_name": "DCI-D",
+    "higher_is_better": true,
+    "definition": "DCI disentanglement from gradient-boosted-tree importances.",
+    "protocol": "80/20 seeded split within the manifest-selected embedding split; raw one-factor DCI-D is trivially 1 and is rendered N/A in presentation tables",
+    "protocol_note": "When factor labels are absent, evaluation falls back to one pooled base/counterfactual factor. Raw DCI-D is then trivially 1.0, the run is marked dci_d_is_trivial=true, and presentation tables render N/A."
+  },
+  "dci_c": {
+    "display_name": "DCI-C",
+    "higher_is_better": true,
+    "definition": "DCI completeness from gradient-boosted-tree importances.",
+    "protocol": "80/20 seeded split within the manifest-selected embedding split",
+    "protocol_note": "Computed against stored per-pair concept factors when available, or the explicitly marked pooled fallback otherwise."
+  },
+  "dci_i": {
+    "display_name": "DCI-I",
+    "higher_is_better": true,
+    "definition": "DCI informativeness (held-out classification accuracy).",
+    "protocol": "80/20 seeded split within the manifest-selected embedding split",
+    "protocol_note": "The GBT always uses a seeded 80/20 split within the selected embedding split; consult transductive to distinguish cfc_train fallback runs."
+  },
+  "r2": {
+    "display_name": "R\u00b2",
+    "higher_is_better": true,
+    "definition": "Linear explicitness of factors from the full learned code.",
+    "protocol": "in-sample on the manifest-selected embedding split, matching the repository's canonical R2 metric",
+    "caveat": "With 2304 codes and fewer test rows, this can saturate at 1.",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "sae_auc": {
+    "display_name": "SAE AUC",
+    "higher_is_better": true,
+    "definition": "Hungarian-matched feature ROC-AUC.",
+    "protocol": "code(raw the manifest-selected embedding split z) vs pooled base/counterfactual factor",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "decoder_projection_mcc_p": {
+    "display_name": "Decoder projection MCC-P",
+    "higher_is_better": true,
+    "definition": "Best Pearson MCC after projecting raw embeddings onto decoder atoms.",
+    "protocol": "raw the manifest-selected embedding split z",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "support_precision": {
+    "display_name": "Support precision",
+    "higher_is_better": true,
+    "definition": "Precision of the MCC-matched feature's binary support.",
+    "protocol": "raw the manifest-selected embedding split codes; |code| > 0.1",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "support_recall": {
+    "display_name": "Support recall",
+    "higher_is_better": true,
+    "definition": "Recall of the MCC-matched feature's binary support.",
+    "protocol": "raw the manifest-selected embedding split codes; |code| > 0.1",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "support_f1": {
+    "display_name": "Support F1",
+    "higher_is_better": true,
+    "definition": "F1 of the MCC-matched feature's binary support.",
+    "protocol": "raw the manifest-selected embedding split codes; |code| > 0.1",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "reconstruction_mse": {
+    "display_name": "Reconstruction MSE",
+    "higher_is_better": false,
+    "definition": "Mean squared reconstruction error.",
+    "protocol": "the manifest-selected embedding split inputs in the model's training regime (raw or delta-z)",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "reconstruction_nmse": {
+    "display_name": "Reconstruction NMSE",
+    "higher_is_better": false,
+    "definition": "MSE divided by mean squared input magnitude.",
+    "protocol": "the manifest-selected embedding split inputs in the model's training regime (raw or delta-z)",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "reconstruction_cosine": {
+    "display_name": "Reconstruction cosine",
+    "higher_is_better": true,
+    "definition": "Mean per-example cosine between input and reconstruction.",
+    "protocol": "the manifest-selected embedding split inputs in the model's training regime (raw or delta-z)",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "mean_l0": {
+    "display_name": "Mean L0",
+    "higher_is_better": null,
+    "definition": "Mean number of active code coordinates per example.",
+    "protocol": "in-regime the manifest-selected embedding split codes; |code| > 1e-08",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "mean_l1": {
+    "display_name": "Mean L1",
+    "higher_is_better": null,
+    "definition": "Mean per-example sum of absolute code values.",
+    "protocol": "in-regime the manifest-selected embedding split codes",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "mean_abs_code": {
+    "display_name": "Mean |code|",
+    "higher_is_better": null,
+    "definition": "Mean absolute code value over examples and coordinates.",
+    "protocol": "in-regime the manifest-selected embedding split codes",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "active_feature_fraction": {
+    "display_name": "Active feature fraction",
+    "higher_is_better": null,
+    "definition": "Fraction of coordinates active for at least one test example.",
+    "protocol": "in-regime the manifest-selected embedding split codes; |code| > 1e-08",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "dead_feature_fraction": {
+    "display_name": "Dead feature fraction",
+    "higher_is_better": false,
+    "definition": "Fraction of coordinates never active on the test inputs.",
+    "protocol": "in-regime the manifest-selected embedding split codes; |code| > 1e-08",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "decoder_diff_cosine": {
+    "display_name": "Decoder-diff cosine",
+    "higher_is_better": true,
+    "definition": "Best decoder atom's mean signed cosine with paired delta-z.",
+    "protocol": "the manifest-selected embedding split paired differences",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "dictionary_best_cosine": {
+    "display_name": "Dictionary best cosine",
+    "higher_is_better": true,
+    "definition": "Largest absolute cosine between a decoder atom and mean delta-z.",
+    "protocol": "the manifest-selected embedding split paired differences",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "dictionary_angular_error_deg": {
+    "display_name": "Dictionary angular error (deg)",
+    "higher_is_better": false,
+    "definition": "Angle corresponding to dictionary_best_cosine.",
+    "protocol": "the manifest-selected embedding split paired differences",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "dictionary_norm_ratio": {
+    "display_name": "Dictionary norm ratio",
+    "higher_is_better": null,
+    "definition": "Best atom norm divided by mean delta-z norm.",
+    "protocol": "the manifest-selected embedding split paired differences",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  },
+  "dictionary_frac_close_0_9": {
+    "display_name": "Dictionary fraction cosine > 0.9",
+    "higher_is_better": true,
+    "definition": "Fraction of decoder atoms with |cos(mean delta-z)| > 0.9.",
+    "protocol": "the manifest-selected embedding split paired differences",
+    "protocol_note": "The exact split, transductive flag, and factor provenance are recorded per run."
+  }
+}

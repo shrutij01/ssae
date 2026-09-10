@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{Target-side steering diagnostics at twice the calibrated strength.}
+\label{tab:target-overshoot-two-alpha}
+\begin{tabular}{lrrrr}
+\toprule
+LLM & Method & Self cosine & French retained & Off-axis drift \\
+\midrule
+gemma & SAE JumpReLU (penalized) & 0.871 & 1.000 & 0.595 \\
+gemma & SAE ReLU (penalized) & 0.756 & 1.000 & 0.557 \\
+gemma & SAE TopK (penalized) & 0.790 & 1.000 & 0.597 \\
+gemma & SSAE JumpReLU (penalized) & 0.757 & 1.000 & 0.557 \\
+gemma & SSAE Linear (constrained L1) & 0.817 & 1.000 & 0.613 \\
+gemma & SSAE Linear (constrained sigmoid-L0) & 0.758 & 1.000 & 0.597 \\
+gemma & SSAE Linear (constrained Step-L0) & 0.816 & 1.000 & 0.614 \\
+gemma & SSAE ReLU (penalized) & 0.726 & 1.000 & 0.373 \\
+gemma & SSAE TopK (penalized) & 0.736 & 1.000 & 0.448 \\
+pythia & SAE JumpReLU (penalized) & 0.983 & 0.950 & 0.175 \\
+pythia & SAE ReLU (penalized) & 0.939 & 1.000 & 0.294 \\
+pythia & SAE TopK (penalized) & 0.950 & 1.000 & 0.270 \\
+pythia & SSAE JumpReLU (penalized) & 0.921 & 1.000 & 0.315 \\
+pythia & SSAE Linear (constrained L1) & 0.890 & 1.000 & 0.303 \\
+pythia & SSAE Linear (constrained sigmoid-L0) & 0.975 & 0.950 & 0.214 \\
+pythia & SSAE Linear (constrained Step-L0) & 0.869 & 1.000 & 0.233 \\
+pythia & SSAE ReLU (penalized) & 0.935 & 1.000 & 0.307 \\
+pythia & SSAE TopK (penalized) & 0.951 & 1.000 & 0.276 \\
+\bottomrule
+\end{tabular}
+\end{table}

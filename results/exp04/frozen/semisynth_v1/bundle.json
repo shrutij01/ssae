@@ -1,0 +1,4025 @@
+{
+  "audits": [
+    {
+      "data_sources": {
+        "reference": "ssae-data://masc-fem-eng/masc-fem-eng_gemma-2-2b-it_25_last_token.h5",
+        "source": "ssae-data://2-binary/2-binary_gemma-2-2b-it_25_last_token.h5",
+        "target": "ssae-data://eng-french/eng-french_gemma-2-2b-it_25_last_token.h5"
+      },
+      "llm": "gemma",
+      "overlap": {
+        "cosine_threshold": 0.9999,
+        "source_best_pair_cosine_max": 0.9607882499694824,
+        "source_rows_matching_target": 0,
+        "target_best_pair_cosine_max": 0.9607882499694824,
+        "target_rows_matching_source": 0
+      },
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "shift_kind": "semantic_domain_shift",
+      "source": "2-binary",
+      "source_inference": {
+        "assigned_cosine_mean": 1.0,
+        "assigned_cosine_min": 0.9999995231628418,
+        "assigned_count": 97,
+        "conservatively_excluded_rows": 301,
+        "english_gender_rows": 97,
+        "feminine_language_rows": 25,
+        "inference": "matched_eng_gender_pair_graph",
+        "joint_rows_identified": 9,
+        "language_calibration_rows": 78,
+        "masculine_language_rows": 53,
+        "source_rows": 485
+      },
+      "target": "eng-french",
+      "target_rows": 100
+    },
+    {
+      "data_sources": {
+        "reference": "ssae-data://eng-german/eng-german_gemma-2-2b-it_25_last_token.h5",
+        "source": "ssae-data://corr-binary/corr-binary_gemma-2-2b-it_25_last_token.h5",
+        "target": "ssae-data://eng-french/eng-french_gemma-2-2b-it_25_last_token.h5"
+      },
+      "llm": "gemma",
+      "overlap": {
+        "cosine_threshold": 0.9999,
+        "source_best_pair_cosine_max": 1.0000004768371582,
+        "source_rows_matching_target": 100,
+        "target_best_pair_cosine_max": 1.0000004768371582,
+        "target_rows_matching_source": 100
+      },
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "shift_kind": "pair_mixture_shift_with_semantic_overlap",
+      "source": "corr-binary",
+      "source_inference": {
+        "assigned_cosine_mean": 1.0,
+        "assigned_cosine_min": 0.9999996423721313,
+        "assigned_count": 100,
+        "french_calibration_rows": 100,
+        "inference": "one_to_one_eng_german_complement",
+        "source_rows": 200
+      },
+      "target": "eng-french",
+      "target_rows": 100
+    },
+    {
+      "data_sources": {
+        "reference": null,
+        "source": "ssae-data://corr-binary-occupation/corr-binary-occupation_gemma-2-2b-it_25_last_token.h5",
+        "target": "ssae-data://eng-french/eng-french_gemma-2-2b-it_25_last_token.h5"
+      },
+      "llm": "gemma",
+      "overlap": {
+        "cosine_threshold": 0.9999,
+        "source_best_pair_cosine_max": 0.960324227809906,
+        "source_rows_matching_target": 0,
+        "target_best_pair_cosine_max": 0.960324227809906,
+        "target_rows_matching_source": 0
+      },
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "shift_kind": "semantic_domain_shift",
+      "source": "corr-binary-occupation",
+      "source_inference": {
+        "inference": "stored_source_labels",
+        "label_counts": {
+          "language_french": 100,
+          "language_german": 100
+        },
+        "language_calibration_rows": 100,
+        "requested_label": "language_french",
+        "source_rows": 200
+      },
+      "target": "eng-french",
+      "target_rows": 100
+    },
+    {
+      "data_sources": {
+        "reference": "ssae-data://masc-fem-eng/masc-fem-eng_pythia70m_5_last_token.h5",
+        "source": "ssae-data://2-binary/2-binary_pythia70m_5_last_token.h5",
+        "target": "ssae-data://eng-french/eng-french_pythia70m_5_last_token.h5"
+      },
+      "llm": "pythia",
+      "overlap": {
+        "cosine_threshold": 0.9999,
+        "source_best_pair_cosine_max": 0.7619450092315674,
+        "source_rows_matching_target": 0,
+        "target_best_pair_cosine_max": 0.7619450092315674,
+        "target_rows_matching_source": 0
+      },
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "shift_kind": "semantic_domain_shift",
+      "source": "2-binary",
+      "source_inference": {
+        "assigned_cosine_mean": 1.0,
+        "assigned_cosine_min": 0.9999996423721313,
+        "assigned_count": 97,
+        "conservatively_excluded_rows": 254,
+        "english_gender_rows": 97,
+        "feminine_language_rows": 44,
+        "inference": "matched_eng_gender_pair_graph",
+        "joint_rows_identified": 22,
+        "language_calibration_rows": 112,
+        "masculine_language_rows": 68,
+        "source_rows": 485
+      },
+      "target": "eng-french",
+      "target_rows": 100
+    },
+    {
+      "data_sources": {
+        "reference": "ssae-data://eng-german/eng-german_pythia70m_5_last_token.h5",
+        "source": "ssae-data://corr-binary/corr-binary_pythia70m_5_last_token.h5",
+        "target": "ssae-data://eng-french/eng-french_pythia70m_5_last_token.h5"
+      },
+      "llm": "pythia",
+      "overlap": {
+        "cosine_threshold": 0.9999,
+        "source_best_pair_cosine_max": 1.000000238418579,
+        "source_rows_matching_target": 100,
+        "target_best_pair_cosine_max": 1.000000238418579,
+        "target_rows_matching_source": 100
+      },
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "shift_kind": "pair_mixture_shift_with_semantic_overlap",
+      "source": "corr-binary",
+      "source_inference": {
+        "assigned_cosine_mean": 1.0,
+        "assigned_cosine_min": 0.9999996423721313,
+        "assigned_count": 100,
+        "french_calibration_rows": 100,
+        "inference": "one_to_one_eng_german_complement",
+        "source_rows": 200
+      },
+      "target": "eng-french",
+      "target_rows": 100
+    },
+    {
+      "data_sources": {
+        "reference": null,
+        "source": "ssae-data://corr-binary-occupation/corr-binary-occupation_pythia70m_5_last_token.h5",
+        "target": "ssae-data://eng-french/eng-french_pythia70m_5_last_token.h5"
+      },
+      "llm": "pythia",
+      "overlap": {
+        "cosine_threshold": 0.9999,
+        "source_best_pair_cosine_max": 0.7700135707855225,
+        "source_rows_matching_target": 0,
+        "target_best_pair_cosine_max": 0.7700135707855225,
+        "target_rows_matching_source": 0
+      },
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "shift_kind": "semantic_domain_shift",
+      "source": "corr-binary-occupation",
+      "source_inference": {
+        "inference": "stored_source_labels",
+        "label_counts": {
+          "language_french": 100,
+          "language_german": 100
+        },
+        "language_calibration_rows": 100,
+        "requested_label": "language_french",
+        "source_rows": 200
+      },
+      "target": "eng-french",
+      "target_rows": 100
+    }
+  ],
+  "evaluation_schema_version": "semisynth-ood-transfer-evaluation-v3",
+  "generated_at_utc": "2026-08-13T02:39:56.687060+00:00",
+  "metric_names": [
+    "target_cosine_mean",
+    "no_steer_cosine_mean",
+    "direction_cosine_mean",
+    "cosine_improvement_mean",
+    "improved_pair_fraction"
+  ],
+  "protocol": {
+    "feature_selection": "source mean-delta alignment only",
+    "orientation": "source only",
+    "primary_metric": "cosine improvement over the no-steering baseline",
+    "scale": "source least-squares scalar",
+    "target_split": "stored cfc_train; current cfc_test is empty",
+    "warning": "corr_to_lang is not semantic-domain OOD in the stored data; it is a pair-mixture shift with overlapping household pairs. corr_occupation_to_lang is the clean, disjoint replacement"
+  },
+  "provenance": {
+    "code": {
+      "evaluator": {
+        "path": "repo://scripts/evaluate_semisynth_ood_transfer.py",
+        "sha256": "3ea1d6fe475ebfdaac6d8dfa3a95817262886f53f337ae5c3d976b567317abc4"
+      },
+      "model_loading": {
+        "path": "repo://evals/model_loading.py",
+        "sha256": "df3a4bc3486756b97607c6ed8008d050052455217397c302ecbfecb7b6237878"
+      }
+    },
+    "data_sources": [
+      {
+        "path": "ssae-data://eng-french/eng-french_gemma-2-2b-it_25_last_token.h5",
+        "sha256": "f2bd9180069922f51313977d8d48346ad031a68fc6d0e858676ef5485968a912",
+        "size_bytes": 1845248
+      },
+      {
+        "path": "ssae-data://2-binary/2-binary_gemma-2-2b-it_25_last_token.h5",
+        "sha256": "9b3edb7ad1f0e78a1101c021971d659da113378a61a50a14ddd5a09eef90bc70",
+        "size_bytes": 8941568
+      },
+      {
+        "path": "ssae-data://masc-fem-eng/masc-fem-eng_gemma-2-2b-it_25_last_token.h5",
+        "sha256": "98f1c209d784e3f8b0ddc16680f20c103e4d23a6bf240d76efec10dbb3757319",
+        "size_bytes": 1789952
+      },
+      {
+        "path": "ssae-data://corr-binary/corr-binary_gemma-2-2b-it_25_last_token.h5",
+        "sha256": "f57b2ad22ebfbc273ea960d1cbce3576caf8ed37c1444b57be196b4e62f460d5",
+        "size_bytes": 3688448
+      },
+      {
+        "path": "ssae-data://eng-german/eng-german_gemma-2-2b-it_25_last_token.h5",
+        "sha256": "66ee37750f9c86d0a4ef0f4cde1661684fd0e6383593d3d717d4816fe3ec14ce",
+        "size_bytes": 1845248
+      },
+      {
+        "path": "ssae-data://corr-binary-occupation/corr-binary-occupation_gemma-2-2b-it_25_last_token.h5",
+        "sha256": "10371b2a3b0f0d033f2bf9f5a5367aa9939f30024175ff6cdf53f41731602f44",
+        "size_bytes": 3720576
+      },
+      {
+        "path": "ssae-data://eng-french/eng-french_pythia70m_5_last_token.h5",
+        "sha256": "aebbb3980c6998c17ebb8447f32dd9b786a9ca0be175379acdc015bdb785e189",
+        "size_bytes": 411648
+      },
+      {
+        "path": "ssae-data://2-binary/2-binary_pythia70m_5_last_token.h5",
+        "sha256": "6c3e37e2231aaffdbef9a6e19e03cba822838ee9f35496cd7cfce5b02b8e6dcc",
+        "size_bytes": 1988608
+      },
+      {
+        "path": "ssae-data://masc-fem-eng/masc-fem-eng_pythia70m_5_last_token.h5",
+        "sha256": "586f9cd18411586c02fc473441e23ead9c87b2d1ff8b3069f98730a4df081b71",
+        "size_bytes": 399360
+      },
+      {
+        "path": "ssae-data://corr-binary/corr-binary_pythia70m_5_last_token.h5",
+        "sha256": "e70a94ca1f58ff1c2f677193852d659ef47627735753dca2a851bfd2a438b0d2",
+        "size_bytes": 821248
+      },
+      {
+        "path": "ssae-data://eng-german/eng-german_pythia70m_5_last_token.h5",
+        "sha256": "58f141ea9e8c5f7446fe27c09bad6e43bb1cc1f3860be08efbcea9e5bd8aa438",
+        "size_bytes": 411648
+      },
+      {
+        "path": "ssae-data://corr-binary-occupation/corr-binary-occupation_pythia70m_5_last_token.h5",
+        "sha256": "cd56bc4eb3769326b0120a850fdd8a01a9f63ee0766dc37892b39565c0eeb1c3",
+        "size_bytes": 853376
+      }
+    ],
+    "freezer": {
+      "path": "scripts/freeze_semisynth_ood_transfer.py",
+      "sha256": "65b48192d5ed7c6490cec5265c4448354b50f2c94f281576eca4694fa513e9cd"
+    },
+    "raw_evaluator_output": {
+      "path": "results/exp04/runs/semisynth_ood_transfer_v1/raw_results.json",
+      "sha256": "d0f83cb71210a13f5f3789084443064d10bf1bbf648a28e92901eebb57a61150",
+      "size_bytes": 1079379
+    }
+  },
+  "regime_metadata": {
+    "binary_to_lang": {
+      "interpretation": "semantic-domain OOD transfer",
+      "label": "2-binary \u2192 eng-french",
+      "warning": null
+    },
+    "corr_occupation_to_lang": {
+      "interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "label": "corr-binary-occupation \u2192 eng-french",
+      "warning": null
+    },
+    "corr_to_lang": {
+      "interpretation": "pair-mixture diagnostic",
+      "label": "corr-binary \u2192 eng-french",
+      "warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD."
+    }
+  },
+  "result_count": 72,
+  "results": [
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.09700380265712738,
+        "direction_cosine_mean": 0.4639391601085663,
+        "improved_pair_fraction": 0.85,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6800641417503357
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_ac4cfb_seed0/cfg.yaml",
+          "sha256": "6ed13a8f98ddd028f48a34b7aec2a7eb0e54b992f91d0e508f17116a9b93b781"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_ac4cfb_seed0/weights.pth",
+          "sha256": "ad9e5b5789a50a812e30cabb75eaa7bec005f1ae84ca1274071898d190a412ee"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.03834861144423485,
+        "direction_cosine_mean": 0.4639391601085663,
+        "improved_pair_fraction": 0.91,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6214089393615723
+      },
+      "optimization": "constrained",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 205.08265686035156,
+        "feature_index": 111,
+        "native_norm": 58.51162338256836,
+        "scale": 3.5049898624420166,
+        "source_alignment": 0.8317683339118958
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.12248629331588745,
+        "direction_cosine_mean": 0.5452231764793396,
+        "improved_pair_fraction": 0.86,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7055466175079346
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_d3be75_seed1/cfg.yaml",
+          "sha256": "8234c9eb89a206d8a22154634374e419d3d389555a6d580706c5dfd01e5b292e"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_d3be75_seed1/weights.pth",
+          "sha256": "7c9afbaaa248a428196342316cc57f3ed58f53f9888d48c31e5b343aa22231f7"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.03928181901574135,
+        "direction_cosine_mean": 0.54522305727005,
+        "improved_pair_fraction": 0.93,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6223421692848206
+      },
+      "optimization": "constrained",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 224.62127685546875,
+        "feature_index": 1887,
+        "native_norm": 51.99050521850586,
+        "scale": 4.32042932510376,
+        "source_alignment": 0.9110117554664612
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.1259273737668991,
+        "direction_cosine_mean": 0.5641042590141296,
+        "improved_pair_fraction": 0.86,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7089877128601074
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_a24c93_seed2/cfg.yaml",
+          "sha256": "0a710f200d72155ec86f4a28d16db1899b3c31269f1d8bb35011d75304e8a72c"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_a24c93_seed2/weights.pth",
+          "sha256": "e6f30c6017cbf656f430a4600bcb30dc0e4c1accafadf5d80b93c48ca107c9eb"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.037067681550979614,
+        "direction_cosine_mean": 0.5641043186187744,
+        "improved_pair_fraction": 0.93,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6201280355453491
+      },
+      "optimization": "constrained",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 215.9293670654297,
+        "feature_index": 49,
+        "native_norm": 47.33941650390625,
+        "scale": 4.5613017082214355,
+        "source_alignment": 0.8757594227790833
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.07787182927131653,
+        "direction_cosine_mean": 0.3353205919265747,
+        "improved_pair_fraction": 0.89,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.660932183265686
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "305824e41d8ff4c37b55a06fd821279248ff9fc310ba9252643a2779623e99ee"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "e80aaf8f739adac38d1b44c0d8d1c4f1accd361eeec962d87c3a4551526df329"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007202461129054427,
+        "direction_cosine_mean": 0.3353206217288971,
+        "improved_pair_fraction": 0.97,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5837805867195129
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 149.05294799804688,
+        "feature_index": 2026,
+        "native_norm": 0.9999905824661255,
+        "scale": 149.05433654785156,
+        "source_alignment": 0.6045243144035339
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.0777381956577301,
+        "direction_cosine_mean": 0.33492496609687805,
+        "improved_pair_fraction": 0.89,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6607985496520996
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "8367acddc33e3c15cae7334b90f64ef3f6d0cbf3a393ad332e3bf12a63f2401f"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "ddd48d0be1d494454949deb2e3c44f92e0e1c58c000b91cc7762f311467c10c3"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007195371435955167,
+        "direction_cosine_mean": 0.33492499589920044,
+        "improved_pair_fraction": 0.97,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5837799310684204
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 148.94639587402344,
+        "feature_index": 1762,
+        "native_norm": 1.0000032186508179,
+        "scale": 148.94589233398438,
+        "source_alignment": 0.6040921807289124
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.07771369069814682,
+        "direction_cosine_mean": 0.3347136974334717,
+        "improved_pair_fraction": 0.89,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6607740521430969
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "2616a5ddb5cb816ed33063cc226bb49c0ecb54d4bb739db572ea03f2a93c7205"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "5cf8c4bc47f806e09d1b5e05648972dfad9c779f2b9284b04afcc70a76577eef"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007195234065875411,
+        "direction_cosine_mean": 0.3347136974334717,
+        "improved_pair_fraction": 0.97,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5837799310684204
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 148.87901306152344,
+        "feature_index": 2126,
+        "native_norm": 1.0000015497207642,
+        "scale": 148.8787841796875,
+        "source_alignment": 0.6038188338279724
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.09418363869190216,
+        "direction_cosine_mean": 0.41772738099098206,
+        "improved_pair_fraction": 0.88,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6772440075874329
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "6ce845201afae13ba2896bc91a7c828124567e441a868add440210283e74e405"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "ba23e0673736ce39e24d0b49b2281cc002fc69add4ecd3f242e68ede42c29b6d"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007670727209188044,
+        "direction_cosine_mean": 0.4177273213863373,
+        "improved_pair_fraction": 0.98,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838274359703064
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 174.7279510498047,
+        "feature_index": 908,
+        "native_norm": 1.0,
+        "scale": 174.72796630859375,
+        "source_alignment": 0.7086564302444458
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.08314786106348038,
+        "direction_cosine_mean": 0.3394046425819397,
+        "improved_pair_fraction": 0.9,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6662082076072693
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "f46fa680708ca085b5dc47379ad4abb1127de08933980979462c9907e1072d27"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "42aed12331321dd2c417685d44c7d3025df0d62013a211d091447a4fba6efa5f"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007469484116882086,
+        "direction_cosine_mean": 0.3394046425819397,
+        "improved_pair_fraction": 0.98,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838072896003723
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 153.93870544433594,
+        "feature_index": 2209,
+        "native_norm": 1.0,
+        "scale": 153.93870544433594,
+        "source_alignment": 0.6243398785591125
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.09684296697378159,
+        "direction_cosine_mean": 0.4012734889984131,
+        "improved_pair_fraction": 0.88,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6799033284187317
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "ede5edc3a83ac9a8bf9b5cab3af1edf4dbecb440dc2dd3f2649a69aae7938798"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "50956f316cdf01e4b8a40e4f633df67c931a6ded068d2620c6ce7b85ceeb7382"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007753983372822404,
+        "direction_cosine_mean": 0.4012734591960907,
+        "improved_pair_fraction": 0.98,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.583835780620575
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 180.61842346191406,
+        "feature_index": 664,
+        "native_norm": 1.0,
+        "scale": 180.61843872070312,
+        "source_alignment": 0.7325467467308044
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.12963497638702393,
+        "direction_cosine_mean": 0.5021390318870544,
+        "improved_pair_fraction": 0.89,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7126953601837158
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "44249adfd19c45fe7a8d879c2da762b4eaa25ac844ba8416918d29a08ef6adc4"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "ef51417dfc7881c6f769873a1d8f254d8b36037eb3fe29cd388305b4fd5677da"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0009113168925978243,
+        "direction_cosine_mean": 0.5021390318870544,
+        "improved_pair_fraction": 0.98,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5839717388153076
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 206.89378356933594,
+        "feature_index": 1525,
+        "native_norm": 0.9999998807907104,
+        "scale": 206.89381408691406,
+        "source_alignment": 0.8391134738922119
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.10322454571723938,
+        "direction_cosine_mean": 0.45103904604911804,
+        "improved_pair_fraction": 0.88,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6862849593162537
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "1e42a7b814368956d461fcb23733503db46eb07fa1c734839beafb3a62da7a19"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "65f0ff7b7ce1e78bc9beb92bfc7020d9457c3a8ea962f442c8b7a577c36aa6fb"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007971814484335482,
+        "direction_cosine_mean": 0.45103919506073,
+        "improved_pair_fraction": 0.97,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.583857536315918
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 185.99069213867188,
+        "feature_index": 2209,
+        "native_norm": 1.0000015497207642,
+        "scale": 185.99037170410156,
+        "source_alignment": 0.7543354034423828
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.08446934074163437,
+        "direction_cosine_mean": 0.29744136333465576,
+        "improved_pair_fraction": 0.91,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6675297021865845
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "6128c812461020ee749768cc8846643420bc9ef22539521c0ba3d21152977e64"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "67f1ba576244ad985a9c30d786df28ae2521c69513f2b45f22e51b7a0dc16944"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007869249675422907,
+        "direction_cosine_mean": 0.29744136333465576,
+        "improved_pair_fraction": 0.98,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838472843170166
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 143.49205017089844,
+        "feature_index": 48,
+        "native_norm": 0.9999931454658508,
+        "scale": 143.4930419921875,
+        "source_alignment": 0.5819705128669739
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.18404421210289001,
+        "direction_cosine_mean": 0.6439728736877441,
+        "improved_pair_fraction": 0.78,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7671045064926147
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_ac4cfb_seed0/cfg.yaml",
+          "sha256": "b122e7c01aa31827e680ba36bc54bbc3612819ddb9a4cdf5b946d14195825e47"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_ac4cfb_seed0/weights.pth",
+          "sha256": "2bc96b5eed6b293d5cbe9023e03b941759d2f7e3be4aa848fce21a388b40e827"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.00999724492430687,
+        "direction_cosine_mean": 0.6439728736877441,
+        "improved_pair_fraction": 0.93,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5930575728416443
+      },
+      "optimization": "constrained",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 350.642578125,
+        "feature_index": 1600,
+        "native_norm": 10.738959312438965,
+        "scale": 32.65144729614258,
+        "source_alignment": 0.9681987762451172
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.1836821734905243,
+        "direction_cosine_mean": 0.6434468626976013,
+        "improved_pair_fraction": 0.78,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7667425274848938
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_d3be75_seed1/cfg.yaml",
+          "sha256": "b2249978faba0daf5a15ce5072f3c2e655270a288dda35e896be756031067d58"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_d3be75_seed1/weights.pth",
+          "sha256": "8d1d75f96e1a8ea367f0245faa178e953f888c099c55d58d885ea29aefda78ba"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.010179638862609863,
+        "direction_cosine_mean": 0.6434468626976013,
+        "improved_pair_fraction": 0.93,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.593239963054657
+      },
+      "optimization": "constrained",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 349.3746032714844,
+        "feature_index": 635,
+        "native_norm": 10.914905548095703,
+        "scale": 32.00894546508789,
+        "source_alignment": 0.9646981954574585
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.18761953711509705,
+        "direction_cosine_mean": 0.6515563726425171,
+        "improved_pair_fraction": 0.78,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7706799507141113
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_a24c93_seed2/cfg.yaml",
+          "sha256": "b092f72e3a831324787383b023b095ac55a2ab8c13d1ada2cf428a49834d0050"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_a24c93_seed2/weights.pth",
+          "sha256": "7205eabc2e96ea454107320aeb50f96f927d888b26ff25254c81e07c58f5ba58"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.009678520262241364,
+        "direction_cosine_mean": 0.6515563130378723,
+        "improved_pair_fraction": 0.93,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5927388668060303
+      },
+      "optimization": "constrained",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 353.13360595703125,
+        "feature_index": 861,
+        "native_norm": 10.308122634887695,
+        "scale": 34.25780487060547,
+        "source_alignment": 0.9750767946243286
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.12351525574922562,
+        "direction_cosine_mean": 0.393944650888443,
+        "improved_pair_fraction": 0.86,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7065756320953369
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "196a499de9eb384479915115c0362e1ad0d3d62a3f1b34def9636e4d5a1ec810"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "ebf093df98d4b6a4e3b5185f5d92d0973de63cf6430d86f205c3b9d1b81eee6a"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0008651629323139787,
+        "direction_cosine_mean": 0.39394471049308777,
+        "improved_pair_fraction": 0.96,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5839255452156067
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 218.6920928955078,
+        "feature_index": 5,
+        "native_norm": 1.0000001192092896,
+        "scale": 218.6920623779297,
+        "source_alignment": 0.6038554906845093
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.12337596714496613,
+        "direction_cosine_mean": 0.39315444231033325,
+        "improved_pair_fraction": 0.86,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7064363360404968
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "241a7dc7b8ce426b6d9f26a6aad00523dae468726e43e497d7f60fd274583a74"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "05e2981ffa701cfd6e64e29c9256379b1f746e731a6cdd952b7ea81f9b1083e5"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.000865127716679126,
+        "direction_cosine_mean": 0.3931543827056885,
+        "improved_pair_fraction": 0.96,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5839254260063171
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 218.2588348388672,
+        "feature_index": 277,
+        "native_norm": 0.9999997019767761,
+        "scale": 218.25894165039062,
+        "source_alignment": 0.6026588678359985
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.12346787750720978,
+        "direction_cosine_mean": 0.39424988627433777,
+        "improved_pair_fraction": 0.86,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7065282464027405
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "db46d0d4f37367574ac78234504ace6cdb16398af2bb00345ddccce7fc8d6cce"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "12b944cc894062a6b32a8100533da30fb9300d0039c6c23d134b6d4cbf146c17"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0008646282367408276,
+        "direction_cosine_mean": 0.39424988627433777,
+        "improved_pair_fraction": 0.96,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5839250087738037
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 218.84519958496094,
+        "feature_index": 1683,
+        "native_norm": 0.9999988675117493,
+        "scale": 218.84544372558594,
+        "source_alignment": 0.604278028011322
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.10428602248430252,
+        "direction_cosine_mean": 0.3337419927120209,
+        "improved_pair_fraction": 0.9,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.687346339225769
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "e2a2a9ef68898254d8b80877689915b39d6d19fc1b6ea248eb4f3f0a9122fea6"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "606719d0d5cae78fe0ce3ab271f108dbf7d1257de3c84cda304c2c48a5c4fc79"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0008212942047975957,
+        "direction_cosine_mean": 0.33374202251434326,
+        "improved_pair_fraction": 0.97,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838816165924072
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 182.50120544433594,
+        "feature_index": 1113,
+        "native_norm": 1.0,
+        "scale": 182.50119018554688,
+        "source_alignment": 0.503924548625946
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.07456503063440323,
+        "direction_cosine_mean": 0.3336213231086731,
+        "improved_pair_fraction": 0.81,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6576254367828369
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "dd40931440a2639343c26e76d29c8de83d513dd31a4f7292a4ac64a6f064fa81"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "df7980809ae6021a82cfa698caf076bbb15b86e74a16a638b83b370c94ebc3a0"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0006305286078713834,
+        "direction_cosine_mean": 0.3336212635040283,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.583690881729126
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 186.31422424316406,
+        "feature_index": 1277,
+        "native_norm": 1.0000001192092896,
+        "scale": 186.31423950195312,
+        "source_alignment": 0.5144531726837158
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.10034214705228806,
+        "direction_cosine_mean": 0.34700366854667664,
+        "improved_pair_fraction": 0.89,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6834024786949158
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "a22a3c2cb60a1905fd1e2385daeed5e40508855b7af23da0d3bb1a9024bd6c91"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "1831e6471f3a8acf795d17ca0fd1492048c940d791e2971cd8ed3d28f16cf213"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007807290530763566,
+        "direction_cosine_mean": 0.34700366854667664,
+        "improved_pair_fraction": 0.97,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.58384108543396
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 190.70086669921875,
+        "feature_index": 1063,
+        "native_norm": 1.0,
+        "scale": 190.70086669921875,
+        "source_alignment": 0.526565670967102
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.13964079320430756,
+        "direction_cosine_mean": 0.5009791851043701,
+        "improved_pair_fraction": 0.78,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7227011322975159
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "ce0bdc78cc36335313c813bc9bc66f864d93b7e6f407804977f870330a89663a"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "8939a3680f8e478b25424755012a04d6b7bb9e560b758da115c3c36d1287a533"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0008580997819080949,
+        "direction_cosine_mean": 0.5009792447090149,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5839184522628784
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 279.65380859375,
+        "feature_index": 1265,
+        "native_norm": 1.0000003576278687,
+        "scale": 279.6536865234375,
+        "source_alignment": 0.7721834778785706
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.14422661066055298,
+        "direction_cosine_mean": 0.48516494035720825,
+        "improved_pair_fraction": 0.82,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7272869944572449
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "ab8e65a5d18005f1abf197fbe2028358dc4f2942ef794ac7d93b7aab4e2d698f"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "6f990aaa2df06e57a21c1edf9ea9eab0da2db48ad0c27d58cbde62dea9f31f03"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.000896704790648073,
+        "direction_cosine_mean": 0.48516491055488586,
+        "improved_pair_fraction": 0.94,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5839570164680481
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 268.1619567871094,
+        "feature_index": 699,
+        "native_norm": 1.000000238418579,
+        "scale": 268.1618957519531,
+        "source_alignment": 0.7404521107673645
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.16760821640491486,
+        "direction_cosine_mean": 0.5436370372772217,
+        "improved_pair_fraction": 0.81,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7506685853004456
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "3d86a47687c7cf1655a56cfe38287e622a726a11cc1df01b52fae39bef9f30b2"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "f9ad9bae8b934f558ab8c81a2bb16043884e50ac63385068fded8915d598e953"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0009619385236874223,
+        "direction_cosine_mean": 0.5436370968818665,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5840223431587219
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 299.5636291503906,
+        "feature_index": 1521,
+        "native_norm": 1.0000015497207642,
+        "scale": 299.5631408691406,
+        "source_alignment": 0.8271589875221252
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.0970672219991684,
+        "direction_cosine_mean": 0.480690598487854,
+        "improved_pair_fraction": 0.8,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6801275610923767
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_3a1428_seed0/cfg.yaml",
+          "sha256": "46dc9808530d58936226a699218941aff2961618846a04aabfc29eeebb817557"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_3a1428_seed0/weights.pth",
+          "sha256": "ecf0457872416ddae878e522fade0e76d62235824e8b971c4165bb3996ccd5e3"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.05559008568525314,
+        "direction_cosine_mean": 0.48069053888320923,
+        "improved_pair_fraction": 0.91,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6386504173278809
+      },
+      "optimization": "constrained",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 259.4428405761719,
+        "feature_index": 30,
+        "native_norm": 96.69648742675781,
+        "scale": 2.6830639839172363,
+        "source_alignment": 0.7635901570320129
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.12243873625993729,
+        "direction_cosine_mean": 0.5378248691558838,
+        "improved_pair_fraction": 0.77,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.7054991126060486
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_e3532d_seed1/cfg.yaml",
+          "sha256": "002d3b4fecb62825b76ccf14476f240cbbc4773316d22e97f5c7b7040535e573"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_e3532d_seed1/weights.pth",
+          "sha256": "fae5955ed1de95aeab9d2f0a06fd5da5cd24d1b41aacd6f31fa22adda0a3fcde"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.026834487915039062,
+        "direction_cosine_mean": 0.5378249287605286,
+        "improved_pair_fraction": 0.91,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.609894871711731
+      },
+      "optimization": "constrained",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 308.2030334472656,
+        "feature_index": 1205,
+        "native_norm": 37.33650588989258,
+        "scale": 8.254735946655273,
+        "source_alignment": 0.9071003794670105
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.08716996014118195,
+        "direction_cosine_mean": 0.443533331155777,
+        "improved_pair_fraction": 0.76,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6702303290367126
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_01314e_seed2/cfg.yaml",
+          "sha256": "9a1711e1a6f9de0de77e5bb487bcdebf326cc9da1ab68ea4b5e772e27f32f013"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_gemma-2-2b-it_l1_t0.005_oc2304_d2.0_lr0.0005_01314e_seed2/weights.pth",
+          "sha256": "6dbc5ef4a2da02a82447bbbad12a086bcad2070715b28d92685aa30019e45cf3"
+        }
+      },
+      "constraint": "l1",
+      "llm": "gemma",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": 0.06373830139636993,
+        "direction_cosine_mean": 0.4435332417488098,
+        "improved_pair_fraction": 0.84,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6467986106872559
+      },
+      "optimization": "constrained",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 270.0012512207031,
+        "feature_index": 433,
+        "native_norm": 127.17376708984375,
+        "scale": 2.12308931350708,
+        "source_alignment": 0.7946645021438599
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.09464104473590851,
+        "direction_cosine_mean": 0.36249443888664246,
+        "improved_pair_fraction": 0.85,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6777014136314392
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "7d2763df860c7a024d381de18bc674e2fb374d77f7b1555159e7f62c99d2854e"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "220a3c5a3a50c9286bd94293c9f41ea8db521d8833b59f1857663a9f5b45c92a"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007283115410245955,
+        "direction_cosine_mean": 0.36249443888664246,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5837886929512024
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 202.48544311523438,
+        "feature_index": 1866,
+        "native_norm": 1.0,
+        "scale": 202.48544311523438,
+        "source_alignment": 0.5959529876708984
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.08365252614021301,
+        "direction_cosine_mean": 0.3311864733695984,
+        "improved_pair_fraction": 0.85,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6667129397392273
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "134dfa91feb76ac57659a0dc18f30462900019552988f199bb390f3712064020"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "cf74ac6829b25c27af3acd0b54e3867c7340dd5e3fcfc6ac87a6657a86c1ce44"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0006627652328461409,
+        "direction_cosine_mean": 0.3311864733695984,
+        "improved_pair_fraction": 0.96,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5837231278419495
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 205.54393005371094,
+        "feature_index": 1447,
+        "native_norm": 0.9999999403953552,
+        "scale": 205.5439453125,
+        "source_alignment": 0.6049548983573914
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.09578690677881241,
+        "direction_cosine_mean": 0.36506369709968567,
+        "improved_pair_fraction": 0.85,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6788472533226013
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "eae409167f3f5d51d926167a4996778d79eb5153bbc30f1946f28556fa52a1c7"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_relu_oc2304_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "8b39a3ec8da6b595902f6726a02e9031101c71522ced1467394dceb173e6a165"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007333832909353077,
+        "direction_cosine_mean": 0.36506378650665283,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5837936997413635
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 203.53009033203125,
+        "feature_index": 1828,
+        "native_norm": 1.0,
+        "scale": 203.53005981445312,
+        "source_alignment": 0.5990275740623474
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.10623403638601303,
+        "direction_cosine_mean": 0.3464118540287018,
+        "improved_pair_fraction": 0.88,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6892943382263184
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "34a6393257f0a64362a394bc439171aca5bf352f46b82d6d22a2ee086762abc7"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "b97f3be59db5cdbcabb54bf807616bffd4d22c03f8b2dfc22ba84dfc8c715d9e"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007958444766700268,
+        "direction_cosine_mean": 0.3464118540287018,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838562250137329
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 201.67953491210938,
+        "feature_index": 776,
+        "native_norm": 1.0000009536743164,
+        "scale": 201.67935180664062,
+        "source_alignment": 0.5935810804367065
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.10481396317481995,
+        "direction_cosine_mean": 0.3478814661502838,
+        "improved_pair_fraction": 0.87,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6878743171691895
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "170bc852bfd88b892447a5f629941241981ddcddaaa8d7fe0bb99153edac7099"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "a82de605d0c7f28970452eee3a8d315b65ecebeff23b5a95c8e7c044e12254c5"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007963380194269121,
+        "direction_cosine_mean": 0.3478814661502838,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838566422462463
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 196.88980102539062,
+        "feature_index": 583,
+        "native_norm": 0.9999999403953552,
+        "scale": 196.88980102539062,
+        "source_alignment": 0.5794839262962341
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.1062127947807312,
+        "direction_cosine_mean": 0.3607594668865204,
+        "improved_pair_fraction": 0.89,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6892731189727783
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "74b0224b4112b9368c5613db70f76611d9935945fbbc028c4b620bfe0abfbae6"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_topk_oc2304_k10_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "9072190483d2136d3269addef25cb45128a0a8c27d1f3c98b2d8e803e1a2a05d"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0008051404147408903,
+        "direction_cosine_mean": 0.3607594668865204,
+        "improved_pair_fraction": 0.96,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838654637336731
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 196.61988830566406,
+        "feature_index": 914,
+        "native_norm": 1.0000022649765015,
+        "scale": 196.61944580078125,
+        "source_alignment": 0.5786895155906677
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.08814052492380142,
+        "direction_cosine_mean": 0.3353826105594635,
+        "improved_pair_fraction": 0.85,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6712009310722351
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "f197f66efe84c5c4f187a1f9ad8ec3b63187e8461ff9e944bc1213238a3914dd"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "6d50ea211e6a56f4ef041043daab30d794e8bccecb0a28c60b27705ced5271da"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.000701768381986767,
+        "direction_cosine_mean": 0.3353826105594635,
+        "improved_pair_fraction": 0.97,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5837621092796326
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 194.6093292236328,
+        "feature_index": 2301,
+        "native_norm": 0.9999998807907104,
+        "scale": 194.60934448242188,
+        "source_alignment": 0.5727720856666565
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.10190075635910034,
+        "direction_cosine_mean": 0.34050285816192627,
+        "improved_pair_fraction": 0.9,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6849610805511475
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "4e0b7a9dc12da1057b2d7748e3c906f9d7ce1655f69a9376d6fe077a459b4885"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "07a27770947187f0f1e9a5e0caf9b32eecc751fdf05b00d87dfa822c0b5bf054"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007956501794978976,
+        "direction_cosine_mean": 0.3405027687549591,
+        "improved_pair_fraction": 0.95,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5838560461997986
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 187.69827270507812,
+        "feature_index": 0,
+        "native_norm": 1.0000001192092896,
+        "scale": 187.69827270507812,
+        "source_alignment": 0.5524314641952515
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.02714643068611622,
+        "direction_cosine_mean": 0.3231653571128845,
+        "improved_pair_fraction": 0.77,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.6102067828178406
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "b7c6d6273386926142bf5f2077e3bf13065cce73502e19ed781455b5923f6e56"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_gemma-2-2b-it_jumprelu_oc2304_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "7fb191e8002e890f616aeb9d0baef94e0a7b8a1b92c166104cf82569313e963f"
+        }
+      },
+      "constraint": "none",
+      "llm": "gemma",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.000340690603479743,
+        "direction_cosine_mean": 0.3231653571128845,
+        "improved_pair_fraction": 0.93,
+        "no_steer_cosine_mean": 0.5830603241920471,
+        "target_cosine_mean": 0.5834010243415833
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 193.801025390625,
+        "feature_index": 232,
+        "native_norm": 0.9999998807907104,
+        "scale": 193.80104064941406,
+        "source_alignment": 0.5703932046890259
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": -0.000952715752646327,
+        "direction_cosine_mean": 0.1970205456018448,
+        "improved_pair_fraction": 0.43,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5032660961151123
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_a128e1_seed0/cfg.yaml",
+          "sha256": "a42914597fe370cfc9a47dfb0f6f63b8078ef7431030f23aa4933ee4263cfc68"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_a128e1_seed0/weights.pth",
+          "sha256": "7f8e6dc825b44b638e7e6fb0de310f6730f3d15a7b6b954ae05fe2ae9dc25ec9"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.2298550009727478,
+        "direction_cosine_mean": 0.1970205456018448,
+        "improved_pair_fraction": 0.08,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.27436381578445435
+      },
+      "optimization": "constrained",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 8.602312088012695,
+        "feature_index": 327,
+        "native_norm": 44.541534423828125,
+        "scale": 0.19313012063503265,
+        "source_alignment": 0.9003573656082153
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": -0.0032091541215777397,
+        "direction_cosine_mean": 0.1944991499185562,
+        "improved_pair_fraction": 0.41,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5010096430778503
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_d5f907_seed1/cfg.yaml",
+          "sha256": "867be826055c91c212f41cc99714ede92670cbc1e44e589f31b6037dc3542135"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_d5f907_seed1/weights.pth",
+          "sha256": "ee057a54962cf63c08c4c0dca047dbd67161b61857d43bbe87d06a77e721b852"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.24070952832698822,
+        "direction_cosine_mean": 0.1944991499185562,
+        "improved_pair_fraction": 0.08,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.26350924372673035
+      },
+      "optimization": "constrained",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 8.596199035644531,
+        "feature_index": 216,
+        "native_norm": 44.70625686645508,
+        "scale": 0.1922817826271057,
+        "source_alignment": 0.8997178077697754
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": -0.0007498983759433031,
+        "direction_cosine_mean": 0.20200839638710022,
+        "improved_pair_fraction": 0.41,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.503468930721283
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_5b9397_seed2/cfg.yaml",
+          "sha256": "7dbc772f76736870a754daa3468d8e08dede3a3c7aa130d69747b1cbede7789f"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/ssae_2-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_5b9397_seed2/weights.pth",
+          "sha256": "3938ea44b4137bc948512b1075ce45a0ec5b7d0e67331bb0b84fc2b16782fbb7"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.22750934958457947,
+        "direction_cosine_mean": 0.20200839638710022,
+        "improved_pair_fraction": 0.1,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.2767094373703003
+      },
+      "optimization": "constrained",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 8.294967651367188,
+        "feature_index": 365,
+        "native_norm": 42.81401824951172,
+        "scale": 0.19374419748783112,
+        "source_alignment": 0.8681893348693848
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.007355364505201578,
+        "direction_cosine_mean": 0.14199452102184296,
+        "improved_pair_fraction": 0.5,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5115741491317749
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "6e80e9fff053cc2a9c2aa9c5a4da4e5f0e4fb511769a25e9d2bc7661aa6a98fb"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "3b3a1f09fcdd27aa2b021783e4dac7b2e5884703202438fb487d4e4e15af8490"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0026144878938794136,
+        "direction_cosine_mean": 0.14199453592300415,
+        "improved_pair_fraction": 0.66,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5068332552909851
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 5.670145034790039,
+        "feature_index": 216,
+        "native_norm": 1.0000019073486328,
+        "scale": 5.6701340675354,
+        "source_alignment": 0.593463659286499
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.007352482061833143,
+        "direction_cosine_mean": 0.14198735356330872,
+        "improved_pair_fraction": 0.5,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5115712285041809
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "4b9923b32fea5af4a1bb60dcbf130f540ba883902947b645eebaa375a0e4b4f2"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "388b460b22c5d6cdacefed721f8b1f7056a30e9a5dff5d62e56d9e6fadbbabd3"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0026139700785279274,
+        "direction_cosine_mean": 0.1419873684644699,
+        "improved_pair_fraction": 0.66,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5068327784538269
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 5.669917106628418,
+        "feature_index": 225,
+        "native_norm": 1.0000025033950806,
+        "scale": 5.669902324676514,
+        "source_alignment": 0.5934396982192993
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.007352063432335854,
+        "direction_cosine_mean": 0.14199300110340118,
+        "improved_pair_fraction": 0.5,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5115708708763123
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "dd3945c79d58f6c36b0abb0533369d45259c8045d2093d5779fbc83e7aa1e0bf"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "bea9c5eeb239763ec241b6f27c0931ec11294112f3a379407de1401e1fb83ab6"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.002613878808915615,
+        "direction_cosine_mean": 0.14199300110340118,
+        "improved_pair_fraction": 0.66,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5068325996398926
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 5.669925689697266,
+        "feature_index": 78,
+        "native_norm": 0.9999975562095642,
+        "scale": 5.6699395179748535,
+        "source_alignment": 0.5934404730796814
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": -0.01608317345380783,
+        "direction_cosine_mean": 0.04208080843091011,
+        "improved_pair_fraction": 0.01,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4881356954574585
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "a1bbc4edc977941d0e42d147a91e2cde53713e66569f37bd0c89a4822c92f12e"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "e339817043235d33beb351dcd9f7cef6d971172475b28c2a9a3a8324a6a7f7f1"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.003070747246965766,
+        "direction_cosine_mean": 0.04208080843091011,
+        "improved_pair_fraction": 0.05,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5011480450630188
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 4.0488996505737305,
+        "feature_index": 289,
+        "native_norm": 0.9999999403953552,
+        "scale": 4.048900127410889,
+        "source_alignment": 0.4237765073776245
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.009146148338913918,
+        "direction_cosine_mean": 0.09622808545827866,
+        "improved_pair_fraction": 0.72,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5133649706840515
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "3609d6cb2d4c44066b45c6f14cc451ba55a4e3784293a0035f1f5581d5691280"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "c60de3d59fd0c6d211dd164c01af197d7989dc90248eeca4ad85e5b0e87a9d82"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0030227815732359886,
+        "direction_cosine_mean": 0.09622810035943985,
+        "improved_pair_fraction": 0.8,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5072416067123413
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 4.557223320007324,
+        "feature_index": 510,
+        "native_norm": 0.9999999403953552,
+        "scale": 4.557223320007324,
+        "source_alignment": 0.47697994112968445
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": -0.012595986016094685,
+        "direction_cosine_mean": 0.08662527799606323,
+        "improved_pair_fraction": 0.11,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.49162280559539795
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "af1c3eedd218d1668304141dfa37c678da7dc68d6dfa8b2f99269273a6af286c"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "2787bddce82395330ffb58f2635c273c69c33b6d7ca7bd9d4d281b3a69cc95ec"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.0017984053120017052,
+        "direction_cosine_mean": 0.08662527054548264,
+        "improved_pair_fraction": 0.19,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5024204254150391
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 4.478765487670898,
+        "feature_index": 294,
+        "native_norm": 1.0,
+        "scale": 4.478765487670898,
+        "source_alignment": 0.4687682092189789
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.007902197539806366,
+        "direction_cosine_mean": 0.11927097290754318,
+        "improved_pair_fraction": 0.27,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4963166117668152
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "50c6a36b0a7f3c3f25b1b3a4158947c6983cc66f4567b644b2dcf1e86b58e8f8"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "a2bd01bd20a059877adbe619dc66f9a410c4e1178a7b41e130bb312275992137"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.00017342880892101675,
+        "direction_cosine_mean": 0.11927099525928497,
+        "improved_pair_fraction": 0.51,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5040453672409058
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 5.466532230377197,
+        "feature_index": 449,
+        "native_norm": 1.0,
+        "scale": 5.466531753540039,
+        "source_alignment": 0.5721524357795715
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.003332247957587242,
+        "direction_cosine_mean": 0.16004768013954163,
+        "improved_pair_fraction": 0.48,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5075510144233704
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "5981aee998380626ec52ea2cbc45fb4dcc38544a8e1f67a27423400406342d61"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "35fffe42f6a125bd77ac39130444925e4c50d03d104d5d5a7537e3d0baa20a21"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.002026186091825366,
+        "direction_cosine_mean": 0.16004768013954163,
+        "improved_pair_fraction": 0.62,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.506244957447052
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 6.337342262268066,
+        "feature_index": 192,
+        "native_norm": 1.0,
+        "scale": 6.337342262268066,
+        "source_alignment": 0.663295328617096
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.0013921605423092842,
+        "direction_cosine_mean": 0.09476474672555923,
+        "improved_pair_fraction": 0.42,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5028266310691833
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "9f1c6b9bd921bb37f420d2eaaf4fdec88320d5e128fd6f60be98d8b918c141ac"
+        },
+        "weights": {
+          "path": "ssae-data://2-binary/run_out/sae_2-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "10632254bc77fe794fbc56ff88cfc2064adf467515b6e3d67bc7c9a7363f1bcf"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0006214459426701069,
+        "direction_cosine_mean": 0.09476474672555923,
+        "improved_pair_fraction": 0.49,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5048402547836304
+      },
+      "optimization": "penalized",
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 4.327382564544678,
+        "feature_index": 65,
+        "native_norm": 1.0,
+        "scale": 4.3273820877075195,
+        "source_alignment": 0.45292383432388306
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.00466429116204381,
+        "direction_cosine_mean": 0.24611598253250122,
+        "improved_pair_fraction": 0.53,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5088830590248108
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_a128e1_seed0/cfg.yaml",
+          "sha256": "bba287fb2d96eb51743d77d182f602e26d98226933453a2b4e105f325d42170e"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_a128e1_seed0/weights.pth",
+          "sha256": "0b6691427718624253d29459203271c5d04f81d23946fbf9d8283f0051bcbdf3"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.18081200122833252,
+        "direction_cosine_mean": 0.24611598253250122,
+        "improved_pair_fraction": 0.07,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.32340678572654724
+      },
+      "optimization": "constrained",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 7.382462978363037,
+        "feature_index": 50,
+        "native_norm": 36.26636505126953,
+        "scale": 0.20356227457523346,
+        "source_alignment": 0.834520697593689
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.006081802304834127,
+        "direction_cosine_mean": 0.2384805828332901,
+        "improved_pair_fraction": 0.55,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5103005766868591
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_d5f907_seed1/cfg.yaml",
+          "sha256": "360e612e96a9e7fd39994d0f736e684f535c329ba5b051139d3ecc1f47724487"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_d5f907_seed1/weights.pth",
+          "sha256": "03b9444ec27ffba80e86c915a6e1775c99b58d6013c6c35314ef8c880ba083c4"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.1549857258796692,
+        "direction_cosine_mean": 0.2384805828332901,
+        "improved_pair_fraction": 0.1,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.34923309087753296
+      },
+      "optimization": "constrained",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 7.176777362823486,
+        "feature_index": 347,
+        "native_norm": 34.10013961791992,
+        "scale": 0.2104618102312088,
+        "source_alignment": 0.8112697005271912
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.003492515068501234,
+        "direction_cosine_mean": 0.2415493130683899,
+        "improved_pair_fraction": 0.53,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5077113509178162
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_5b9397_seed2/cfg.yaml",
+          "sha256": "dd0edd347689983790ca8483a04b45c4b0a9dbfec85211a460e78408b6df05bf"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/ssae_corr-binary_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_5b9397_seed2/weights.pth",
+          "sha256": "c119d6baabeed79e0bfdc42b2a00fb762d48871144c9bb66733b47a23c9386d2"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.1478605717420578,
+        "direction_cosine_mean": 0.2415493130683899,
+        "improved_pair_fraction": 0.09,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.35635823011398315
+      },
+      "optimization": "constrained",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 7.23407506942749,
+        "feature_index": 366,
+        "native_norm": 31.167766571044922,
+        "scale": 0.23210115730762482,
+        "source_alignment": 0.8177465796470642
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.01347703579813242,
+        "direction_cosine_mean": 0.16487927734851837,
+        "improved_pair_fraction": 0.73,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5176957845687866
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "5bbcda5c504c5f564ef6690a1293faf12cf6c0838bec62dae2f0f8e725371753"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "36cfdf1be9137d94e9cca0809330ca33fefbd4a8bade2623c4610882143fcc13"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.003892733948305249,
+        "direction_cosine_mean": 0.16487927734851837,
+        "improved_pair_fraction": 0.8,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5081115365028381
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 4.797354221343994,
+        "feature_index": 165,
+        "native_norm": 0.9999999403953552,
+        "scale": 4.797354221343994,
+        "source_alignment": 0.5422975420951843
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.013453545980155468,
+        "direction_cosine_mean": 0.16489830613136292,
+        "improved_pair_fraction": 0.72,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5176723599433899
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "f05ccfaa03f6e89cdaa32522661482d0839be664943feea4018357b642922cea"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "c4c46057b7bbcccdd5165a5282f8d82509d574a876739ad7e5b967d785e3d319"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0038875748869031668,
+        "direction_cosine_mean": 0.16489830613136292,
+        "improved_pair_fraction": 0.8,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5081064105033875
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 4.79787540435791,
+        "feature_index": 326,
+        "native_norm": 0.9999991655349731,
+        "scale": 4.797879219055176,
+        "source_alignment": 0.5423564314842224
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.013426873832941055,
+        "direction_cosine_mean": 0.16488933563232422,
+        "improved_pair_fraction": 0.72,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5176456570625305
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "e032f37a0ab02579e0543d2886782a3c2f522b42be675e5ee0e305716d69850c"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "a65d36232ab40399b763c317ad1f0f3e0aea6dbe401de134fde94b25ccd9642b"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.003882010467350483,
+        "direction_cosine_mean": 0.16488932073116302,
+        "improved_pair_fraction": 0.8,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5081008076667786
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 4.79760217666626,
+        "feature_index": 33,
+        "native_norm": 1.0000008344650269,
+        "scale": 4.797598361968994,
+        "source_alignment": 0.5423255562782288
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": 0.00046941384789533913,
+        "direction_cosine_mean": 0.10235196352005005,
+        "improved_pair_fraction": 0.55,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5046882033348083
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "02a06535485e6a9cef0103805f0ed384b29eb52a7bf18f2fd677a499de3c65ff"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "8f515136a3164463bca1532b8887c6f20db636bd37010c34639091cf77a48421"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0007233202341012657,
+        "direction_cosine_mean": 0.10235196352005005,
+        "improved_pair_fraction": 0.6,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5049421191215515
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 3.0252459049224854,
+        "feature_index": 396,
+        "native_norm": 1.0,
+        "scale": 3.0252456665039062,
+        "source_alignment": 0.34197670221328735
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": -0.0027758765500038862,
+        "direction_cosine_mean": 0.11223205924034119,
+        "improved_pair_fraction": 0.38,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5014429092407227
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "f311a3d031317ff6020affc93a4e9169c90f247aa06898bb8f57bd3a4f03cba1"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "0f1febe8513fadbc91a899c0e781b541ba253e15033cdfe2b12bf76b5aae1972"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.00014205501065589488,
+        "direction_cosine_mean": 0.11223206669092178,
+        "improved_pair_fraction": 0.49,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5040767192840576
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 3.4087982177734375,
+        "feature_index": 424,
+        "native_norm": 1.0,
+        "scale": 3.4087979793548584,
+        "source_alignment": 0.3853338062763214
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": -0.008283428847789764,
+        "direction_cosine_mean": 0.14533136785030365,
+        "improved_pair_fraction": 0.25,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4959353506565094
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "a43b82025ff747ccd34de7fba8e60a3f91ce80a24e3ef7306f5cd3929edc1d0a"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "a810723d74c52b28367ff8935a0a9185d41cdb16de7b3695fa54aacf3e852599"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.0009121082839556038,
+        "direction_cosine_mean": 0.14533136785030365,
+        "improved_pair_fraction": 0.36,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5033066868782043
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 4.408308506011963,
+        "feature_index": 111,
+        "native_norm": 0.9999999403953552,
+        "scale": 4.408308506011963,
+        "source_alignment": 0.4983193576335907
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.0006736685172654688,
+        "direction_cosine_mean": 0.0845000296831131,
+        "improved_pair_fraction": 0.49,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5035451054573059
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "5fa66b9a3b067b603163858ba38d5047453683f3e5fbb3cb260bc1dfbc7be311"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "ad95481d2b5af2adb5357cb4afd2360a4622e20bfcf75faab0e6da56b034649e"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0001711985532892868,
+        "direction_cosine_mean": 0.0845000296831131,
+        "improved_pair_fraction": 0.57,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5043900012969971
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 2.542006015777588,
+        "feature_index": 449,
+        "native_norm": 1.0,
+        "scale": 2.542006015777588,
+        "source_alignment": 0.28735077381134033
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": 0.0021811528131365776,
+        "direction_cosine_mean": 0.07478758692741394,
+        "improved_pair_fraction": 0.63,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.506399929523468
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "58c351b609852cfd671e0aefced0aa4cb12f5e8b2dbfe252ade0b646203ff7c7"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "8b77692bd586d594dd2cc14596c440dbe7bb845a4d5f561c66cd31a8eef7732f"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": 0.0013310178183019161,
+        "direction_cosine_mean": 0.07478758692741394,
+        "improved_pair_fraction": 0.7,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5055497884750366
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 2.204728603363037,
+        "feature_index": 290,
+        "native_norm": 1.0000001192092896,
+        "scale": 2.204728364944458,
+        "source_alignment": 0.24922460317611694
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.0011700562899932265,
+        "direction_cosine_mean": 0.0657346323132515,
+        "improved_pair_fraction": 0.3,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5030487775802612
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "cd0bd789e08f8d46ed5961e64828e951a5b813573cff0b08d0d0414678dc489d"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary/run_out/sae_corr-binary_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "1b7cf40c0cd22ddcc7cc6612b20769fb8e1caf737bd859ab5b8e683fd55aa709"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.00029616878600791097,
+        "direction_cosine_mean": 0.06573463976383209,
+        "improved_pair_fraction": 0.37,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5039226412773132
+      },
+      "optimization": "penalized",
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 2.008384943008423,
+        "feature_index": 400,
+        "native_norm": 1.0,
+        "scale": 2.0083847045898438,
+        "source_alignment": 0.2270297259092331
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": -0.006704327650368214,
+        "direction_cosine_mean": 0.076526939868927,
+        "improved_pair_fraction": 0.26,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4975144565105438
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_5fcd8d_seed0/cfg.yaml",
+          "sha256": "b20ddf6eb1a3d6a2bf168c29ead2491c1f0e3093e91bae2c037276df26ca6a1f"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_5fcd8d_seed0/weights.pth",
+          "sha256": "184ca44d4df3454fae93c973ca582e924818bda01e3f3fb80dbcb84967fc6fe0"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.14579614996910095,
+        "direction_cosine_mean": 0.076526939868927,
+        "improved_pair_fraction": 0.01,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.3584226369857788
+      },
+      "optimization": "constrained",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 4.086150169372559,
+        "feature_index": 392,
+        "native_norm": 24.81041717529297,
+        "scale": 0.16469493508338928,
+        "source_alignment": 0.4179973602294922
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": 0.0014320517657324672,
+        "direction_cosine_mean": 0.12084166705608368,
+        "improved_pair_fraction": 0.5,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5056508183479309
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_78f78a_seed1/cfg.yaml",
+          "sha256": "2486290f4385868d1a77d5d7dae3c3a8a593e8ff32419661978bdcb2f79d7f23"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_78f78a_seed1/weights.pth",
+          "sha256": "eed2f5e89b75b2f7d77e0540650ac0cbbd5cff2099063a68d13c0c5164cf05ea"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.1000262200832367,
+        "direction_cosine_mean": 0.12084166705608368,
+        "improved_pair_fraction": 0.1,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.40419256687164307
+      },
+      "optimization": "constrained",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 4.800779342651367,
+        "feature_index": 339,
+        "native_norm": 25.04214859008789,
+        "scale": 0.19170795381069183,
+        "source_alignment": 0.4911011755466461
+      }
+    },
+    {
+      "activation": "linear",
+      "calibrated": {
+        "cosine_improvement_mean": -0.009440192021429539,
+        "direction_cosine_mean": 0.12309283018112183,
+        "improved_pair_fraction": 0.24,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4947786331176758
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_42fd7c_seed2/cfg.yaml",
+          "sha256": "c5df34f49d3646013a93817aa1904ae45a562eb8878e0038659b093208e424eb"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/ssae_corr-binary-occupation_pythia-70m-deduped_l1_t0.005_oc512_d2.0_lr0.0005_42fd7c_seed2/weights.pth",
+          "sha256": "c031fd34e7e33d7f18daef0f15c369bfc2b83ae4cb0f00ef89891dc95aba79b1"
+        }
+      },
+      "constraint": "l1",
+      "llm": "pythia",
+      "method_id": "ssae",
+      "method_label": "SSAE Linear (constrained L1)",
+      "model_family": "SSAE",
+      "native": {
+        "cosine_improvement_mean": -0.04574574902653694,
+        "direction_cosine_mean": 0.12309284508228302,
+        "improved_pair_fraction": 0.14,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4584730565547943
+      },
+      "optimization": "constrained",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 5.21687126159668,
+        "feature_index": 174,
+        "native_norm": 12.17539119720459,
+        "scale": 0.4284766614437103,
+        "source_alignment": 0.5336658358573914
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.03942880034446716,
+        "direction_cosine_mean": 0.049669165164232254,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4647899866104126
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "28b8503a4a683eac3879cfda6d497f1487b441226a0ec948d490185c13f5b18f"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "0d33e82375c3c7748077d3bb3f37c3f246725b626f543177789037e5b9b31e35"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.0048490832559764385,
+        "direction_cosine_mean": 0.04966916888952255,
+        "improved_pair_fraction": 0.01,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.499369740486145
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 6.103689193725586,
+        "feature_index": 64,
+        "native_norm": 1.0,
+        "scale": 6.103688716888428,
+        "source_alignment": 0.6243841052055359
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.048826009035110474,
+        "direction_cosine_mean": 0.04860257729887962,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4553928077220917
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "08fb4a7d010757c006ce284ac2fbefef25d4f7bc8cdd7a2f545a9fbb5f7d3ea8"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "1f0ead25c9a133d24fd17f6d3b6e2477ec01dea72f05d08e2ff1fc78334cf872"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.006011524237692356,
+        "direction_cosine_mean": 0.04860258102416992,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4982072710990906
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 6.28778600692749,
+        "feature_index": 150,
+        "native_norm": 1.000008225440979,
+        "scale": 6.287734031677246,
+        "source_alignment": 0.6432163119316101
+      }
+    },
+    {
+      "activation": "relu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.021319670602679253,
+        "direction_cosine_mean": 0.12508508563041687,
+        "improved_pair_fraction": 0.17,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.48289912939071655
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "f9060371a46223acfbf58c8357705587d5f287d0b3c6fd4664cbd6a0d1ff849d"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_relu_oc512_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "ccd78fd1b14b2f1bd3192bdd28fa026b5994e7a3f54276f9b1849124907242d9"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "relu",
+      "method_label": "SAE ReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.002106019062921405,
+        "direction_cosine_mean": 0.12508507072925568,
+        "improved_pair_fraction": 0.21,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.5021127462387085
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 5.9751505851745605,
+        "feature_index": 285,
+        "native_norm": 0.9999997615814209,
+        "scale": 5.975152015686035,
+        "source_alignment": 0.6112350821495056
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": -0.041423968970775604,
+        "direction_cosine_mean": 0.10120844095945358,
+        "improved_pair_fraction": 0.01,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.46279484033584595
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "990ff7f1c49256bd3c9b8037b68ef36e1401db4765340e1464cf5076aff60836"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "cd3de189d2bf1bc71e62d3d51efebc8fc950782c714ee8450c1810862880fe95"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.004750429652631283,
+        "direction_cosine_mean": 0.10120844095945358,
+        "improved_pair_fraction": 0.03,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4994684159755707
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 6.384648323059082,
+        "feature_index": 393,
+        "native_norm": 0.9999988675117493,
+        "scale": 6.384655475616455,
+        "source_alignment": 0.6531250476837158
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": -0.044397953897714615,
+        "direction_cosine_mean": 0.043388210237026215,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.45982086658477783
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "f838587e13f3e99e568670f4752cc50d414e1cb985e87b8f68ae9793e81f5095"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "4acdef6d83ee7db0235b74715fea57a4a9cb62231495e8fb1334fc51b9078cc0"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.005636196583509445,
+        "direction_cosine_mean": 0.043388210237026215,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4985826015472412
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 6.0913519859313965,
+        "feature_index": 443,
+        "native_norm": 0.9999982714653015,
+        "scale": 6.091362476348877,
+        "source_alignment": 0.6231220364570618
+      }
+    },
+    {
+      "activation": "topk",
+      "calibrated": {
+        "cosine_improvement_mean": -0.0558709092438221,
+        "direction_cosine_mean": 0.03701051324605942,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.44834792613983154
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "5f796bcf2fdd3bb665821e2c8b5f889f07d83c6932a8b7438772d90e6ff3c061"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_topk_oc512_k10_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "55ad921ee132a24876d9d6b6cf6fa92095fc0eca0c47de7d9690b8259969bd13"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "topk",
+      "method_label": "SAE TopK (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.008565213531255722,
+        "direction_cosine_mean": 0.03701051324605942,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.49565356969833374
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 5.461050987243652,
+        "feature_index": 169,
+        "native_norm": 1.0000007152557373,
+        "scale": 5.461047172546387,
+        "source_alignment": 0.5586445927619934
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.04807085916399956,
+        "direction_cosine_mean": 0.03973137214779854,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4561479091644287
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed0/cfg.yaml",
+          "sha256": "dcd07bc43ed756f0febedf32dbb66a53d0198c87e1b033d71014313a99e862f3"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed0/weights.pth",
+          "sha256": "e7a3adf8fdc72f5a77aea0643c384c71da0e5c52ba71a835dca6310ff079b383"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.007460774388164282,
+        "direction_cosine_mean": 0.03973137214779854,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.49675801396369934
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 0,
+      "selection": {
+        "calibrated_norm": 5.348938941955566,
+        "feature_index": 213,
+        "native_norm": 1.0,
+        "scale": 5.348938941955566,
+        "source_alignment": 0.5471758842468262
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.04359613358974457,
+        "direction_cosine_mean": 0.08288544416427612,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4606226682662964
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed1/cfg.yaml",
+          "sha256": "4760e78ed2e1d1b602ea36dab1068f8c50244660dcc5e745916a95828e2cc57c"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed1/weights.pth",
+          "sha256": "8b7c93fe492bbc0d185441a22fa6f7ddae385fb8ea8e87ba7dcad83d9713b772"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.006150820292532444,
+        "direction_cosine_mean": 0.08288546651601791,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4980680048465729
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 1,
+      "selection": {
+        "calibrated_norm": 5.648386001586914,
+        "feature_index": 107,
+        "native_norm": 1.0,
+        "scale": 5.648385524749756,
+        "source_alignment": 0.5778082013130188
+      }
+    },
+    {
+      "activation": "jumprelu",
+      "calibrated": {
+        "cosine_improvement_mean": -0.04982149600982666,
+        "direction_cosine_mean": 0.042092204093933105,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.4543972909450531
+      },
+      "checkpoint_provenance": {
+        "config": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed2/cfg.yaml",
+          "sha256": "8c45a04e64fe38cdafdd6303482c8f531f340f5d0355c794a191d441af7ab063"
+        },
+        "weights": {
+          "path": "ssae-data://corr-binary-occupation/run_out/sae_corr-binary-occupation_pythia-70m-deduped_jumprelu_oc512_k0_g0.001_lr0.0005_seed2/weights.pth",
+          "sha256": "4440f4ab7fd0a8281454950f44e9d1422a8ceda534bdea0fcba6841690b7c4fa"
+        }
+      },
+      "constraint": "none",
+      "llm": "pythia",
+      "method_id": "jumprelu",
+      "method_label": "SAE JumpReLU (penalized)",
+      "model_family": "SAE",
+      "native": {
+        "cosine_improvement_mean": -0.007986372336745262,
+        "direction_cosine_mean": 0.042092204093933105,
+        "improved_pair_fraction": 0.0,
+        "no_steer_cosine_mean": 0.5042188167572021,
+        "target_cosine_mean": 0.49623242020606995
+      },
+      "optimization": "penalized",
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "seed": 2,
+      "selection": {
+        "calibrated_norm": 5.232831001281738,
+        "feature_index": 443,
+        "native_norm": 1.0,
+        "scale": 5.23283052444458,
+        "source_alignment": 0.5352985262870789
+      }
+    }
+  ],
+  "schema_version": "ssae-ood-transfer-bundle-v2",
+  "study_id": "exp04_semisynth_ood_transfer_v1",
+  "summary": [
+    {
+      "cosine_improvement_mean": 0.10577628761529922,
+      "cosine_improvement_mean_seed_std": 0.018526866992717297,
+      "direction_cosine_mean": 0.41687314709027606,
+      "direction_cosine_mean_seed_std": 0.08698952184581875,
+      "improved_pair_fraction": 0.8933333333333334,
+      "improved_pair_fraction_seed_std": 0.012472191289246483,
+      "llm": "gemma",
+      "method": "jumprelu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.688836673895518,
+      "target_cosine_mean_seed_std": 0.018526874193073896
+    },
+    {
+      "cosine_improvement_mean": 0.07777457187573115,
+      "cosine_improvement_mean_seed_std": 6.949519891370246e-05,
+      "direction_cosine_mean": 0.3349864184856415,
+      "direction_cosine_mean_seed_std": 0.0002515452623329696,
+      "improved_pair_fraction": 0.89,
+      "improved_pair_fraction_seed_std": 0.0,
+      "llm": "gemma",
+      "method": "relu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.6608349283536276,
+      "target_cosine_mean_seed_std": 6.949302327795645e-05
+    },
+    {
+      "cosine_improvement_mean": 0.11513915657997131,
+      "cosine_improvement_mean_seed_std": 0.012900350256167252,
+      "direction_cosine_mean": 0.5244221985340118,
+      "direction_cosine_mean_seed_std": 0.04345704601329019,
+      "improved_pair_fraction": 0.8566666666666666,
+      "improved_pair_fraction_seed_std": 0.004714045207910321,
+      "llm": "gemma",
+      "method": "ssae",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.6981994907061259,
+      "target_cosine_mean_seed_std": 0.012900347427282646
+    },
+    {
+      "cosine_improvement_mean": 0.09139148890972137,
+      "cosine_improvement_mean_seed_std": 0.005929365158721515,
+      "direction_cosine_mean": 0.38613517085711163,
+      "direction_cosine_mean_seed_std": 0.03371932527086174,
+      "improved_pair_fraction": 0.8866666666666667,
+      "improved_pair_fraction_seed_std": 0.009428090415820642,
+      "llm": "gemma",
+      "method": "topk",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.6744518478711446,
+      "target_cosine_mean_seed_std": 0.005929373233942174
+    },
+    {
+      "cosine_improvement_mean": -0.0019873700415094695,
+      "cosine_improvement_mean_seed_std": 0.004605713637749709,
+      "direction_cosine_mean": 0.12469446659088135,
+      "direction_cosine_mean_seed_std": 0.026926146668043948,
+      "improved_pair_fraction": 0.38999999999999996,
+      "improved_pair_fraction_seed_std": 0.08831760866327845,
+      "llm": "pythia",
+      "method": "jumprelu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.5022314190864563,
+      "target_cosine_mean_seed_std": 0.004605696381706021
+    },
+    {
+      "cosine_improvement_mean": 0.007353303333123525,
+      "cosine_improvement_mean_seed_std": 1.4674548069156391e-06,
+      "direction_cosine_mean": 0.1419916252295176,
+      "direction_cosine_mean_seed_std": 3.083600402951369e-06,
+      "improved_pair_fraction": 0.5,
+      "improved_pair_fraction_seed_std": 0.0,
+      "llm": "pythia",
+      "method": "relu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.5115720828374227,
+      "target_cosine_mean_seed_std": 1.4683672759454948e-06
+    },
+    {
+      "cosine_improvement_mean": -0.0016372560833891232,
+      "cosine_improvement_mean_seed_std": 0.0011145795332528137,
+      "direction_cosine_mean": 0.1978426973025004,
+      "direction_cosine_mean_seed_std": 0.0031202719641620293,
+      "improved_pair_fraction": 0.4166666666666667,
+      "improved_pair_fraction_seed_std": 0.009428090415820642,
+      "llm": "pythia",
+      "method": "ssae",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.5025815566380819,
+      "target_cosine_mean_seed_std": 0.0011145910012182096
+    },
+    {
+      "cosine_improvement_mean": -0.006511003710329533,
+      "cosine_improvement_mean_seed_std": 0.011162434823289597,
+      "direction_cosine_mean": 0.074978057295084,
+      "direction_cosine_mean_seed_std": 0.023589902005061936,
+      "improved_pair_fraction": 0.27999999999999997,
+      "improved_pair_fraction_seed_std": 0.3137939876203282,
+      "llm": "pythia",
+      "method": "topk",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "binary_to_lang",
+      "regime_interpretation": "semantic-domain OOD transfer",
+      "regime_label": "2-binary \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.49770782391230267,
+      "target_cosine_mean_seed_std": 0.01116242709726382
+    },
+    {
+      "cosine_improvement_mean": 0.07239590398967266,
+      "cosine_improvement_mean_seed_std": 0.032485608279926026,
+      "direction_cosine_mean": 0.3330169419447581,
+      "direction_cosine_mean_seed_std": 0.007272987769930254,
+      "improved_pair_fraction": 0.84,
+      "improved_pair_fraction_seed_std": 0.05354126134736337,
+      "llm": "gemma",
+      "method": "jumprelu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.6554562648137411,
+      "target_cosine_mean_seed_std": 0.03248560854792466
+    },
+    {
+      "cosine_improvement_mean": 0.09136015921831131,
+      "cosine_improvement_mean_seed_std": 0.005470158785342417,
+      "direction_cosine_mean": 0.35291486978530884,
+      "direction_cosine_mean_seed_std": 0.015400058009414911,
+      "improved_pair_fraction": 0.85,
+      "improved_pair_fraction_seed_std": 0.0,
+      "llm": "gemma",
+      "method": "relu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.6744205355644226,
+      "target_cosine_mean_seed_std": 0.005470131759710289
+    },
+    {
+      "cosine_improvement_mean": 0.10222530613342921,
+      "cosine_improvement_mean_seed_std": 0.01485319306144432,
+      "direction_cosine_mean": 0.48734959959983826,
+      "direction_cosine_mean_seed_std": 0.03878126915976708,
+      "improved_pair_fraction": 0.7766666666666667,
+      "improved_pair_fraction_seed_std": 0.016996731711975965,
+      "llm": "gemma",
+      "method": "ssae",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.6852856675783793,
+      "target_cosine_mean_seed_std": 0.014853199891064366
+    },
+    {
+      "cosine_improvement_mean": 0.10575359811385472,
+      "cosine_improvement_mean_seed_std": 0.0006644788260684248,
+      "direction_cosine_mean": 0.35168426235516864,
+      "direction_cosine_mean_seed_std": 0.006445124405904326,
+      "improved_pair_fraction": 0.88,
+      "improved_pair_fraction_seed_std": 0.008164965809277268,
+      "llm": "gemma",
+      "method": "topk",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.6888139247894287,
+      "target_cosine_mean_seed_std": 0.000664459391379669
+    },
+    {
+      "cosine_improvement_mean": -0.047162829587856926,
+      "cosine_improvement_mean_seed_std": 0.0026213447692237297,
+      "direction_cosine_mean": 0.05490300680200259,
+      "direction_cosine_mean_seed_std": 0.01981003083321921,
+      "improved_pair_fraction": 0.0,
+      "improved_pair_fraction_seed_std": 0.0,
+      "llm": "pythia",
+      "method": "jumprelu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.4570559561252594,
+      "target_cosine_mean_seed_std": 0.002621353678320668
+    },
+    {
+      "cosine_improvement_mean": -0.036524826660752296,
+      "cosine_improvement_mean_seed_std": 0.011415616813723268,
+      "direction_cosine_mean": 0.07445227603117625,
+      "direction_cosine_mean_seed_std": 0.03580545078013816,
+      "improved_pair_fraction": 0.05666666666666667,
+      "improved_pair_fraction_seed_std": 0.0801387685344754,
+      "llm": "pythia",
+      "method": "relu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.4676939745744069,
+      "target_cosine_mean_seed_std": 0.011415611897915172
+    },
+    {
+      "cosine_improvement_mean": -0.004904155968688428,
+      "cosine_improvement_mean_seed_std": 0.004617494616817802,
+      "direction_cosine_mean": 0.1068204790353775,
+      "direction_cosine_mean_seed_std": 0.021440472946833298,
+      "improved_pair_fraction": 0.3333333333333333,
+      "improved_pair_fraction_seed_std": 0.118133634311129,
+      "llm": "pythia",
+      "method": "ssae",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.49931463599205017,
+      "target_cosine_mean_seed_std": 0.004617473157797584
+    },
+    {
+      "cosine_improvement_mean": -0.04723094403743744,
+      "cosine_improvement_mean_seed_std": 0.0062288519895760475,
+      "direction_cosine_mean": 0.060535721480846405,
+      "direction_cosine_mean_seed_std": 0.028877573040524608,
+      "improved_pair_fraction": 0.0033333333333333335,
+      "improved_pair_fraction_seed_std": 0.004714045207910317,
+      "llm": "pythia",
+      "method": "topk",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_occupation_to_lang",
+      "regime_interpretation": "clean lexically disjoint semantic-domain OOD transfer",
+      "regime_label": "corr-binary-occupation \u2192 eng-french",
+      "regime_warning": null,
+      "target_cosine_mean": 0.4569878776868184,
+      "target_cosine_mean_seed_std": 0.00622884162685816
+    },
+    {
+      "cosine_improvement_mean": 0.15049187342325845,
+      "cosine_improvement_mean_seed_std": 0.012247022175064294,
+      "direction_cosine_mean": 0.5099270542462667,
+      "direction_cosine_mean_seed_std": 0.024695408496199445,
+      "improved_pair_fraction": 0.8033333333333333,
+      "improved_pair_fraction_seed_std": 0.016996731711975927,
+      "llm": "gemma",
+      "method": "jumprelu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.7335522373517355,
+      "target_cosine_mean_seed_std": 0.012247028435855872
+    },
+    {
+      "cosine_improvement_mean": 0.12345303346713384,
+      "cosine_improvement_mean_seed_std": 5.782495403353878e-05,
+      "direction_cosine_mean": 0.39378299315770465,
+      "direction_cosine_mean_seed_std": 0.00046159093434127726,
+      "improved_pair_fraction": 0.86,
+      "improved_pair_fraction_seed_std": 0.0,
+      "llm": "gemma",
+      "method": "relu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.7065134048461914,
+      "target_cosine_mean_seed_std": 5.782762646637952e-05
+    },
+    {
+      "cosine_improvement_mean": 0.18511530756950378,
+      "cosine_improvement_mean_seed_std": 0.001776915342567488,
+      "direction_cosine_mean": 0.6463253696759542,
+      "direction_cosine_mean_seed_std": 0.0037051060189581806,
+      "improved_pair_fraction": 0.7799999999999999,
+      "improved_pair_fraction_seed_std": 0.0,
+      "llm": "gemma",
+      "method": "ssae",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.7681756615638733,
+      "target_cosine_mean_seed_std": 0.0017769553195485102
+    },
+    {
+      "cosine_improvement_mean": 0.09306440005699794,
+      "cosine_improvement_mean_seed_std": 0.013179745574960487,
+      "direction_cosine_mean": 0.33812232812245685,
+      "direction_cosine_mean_seed_std": 0.006280249256542458,
+      "improved_pair_fraction": 0.8666666666666667,
+      "improved_pair_fraction_seed_std": 0.04027681991198189,
+      "llm": "gemma",
+      "method": "topk",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5830603241920471,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.6761247515678406,
+      "target_cosine_mean_seed_std": 0.013179706486557198
+    },
+    {
+      "cosine_improvement_mean": 0.00011247600195929408,
+      "cosine_improvement_mean_seed_std": 0.0014767459761370306,
+      "direction_cosine_mean": 0.07500741630792618,
+      "direction_cosine_mean_seed_std": 0.0076625182253009785,
+      "improved_pair_fraction": 0.47333333333333333,
+      "improved_pair_fraction_seed_std": 0.13523641850067197,
+      "llm": "pythia",
+      "method": "jumprelu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.5043312708536783,
+      "target_cosine_mean_seed_std": 0.001476729914248546
+    },
+    {
+      "cosine_improvement_mean": 0.013452485203742981,
+      "cosine_improvement_mean_seed_std": 2.049226883343858e-05,
+      "direction_cosine_mean": 0.16488897303740183,
+      "direction_cosine_mean_seed_std": 7.772697963363029e-06,
+      "improved_pair_fraction": 0.7233333333333333,
+      "improved_pair_fraction_seed_std": 0.004714045207910321,
+      "llm": "pythia",
+      "method": "relu",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.517671267191569,
+      "target_cosine_mean_seed_std": 2.0479051097327976e-05
+    },
+    {
+      "cosine_improvement_mean": 0.0047462028451263905,
+      "cosine_improvement_mean_seed_std": 0.0010586577164592825,
+      "direction_cosine_mean": 0.24204862614472708,
+      "direction_cosine_mean_seed_std": 0.003137070533988601,
+      "improved_pair_fraction": 0.5366666666666667,
+      "improved_pair_fraction_seed_std": 0.009428090415820642,
+      "llm": "pythia",
+      "method": "ssae",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.508964995543162,
+      "target_cosine_mean_seed_std": 0.0010586336210885803
+    },
+    {
+      "cosine_improvement_mean": -0.0035299638499661037,
+      "cosine_improvement_mean_seed_std": 0.003612898149300203,
+      "direction_cosine_mean": 0.11997179687023163,
+      "direction_cosine_mean_seed_std": 0.018379970132012584,
+      "improved_pair_fraction": 0.39333333333333337,
+      "improved_pair_fraction_seed_std": 0.12283683848458854,
+      "llm": "pythia",
+      "method": "topk",
+      "n_runs": 3,
+      "no_steer_cosine_mean": 0.5042188167572021,
+      "no_steer_cosine_mean_seed_std": 0.0,
+      "regime": "corr_to_lang",
+      "regime_interpretation": "pair-mixture diagnostic",
+      "regime_label": "corr-binary \u2192 eng-french",
+      "regime_warning": "Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.",
+      "target_cosine_mean": 0.5006888210773468,
+      "target_cosine_mean_seed_std": 0.0036129022701616637
+    }
+  ],
+  "summary_count": 24
+}

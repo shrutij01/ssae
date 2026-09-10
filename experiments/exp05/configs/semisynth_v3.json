@@ -1,0 +1,27 @@
+{
+  "batch_size": 512,
+  "concept_selection": {
+    "fdr_q": 0.05,
+    "interaction_order": 2,
+    "null": "term-conditional Freedman-Lane residual sign flips",
+    "negative_control_permutations": 200,
+    "null_pooling": "studentized null pooled across features within term and checkpoint",
+    "permutation_chunk_size": 32,
+    "permutations": 1000,
+    "split": "cfc_train"
+  },
+  "cross_seed_identity": {
+    "decoder_effect_min": 0.8,
+    "empirical_identity_fdr_q": 0.05,
+    "empirical_null": "independent response/decoder atom pairing with row-search correction",
+    "required_seed_count": 2,
+    "response_effect_min": 0.5,
+    "views": [
+      "dictionary_wide",
+      "concept_conditioned"
+    ]
+  },
+  "presentation_split": "cfc_test",
+  "schema_version": "semisynth-feature-atlas-study-v3",
+  "study_id": "semisynth_feature_atlas_v3"
+}

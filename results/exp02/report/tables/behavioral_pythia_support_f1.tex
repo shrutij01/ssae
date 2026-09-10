@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Held-out Support F1 for behavioral data (pythia).}
+\label{tab:behavioral-pythia-support-f1}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+bias-in-bios & 0.055 ± 0.000 & 0.000 ± 0.000 & 0.096 ± 0.007 & 0.135 ± 0.001 & 0.128 ± 0.000 & 0.180 ± 0.001 & 0.168 ± 0.001 & 0.128 ± 0.000 & 0.199 ± 0.001 \\
+refusal & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+sycophancy & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+truthful-qa & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+\bottomrule
+\end{tabular}
+\end{table}

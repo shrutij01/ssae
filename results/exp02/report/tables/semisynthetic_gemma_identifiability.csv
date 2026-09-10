@@ -1,0 +1,51 @@
+metric,dataset,SSAE Linear (constrained L1),SSAE Linear (constrained Step-L0),SSAE Linear (constrained sigmoid-L0),SSAE ReLU (penalized),SSAE JumpReLU (penalized),SSAE TopK (penalized),SAE ReLU (penalized),SAE JumpReLU (penalized),SAE TopK (penalized)
+MCC-P,eng-french,0.918 ± 0.007,0.969 ± 0.001,0.973 ± 0.000,0.170 ± 0.106,0.887 ± 0.019,0.822 ± 0.023,0.275 ± 0.161,0.850 ± 0.055,0.905 ± 0.013
+MCC-P,eng-german,0.891 ± 0.027,0.970 ± 0.000,0.971 ± 0.001,0.281 ± 0.029,0.918 ± 0.007,0.913 ± 0.008,0.074 ± 0.048,0.908 ± 0.026,0.910 ± 0.029
+MCC-P,masc-fem-eng,0.991 ± 0.005,0.990 ± 0.002,0.994 ± 0.002,0.126 ± 0.135,0.902 ± 0.010,0.854 ± 0.032,0.314 ± 0.206,0.871 ± 0.025,0.881 ± 0.032
+MCC-P,2-binary,0.799 ± 0.008,0.753 ± 0.008,0.804 ± 0.010,0.090 ± 0.018,0.753 ± 0.027,0.637 ± 0.117,0.119 ± 0.056,0.693 ± 0.054,0.666 ± 0.036
+MCC-P,corr-binary,0.882 ± 0.016,0.750 ± 0.030,0.885 ± 0.022,0.148 ± 0.088,0.846 ± 0.015,0.853 ± 0.012,0.265 ± 0.063,0.827 ± 0.013,0.799 ± 0.010
+MCC-S,eng-french,0.362 ± 0.297,0.864 ± 0.000,0.864 ± 0.000,0.319 ± 0.070,0.864 ± 0.000,0.828 ± 0.027,0.048 ± 0.044,0.819 ± 0.032,0.780 ± 0.073
+MCC-S,eng-german,0.421 ± 0.207,0.864 ± 0.000,0.859 ± 0.007,0.129 ± 0.091,0.864 ± 0.000,0.864 ± 0.000,0.334 ± 0.163,0.854 ± 0.007,0.806 ± 0.072
+MCC-S,masc-fem-eng,0.866 ± 0.000,0.866 ± 0.000,0.866 ± 0.000,0.254 ± 0.187,0.866 ± 0.000,0.789 ± 0.093,0.364 ± 0.203,0.852 ± 0.009,0.865 ± 0.002
+MCC-S,2-binary,0.804 ± 0.029,0.740 ± 0.019,0.826 ± 0.016,0.134 ± 0.008,0.752 ± 0.027,0.649 ± 0.109,0.100 ± 0.084,0.727 ± 0.008,0.680 ± 0.071
+MCC-S,corr-binary,0.765 ± 0.157,0.288 ± 0.188,0.862 ± 0.015,0.108 ± 0.032,0.847 ± 0.013,0.851 ± 0.011,0.199 ± 0.035,0.811 ± 0.027,0.746 ± 0.047
+DCI-C,eng-french,0.672 ± 0.002,0.664 ± 0.003,0.661 ± 0.004,0.065 ± 0.005,0.933 ± 0.079,0.937 ± 0.023,0.355 ± 0.048,0.989 ± 0.015,0.982 ± 0.026
+DCI-C,eng-german,0.736 ± 0.060,0.686 ± 0.018,0.640 ± 0.001,0.062 ± 0.003,0.911 ± 0.009,0.940 ± 0.044,0.238 ± 0.015,0.921 ± 0.057,0.870 ± 0.022
+DCI-C,masc-fem-eng,0.836 ± 0.057,0.902 ± 0.070,0.847 ± 0.110,0.103 ± 0.006,0.811 ± 0.038,0.657 ± 0.047,0.255 ± 0.021,0.754 ± 0.033,0.741 ± 0.023
+DCI-C,2-binary,0.628 ± 0.005,0.608 ± 0.002,0.679 ± 0.036,0.260 ± 0.002,0.635 ± 0.009,0.652 ± 0.027,0.210 ± 0.014,0.629 ± 0.029,0.583 ± 0.019
+DCI-C,corr-binary,0.733 ± 0.034,0.753 ± 0.022,0.799 ± 0.027,0.123 ± 0.002,0.748 ± 0.032,0.777 ± 0.018,0.192 ± 0.009,0.709 ± 0.038,0.667 ± 0.013
+DCI-I,eng-french,0.917 ± 0.012,0.975 ± 0.000,0.975 ± 0.000,0.500 ± 0.054,0.975 ± 0.000,0.925 ± 0.071,0.650 ± 0.054,0.917 ± 0.051,0.858 ± 0.085
+DCI-I,eng-german,0.754 ± 0.087,0.974 ± 0.000,0.974 ± 0.000,0.482 ± 0.097,0.956 ± 0.025,0.965 ± 0.012,0.623 ± 0.087,0.947 ± 0.021,0.956 ± 0.025
+DCI-I,masc-fem-eng,0.958 ± 0.059,1.000 ± 0.000,1.000 ± 0.000,0.550 ± 0.035,1.000 ± 0.000,0.992 ± 0.012,0.483 ± 0.131,1.000 ± 0.000,0.992 ± 0.012
+DCI-I,2-binary,0.680 ± 0.020,0.852 ± 0.009,0.904 ± 0.016,0.437 ± 0.026,0.840 ± 0.018,0.869 ± 0.007,0.343 ± 0.023,0.845 ± 0.008,0.843 ± 0.015
+DCI-I,corr-binary,0.829 ± 0.039,0.620 ± 0.061,0.938 ± 0.022,0.472 ± 0.012,0.880 ± 0.016,0.865 ± 0.055,0.457 ± 0.016,0.882 ± 0.029,0.889 ± 0.015
+R²,eng-french,0.757 ± 0.038,0.939 ± 0.001,0.947 ± 0.001,0.717 ± 0.035,0.855 ± 0.007,0.850 ± 0.012,0.618 ± 0.055,0.885 ± 0.009,0.864 ± 0.021
+R²,eng-german,0.611 ± 0.052,0.937 ± 0.005,0.947 ± 0.000,0.633 ± 0.030,0.849 ± 0.006,0.857 ± 0.017,0.785 ± 0.023,0.853 ± 0.010,0.887 ± 0.001
+R²,masc-fem-eng,0.939 ± 0.010,0.953 ± 0.003,0.987 ± 0.002,0.524 ± 0.039,0.896 ± 0.008,0.899 ± 0.025,0.168 ± 0.237,0.853 ± 0.021,0.830 ± 0.049
+R²,2-binary,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000,0.537 ± 0.038,0.436 ± 0.062,0.113 ± 0.160,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000
+R²,corr-binary,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000,0.000 ± 0.000
+Feature ROC-AUC,eng-french,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Feature ROC-AUC,eng-german,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Feature ROC-AUC,masc-fem-eng,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Feature ROC-AUC,2-binary,0.803 ± 0.067,0.844 ± 0.008,0.897 ± 0.019,0.534 ± 0.006,0.818 ± 0.009,0.743 ± 0.050,0.521 ± 0.010,0.790 ± 0.043,0.769 ± 0.069
+Feature ROC-AUC,corr-binary,0.860 ± 0.064,0.538 ± 0.026,0.894 ± 0.042,0.548 ± 0.035,0.872 ± 0.017,0.906 ± 0.010,0.559 ± 0.026,0.834 ± 0.044,0.762 ± 0.004
+Decoder-projection MCC-P,eng-french,0.910 ± 0.001,0.879 ± 0.013,0.870 ± 0.008,0.885 ± 0.013,0.856 ± 0.007,0.878 ± 0.022,0.883 ± 0.012,0.855 ± 0.012,0.905 ± 0.020
+Decoder-projection MCC-P,eng-german,0.930 ± 0.006,0.920 ± 0.001,0.928 ± 0.001,0.914 ± 0.011,0.911 ± 0.022,0.936 ± 0.014,0.912 ± 0.010,0.918 ± 0.004,0.938 ± 0.009
+Decoder-projection MCC-P,masc-fem-eng,0.905 ± 0.023,0.945 ± 0.010,0.926 ± 0.032,0.930 ± 0.001,0.939 ± 0.018,0.918 ± 0.008,0.784 ± 0.090,0.885 ± 0.047,0.919 ± 0.019
+Decoder-projection MCC-P,2-binary,0.819 ± 0.019,0.789 ± 0.043,0.765 ± 0.020,0.846 ± 0.010,0.804 ± 0.034,0.803 ± 0.033,0.777 ± 0.021,0.735 ± 0.016,0.725 ± 0.037
+Decoder-projection MCC-P,corr-binary,0.834 ± 0.009,0.863 ± 0.006,0.836 ± 0.018,0.856 ± 0.001,0.855 ± 0.006,0.867 ± 0.013,0.876 ± 0.006,0.843 ± 0.007,0.840 ± 0.001
+Support precision,eng-french,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support precision,eng-german,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support precision,masc-fem-eng,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support precision,2-binary,0.000 ± 0.000,0.000 ± 0.000,0.333 ± 0.115,0.281 ± 0.012,0.506 ± 0.012,0.519 ± 0.014,0.506 ± 0.024,0.522 ± 0.032,0.516 ± 0.015
+Support precision,corr-binary,0.000 ± 0.000,0.000 ± 0.000,0.182 ± 0.130,0.649 ± 0.107,0.517 ± 0.003,0.584 ± 0.009,0.538 ± 0.061,0.551 ± 0.036,0.493 ± 0.000
+Support recall,eng-french,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support recall,eng-german,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support recall,masc-fem-eng,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support recall,2-binary,0.000 ± 0.000,0.000 ± 0.000,0.657 ± 0.223,0.224 ± 0.037,0.981 ± 0.007,0.967 ± 0.013,0.428 ± 0.058,0.953 ± 0.006,0.963 ± 0.017
+Support recall,corr-binary,0.000 ± 0.000,0.000 ± 0.000,0.316 ± 0.224,0.188 ± 0.068,0.940 ± 0.012,0.923 ± 0.001,0.443 ± 0.042,0.907 ± 0.031,0.924 ± 0.000
+Support F1,eng-french,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support F1,eng-german,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support F1,masc-fem-eng,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+Support F1,2-binary,0.000 ± 0.000,0.000 ± 0.000,0.442 ± 0.152,0.247 ± 0.023,0.668 ± 0.011,0.676 ± 0.015,0.456 ± 0.026,0.674 ± 0.027,0.671 ± 0.014
+Support F1,corr-binary,0.000 ± 0.000,0.000 ± 0.000,0.231 ± 0.164,0.277 ± 0.067,0.667 ± 0.005,0.715 ± 0.007,0.475 ± 0.036,0.679 ± 0.018,0.643 ± 0.000

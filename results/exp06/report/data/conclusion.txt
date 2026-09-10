@@ -1,0 +1,1 @@
+Constrained SSAE has higher MCC-P on 3/3 dataset means and 14/15 paired dataset-seed comparisons than the affine baseline (mean paired delta 0.256); the worst dataset-level constrained relative MSE is 0.00416. This establishes recovery only for the frozen synthetic linear DGP.

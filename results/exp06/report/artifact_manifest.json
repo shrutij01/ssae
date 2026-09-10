@@ -1,0 +1,238 @@
+{
+  "code_dependencies": [
+    {
+      "path": "experiments/common/reporting.py",
+      "role": "shared_result_helpers",
+      "sha256": "7939e92e772e230a3a44bb95f114c58c7f2b7d2e28eeb4aba57696c16ddf9d89",
+      "size_bytes": 14105
+    },
+    {
+      "path": "experiments/common/style.py",
+      "role": "shared_plot_style",
+      "sha256": "24d0c9155b2f354897736a72a9a36073ba3d1d353f414f32315025190572507d",
+      "size_bytes": 10562
+    },
+    {
+      "path": "ssae/model_spec.py",
+      "role": "canonical_model_identity",
+      "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345",
+      "size_bytes": 11206
+    },
+    {
+      "path": "experiments/common/__init__.py",
+      "role": "result_package_setup",
+      "sha256": "a6c17b00c4efe264e91d07197908fd8b26992ce7ae1eed4761a181a957983686",
+      "size_bytes": 365
+    }
+  ],
+  "commands": {
+    "build": "python3 -m experiments.exp06.report --build",
+    "check": "python3 -m experiments.exp06.report --check"
+  },
+  "conclusion": "Constrained SSAE has higher MCC-P on 3/3 dataset means and 14/15 paired dataset-seed comparisons than the affine baseline (mean paired delta 0.256); the worst dataset-level constrained relative MSE is 0.00416. This establishes recovery only for the frozen synthetic linear DGP.",
+  "entry_point": "experiments.exp06.report",
+  "experiment_id": "exp06",
+  "figures": [
+    {
+      "id": "synthetic_recovery",
+      "title": "Continuous-factor recovery",
+      "variants": [
+        "figures/synthetic_recovery.svg",
+        "figures/synthetic_recovery.pdf"
+      ]
+    },
+    {
+      "id": "synthetic_feature_support",
+      "title": "Feature and support recovery",
+      "variants": [
+        "figures/synthetic_feature_support.svg",
+        "figures/synthetic_feature_support.pdf"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/conclusion.txt",
+      "role": "conclusion",
+      "sha256": "8b404d09339c9945cca9361bf704f74cc2a931ef8f9fadadf6c403cf51e5eda6",
+      "size_bytes": 278
+    },
+    {
+      "path": "data/summary.json",
+      "role": "summary",
+      "sha256": "730fa7961f7afda2ee72937c6eeacb7419dcd13839c2a33fd2afc39ecb1ebc8d",
+      "size_bytes": 20330
+    },
+    {
+      "path": "figures/synthetic_feature_support.pdf",
+      "role": "figure",
+      "sha256": "d8825b64f8a894ad90bbd082c51d27dc98b0992bb066fc862d507a69ee2112d1",
+      "size_bytes": 20067
+    },
+    {
+      "path": "figures/synthetic_feature_support.svg",
+      "role": "figure",
+      "sha256": "9c15fdc85daa07af2dfc979416f65590d4b4f9614f2f4dd2b6c2accf9c9c66bb",
+      "size_bytes": 55814
+    },
+    {
+      "path": "figures/synthetic_recovery.pdf",
+      "role": "figure",
+      "sha256": "848cf9529cb4b6e2b5ba8a6d83e888001bba42a61e1e9ce147ba6be7257c4be0",
+      "size_bytes": 19278
+    },
+    {
+      "path": "figures/synthetic_recovery.svg",
+      "role": "figure",
+      "sha256": "6f9401fdf0120d3d83f300622ec9f7a808f015fa4770d5d39c5953fda08514b5",
+      "size_bytes": 55723
+    },
+    {
+      "path": "tables/experiment_config.csv",
+      "role": "table",
+      "sha256": "b60e14d2c94cf5c6f5ac0997abea70dbab3f10fdb7a75bb7e48361231b87ed2c",
+      "size_bytes": 492
+    },
+    {
+      "path": "tables/metric_definitions.csv",
+      "role": "table",
+      "sha256": "3667ff33ae391db0af6ffff0f4e48c4a7211a77b94a30cc6211a53a34fd0e88a",
+      "size_bytes": 1670
+    },
+    {
+      "path": "tables/metric_summary.csv",
+      "role": "table",
+      "sha256": "7fd7eac6a6eccea4864267aba9d3313377affbb19ec84478f4f55c6059a01fd8",
+      "size_bytes": 3983
+    },
+    {
+      "path": "tables/paired_deltas.csv",
+      "role": "table",
+      "sha256": "ed92e7e12ec9de32bd718e1231fd87b0af2821bd446cced4591f3d402030aa7d",
+      "size_bytes": 932
+    },
+    {
+      "path": "tables/synthetic_mcc.tex",
+      "role": "table",
+      "sha256": "27a2f86ebf26cd91bdd94292e3e3c9c6e77e874925ab0d3c2a955dea47b67835",
+      "size_bytes": 429
+    }
+  ],
+  "result_counts": {
+    "datasets": 3,
+    "identifiability_metrics": 10,
+    "methods": 2,
+    "runs": 30,
+    "seeds": 5
+  },
+  "schema_version": "ssae-result-artifacts-v1",
+  "script": {
+    "path": "experiments/exp06/run.py",
+    "role": "result_builder",
+    "sha256": "6affef8fe943df7837b29670148db63911c790ac65c2f5dcc4bf775ed5c8aa36",
+    "size_bytes": 64905
+  },
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "source_provenance": {
+    "bundle_schema_version": "ssae-synthetic-identification-bundle-v3",
+    "code_provenance": {
+      "software": {
+        "cooper_optim": "1.0.1",
+        "numpy": "1.26.4",
+        "python": "3.10.12",
+        "torch": "2.11.0"
+      },
+      "sources": {
+        "activation": {
+          "path": "ssae/activations.py",
+          "sha256": "9410ad6f55ba0001f7aca5037d993b4db11130b5786747b59733789b47758872"
+        },
+        "constraint": {
+          "path": "ssae/constraints.py",
+          "sha256": "9feb178a1fb9f6d1ef93a8174a4123921d8bf081ba54344d6fd48dd46665a4b8"
+        },
+        "experiment": {
+          "path": "experiments/synthetic_identification.py",
+          "sha256": "f6b6411b9171a8e6249686e7cb699b87eb0307e40f1957f89864ecec03ec056c"
+        },
+        "identifiability_metrics": {
+          "path": "evals/metrics/identifiability.py",
+          "sha256": "3235650459ebbd35579735625dc2204f4c61ffc2c46c89860e8c145ca3279bed"
+        },
+        "model": {
+          "path": "ssae/model.py",
+          "sha256": "40ffa916f231eacfebf207b178b74863cd172fba45826a40c262bf522feb6c68"
+        },
+        "model_identity": {
+          "path": "ssae/model_spec.py",
+          "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345"
+        },
+        "paired_identification": {
+          "path": "evals/paired_identification.py",
+          "sha256": "f9c04a1701d0d86f50911aef119c6e8c5f0ef67ba1ecdec162912005777f6a6d"
+        }
+      }
+    },
+    "data_protocol": {
+      "dci_factor_type": "continuous",
+      "evaluation_split": "independently generated held-out synthetic test data",
+      "factor_type": "continuous oriented sparse shifts",
+      "feature_support_response": "absolute code magnitude",
+      "feature_support_target": "factor != 0",
+      "l1_target_units": "analytic raw-factor mean absolute value divided by scalar training RMS",
+      "linear_encoder_norm": "none; preserve continuous factor magnitude",
+      "matching": "one-to-one Hungarian assignment selected on train only",
+      "missing_values": "unavailable rather than zero-filled",
+      "selection_split": "independently generated synthetic train data",
+      "support_threshold": 0.1
+    },
+    "run_schema_version": "ssae-synthetic-identification-run-v4"
+  },
+  "sources": [
+    {
+      "path": "results/exp06/frozen/synthetic_identification_v1/bundle.json",
+      "role": "frozen_results_bundle",
+      "sha256": "4b600d2e3ff5a6a0a0c5810027542304ee8c812bad4775732e8b390083ba9ef6",
+      "size_bytes": 475827
+    },
+    {
+      "path": "evals/metrics/identifiability.py",
+      "role": "identifiability_metric_implementation",
+      "sha256": "426c39bbfc77a74823d923c7b70c4f160ea8be73aae1f8b1dabb009552c269cb",
+      "size_bytes": 16047
+    },
+    {
+      "path": "evals/paired_identification.py",
+      "role": "paired_identification_implementation",
+      "sha256": "ffc64cfde4fed68797f02f5c41de9ed36501d92760908b6d80118e93bfc44bac",
+      "size_bytes": 25419
+    }
+  ],
+  "tables": [
+    {
+      "id": "experiment_config",
+      "path": "tables/experiment_config.csv"
+    },
+    {
+      "id": "metric_summary",
+      "path": "tables/metric_summary.csv"
+    },
+    {
+      "id": "paired_deltas",
+      "path": "tables/paired_deltas.csv"
+    },
+    {
+      "id": "metric_definitions",
+      "path": "tables/metric_definitions.csv"
+    },
+    {
+      "id": "synthetic_mcc",
+      "path": "tables/synthetic_mcc.tex"
+    }
+  ],
+  "title": "Synthetic concept identification"
+}

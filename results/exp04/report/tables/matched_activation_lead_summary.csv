@@ -1,0 +1,7 @@
+llm,activation,regime_cells,ssae_leads,sae_leads,ties
+gemma,relu,3,2,1,0
+gemma,jumprelu,3,3,0,0
+gemma,topk,3,3,0,0
+pythia,relu,3,1,2,0
+pythia,jumprelu,3,1,2,0
+pythia,topk,3,2,1,0

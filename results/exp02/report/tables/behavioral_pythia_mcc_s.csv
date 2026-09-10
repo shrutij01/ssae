@@ -1,0 +1,5 @@
+dataset,SSAE Linear (constrained L1),SSAE Linear (constrained Step-L0),SSAE Linear (constrained sigmoid-L0),SSAE ReLU (penalized),SSAE JumpReLU (penalized),SSAE TopK (penalized),SAE ReLU (penalized),SAE JumpReLU (penalized),SAE TopK (penalized)
+bias-in-bios,0.141 ± 0.000,0.121 ± 0.002,0.168 ± 0.001,0.154 ± 0.005,0.138 ± 0.003,0.180 ± 0.003,0.193 ± 0.003,0.137 ± 0.002,0.210 ± 0.002
+refusal,0.274 ± 0.124,0.217 ± 0.098,0.517 ± 0.050,0.123 ± 0.057,0.536 ± 0.135,0.312 ± 0.110,0.115 ± 0.088,0.191 ± 0.030,0.212 ± 0.098
+sycophancy,0.385 ± 0.086,0.737 ± 0.008,0.677 ± 0.086,0.387 ± 0.003,0.508 ± 0.098,0.452 ± 0.048,0.391 ± 0.007,0.754 ± 0.003,0.298 ± 0.113
+truthful-qa,0.214 ± 0.121,0.213 ± 0.023,0.532 ± 0.040,0.119 ± 0.065,0.408 ± 0.056,0.135 ± 0.074,0.247 ± 0.046,0.394 ± 0.016,0.372 ± 0.030

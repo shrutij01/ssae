@@ -1,0 +1,7 @@
+quantity,criterion,interpretation
+Concept-selected feature,"Joint factorial term, studentized Freedman-Lane sign-flip p-value, BH q <= 0.05",Conditional concept association on cfc_train; not yet cross-seed identity
+Response recurrence,Absolute held-in response correlation >= 0.50 after Hungarian assignment,Functionally similar response profile across a seed pair
+Strong decoder geometry,Absolute decoder cosine >= 0.80,Similar representation-space atom direction across a seed pair
+Strict pair identity,Response recurrence and strong decoder geometry both hold,Same response and same decoder direction for an assigned pair
+Empirical coupling,"Independent response/decoder pairing null with row-search correction, BH q <= 0.05",Coupling evidence reported separately from the fixed effect-size thresholds
+Stable atom identity,Strict-identity component spans at least 2 of 3 seeds,Eligibility criterion for an individual feature card

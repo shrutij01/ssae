@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Held-out DCI-I for behavioral data (gemma).}
+\label{tab:behavioral-gemma-dci-i}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+bias-in-bios & 0.950 ± 0.000 & 0.949 ± 0.000 & 0.948 ± 0.000 & 0.944 ± 0.000 & 0.944 ± 0.001 & 0.957 ± 0.001 & 0.954 ± 0.000 & 0.952 ± 0.000 & 0.963 ± 0.000 \\
+refusal & 0.620 ± 0.145 & 0.533 ± 0.041 & 0.989 ± 0.009 & 0.442 ± 0.067 & 0.971 ± 0.010 & 0.913 ± 0.047 & 0.960 ± 0.005 & 0.971 ± 0.005 & 0.993 ± 0.005 \\
+sycophancy & 0.141 ± 0.056 & 0.136 ± 0.019 & 0.108 ± 0.009 & 0.288 ± 0.081 & 0.166 ± 0.049 & 0.200 ± 0.028 & 0.110 ± 0.021 & 0.169 ± 0.065 & 0.134 ± 0.062 \\
+truthful-qa & 0.738 ± 0.070 & 0.787 ± 0.028 & 0.894 ± 0.010 & 0.514 ± 0.022 & 0.870 ± 0.033 & 0.801 ± 0.029 & 0.807 ± 0.029 & 0.882 ± 0.017 & 0.890 ± 0.010 \\
+\bottomrule
+\end{tabular}
+\end{table}

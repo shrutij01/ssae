@@ -1,0 +1,3 @@
+llm,regime_cells,ssae_leads,sae_leads,ties,most_frequent_best_ssae_variant,best_ssae_variant_cells,most_frequent_winning_ssae_variant,winning_ssae_variant_cells
+gemma,3,3,0,0,SSAE Linear (constrained sigmoid-L0),1,SSAE Linear (constrained sigmoid-L0),1
+pythia,3,2,1,0,SSAE Linear (constrained Step-L0),2,SSAE TopK (penalized),1

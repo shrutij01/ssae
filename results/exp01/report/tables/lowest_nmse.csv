@@ -1,0 +1,40 @@
+study_family,dataset,llm,input_regime,reconstruction_target,method,reconstruction_nmse_mean,reconstruction_nmse_std,n_seeds
+behavioral,bias-in-bios,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.011679020198471066,2.9147686584998816e-05,3
+behavioral,bias-in-bios,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.003638087842479617,0.00028387817874066967,3
+behavioral,bias-in-bios,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.001111220041407527,2.8486741911374104e-06,3
+behavioral,bias-in-bios,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.00013521554904910213,1.0072282782548101e-06,3
+behavioral,refusal,gemma,diff,paired difference (delta_z),SSAE Linear (constrained sigmoid-L0),0.15499523445638608,0.002935433047847824,3
+behavioral,refusal,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.020021677084044037,7.815932669720268e-06,3
+behavioral,refusal,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.019252916873150155,0.00016540296393448064,3
+behavioral,refusal,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.009083244613770731,0.00018816975013873986,3
+behavioral,sycophancy,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.009377196157230103,0.0003865997537452224,3
+behavioral,sycophancy,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.0018495010005290461,1.9729923614268207e-05,3
+behavioral,sycophancy,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.004138263514774252,6.427727813749793e-05,3
+behavioral,sycophancy,pythia,raw,raw activation (z),SAE JumpReLU (penalized),9.1300369747568e-05,3.17463657893596e-06,3
+behavioral,truthful-qa,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.28897442050200384,0.00041325639044783935,3
+behavioral,truthful-qa,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.023937770363348945,7.983753832878461e-05,3
+behavioral,truthful-qa,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),5.8007800859151967e-05,2.020509288492121e-06,3
+behavioral,truthful-qa,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.0018476718105816803,7.492527622730988e-05,3
+semi-synthetic,2-binary,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.2711869011464305,0.0013931680476953598,3
+semi-synthetic,2-binary,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.11546359431309468,0.0008363820923721979,3
+semi-synthetic,2-binary,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.11621984448767915,0.0006233852584063149,3
+semi-synthetic,2-binary,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.06043967136709092,0.000295444709221661,3
+semi-synthetic,corr-binary,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.2946232997029274,8.87330995522688e-05,3
+semi-synthetic,corr-binary,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.2187015871808404,0.001204446691604934,3
+semi-synthetic,corr-binary,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.22019067394670896,0.0017387215982965767,3
+semi-synthetic,corr-binary,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.11128338859720159,0.0007000975567161993,3
+semi-synthetic,eng-french,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.2877778846985157,0.001839874936869622,3
+semi-synthetic,eng-french,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.2207281364059364,0.001019840909097936,3
+semi-synthetic,eng-french,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.29752635974659003,0.002077866571088974,3
+semi-synthetic,eng-french,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.1633208283170331,0.000464033625864924,3
+semi-synthetic,eng-german,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.2948622280906103,0.0025007679200379266,3
+semi-synthetic,eng-german,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.2246429222573836,0.0011116527574312571,3
+semi-synthetic,eng-german,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.31428305660873584,0.0008298104131640174,3
+semi-synthetic,eng-german,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.15874868804388545,0.00106519260770764,3
+semi-synthetic,masc-fem-eng,gemma,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.2921668459756959,0.0008335899345418199,3
+semi-synthetic,masc-fem-eng,gemma,raw,raw activation (z),SAE JumpReLU (penalized),0.13097940376362557,0.0010025581107329228,3
+semi-synthetic,masc-fem-eng,pythia,diff,paired difference (delta_z),SSAE JumpReLU (penalized),0.2569011679565843,0.0037518865387450528,3
+semi-synthetic,masc-fem-eng,pythia,raw,raw activation (z),SAE JumpReLU (penalized),0.11059835349579568,0.00048254527890693316,3
+synthetic,"synth(10,7)",not applicable,diff,synthetic observed difference (delta_z),SSAE Affine (reconstruction-only control),2.467246720270283e-06,2.1005761573907287e-06,5
+synthetic,"synth(3,2)",not applicable,diff,synthetic observed difference (delta_z),SSAE Affine (reconstruction-only control),8.113062285256769e-08,1.2313519743414912e-07,5
+synthetic,"synth(4,3)",not applicable,diff,synthetic observed difference (delta_z),SSAE Affine (reconstruction-only control),1.4960418031285852e-06,2.3959689272114318e-06,5

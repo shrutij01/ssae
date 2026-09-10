@@ -1,0 +1,163 @@
+study_family,dataset,llm,metric,metric_label,method,mean,std,n_available_seeds
+behavioral,bias-in-bios,gemma,dci_c,DCI-C,SSAE TopK (penalized),0.6225387433781971,0.006214676160431147,3
+behavioral,bias-in-bios,gemma,dci_i,DCI-I,SAE TopK (penalized),0.9628275862068966,0.0001772650818267327,3
+behavioral,bias-in-bios,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE TopK (penalized),0.38240668376482095,0.004564048313951719,3
+behavioral,bias-in-bios,gemma,mcc_p,MCC-P,SAE TopK (penalized),0.5270934062605561,0.012029503086474012,3
+behavioral,bias-in-bios,gemma,mcc_s,MCC-S,SSAE TopK (penalized),0.4368672304485981,0.004704831773580471,3
+behavioral,bias-in-bios,gemma,r2,R²,SAE TopK (penalized),0.37261251330316253,0.005872504035746388,3
+behavioral,bias-in-bios,gemma,sae_auc,Feature ROC-AUC,SAE TopK (penalized),0.8643035116043291,0.006223657649072816,3
+behavioral,bias-in-bios,gemma,support_f1,Support F1,SSAE TopK (penalized),0.42515115048205027,0.005697817723567621,3
+behavioral,bias-in-bios,gemma,support_precision,Support precision,SAE ReLU (penalized),0.41381921828643603,0.0048105636113738364,3
+behavioral,bias-in-bios,gemma,support_recall,Support recall,SSAE JumpReLU (penalized),0.964283462556001,0.004826688023838839,3
+behavioral,bias-in-bios,pythia,dci_c,DCI-C,SAE TopK (penalized),0.42393830613120537,0.004903075628302683,3
+behavioral,bias-in-bios,pythia,dci_i,DCI-I,SAE ReLU (penalized),0.9450770114942529,2.131866320798559e-05,3
+behavioral,bias-in-bios,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SAE ReLU (penalized),0.24835090091938997,0.0018678637334164432,3
+behavioral,bias-in-bios,pythia,mcc_p,MCC-P,SAE ReLU (penalized),0.2651564731570975,0.004496119819301887,3
+behavioral,bias-in-bios,pythia,mcc_s,MCC-S,SAE TopK (penalized),0.21018897616376028,0.0023503033960260485,3
+behavioral,bias-in-bios,pythia,r2,R²,SAE ReLU (penalized),0.18324471886677354,0.0004926017743507687,3
+behavioral,bias-in-bios,pythia,sae_auc,Feature ROC-AUC,SAE ReLU (penalized),0.7100282053255812,0.007958001248852,3
+behavioral,bias-in-bios,pythia,support_f1,Support F1,SAE TopK (penalized),0.199186005482794,0.001236187549610908,3
+behavioral,bias-in-bios,pythia,support_precision,Support precision,SSAE TopK (penalized),0.2107109603247177,0.007706336431379773,3
+behavioral,bias-in-bios,pythia,support_recall,Support recall,SSAE JumpReLU (penalized),0.9357810653699886,0.007947095429336472,3
+behavioral,refusal,gemma,dci_c,DCI-C,SSAE Linear (constrained sigmoid-L0),0.7176859475021127,0.037185388422892755,3
+behavioral,refusal,gemma,dci_i,DCI-I,SAE TopK (penalized),0.9927536231884058,0.005123962182511236,3
+behavioral,refusal,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained Step-L0),0.8744962623048881,0.062078616269230176,3
+behavioral,refusal,gemma,mcc_p,MCC-P,SSAE Linear (constrained Step-L0),0.8433353646463724,0.03835930728062668,3
+behavioral,refusal,gemma,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.7918570256334084,0.040465203574211586,3
+behavioral,refusal,gemma,r2,R²,SAE TopK (penalized),0.7740965953841159,0.009604637807628234,3
+behavioral,refusal,pythia,dci_c,DCI-C,SSAE JumpReLU (penalized),0.5382807903159658,0.05426018359093554,3
+behavioral,refusal,pythia,dci_i,DCI-I,SSAE JumpReLU (penalized),0.7717391304347826,0.00887496283617093,3
+behavioral,refusal,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE JumpReLU (penalized),0.5592635210792332,0.11665131182788462,3
+behavioral,refusal,pythia,mcc_p,MCC-P,SSAE JumpReLU (penalized),0.5188725994677267,0.15478266644534555,3
+behavioral,refusal,pythia,mcc_s,MCC-S,SSAE JumpReLU (penalized),0.5364618029212979,0.13479545293677037,3
+behavioral,refusal,pythia,r2,R²,SSAE ReLU (penalized),0.21019375033614598,0.03151272705750531,3
+behavioral,sycophancy,gemma,dci_c,DCI-C,SSAE Linear (constrained Step-L0),0.6162772353576558,0.0006888111475557791,3
+behavioral,sycophancy,gemma,dci_i,DCI-I,SSAE ReLU (penalized),0.2882615156017831,0.08109634638141697,3
+behavioral,sycophancy,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE JumpReLU (penalized),0.6182649132224952,0.08311312365599546,3
+behavioral,sycophancy,gemma,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.6331094664742686,0.031088121165276348,3
+behavioral,sycophancy,gemma,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.6707673040203591,0.048616617205758716,3
+behavioral,sycophancy,gemma,r2,R²,SAE JumpReLU (penalized),0.0,0.0,3
+behavioral,sycophancy,pythia,dci_c,DCI-C,SSAE Linear (constrained L1),0.4581843891495856,0.040140690546132285,3
+behavioral,sycophancy,pythia,dci_i,DCI-I,SSAE TopK (penalized),0.145864289252105,0.04357889762652053,3
+behavioral,sycophancy,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SAE JumpReLU (penalized),0.7587657157650898,0.025892289650381973,3
+behavioral,sycophancy,pythia,mcc_p,MCC-P,SAE JumpReLU (penalized),0.7287379962431834,0.01864694065998063,3
+behavioral,sycophancy,pythia,mcc_s,MCC-S,SAE JumpReLU (penalized),0.7538871228877779,0.0032867405726034757,3
+behavioral,sycophancy,pythia,r2,R²,SAE JumpReLU (penalized),0.0,0.0,3
+behavioral,truthful-qa,gemma,dci_c,DCI-C,SSAE Linear (constrained Step-L0),0.6116076596970016,0.04670352603363495,3
+behavioral,truthful-qa,gemma,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.894308943089431,0.010363860799985343,3
+behavioral,truthful-qa,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained Step-L0),0.6385439845629963,0.011818958654296566,3
+behavioral,truthful-qa,gemma,mcc_p,MCC-P,SSAE Linear (constrained Step-L0),0.6020159860807106,0.015679084484846614,3
+behavioral,truthful-qa,gemma,mcc_s,MCC-S,SSAE Linear (constrained Step-L0),0.6456242382237846,0.028206067347319265,3
+behavioral,truthful-qa,gemma,r2,R²,SSAE TopK (penalized),0.6027015080612887,0.006566717167166334,3
+behavioral,truthful-qa,pythia,dci_c,DCI-C,SAE ReLU (penalized),0.3993040911481461,0.012327574273404664,3
+behavioral,truthful-qa,pythia,dci_i,DCI-I,SSAE JumpReLU (penalized),0.7845528455284553,0.018848818080275838,3
+behavioral,truthful-qa,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE TopK (penalized),0.4515503921140897,0.060970328932025315,3
+behavioral,truthful-qa,pythia,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.5291489335818519,0.038488594736065744,3
+behavioral,truthful-qa,pythia,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.5316804472777862,0.03979076448596701,3
+behavioral,truthful-qa,pythia,r2,R²,SAE TopK (penalized),0.18493153121918085,0.024487329373999788,3
+semi-synthetic,2-binary,gemma,dci_c,DCI-C,SSAE Linear (constrained sigmoid-L0),0.6788862143509528,0.03624908269521778,3
+semi-synthetic,2-binary,gemma,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.903755868544601,0.01583419901787796,3
+semi-synthetic,2-binary,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE ReLU (penalized),0.8463808673672553,0.009636942323931362,3
+semi-synthetic,2-binary,gemma,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.8042169881053871,0.010127706015448603,3
+semi-synthetic,2-binary,gemma,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.8262172412228684,0.016426523292549497,3
+semi-synthetic,2-binary,gemma,r2,R²,SSAE ReLU (penalized),0.5371326467883698,0.03778026691841296,3
+semi-synthetic,2-binary,gemma,sae_auc,Feature ROC-AUC,SSAE Linear (constrained sigmoid-L0),0.8970899470899472,0.01904853760277828,3
+semi-synthetic,2-binary,gemma,support_f1,Support F1,SSAE TopK (penalized),0.6756598896746242,0.014825844695806535,3
+semi-synthetic,2-binary,gemma,support_precision,Support precision,SAE JumpReLU (penalized),0.5221726689125106,0.03151457535816547,3
+semi-synthetic,2-binary,gemma,support_recall,Support recall,SSAE JumpReLU (penalized),0.9813492063492064,0.006734350297014766,3
+semi-synthetic,2-binary,pythia,dci_c,DCI-C,SSAE JumpReLU (penalized),0.3909728809901147,0.020886659878836502,3
+semi-synthetic,2-binary,pythia,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.8286384976525821,0.019569638498278273,3
+semi-synthetic,2-binary,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained L1),0.6424642123654535,0.041127047502009524,3
+semi-synthetic,2-binary,pythia,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.6058307080488571,0.07288398131687977,3
+semi-synthetic,2-binary,pythia,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.6121303505760941,0.07382467665407524,3
+semi-synthetic,2-binary,pythia,r2,R²,SSAE ReLU (penalized),0.37003482591668124,0.2633438872125387,3
+semi-synthetic,2-binary,pythia,sae_auc,Feature ROC-AUC,SSAE Linear (constrained sigmoid-L0),0.7584656084656084,0.06494399177946462,3
+semi-synthetic,2-binary,pythia,support_f1,Support F1,SSAE JumpReLU (penalized),0.6745241462921804,0.006952927926672584,3
+semi-synthetic,2-binary,pythia,support_precision,Support precision,SSAE JumpReLU (penalized),0.5221240599505524,0.006718662221752367,3
+semi-synthetic,2-binary,pythia,support_recall,Support recall,SSAE Linear (constrained sigmoid-L0),0.9674603174603175,0.013189097655570359,3
+semi-synthetic,corr-binary,gemma,dci_c,DCI-C,SSAE Linear (constrained sigmoid-L0),0.7985542682190001,0.026547174585014155,3
+semi-synthetic,corr-binary,gemma,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.9380341880341881,0.02179068168202042,3
+semi-synthetic,corr-binary,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SAE ReLU (penalized),0.8761172670259162,0.005532813763547334,3
+semi-synthetic,corr-binary,gemma,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.8853514732299095,0.022438432985737503,3
+semi-synthetic,corr-binary,gemma,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.86215929211656,0.015055432021365521,3
+semi-synthetic,corr-binary,gemma,r2,R²,SAE JumpReLU (penalized),0.0,0.0,3
+semi-synthetic,corr-binary,gemma,sae_auc,Feature ROC-AUC,SSAE TopK (penalized),0.905921052631579,0.01006385430314364,3
+semi-synthetic,corr-binary,gemma,support_f1,Support F1,SSAE TopK (penalized),0.7152405834128523,0.006624101899377175,3
+semi-synthetic,corr-binary,gemma,support_precision,Support precision,SSAE ReLU (penalized),0.6488095238095238,0.10691775294913197,3
+semi-synthetic,corr-binary,gemma,support_recall,Support recall,SSAE JumpReLU (penalized),0.9403508771929824,0.011785113019775802,3
+semi-synthetic,corr-binary,pythia,dci_c,DCI-C,SSAE Linear (constrained sigmoid-L0),0.40827860825985307,0.011875479474053749,3
+semi-synthetic,corr-binary,pythia,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.7777777777777777,0.018381036895390255,3
+semi-synthetic,corr-binary,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SAE ReLU (penalized),0.7419210201985149,1.8417757132714258e-06,3
+semi-synthetic,corr-binary,pythia,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.6816877398407611,0.03798437254332902,3
+semi-synthetic,corr-binary,pythia,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.6820283831344169,0.038139487121771475,3
+semi-synthetic,corr-binary,pythia,r2,R²,SSAE ReLU (penalized),0.08402970535067944,0.1188359489491459,3
+semi-synthetic,corr-binary,pythia,sae_auc,Feature ROC-AUC,SSAE Linear (constrained sigmoid-L0),0.6692982456140352,0.054826315761404405,3
+semi-synthetic,corr-binary,pythia,support_f1,Support F1,SSAE JumpReLU (penalized),0.6444765111431778,0.010231795932602152,3
+semi-synthetic,corr-binary,pythia,support_precision,Support precision,SAE TopK (penalized),0.6888532763532763,0.04484773582839351,3
+semi-synthetic,corr-binary,pythia,support_recall,Support recall,SSAE JumpReLU (penalized),0.9232456140350876,0.020421836362847064,3
+semi-synthetic,eng-french,gemma,dci_c,DCI-C,SAE JumpReLU (penalized),0.9891555585738147,0.015336069375280651,3
+semi-synthetic,eng-french,gemma,dci_i,DCI-I,SSAE JumpReLU (penalized),0.975,0.0,3
+semi-synthetic,eng-french,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained L1),0.9100100577035947,0.0008624282533587908,3
+semi-synthetic,eng-french,gemma,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.9734121989657186,0.00018594713846630833,3
+semi-synthetic,eng-french,gemma,mcc_s,MCC-S,SSAE JumpReLU (penalized),0.8641709575369143,0.0,3
+semi-synthetic,eng-french,gemma,r2,R²,SSAE Linear (constrained sigmoid-L0),0.9468207778114791,0.0006045375831543382,3
+semi-synthetic,eng-french,pythia,dci_c,DCI-C,SSAE Linear (constrained Step-L0),0.9362383928678013,0.014730715785837263,3
+semi-synthetic,eng-french,pythia,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.9083333333333333,0.023570226039551608,3
+semi-synthetic,eng-french,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained Step-L0),0.8584813811359592,0.007139367469241221,3
+semi-synthetic,eng-french,pythia,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.9133972171089906,0.015434129852339266,3
+semi-synthetic,eng-french,pythia,mcc_s,MCC-S,SSAE Linear (constrained Step-L0),0.8497320108779851,0.01020987709571968,3
+semi-synthetic,eng-french,pythia,r2,R²,SSAE Linear (constrained sigmoid-L0),0.8479827806155726,0.009455456618447973,3
+semi-synthetic,eng-german,gemma,dci_c,DCI-C,SSAE TopK (penalized),0.939990721741684,0.043836178460113284,3
+semi-synthetic,eng-german,gemma,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.9736842105263158,0.0,3
+semi-synthetic,eng-german,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SAE TopK (penalized),0.9379450299842963,0.00908631708444954,3
+semi-synthetic,eng-german,gemma,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.9710599285044772,0.0010379585080852699,3
+semi-synthetic,eng-german,gemma,mcc_s,MCC-S,SSAE JumpReLU (penalized),0.863972906234484,1.1102230246251565e-16,3
+semi-synthetic,eng-german,gemma,r2,R²,SSAE Linear (constrained sigmoid-L0),0.9467584499504302,0.0001679526013199539,3
+semi-synthetic,eng-german,pythia,dci_c,DCI-C,SSAE Linear (constrained sigmoid-L0),0.8872711819121347,0.0021378225475845664,3
+semi-synthetic,eng-german,pythia,dci_i,DCI-I,SSAE JumpReLU (penalized),0.9035087719298245,0.024810764252159532,3
+semi-synthetic,eng-german,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained Step-L0),0.888841601679761,0.0034227240371943676,3
+semi-synthetic,eng-german,pythia,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.9448129579985434,0.01681760282101537,3
+semi-synthetic,eng-german,pythia,mcc_s,MCC-S,SSAE JumpReLU (penalized),0.82237421074912,0.015838695204885064,3
+semi-synthetic,eng-german,pythia,r2,R²,SSAE Linear (constrained sigmoid-L0),0.859261671001209,0.013454928044293303,3
+semi-synthetic,masc-fem-eng,gemma,dci_c,DCI-C,SSAE Linear (constrained Step-L0),0.9023845349426473,0.06965294957177608,3
+semi-synthetic,masc-fem-eng,gemma,dci_i,DCI-I,SAE JumpReLU (penalized),1.0,0.0,3
+semi-synthetic,masc-fem-eng,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained Step-L0),0.9451736269350373,0.010308958923791613,3
+semi-synthetic,masc-fem-eng,gemma,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.9936617121163379,0.0015566841998964057,3
+semi-synthetic,masc-fem-eng,gemma,mcc_s,MCC-S,SSAE JumpReLU (penalized),0.86629616364842,0.0,3
+semi-synthetic,masc-fem-eng,gemma,r2,R²,SSAE Linear (constrained sigmoid-L0),0.9865546141016356,0.002340800674196328,3
+semi-synthetic,masc-fem-eng,pythia,dci_c,DCI-C,SSAE Linear (constrained Step-L0),0.9415442517726237,0.023867391990293127,3
+semi-synthetic,masc-fem-eng,pythia,dci_i,DCI-I,SSAE Linear (constrained sigmoid-L0),0.9249999999999999,0.020412414523193124,3
+semi-synthetic,masc-fem-eng,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained Step-L0),0.8729591403501312,0.005807926572798342,3
+semi-synthetic,masc-fem-eng,pythia,mcc_p,MCC-P,SSAE Linear (constrained sigmoid-L0),0.8424646294888763,0.03808874794750356,3
+semi-synthetic,masc-fem-eng,pythia,mcc_s,MCC-S,SSAE Linear (constrained sigmoid-L0),0.7883295089200623,0.06453761065838615,3
+semi-synthetic,masc-fem-eng,pythia,r2,R²,SAE JumpReLU (penalized),0.7554597088487179,0.028817301231137415,3
+synthetic,"synth(10,7)",not applicable,dci_c,DCI-C,SSAE Linear (constrained L1),0.9999258464790423,0.0001227866591157281,5
+synthetic,"synth(10,7)",not applicable,dci_i,DCI-I,SSAE Linear (constrained L1),0.9999446715632937,4.6425523652556635e-06,5
+synthetic,"synth(10,7)",not applicable,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained L1),0.9346001397110719,0.008352247242342924,5
+synthetic,"synth(10,7)",not applicable,mcc_p,MCC-P,SSAE Linear (constrained L1),0.9999667820087763,5.557370784563393e-05,5
+synthetic,"synth(10,7)",not applicable,mcc_s,MCC-S,SSAE Linear (constrained L1),0.8851516033521181,0.0018334521687658558,5
+synthetic,"synth(10,7)",not applicable,r2,R²,SSAE Affine (reconstruction-only control),0.9999999999999947,2.275280134513746e-16,5
+synthetic,"synth(10,7)",not applicable,sae_auc,Feature ROC-AUC,SSAE Linear (constrained L1),0.999999459614736,1.0807705277837698e-06,5
+synthetic,"synth(10,7)",not applicable,support_f1,Support F1,SSAE Linear (constrained L1),0.9991522388059701,0.0016955223880597003,5
+synthetic,"synth(10,7)",not applicable,support_precision,Support precision,SSAE Linear (constrained L1),0.9983734249713632,0.0032531500572737567,5
+synthetic,"synth(10,7)",not applicable,support_recall,Support recall,SSAE Linear (constrained L1),1.0,0.0,5
+synthetic,"synth(3,2)",not applicable,dci_c,DCI-C,SSAE Linear (constrained L1),0.9039375769340484,0.19211014366424753,5
+synthetic,"synth(3,2)",not applicable,dci_i,DCI-I,SSAE Linear (constrained L1),0.9989192838159923,0.002061838740727143,5
+synthetic,"synth(3,2)",not applicable,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained L1),0.9034669201239517,0.05268422704484704,5
+synthetic,"synth(3,2)",not applicable,mcc_p,MCC-P,SSAE Linear (constrained L1),0.9680671486722934,0.06386313735840671,5
+synthetic,"synth(3,2)",not applicable,mcc_s,MCC-S,SSAE Linear (constrained L1),0.9073336720759981,0.055522374648916344,5
+synthetic,"synth(3,2)",not applicable,r2,R²,SSAE Linear (constrained L1),0.9999999999999973,8.599750569898517e-17,5
+synthetic,"synth(3,2)",not applicable,sae_auc,Feature ROC-AUC,SSAE Linear (constrained L1),0.9591197986331155,0.08176040273376906,5
+synthetic,"synth(3,2)",not applicable,support_f1,Support F1,SSAE Linear (constrained L1),0.954670414441312,0.090659171117376,5
+synthetic,"synth(3,2)",not applicable,support_precision,Support precision,SSAE Linear (constrained L1),0.9338570862498677,0.13228582750026452,5
+synthetic,"synth(3,2)",not applicable,support_recall,Support recall,SSAE Linear (constrained L1),0.9941983012816976,0.011603397436604726,5
+synthetic,"synth(4,3)",not applicable,dci_c,DCI-C,SSAE Linear (constrained L1),0.9879326996972644,0.01597280071466739,5
+synthetic,"synth(4,3)",not applicable,dci_i,DCI-I,SSAE Linear (constrained L1),0.9997146000982056,0.00037569775623515775,5
+synthetic,"synth(4,3)",not applicable,decoder_projection_mcc_p,Decoder-projection MCC-P,SSAE Linear (constrained L1),0.9383715390256107,0.014880518738360875,5
+synthetic,"synth(4,3)",not applicable,mcc_p,MCC-P,SSAE Linear (constrained L1),0.9969573683150902,0.0038946575498114812,5
+synthetic,"synth(4,3)",not applicable,mcc_s,MCC-S,SSAE Linear (constrained L1),0.9331935014854741,0.0032977741704152464,5
+synthetic,"synth(4,3)",not applicable,r2,R²,SSAE Affine (reconstruction-only control),0.9999999999999968,1.6467268631127714e-16,5
+synthetic,"synth(4,3)",not applicable,sae_auc,Feature ROC-AUC,SSAE Linear (constrained L1),0.9957683275427744,0.005566017610794464,5
+synthetic,"synth(4,3)",not applicable,support_f1,Support F1,SSAE Linear (constrained L1),0.9753851013248708,0.03084289295702291,5
+synthetic,"synth(4,3)",not applicable,support_precision,Support precision,SSAE Linear (constrained L1),0.9612037062863392,0.04825428255011968,5
+synthetic,"synth(4,3)",not applicable,support_recall,Support recall,SSAE Linear (constrained L1),0.9985548883387064,0.001806321055770408,5

@@ -1,0 +1,82 @@
+{
+  "schema_version": "semisynth-metrics-v1",
+  "study_id": "semisynth_metrics_v1",
+  "prepared_at_utc": "2026-08-05T19:55:44.562570+00:00",
+  "training_manifest": "repo://results/shared/semisynth_heldout_2k/runs/study_v1/manifests/frozen_manifest.jsonl",
+  "training_manifest_sha256": "100a621d50194745b83f8d7c50381ddd0d519e9889c1d0fe2ad0bcd2847d159b",
+  "evaluation_manifest": "repo://results/shared/semisynth_heldout_2k/runs/study_v1/metrics/evaluation_manifest.jsonl",
+  "evaluation_manifest_sha256": "55898731006728e4f1c6727ce70aa80f10e124993544491c124170e79cad0f20",
+  "evaluation_script": "repo://scripts/evaluate_semisynth_metrics.py",
+  "evaluation_source_sha256": {
+    "scripts/evaluate_semisynth_metrics.py": "44832acc650c5d8b8a9adf746aeec29925d6b86b3eb98ebdb0e445293fff6b9a",
+    "scripts/evaluate_canonical_15k_metrics.py": "718905db30c9a81131b8c56beb37e06e46b1f22a1b812ee1a41cbe363258915b",
+    "evals/model_loading.py": "ef55e9b659131646d72ca50b8a1a3ae7b23186bf40610e5bad23d07081b57e58",
+    "evals/concept_mapping.py": "eb078aec870aba82cb099a4b7cdfa5b26fe1674ffdc8e131b5ecce1c10163bd8",
+    "evals/metrics/identifiability.py": "402f0c039a7a3787bfc6090ac4489e1c79ba8f34838378858cbf216c6d68fa14",
+    "ssae/model.py": "41810a5732d7991eb39a8c1345cf6e3e1b9f614eed123c2d6b561e20390d58a7",
+    "ssae/sae.py": "5c12dfa2882bac7577b79cb35b93b989bb88b8ceabeeb39d9a69d92cab83f32f"
+  },
+  "evaluation_git_commit": "8f7a357d162993840081bfec0d3e407120a8eb53",
+  "metrics": [
+    "mcc_p",
+    "mcc_s",
+    "dci_d",
+    "dci_c",
+    "dci_i",
+    "r2",
+    "sae_auc",
+    "decoder_projection_mcc_p",
+    "support_precision",
+    "support_recall",
+    "support_f1",
+    "reconstruction_mse",
+    "reconstruction_nmse",
+    "reconstruction_cosine",
+    "mean_l0",
+    "mean_l1",
+    "mean_abs_code",
+    "active_feature_fraction",
+    "dead_feature_fraction",
+    "decoder_diff_cosine",
+    "dictionary_best_cosine",
+    "dictionary_angular_error_deg",
+    "dictionary_norm_ratio",
+    "dictionary_frac_close_0_9"
+  ],
+  "expected_runs": 210,
+  "expected_summaries": 70,
+  "datasets": [
+    "eng-french",
+    "eng-german",
+    "masc-fem-eng",
+    "2-binary",
+    "corr-binary"
+  ],
+  "llms": [
+    "gemma-2-2b-it",
+    "pythia-70m-deduped"
+  ],
+  "included_epochs": [
+    2000
+  ],
+  "requested_epoch_filter": [
+    2000
+  ],
+  "require_multifactor_labels": true,
+  "require_heldout": true,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "split_inventory": [
+    {
+      "evaluation_split": "cfc_test",
+      "transductive": false,
+      "labels_preserved": true,
+      "run_count": 210
+    }
+  ],
+  "array_job_script": "repo://results/shared/semisynth_heldout_2k/runs/study_v1/metrics/evaluate_array.sh",
+  "consolidate_job_script": "repo://results/shared/semisynth_heldout_2k/runs/study_v1/metrics/consolidate.sh"
+}

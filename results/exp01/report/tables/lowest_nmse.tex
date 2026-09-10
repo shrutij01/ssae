@@ -1,0 +1,50 @@
+\begin{table}[t]
+\centering
+\caption{Lowest held-out reconstruction NMSE within each target regime.}
+\label{tab:reconstruction-nmse}
+\begin{tabular}{lrrrrr}
+\toprule
+Family & Dataset & LLM & Target & Lowest-NMSE method & NMSE \\
+\midrule
+behavioral & bias-in-bios & gemma & diff & SSAE JumpReLU (penalized) & 0.012 ± 0.000 \\
+behavioral & bias-in-bios & gemma & raw & SAE JumpReLU (penalized) & 0.004 ± 0.000 \\
+behavioral & bias-in-bios & pythia & diff & SSAE JumpReLU (penalized) & 0.001 ± 0.000 \\
+behavioral & bias-in-bios & pythia & raw & SAE JumpReLU (penalized) & 0.000 ± 0.000 \\
+behavioral & refusal & gemma & diff & SSAE Linear (constrained sigmoid-L0) & 0.155 ± 0.003 \\
+behavioral & refusal & gemma & raw & SAE JumpReLU (penalized) & 0.020 ± 0.000 \\
+behavioral & refusal & pythia & diff & SSAE JumpReLU (penalized) & 0.019 ± 0.000 \\
+behavioral & refusal & pythia & raw & SAE JumpReLU (penalized) & 0.009 ± 0.000 \\
+behavioral & sycophancy & gemma & diff & SSAE JumpReLU (penalized) & 0.009 ± 0.000 \\
+behavioral & sycophancy & gemma & raw & SAE JumpReLU (penalized) & 0.002 ± 0.000 \\
+behavioral & sycophancy & pythia & diff & SSAE JumpReLU (penalized) & 0.004 ± 0.000 \\
+behavioral & sycophancy & pythia & raw & SAE JumpReLU (penalized) & 0.000 ± 0.000 \\
+behavioral & truthful-qa & gemma & diff & SSAE JumpReLU (penalized) & 0.289 ± 0.000 \\
+behavioral & truthful-qa & gemma & raw & SAE JumpReLU (penalized) & 0.024 ± 0.000 \\
+behavioral & truthful-qa & pythia & diff & SSAE JumpReLU (penalized) & 0.000 ± 0.000 \\
+behavioral & truthful-qa & pythia & raw & SAE JumpReLU (penalized) & 0.002 ± 0.000 \\
+semi-synthetic & 2-binary & gemma & diff & SSAE JumpReLU (penalized) & 0.271 ± 0.001 \\
+semi-synthetic & 2-binary & gemma & raw & SAE JumpReLU (penalized) & 0.115 ± 0.001 \\
+semi-synthetic & 2-binary & pythia & diff & SSAE JumpReLU (penalized) & 0.116 ± 0.001 \\
+semi-synthetic & 2-binary & pythia & raw & SAE JumpReLU (penalized) & 0.060 ± 0.000 \\
+semi-synthetic & corr-binary & gemma & diff & SSAE JumpReLU (penalized) & 0.295 ± 0.000 \\
+semi-synthetic & corr-binary & gemma & raw & SAE JumpReLU (penalized) & 0.219 ± 0.001 \\
+semi-synthetic & corr-binary & pythia & diff & SSAE JumpReLU (penalized) & 0.220 ± 0.002 \\
+semi-synthetic & corr-binary & pythia & raw & SAE JumpReLU (penalized) & 0.111 ± 0.001 \\
+semi-synthetic & eng-french & gemma & diff & SSAE JumpReLU (penalized) & 0.288 ± 0.002 \\
+semi-synthetic & eng-french & gemma & raw & SAE JumpReLU (penalized) & 0.221 ± 0.001 \\
+semi-synthetic & eng-french & pythia & diff & SSAE JumpReLU (penalized) & 0.298 ± 0.002 \\
+semi-synthetic & eng-french & pythia & raw & SAE JumpReLU (penalized) & 0.163 ± 0.000 \\
+semi-synthetic & eng-german & gemma & diff & SSAE JumpReLU (penalized) & 0.295 ± 0.003 \\
+semi-synthetic & eng-german & gemma & raw & SAE JumpReLU (penalized) & 0.225 ± 0.001 \\
+semi-synthetic & eng-german & pythia & diff & SSAE JumpReLU (penalized) & 0.314 ± 0.001 \\
+semi-synthetic & eng-german & pythia & raw & SAE JumpReLU (penalized) & 0.159 ± 0.001 \\
+semi-synthetic & masc-fem-eng & gemma & diff & SSAE JumpReLU (penalized) & 0.292 ± 0.001 \\
+semi-synthetic & masc-fem-eng & gemma & raw & SAE JumpReLU (penalized) & 0.131 ± 0.001 \\
+semi-synthetic & masc-fem-eng & pythia & diff & SSAE JumpReLU (penalized) & 0.257 ± 0.004 \\
+semi-synthetic & masc-fem-eng & pythia & raw & SAE JumpReLU (penalized) & 0.111 ± 0.000 \\
+synthetic & synth(10,7) & not applicable & diff & SSAE Affine (reconstruction-only control) & 0.000 ± 0.000 \\
+synthetic & synth(3,2) & not applicable & diff & SSAE Affine (reconstruction-only control) & 0.000 ± 0.000 \\
+synthetic & synth(4,3) & not applicable & diff & SSAE Affine (reconstruction-only control) & 0.000 ± 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

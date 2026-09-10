@@ -1,0 +1,12 @@
+{
+  "metric_array_job_id": "10295200",
+  "consolidation_job_id": "10295201",
+  "consolidation_dependency": "afterok:10295200",
+  "workers": 210,
+  "max_parallel": 40,
+  "status": "complete",
+  "completed_metric_workers": 210,
+  "completed_three_seed_summaries": 70,
+  "completed_tidy_metric_rows": 5040,
+  "consolidation_note": "The scheduled consolidation encountered a missing manifest-only model_base_name field in partial rows. Consolidation was corrected to restore that immutable field from the frozen manifest and completed locally; no metric worker was repeated."
+}

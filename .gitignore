@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+site/
+
+# Data / model weights (too large for git)
+*.h5
+*.pth
+*.pt
+*.npy
+*.safetensors
+*.npz
+/scripts/checkpoints/
+/scripts/gemma-2-2b-it/
+/data/behavioral/refusal.json
+/data/oodprobe/**/*.csv
+/data/oodprobe/*.csv
+
+# Outputs
+outputs/
+logs/
+generated_jobs/
+wandb/
+results/**/runs/
+results/**/checkpoints/
+results/**/logs/
+results/**/cache/
+/docs/explorer/
+
+# Environment / editor
+.venv/
+.venv-*/
+.env
+.vscode/
+.claude/
+.DS_Store
+*.swp
+*.lock
+CLAUDE.md
+
+# Paper / review materials (not for public repo)
+overleaf/
+ssae-overleaf/
+*rebuttal*
+old-rebuttal.pdf
+
+# Cluster-specific
+slurm-*.out
+*.out
+*job_error*
+*job_output*
+model_cache/
+pythia-70m-deduped/
+
+# Generated plots / data
+scripts/plots/*.png
+scripts/plots/*.json
+/generated_outputs/
+/gemma_steering_results.json
+/scripts/generated_bios.json
+/scripts/summary_bios.json
+/scripts/results.json
+/scripts/intervention_matrix*.json
+/scripts/intervention_matrix*.png
+
+# Misc
+.history/
+questions.txt
+script.txt
+/NEXT_AGENT_HANDOFF.md
+# local cluster config (never commit)
+scripts/job_scripts/env.local.sh

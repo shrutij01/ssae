@@ -1,0 +1,40 @@
+{
+  "schema_version": "ssae-negative-finding-v1",
+  "finding_id": "synthetic_rms_layernorm_constraint_mismatch_v3",
+  "status": "invalid_comparison_preserved_as_diagnostic_evidence",
+  "scope": "exp06 synthetic linear identification",
+  "failed_protocol": {
+    "input_norm": "scalar_rms_without_mean_subtraction",
+    "constrained_encoder_norm": "LayerNorm",
+    "baseline_encoder_norm": "Identity",
+    "l1_target_units": "raw_factor_units_not_adjusted_for_input_rms",
+    "zero_biases": true,
+    "reverse_difference_augmentation": true
+  },
+  "diagnosis": [
+    "LayerNorm removed per-example latent mean and scale only for the constrained model.",
+    "The raw-factor L1 ceiling was applied to coefficients required to reconstruct RMS-normalized inputs."
+  ],
+  "inference_boundary": "This bundle does not show that scalar RMS is harmful; it shows that normalization and constraint units must be propagated consistently and that a linear identification comparison cannot apply LayerNorm to only one method.",
+  "source_bundle": {
+    "path": "results_bundle.json",
+    "sha256": "23620b7c439184d2c789a0ea11156ead879b62668f7ef9a18df9234bfba7e293",
+    "schema_version": "ssae-synthetic-identification-bundle-v2",
+    "run_schema_version": "ssae-synthetic-identification-run-v3",
+    "run_count": 30,
+    "embedded_experiment_source_sha256": "71a9fdc4c04be0f3457a616412ae83f4c445ba4d9584cdcecc898c59e7f2b6fe",
+    "embedded_model_source_sha256": "40ffa916f231eacfebf207b178b74863cd172fba45826a40c262bf522feb6c68"
+  },
+  "public_summary": {
+    "path": "docs/findings/data/synthetic_rms_layernorm_constraint_mismatch_v3_summary.json",
+    "sha256": "7652d92370a56de836fd6c344758fdd5bac1ed8f713bd794348dc221edd2faa7"
+  },
+  "corrected_protocol": {
+    "input_norm": "scalar_rms_without_mean_subtraction",
+    "encoder_norm": "Identity_for_both_methods",
+    "l1_target_units": "raw_factor_expectation_divided_by_training_input_rms",
+    "zero_biases": true,
+    "reverse_difference_augmentation": true,
+    "run_schema_version": "ssae-synthetic-identification-run-v4"
+  }
+}

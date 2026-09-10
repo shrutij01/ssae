@@ -1,0 +1,149 @@
+{
+  "files": [
+    {
+      "dataset": "eng-french",
+      "factor_names": [
+        "language"
+      ],
+      "llm": "gemma",
+      "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_gemma-2-2b-it_25_last_token.h5",
+      "representation_dim": 2304,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 20,
+      "train_pairs": 80,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "eng-french",
+      "factor_names": [
+        "language"
+      ],
+      "llm": "pythia",
+      "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_pythia70m_5_last_token.h5",
+      "representation_dim": 512,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 20,
+      "train_pairs": 80,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "eng-german",
+      "factor_names": [
+        "language"
+      ],
+      "llm": "gemma",
+      "path": "ssae-data://semisynth_heldout_2k_v1/eng-german/eng-german_gemma-2-2b-it_25_last_token.h5",
+      "representation_dim": 2304,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 19,
+      "train_pairs": 80,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "eng-german",
+      "factor_names": [
+        "language"
+      ],
+      "llm": "pythia",
+      "path": "ssae-data://semisynth_heldout_2k_v1/eng-german/eng-german_pythia70m_5_last_token.h5",
+      "representation_dim": 512,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 19,
+      "train_pairs": 80,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "masc-fem-eng",
+      "factor_names": [
+        "gender"
+      ],
+      "llm": "gemma",
+      "path": "ssae-data://semisynth_heldout_2k_v1/masc-fem-eng/masc-fem-eng_gemma-2-2b-it_25_last_token.h5",
+      "representation_dim": 2304,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 20,
+      "train_pairs": 77,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "masc-fem-eng",
+      "factor_names": [
+        "gender"
+      ],
+      "llm": "pythia",
+      "path": "ssae-data://semisynth_heldout_2k_v1/masc-fem-eng/masc-fem-eng_pythia70m_5_last_token.h5",
+      "representation_dim": 512,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 20,
+      "train_pairs": 77,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "2-binary",
+      "factor_names": [
+        "gender",
+        "language"
+      ],
+      "llm": "gemma",
+      "path": "ssae-data://semisynth_heldout_2k_v1/2-binary/2-binary_gemma-2-2b-it_25_last_token.h5",
+      "representation_dim": 2304,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 71,
+      "train_pairs": 385,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "2-binary",
+      "factor_names": [
+        "gender",
+        "language"
+      ],
+      "llm": "pythia",
+      "path": "ssae-data://semisynth_heldout_2k_v1/2-binary/2-binary_pythia70m_5_last_token.h5",
+      "representation_dim": 512,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 71,
+      "train_pairs": 385,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "corr-binary",
+      "factor_names": [
+        "language_french",
+        "language_german"
+      ],
+      "llm": "gemma",
+      "path": "ssae-data://semisynth_heldout_2k_v1/corr-binary/corr-binary_gemma-2-2b-it_25_last_token.h5",
+      "representation_dim": 2304,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 39,
+      "train_pairs": 160,
+      "train_test_text_overlap": 0
+    },
+    {
+      "dataset": "corr-binary",
+      "factor_names": [
+        "language_french",
+        "language_german"
+      ],
+      "llm": "pythia",
+      "path": "ssae-data://semisynth_heldout_2k_v1/corr-binary/corr-binary_pythia70m_5_last_token.h5",
+      "representation_dim": 512,
+      "split": 0.8,
+      "status": "pass",
+      "test_pairs": 39,
+      "train_pairs": 160,
+      "train_test_text_overlap": 0
+    }
+  ],
+  "status": "pass"
+}

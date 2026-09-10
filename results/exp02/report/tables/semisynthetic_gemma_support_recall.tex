@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Held-out Support recall for semi-synthetic data (gemma).}
+\label{tab:semisynthetic-gemma-support-recall}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+eng-french & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+eng-german & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+masc-fem-eng & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+2-binary & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.657 ± 0.223 & 0.224 ± 0.037 & 0.981 ± 0.007 & 0.967 ± 0.013 & 0.428 ± 0.058 & 0.953 ± 0.006 & 0.963 ± 0.017 \\
+corr-binary & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.316 ± 0.224 & 0.188 ± 0.068 & 0.940 ± 0.012 & 0.923 ± 0.001 & 0.443 ± 0.042 & 0.907 ± 0.031 & 0.924 ± 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

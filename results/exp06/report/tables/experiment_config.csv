@@ -1,0 +1,4 @@
+dataset,n_concepts,max_changes,l1_target,min_shift_magnitude,max_shift_magnitude,n_train,n_test,batch_size,epochs,learning_rate,input_norm,constrained_encoder_norm,baseline_encoder_norm,zero_biases,reverse_difference_augmentation
+"synth(3,2)",3,2,0.275,0.1,1.0,100000,10000,256,100,0.005,rms,none,none,True,True
+"synth(4,3)",4,3,0.275,0.1,1.0,100000,10000,256,100,0.005,rms,none,none,True,True
+"synth(10,7)",10,7,0.22000000000000003,0.1,1.0,100000,10000,256,100,0.005,rms,none,none,True,True

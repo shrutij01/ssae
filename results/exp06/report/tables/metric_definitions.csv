@@ -1,0 +1,13 @@
+metric,display_name,definition,protocol
+mcc_p,MCC-P,Hungarian-matched absolute Pearson correlation.,mapping selected on synthetic train data and fixed on held-out test data
+mcc_s,MCC-S,Hungarian-matched absolute Spearman correlation.,mapping selected on synthetic train data and fixed on held-out test data
+dci_c,DCI-C,DCI completeness from gradient-boosted-tree importances.,continuous factors; probe fit on train and evaluated on held-out test data
+dci_i,DCI-I,DCI held-out informativeness from gradient-boosted trees.,continuous factors; probe fit on train and evaluated on held-out test data
+r2,R²,Linear explicitness of planted factors from the full code.,linear map fit on train and evaluated on held-out test data
+sae_auc,Feature ROC-AUC,Hungarian-matched feature ROC-AUC.,binary planted support (factor != 0); |code| mapping selected on train and fixed on held-out test data
+decoder_projection_mcc_p,Decoder-projection MCC-P,Pearson MCC after projecting observations onto decoder atoms.,decoder mapping selected on train and fixed on held-out test differences
+support_precision,Support precision,Precision of the MCC-matched feature's binary support.,planted support (factor != 0); |code| > 0.1
+support_recall,Support recall,Recall of the MCC-matched feature's binary support.,planted support (factor != 0); |code| > 0.1
+support_f1,Support F1,F1 of the MCC-matched feature's binary support.,planted support (factor != 0); |code| > 0.1
+reconstruction_nmse,Reconstruction NMSE,Mean squared error divided by mean squared target magnitude.,held-out test differences
+reconstruction_mse,Reconstruction MSE,Mean squared reconstruction error.,held-out test differences

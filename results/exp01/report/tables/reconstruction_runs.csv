@@ -1,0 +1,517 @@
+study_family,dataset,llm,source_model_name,method,model_family,activation,optimization,constraint,input_regime,input_norm,seed,reconstruction_target,reconstruction_nmse,reconstruction_mse,n_test_pairs
+semi-synthetic,2-binary,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.11592460239733078,16.941612243652344,71
+semi-synthetic,2-binary,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.11617643865114331,16.978416442871094,71
+semi-synthetic,2-binary,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.11428974189080998,16.702688217163086,71
+semi-synthetic,2-binary,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),1.5303705960500549,223.6535186767578,71
+semi-synthetic,2-binary,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),1.7977696412440127,262.73211669921875,71
+semi-synthetic,2-binary,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),1.57371639729654,229.98822021484375,71
+semi-synthetic,2-binary,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.12787184165805981,18.6876220703125,71
+semi-synthetic,2-binary,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.1287279230859505,18.812732696533203,71
+semi-synthetic,2-binary,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.12536017439347347,18.320558547973633,71
+semi-synthetic,2-binary,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.2730290718605635,18.989547729492188,71
+semi-synthetic,2-binary,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.27087094479104207,18.839447021484375,71
+semi-synthetic,2-binary,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.2696606867876859,18.755271911621094,71
+semi-synthetic,2-binary,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.6623112516369143,46.064659118652344,71
+semi-synthetic,2-binary,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.6635499753297358,46.150814056396484,71
+semi-synthetic,2-binary,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.6622074807612526,46.05744171142578,71
+semi-synthetic,2-binary,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.30165505222658734,20.98052406311035,71
+semi-synthetic,2-binary,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.3047133038869762,21.19322967529297,71
+semi-synthetic,2-binary,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.30369953592699095,21.12272071838379,71
+semi-synthetic,2-binary,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6408539355817608,44.57227325439453,71
+semi-synthetic,2-binary,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.6508412241979641,45.266902923583984,71
+semi-synthetic,2-binary,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6488004152590137,45.124961853027344,71
+semi-synthetic,2-binary,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.47817515295234725,33.25774002075195,71
+semi-synthetic,2-binary,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.4854341231547487,33.762611389160156,71
+semi-synthetic,2-binary,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.47154966774671747,32.79692840576172,71
+semi-synthetic,2-binary,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.3275044212316528,22.778383255004883,71
+semi-synthetic,2-binary,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.3250199808298116,22.605587005615234,71
+semi-synthetic,2-binary,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.32486588766111635,22.59486961364746,71
+semi-synthetic,2-binary,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.06060967132117323,0.0965091660618782,71
+semi-synthetic,2-binary,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.06002413186742105,0.09557680785655975,71
+semi-synthetic,2-binary,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.06068521091267848,0.09662944823503494,71
+semi-synthetic,2-binary,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.38515271949267343,0.6132811307907104,71
+semi-synthetic,2-binary,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.37872990770394527,0.6030540466308594,71
+semi-synthetic,2-binary,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.3736567765452039,0.5949760675430298,71
+semi-synthetic,2-binary,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.38819549017408844,0.6181261539459229,71
+semi-synthetic,2-binary,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.4251459920519473,0.676962673664093,71
+semi-synthetic,2-binary,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.4276980922846751,0.6810263991355896,71
+semi-synthetic,2-binary,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.11542385344829392,0.13140331208705902,71
+semi-synthetic,2-binary,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.11628964422813128,0.13238896429538727,71
+semi-synthetic,2-binary,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.11694603578661227,0.13313622772693634,71
+semi-synthetic,2-binary,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.656469150591522,0.7473517656326294,71
+semi-synthetic,2-binary,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.6599838847155061,0.7513530850410461,71
+semi-synthetic,2-binary,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.6537149971622859,0.7442163228988647,71
+semi-synthetic,2-binary,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.3141968169433525,0.35769471526145935,71
+semi-synthetic,2-binary,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.3087624110727397,0.3515079617500305,71
+semi-synthetic,2-binary,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.31311217662100493,0.35645991563796997,71
+semi-synthetic,2-binary,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6648836537192904,0.7569311857223511,71
+semi-synthetic,2-binary,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.6684125764140927,0.760948657989502,71
+semi-synthetic,2-binary,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6644362687095416,0.7564218640327454,71
+semi-synthetic,2-binary,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.4445505416787959,0.5060948133468628,71
+semi-synthetic,2-binary,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.431211792953673,0.4909094274044037,71
+semi-synthetic,2-binary,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.43497998416743977,0.4951992928981781,71
+semi-synthetic,2-binary,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.5953699185544621,0.6777938604354858,71
+semi-synthetic,2-binary,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.5802063677886982,0.6605310440063477,71
+semi-synthetic,2-binary,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.5862964584070686,0.6674642562866211,71
+behavioral,bias-in-bios,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.0032641742244409813,0.5717229843139648,5000
+behavioral,bias-in-bios,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.003698467855712256,0.6477898955345154,5000
+behavioral,bias-in-bios,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.003951621447285613,0.6921299695968628,5000
+behavioral,bias-in-bios,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.0849450505484687,14.87819766998291,5000
+behavioral,bias-in-bios,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.08476821737261564,14.847225189208984,5000
+behavioral,bias-in-bios,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.08477473488690256,14.848366737365723,5000
+behavioral,bias-in-bios,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.06217757633582799,10.89045524597168,5000
+behavioral,bias-in-bios,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.06197381825759499,10.854766845703125,5000
+behavioral,bias-in-bios,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.062446482332559665,10.937554359436035,5000
+behavioral,bias-in-bios,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.011639019208843112,0.9311662912368774,5000
+behavioral,bias-in-bios,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.011690399668318478,0.9352769255638123,5000
+behavioral,bias-in-bios,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.01170764171825161,0.9366563558578491,5000
+behavioral,bias-in-bios,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.8230823675619839,65.8497543334961,5000
+behavioral,bias-in-bios,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.8234353054624602,65.87799072265625,5000
+behavioral,bias-in-bios,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.8238766447230396,65.91329956054688,5000
+behavioral,bias-in-bios,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.11655945816355567,9.325204849243164,5000
+behavioral,bias-in-bios,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.11595799276081548,9.277085304260254,5000
+behavioral,bias-in-bios,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.11636626495384819,9.309748649597168,5000
+behavioral,bias-in-bios,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.787913502845246,63.036109924316406,5000
+behavioral,bias-in-bios,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.7887448486186455,63.10262680053711,5000
+behavioral,bias-in-bios,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.7878246246709029,63.02899932861328,5000
+behavioral,bias-in-bios,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.325912872695855,26.07428550720215,5000
+behavioral,bias-in-bios,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.3259863259225282,26.080162048339844,5000
+behavioral,bias-in-bios,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.32559827069027913,26.049116134643555,5000
+behavioral,bias-in-bios,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.30662175712706097,24.530921936035156,5000
+behavioral,bias-in-bios,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.3053109472247745,24.42605209350586,5000
+behavioral,bias-in-bios,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.3063634668778636,24.510257720947266,5000
+behavioral,bias-in-bios,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.00013616845646328648,0.0001444363733753562,5000
+behavioral,bias-in-bios,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.00013382217724219482,0.00014194763207342476,5000
+behavioral,bias-in-bios,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.00013565601344182508,0.000143892815685831,5000
+behavioral,bias-in-bios,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.052657304491483994,0.055854566395282745,5000
+behavioral,bias-in-bios,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.05240478846251103,0.055586718022823334,5000
+behavioral,bias-in-bios,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.052374556779932455,0.055554650723934174,5000
+behavioral,bias-in-bios,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.11896389055906136,0.12618717551231384,5000
+behavioral,bias-in-bios,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.11826866019701167,0.12544973194599152,5000
+behavioral,bias-in-bios,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.11811105366966548,0.12528255581855774,5000
+behavioral,bias-in-bios,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.0011072798531944232,0.0010553620522841811,5000
+behavioral,bias-in-bios,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.0011139171875100646,0.0010616881772875786,5000
+behavioral,bias-in-bios,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.0011124630835180932,0.001060302252881229,5000
+behavioral,bias-in-bios,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.9009958431127945,0.8587502241134644,5000
+behavioral,bias-in-bios,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.9008602632138653,0.8586210012435913,5000
+behavioral,bias-in-bios,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.9011042194803425,0.8588535189628601,5000
+behavioral,bias-in-bios,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.0980197486381193,0.09342382848262787,5000
+behavioral,bias-in-bios,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.10147089181493268,0.09671315550804138,5000
+behavioral,bias-in-bios,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.09808063608235128,0.09348186105489731,5000
+behavioral,bias-in-bios,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.9150139166387492,0.8721110224723816,5000
+behavioral,bias-in-bios,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.914997969741043,0.8720958232879639,5000
+behavioral,bias-in-bios,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.9154129017656718,0.8724913001060486,5000
+behavioral,bias-in-bios,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.04393344912448718,0.0418735109269619,5000
+behavioral,bias-in-bios,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.043848524077095184,0.04179256781935692,5000
+behavioral,bias-in-bios,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.04387102561878497,0.041814014315605164,5000
+behavioral,bias-in-bios,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.3156278505074302,0.30082884430885315,5000
+behavioral,bias-in-bios,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.31248731283817577,0.2978355586528778,5000
+behavioral,bias-in-bios,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.3136714479417687,0.29896417260169983,5000
+semi-synthetic,corr-binary,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.21897378722958588,31.009897232055664,39
+semi-synthetic,corr-binary,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.22002166987147093,31.158292770385742,39
+semi-synthetic,corr-binary,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.21710930444146437,30.745859146118164,39
+semi-synthetic,corr-binary,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),9.877648812211113,1398.81982421875,39
+semi-synthetic,corr-binary,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),10.147669536588104,1437.0587158203125,39
+semi-synthetic,corr-binary,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),10.292521661251579,1457.5718994140625,39
+semi-synthetic,corr-binary,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.22721910517325014,32.177555084228516,39
+semi-synthetic,corr-binary,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.22667416633246623,32.10038375854492,39
+semi-synthetic,corr-binary,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.22463554824349213,31.81168556213379,39
+semi-synthetic,corr-binary,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.2945838592861919,38.71154022216797,39
+semi-synthetic,corr-binary,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.2945398516769396,38.70575714111328,39
+semi-synthetic,corr-binary,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.29474618814565057,38.732872009277344,39
+semi-synthetic,corr-binary,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.7027085115941472,92.34358215332031,39
+semi-synthetic,corr-binary,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.7038829574088784,92.49791717529297,39
+semi-synthetic,corr-binary,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.6949771642309404,91.32759857177734,39
+semi-synthetic,corr-binary,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.436462301444692,57.355918884277344,39
+semi-synthetic,corr-binary,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.42386883897824784,55.70100021362305,39
+semi-synthetic,corr-binary,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.44664022223494326,58.69340896606445,39
+semi-synthetic,corr-binary,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6894449781221802,90.6006088256836,39
+semi-synthetic,corr-binary,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.6947430762619357,91.29683685302734,39
+semi-synthetic,corr-binary,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6848792757485445,90.00062561035156,39
+semi-synthetic,corr-binary,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.5473758750286079,71.9311752319336,39
+semi-synthetic,corr-binary,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.4959630856277767,65.17497253417969,39
+semi-synthetic,corr-binary,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.5310814480988306,69.78990936279297,39
+semi-synthetic,corr-binary,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.3547407516383545,46.61681365966797,39
+semi-synthetic,corr-binary,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.3555665039159225,46.72532653808594,39
+semi-synthetic,corr-binary,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.3545805999363457,46.595767974853516,39
+semi-synthetic,corr-binary,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.11057269722166807,0.1806437373161316,39
+semi-synthetic,corr-binary,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.11223572106031324,0.18336063623428345,39
+semi-synthetic,corr-binary,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.11104174750962344,0.1814100295305252,39
+semi-synthetic,corr-binary,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.671108158645659,1.0963962078094482,39
+semi-synthetic,corr-binary,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.6799072775370874,1.1107714176177979,39
+semi-synthetic,corr-binary,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.6930069376938498,1.1321724653244019,39
+semi-synthetic,corr-binary,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.44553675369515855,0.7278779149055481,39
+semi-synthetic,corr-binary,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.4481739427638433,0.7321863174438477,39
+semi-synthetic,corr-binary,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.4396668071066012,0.7182881236076355,39
+semi-synthetic,corr-binary,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.22248591668545076,0.334869921207428,39
+semi-synthetic,corr-binary,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.21827909919377053,0.32853811979293823,39
+semi-synthetic,corr-binary,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.21980700596090555,0.33083781599998474,39
+semi-synthetic,corr-binary,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.7228475136968084,1.087978482246399,39
+semi-synthetic,corr-binary,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.7260314365654058,1.0927706956863403,39
+semi-synthetic,corr-binary,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.7226387370629372,1.087664246559143,39
+semi-synthetic,corr-binary,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.7485546019803366,1.1266709566116333,39
+semi-synthetic,corr-binary,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.8296714524248265,1.2487622499465942,39
+semi-synthetic,corr-binary,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.7754804515848095,1.167197823524475,39
+semi-synthetic,corr-binary,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6860153078576207,1.032541275024414,39
+semi-synthetic,corr-binary,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.6893950182220183,1.037628173828125,39
+semi-synthetic,corr-binary,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6869325469307854,1.0339218378067017,39
+semi-synthetic,corr-binary,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.5346178746063459,0.804668664932251,39
+semi-synthetic,corr-binary,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.5290282683245453,0.7962555885314941,39
+semi-synthetic,corr-binary,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.5296662409291859,0.7972158193588257,39
+semi-synthetic,corr-binary,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.772851259954313,1.1632405519485474,39
+semi-synthetic,corr-binary,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.77560424440679,1.167384147644043,39
+semi-synthetic,corr-binary,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.7618284714619924,1.1466498374938965,39
+semi-synthetic,eng-french,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.2220803131154415,32.14008331298828,20
+semi-synthetic,eng-french,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.22048659014294084,31.909435272216797,20
+semi-synthetic,eng-french,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.21961750595942686,31.783658981323242,20
+semi-synthetic,eng-french,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),39.93946451667253,5780.15087890625,20
+semi-synthetic,eng-french,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),41.39224526448426,5990.4013671875,20
+semi-synthetic,eng-french,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),38.41212379750527,5559.10986328125,20
+semi-synthetic,eng-french,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.23047915384098755,33.355587005615234,20
+semi-synthetic,eng-french,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.22910009570298148,33.156005859375,20
+semi-synthetic,eng-french,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.23128512224034176,33.47222900390625,20
+semi-synthetic,eng-french,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.2851808317099776,37.849609375,20
+semi-synthetic,eng-french,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.2892149626490222,38.38502502441406,20
+semi-synthetic,eng-french,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.2889378597365473,38.34824752807617,20
+semi-synthetic,eng-french,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.706090929534405,93.7134017944336,20
+semi-synthetic,eng-french,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.7002010914652878,92.93169403076172,20
+semi-synthetic,eng-french,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.7019263667919364,93.16067504882812,20
+semi-synthetic,eng-french,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.5001990680190646,66.38713836669922,20
+semi-synthetic,eng-french,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.48824550197102057,64.80064392089844,20
+semi-synthetic,eng-french,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.5143894618920694,68.2705078125,20
+semi-synthetic,eng-french,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6935800535109551,92.05294036865234,20
+semi-synthetic,eng-french,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.6948841990923924,92.22602844238281,20
+semi-synthetic,eng-french,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6919659527580492,91.83871459960938,20
+semi-synthetic,eng-french,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.38128734178030155,50.605003356933594,20
+semi-synthetic,eng-french,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.39657171875201197,52.633567810058594,20
+semi-synthetic,eng-french,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.37209310680852864,49.38473129272461,20
+semi-synthetic,eng-french,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.3643369845040809,48.35532760620117,20
+semi-synthetic,eng-french,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.36392804142362317,48.30105209350586,20
+semi-synthetic,eng-french,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.36629360526611077,48.615013122558594,20
+semi-synthetic,eng-french,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.1629753909833835,0.26980355381965637,20
+semi-synthetic,eng-french,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.16397676080329068,0.2714613080024719,20
+semi-synthetic,eng-french,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.16301033316442512,0.2698614001274109,20
+semi-synthetic,eng-french,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.46739197825455003,0.7737610936164856,20
+semi-synthetic,eng-french,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.4509569117002264,0.7465530633926392,20
+semi-synthetic,eng-french,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.48419274056656525,0.8015745282173157,20
+semi-synthetic,eng-french,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.420154001947257,0.6955592632293701,20
+semi-synthetic,eng-french,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.4237932814088803,0.7015840411186218,20
+semi-synthetic,eng-french,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.42247476764079683,0.6994012594223022,20
+semi-synthetic,eng-french,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.29461444367732603,0.46042171120643616,20
+semi-synthetic,eng-french,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.29864048034172036,0.4667135775089264,20
+semi-synthetic,eng-french,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.29932415522072375,0.46778202056884766,20
+semi-synthetic,eng-french,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.7054217319173706,1.102428913116455,20
+semi-synthetic,eng-french,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.7099955323045201,1.1095768213272095,20
+semi-synthetic,eng-french,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.7086670469966934,1.107500672340393,20
+semi-synthetic,eng-french,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.8822076106128401,1.378708839416504,20
+semi-synthetic,eng-french,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.9374933779782507,1.46510910987854,20
+semi-synthetic,eng-french,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.9466032966359863,1.4793460369110107,20
+semi-synthetic,eng-french,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6961431590901584,1.0879284143447876,20
+semi-synthetic,eng-french,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.7023647511412762,1.097651481628418,20
+semi-synthetic,eng-french,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.701973818251829,1.0970405340194702,20
+semi-synthetic,eng-french,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.5491739035018968,0.8582457304000854,20
+semi-synthetic,eng-french,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.5590970388492705,0.873753547668457,20
+semi-synthetic,eng-french,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.5545628657081831,0.8666675686836243,20
+semi-synthetic,eng-french,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.7770706151422458,1.214401364326477,20
+semi-synthetic,eng-french,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.7868373773338407,1.2296648025512695,20
+semi-synthetic,eng-french,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.7820257371907311,1.2221451997756958,20
+semi-synthetic,eng-german,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.22349339481867364,30.918733596801758,19
+semi-synthetic,eng-german,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.22614644739949283,31.285764694213867,19
+semi-synthetic,eng-german,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.22428892455398441,31.028789520263672,19
+semi-synthetic,eng-german,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),13.334990138911147,1844.8017578125,19
+semi-synthetic,eng-german,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),13.116079150334922,1814.5169677734375,19
+semi-synthetic,eng-german,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),11.982435007863613,1657.685302734375,19
+semi-synthetic,eng-german,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.23369964384047856,32.33069610595703,19
+semi-synthetic,eng-german,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.23611001580222807,32.664154052734375,19
+semi-synthetic,eng-german,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.23571548401065334,32.60957336425781,19
+semi-synthetic,eng-german,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.293366133356302,38.146827697753906,19
+semi-synthetic,eng-german,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.2928350212902479,38.07776641845703,19
+semi-synthetic,eng-german,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.29838552962528087,38.79950714111328,19
+semi-synthetic,eng-german,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.6921687490656253,90.00371551513672,19
+semi-synthetic,eng-german,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.6651448142879707,86.48975372314453,19
+semi-synthetic,eng-german,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.6974379768831303,90.68888092041016,19
+semi-synthetic,eng-german,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.45875130343068354,59.652103424072266,19
+semi-synthetic,eng-german,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.4570506534931473,59.430965423583984,19
+semi-synthetic,eng-german,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.4611404276261825,59.962764739990234,19
+semi-synthetic,eng-german,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6887783037787344,89.56285095214844,19
+semi-synthetic,eng-german,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.6920674200181137,89.99053955078125,19
+semi-synthetic,eng-german,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6926059836122708,90.0605697631836,19
+semi-synthetic,eng-german,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.45737532302667694,59.473182678222656,19
+semi-synthetic,eng-german,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.47299305118601337,61.50397872924805,19
+semi-synthetic,eng-german,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.43328007348732217,56.34004211425781,19
+semi-synthetic,eng-german,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.3743404224159802,48.67603302001953,19
+semi-synthetic,eng-german,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.37537897181116253,48.81107711791992,19
+semi-synthetic,eng-german,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.373770908577143,48.60197830200195,19
+semi-synthetic,eng-german,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.15724292653800628,0.2532849609851837,19
+semi-synthetic,eng-german,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.15946329801381945,0.25686150789260864,19
+semi-synthetic,eng-german,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.15953983957983064,0.25698480010032654,19
+semi-synthetic,eng-german,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.7821019065196023,1.2598000764846802,19
+semi-synthetic,eng-german,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.8299708575896892,1.3369067907333374,19
+semi-synthetic,eng-german,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.7904772596987063,1.273290991783142,19
+semi-synthetic,eng-german,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.4068101530860923,0.6552847623825073,19
+semi-synthetic,eng-german,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.40661455302907745,0.6549696922302246,19
+semi-synthetic,eng-german,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.40391208254781247,0.6506165862083435,19
+semi-synthetic,eng-german,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.315365209619089,0.4555223286151886,19
+semi-synthetic,eng-german,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.31413515516549834,0.45374560356140137,19
+semi-synthetic,eng-german,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.3133488050416201,0.4526097774505615,19
+semi-synthetic,eng-german,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.7285896206405353,1.052395224571228,19
+semi-synthetic,eng-german,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.730866883336607,1.0556845664978027,19
+semi-synthetic,eng-german,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.7303053461574648,1.0548734664916992,19
+semi-synthetic,eng-german,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),1.1041940323882495,1.5949287414550781,19
+semi-synthetic,eng-german,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),1.0523917324296799,1.5201040506362915,19
+semi-synthetic,eng-german,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),1.042439880693982,1.5057293176651,19
+semi-synthetic,eng-german,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.7207389116214428,1.04105544090271,19
+semi-synthetic,eng-german,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.7169974762188509,1.0356512069702148,19
+semi-synthetic,eng-german,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.7138199713784401,1.0310615301132202,19
+semi-synthetic,eng-german,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.571857818192022,0.8260074257850647,19
+semi-synthetic,eng-german,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.5762567736866517,0.8323614001274109,19
+semi-synthetic,eng-german,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.5783581639946058,0.8353967070579529,19
+semi-synthetic,eng-german,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.7934442762657282,1.1460731029510498,19
+semi-synthetic,eng-german,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.7996859716392363,1.1550887823104858,19
+semi-synthetic,eng-german,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.784170907356269,1.1326783895492554,19
+semi-synthetic,masc-fem-eng,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.12987129951022658,17.729259490966797,20
+semi-synthetic,masc-fem-eng,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.13229946037516432,18.06073760986328,20
+semi-synthetic,masc-fem-eng,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.13076745140548585,17.85159683227539,20
+semi-synthetic,masc-fem-eng,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.32226169848476277,43.993255615234375,20
+semi-synthetic,masc-fem-eng,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.3062742871973734,41.81074905395508,20
+semi-synthetic,masc-fem-eng,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.3025341174834736,41.30016326904297,20
+semi-synthetic,masc-fem-eng,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.14138836031979127,19.30150032043457,20
+semi-synthetic,masc-fem-eng,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.14147854835352838,19.313812255859375,20
+semi-synthetic,masc-fem-eng,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.1392335299744506,19.007335662841797,20
+semi-synthetic,masc-fem-eng,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.29289076512057655,16.43967628479004,20
+semi-synthetic,masc-fem-eng,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.29261065564578775,16.423954010009766,20
+semi-synthetic,masc-fem-eng,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.29099911716072363,16.333499908447266,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.6956194452996455,39.04444885253906,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.695155190095889,39.01839065551758,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.6977660564269544,39.16493606567383,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.4404019943060605,24.71933937072754,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.43719872854833086,24.53954315185547,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.43961827905468914,24.675350189208984,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6957863624099405,39.05381774902344,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.696972112745168,39.1203727722168,20
+semi-synthetic,masc-fem-eng,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6965801701657414,39.09837341308594,20
+semi-synthetic,masc-fem-eng,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.5397222284521632,30.29408836364746,20
+semi-synthetic,masc-fem-eng,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.5309704979444593,29.8028621673584,20
+semi-synthetic,masc-fem-eng,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.5705153429854376,32.02247619628906,20
+semi-synthetic,masc-fem-eng,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.4012906172331042,22.52405548095703,20
+semi-synthetic,masc-fem-eng,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.401628189418298,22.54300308227539,20
+semi-synthetic,masc-fem-eng,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.4026863052530636,22.602394104003906,20
+semi-synthetic,masc-fem-eng,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.11000035665744361,0.18346509337425232,20
+semi-synthetic,masc-fem-eng,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.1106126156241977,0.1844862550497055,20
+semi-synthetic,masc-fem-eng,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.11118208820574574,0.18543605506420135,20
+semi-synthetic,masc-fem-eng,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),1.0194966541386272,1.7003767490386963,20
+semi-synthetic,masc-fem-eng,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),1.096322740249886,1.8285118341445923,20
+semi-synthetic,masc-fem-eng,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.8042674670660086,1.3414047956466675,20
+semi-synthetic,masc-fem-eng,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.2893023637454206,0.4825155735015869,20
+semi-synthetic,masc-fem-eng,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.30892731449953315,0.5152472257614136,20
+semi-synthetic,masc-fem-eng,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.301249709099039,0.5024420619010925,20
+semi-synthetic,masc-fem-eng,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.25619685304062073,0.2644731402397156,20
+semi-synthetic,masc-fem-eng,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.2526988842552373,0.26086217164993286,20
+semi-synthetic,masc-fem-eng,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.2618077665738948,0.2702653110027313,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.6824921529258232,0.7045396566390991,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.693993785161134,0.7164128422737122,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.6792134784101385,0.7011550664901733,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.8528409578413406,0.8803914785385132,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.8549049107019645,0.8825221061706543,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.8498918598636865,0.8773471117019653,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.6636155239094844,0.6850532293319702,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.6676932540856116,0.6892626881599426,20
+semi-synthetic,masc-fem-eng,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.6596111805202944,0.6809195280075073,20
+semi-synthetic,masc-fem-eng,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.49193599886923145,0.5078276991844177,20
+semi-synthetic,masc-fem-eng,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.4802590697927398,0.4957735538482666,20
+semi-synthetic,masc-fem-eng,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.48444615840667876,0.5000959038734436,20
+semi-synthetic,masc-fem-eng,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.6783164389751625,0.7002290487289429,20
+semi-synthetic,masc-fem-eng,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.6734237748015295,0.6951783299446106,20
+semi-synthetic,masc-fem-eng,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.6686682417207175,0.6902691721916199,20
+behavioral,refusal,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.020031516643349605,3.8393239974975586,46
+behavioral,refusal,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.020012396053452525,3.8356592655181885,46
+behavioral,refusal,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.020021118555329977,3.8373310565948486,46
+behavioral,refusal,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.056407464296157686,10.81128978729248,46
+behavioral,refusal,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.057659215464047446,11.0512056350708,46
+behavioral,refusal,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.056479150026076945,10.825029373168945,46
+behavioral,refusal,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.03741254211580171,7.1706438064575195,46
+behavioral,refusal,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.037238226423689444,7.137233734130859,46
+behavioral,refusal,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.03725572616077045,7.14058780670166,46
+behavioral,refusal,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.17876392082117018,2.821078062057495,46
+behavioral,refusal,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.17748264779102474,2.80085825920105,46
+behavioral,refusal,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.17967498922049444,2.8354556560516357,46
+behavioral,refusal,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.3208488781307023,5.063324451446533,46
+behavioral,refusal,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.3122799039498465,4.928097248077393,46
+behavioral,refusal,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.32027099994228775,5.054204940795898,46
+behavioral,refusal,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.15688249145420138,2.475766658782959,46
+behavioral,refusal,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.15084944316715318,2.380558967590332,46
+behavioral,refusal,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.1572537687478037,2.48162579536438,46
+behavioral,refusal,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.31655082412228236,4.99549674987793,46
+behavioral,refusal,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.31666349903807833,4.997274875640869,46
+behavioral,refusal,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.31070049109825865,4.903172492980957,46
+behavioral,refusal,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.5264846483826512,8.308467864990234,46
+behavioral,refusal,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.5005899645296101,7.899823188781738,46
+behavioral,refusal,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.4405621538585191,6.9525227546691895,46
+behavioral,refusal,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.2609769510451815,4.118484020233154,46
+behavioral,refusal,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.2608928905421661,4.117157459259033,46
+behavioral,refusal,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.2601087287253956,4.104782581329346,46
+behavioral,refusal,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.008817235135551577,0.011924163438379765,46
+behavioral,refusal,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.009222652510233813,0.01247243769466877,46
+behavioral,refusal,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.009209846195526802,0.01245511882007122,46
+behavioral,refusal,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.2468845919269609,0.333879292011261,46
+behavioral,refusal,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.2620849079214679,0.3544357419013977,46
+behavioral,refusal,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.2587964424349736,0.34998852014541626,46
+behavioral,refusal,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.16593162625663305,0.22440093755722046,46
+behavioral,refusal,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.16417237082530117,0.22202177345752716,46
+behavioral,refusal,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.16686126168087959,0.22565814852714539,46
+behavioral,refusal,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.019486690728069012,0.0012196579482406378,46
+behavioral,refusal,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.019128990820407754,0.0011972697684541345,46
+behavioral,refusal,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.019143069070973698,0.0011981509160250425,46
+behavioral,refusal,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.757851858279971,0.04743340238928795,46
+behavioral,refusal,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.7807896492044428,0.0488690622150898,46
+behavioral,refusal,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.7974065753230933,0.04990910366177559,46
+behavioral,refusal,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.06532622228602726,0.004088721238076687,46
+behavioral,refusal,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.06422162738312102,0.004019585438072681,46
+behavioral,refusal,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.06293172557740283,0.003938851412385702,46
+behavioral,refusal,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.7364724696155306,0.04609528183937073,46
+behavioral,refusal,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.7342458405605035,0.04595591872930527,46
+behavioral,refusal,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.7364225326527621,0.04609215632081032,46
+behavioral,refusal,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.4919338413214023,0.030789785087108612,46
+behavioral,refusal,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.5178862415751463,0.03241412714123726,46
+behavioral,refusal,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.5127813626446044,0.03209461644291878,46
+behavioral,refusal,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.7138369193310328,0.04467853903770447,46
+behavioral,refusal,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.6660004040191934,0.04168448597192764,46
+behavioral,refusal,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.7796249692432354,0.048796165734529495,46
+behavioral,sycophancy,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.0018770177246518363,0.3342965245246887,2019
+behavioral,sycophancy,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.001839746043131182,0.32765844464302063,2019
+behavioral,sycophancy,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.0018317392338041201,0.3262324333190918,2019
+behavioral,sycophancy,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.008613525642673247,1.5340673923492432,2019
+behavioral,sycophancy,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.00860263615441293,1.5321279764175415,2019
+behavioral,sycophancy,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.00824633590038511,1.4686709642410278,2019
+behavioral,sycophancy,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.0028443655917605886,0.5065810084342957,2019
+behavioral,sycophancy,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.002882607648572004,0.51339191198349,2019
+behavioral,sycophancy,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.0029208389959475495,0.5202009081840515,2019
+behavioral,sycophancy,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.009143131557135604,0.2519989311695099,2019
+behavioral,sycophancy,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.009922129586781297,0.27346932888031006,2019
+behavioral,sycophancy,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.009066327327773408,0.24988208711147308,2019
+behavioral,sycophancy,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.15016582130316036,4.138803958892822,2019
+behavioral,sycophancy,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.14968014614060865,4.125417709350586,2019
+behavioral,sycophancy,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.14744731108800338,4.063877582550049,2019
+behavioral,sycophancy,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.026420445128310745,0.7281885743141174,2019
+behavioral,sycophancy,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.0257452249080687,0.7095784544944763,2019
+behavioral,sycophancy,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.025102618871595695,0.6918672323226929,2019
+behavioral,sycophancy,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.154475549219308,4.257586479187012,2019
+behavioral,sycophancy,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.15534915346805403,4.2816643714904785,2019
+behavioral,sycophancy,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.15168913314860225,4.180788516998291,2019
+behavioral,sycophancy,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.032579642707886325,0.8979456424713135,2019
+behavioral,sycophancy,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.031748375696435335,0.8750346302986145,2019
+behavioral,sycophancy,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.03287344068691678,0.9060431718826294,2019
+behavioral,sycophancy,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.01143312937528728,0.3151148557662964,2019
+behavioral,sycophancy,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.011804639045305486,0.3253542184829712,2019
+behavioral,sycophancy,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.01114255230016651,0.307106077671051,2019
+behavioral,sycophancy,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),9.348624930398594e-05,0.0001286046754103154,2019
+behavioral,sycophancy,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),8.681126683486403e-05,0.00011942221317440271,2019
+behavioral,sycophancy,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),9.360359310385403e-05,0.00012876609980594367,2019
+behavioral,sycophancy,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.01239391675361923,0.01704973354935646,2019
+behavioral,sycophancy,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.017292383189438792,0.023788325488567352,2019
+behavioral,sycophancy,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.011518029542842837,0.015844816341996193,2019
+behavioral,sycophancy,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.005918050411891281,0.008141186088323593,2019
+behavioral,sycophancy,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.007241153472147782,0.009961317293345928,2019
+behavioral,sycophancy,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.00647368774348848,0.008905550464987755,2019
+behavioral,sycophancy,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.0041690355062010765,0.00020326125377323478,2019
+behavioral,sycophancy,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.004048802110625459,0.0001973992766579613,2019
+behavioral,sycophancy,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.004196952927496221,0.00020462236716412008,2019
+behavioral,sycophancy,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.469021665296664,0.022867143154144287,2019
+behavioral,sycophancy,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.47256243063072234,0.023039773106575012,2019
+behavioral,sycophancy,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.4737654045068426,0.023098424077033997,2019
+behavioral,sycophancy,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.008587054952578653,0.0004186617152299732,2019
+behavioral,sycophancy,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.007479346235961675,0.0003646553959697485,2019
+behavioral,sycophancy,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.007288396864627082,0.0003553456626832485,2019
+behavioral,sycophancy,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.5220108918648433,0.025450631976127625,2019
+behavioral,sycophancy,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.5229321479639529,0.02549554780125618,2019
+behavioral,sycophancy,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.5231119369331165,0.02550431340932846,2019
+behavioral,sycophancy,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.011165049950846476,0.0005443518166430295,2019
+behavioral,sycophancy,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.01047829362426902,0.0005108690238557756,2019
+behavioral,sycophancy,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.010581800319967773,0.0005159155698493123,2019
+behavioral,sycophancy,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.007722280196557527,0.00037649969453923404,2019
+behavioral,sycophancy,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.008027329351794009,0.00039137236308306456,2019
+behavioral,sycophancy,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.007911702579952605,0.0003857349220197648,2019
+behavioral,truthful-qa,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.023832610576738602,3.4497601985931396,82
+behavioral,truthful-qa,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.023954753722417614,3.467440366744995,82
+behavioral,truthful-qa,gemma,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.02402594679089062,3.477745532989502,82
+behavioral,truthful-qa,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.08163974330160902,11.817317962646484,82
+behavioral,truthful-qa,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.08171062836036949,11.8275785446167,82
+behavioral,truthful-qa,gemma,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.08170376320271279,11.826584815979004,82
+behavioral,truthful-qa,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.061961361838557216,8.968880653381348,82
+behavioral,truthful-qa,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.061803772869276435,8.946069717407227,82
+behavioral,truthful-qa,gemma,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.0625176833811426,9.049407958984375,82
+behavioral,truthful-qa,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),0.2891167873312043,7.225219249725342,82
+behavioral,truthful-qa,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),0.2893941240711652,7.232150077819824,82
+behavioral,truthful-qa,gemma,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),0.2884123501036421,7.207614898681641,82
+behavioral,truthful-qa,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.42968751371419206,10.738174438476562,82
+behavioral,truthful-qa,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.43014521950835666,10.749612808227539,82
+behavioral,truthful-qa,gemma,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.4296155034729391,10.736374855041504,82
+behavioral,truthful-qa,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.49436225066692474,12.354438781738281,82
+behavioral,truthful-qa,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.4786800839516534,11.962531089782715,82
+behavioral,truthful-qa,gemma,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.43897214100452414,10.970203399658203,82
+behavioral,truthful-qa,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.41266218618207806,10.312700271606445,82
+behavioral,truthful-qa,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.4138946794315473,10.343501091003418,82
+behavioral,truthful-qa,gemma,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.41264699801248683,10.312320709228516,82
+behavioral,truthful-qa,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.6538460452334219,16.340044021606445,82
+behavioral,truthful-qa,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.6578879300837418,16.44105339050293,82
+behavioral,truthful-qa,gemma,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.666825595469743,16.664411544799805,82
+behavioral,truthful-qa,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.4947108916653813,12.363151550292969,82
+behavioral,truthful-qa,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.49548842672925514,12.382582664489746,82
+behavioral,truthful-qa,gemma,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.49472226371195965,12.363435745239258,82
+behavioral,truthful-qa,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,0,raw activation (z),0.0018230002919269789,0.002053597243502736,82
+behavioral,truthful-qa,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,1,raw activation (z),0.001949249839333677,0.0021958164870738983,82
+behavioral,truthful-qa,pythia,sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none,raw,rms,2,raw activation (z),0.0017707653004843853,0.0019947548862546682,82
+behavioral,truthful-qa,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,0,raw activation (z),0.07368541057719344,0.0830061063170433,82
+behavioral,truthful-qa,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,1,raw activation (z),0.07016480613318357,0.07904016971588135,82
+behavioral,truthful-qa,pythia,sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none,raw,rms,2,raw activation (z),0.07801607303462996,0.0878845676779747,82
+behavioral,truthful-qa,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,0,raw activation (z),0.0548302234756647,0.061765868216753006,82
+behavioral,truthful-qa,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,1,raw activation (z),0.05338225560702451,0.06013474240899086,82
+behavioral,truthful-qa,pythia,sae_topk,SAE TopK (penalized),SAE,topk,penalized,none,raw,rms,2,raw activation (z),0.05378657691998769,0.06059020757675171,82
+behavioral,truthful-qa,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,0,paired difference (delta_z),5.8899569879643055e-05,6.195862624736037e-06,82
+behavioral,truthful-qa,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,1,paired difference (delta_z),5.991292627825459e-05,6.302461315499386e-06,82
+behavioral,truthful-qa,pythia,ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none,diff,rms,2,paired difference (delta_z),5.5210906419558255e-05,5.80783853365574e-06,82
+behavioral,truthful-qa,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,paired difference (delta_z),0.9261840388354383,0.09742870926856995,82
+behavioral,truthful-qa,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,paired difference (delta_z),0.9266864166129029,0.09748155623674393,82
+behavioral,truthful-qa,pythia,ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,paired difference (delta_z),0.9254043014955106,0.09734668582677841,82
+behavioral,truthful-qa,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,0,paired difference (delta_z),0.1627493642013656,0.017120204865932465,82
+behavioral,truthful-qa,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,1,paired difference (delta_z),0.17424361972077484,0.018329327926039696,82
+behavioral,truthful-qa,pythia,ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0,diff,rms,2,paired difference (delta_z),0.16735364980323833,0.01760454662144184,82
+behavioral,truthful-qa,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,0,paired difference (delta_z),0.8800232908372115,0.0925728902220726,82
+behavioral,truthful-qa,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,1,paired difference (delta_z),0.8807450914758893,0.09264881908893585,82
+behavioral,truthful-qa,pythia,ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0,diff,rms,2,paired difference (delta_z),0.8792450408698098,0.0924910232424736,82
+behavioral,truthful-qa,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,0,paired difference (delta_z),0.5033161319905525,0.052945684641599655,82
+behavioral,truthful-qa,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,1,paired difference (delta_z),0.5262118560713723,0.05535417050123215,82
+behavioral,truthful-qa,pythia,ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none,diff,rms,2,paired difference (delta_z),0.49997921220121255,0.052594661712646484,82
+behavioral,truthful-qa,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,0,paired difference (delta_z),0.6260748124193322,0.0658591240644455,82
+behavioral,truthful-qa,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,1,paired difference (delta_z),0.6411733412735406,0.06744739413261414,82
+behavioral,truthful-qa,pythia,ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none,diff,rms,2,paired difference (delta_z),0.6838196344336324,0.07193351536989212,82
+synthetic,"synth(3,2)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,synthetic observed difference (delta_z),0.020359644434856865,0.0037339054979383945,10000
+synthetic,"synth(3,2)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,synthetic observed difference (delta_z),1.7999271883693607e-05,3.3169601465488086e-06,10000
+synthetic,"synth(3,2)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,synthetic observed difference (delta_z),8.714566910778442e-05,1.603708733455278e-05,10000
+synthetic,"synth(3,2)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,5,synthetic observed difference (delta_z),8.28255610706429e-08,1.5402951802911957e-08,10000
+synthetic,"synth(3,2)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,7,synthetic observed difference (delta_z),2.981355238270132e-10,5.524268889556261e-11,10000
+synthetic,"synth(3,2)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,0,synthetic observed difference (delta_z),3.206900640506334e-07,5.8813718339933985e-08,10000
+synthetic,"synth(3,2)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,1,synthetic observed difference (delta_z),7.041767755802616e-10,1.2976782148843569e-10,10000
+synthetic,"synth(3,2)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,2,synthetic observed difference (delta_z),9.496234121003697e-10,1.747555988806937e-10,10000
+synthetic,"synth(3,2)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,5,synthetic observed difference (delta_z),7.635724492620018e-08,1.4200048248369512e-08,10000
+synthetic,"synth(3,2)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,7,synthetic observed difference (delta_z),6.952005098324207e-09,1.2881640198969535e-09,10000
+synthetic,"synth(4,3)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,synthetic observed difference (delta_z),9.367289199295118e-05,1.7171141735161655e-05,10000
+synthetic,"synth(4,3)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,synthetic observed difference (delta_z),1.0054294883165223e-05,1.8755433757178253e-06,10000
+synthetic,"synth(4,3)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,synthetic observed difference (delta_z),0.00014748311820864807,2.7383492124499753e-05,10000
+synthetic,"synth(4,3)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,5,synthetic observed difference (delta_z),3.0961265185521483e-06,5.720465310332656e-07,10000
+synthetic,"synth(4,3)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,7,synthetic observed difference (delta_z),0.0003780173583584806,6.986076186876744e-05,10000
+synthetic,"synth(4,3)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,0,synthetic observed difference (delta_z),2.3780166422058006e-07,4.3591331433390224e-08,10000
+synthetic,"synth(4,3)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,1,synthetic observed difference (delta_z),1.1044952355782258e-08,2.060342119136749e-09,10000
+synthetic,"synth(4,3)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,2,synthetic observed difference (delta_z),6.257801543665717e-06,1.1618988082773285e-06,10000
+synthetic,"synth(4,3)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,5,synthetic observed difference (delta_z),8.056681292401503e-07,1.48856855730628e-07,10000
+synthetic,"synth(4,3)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,7,synthetic observed difference (delta_z),1.6789272616069622e-07,3.1027976632458376e-08,10000
+synthetic,"synth(10,7)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,0,synthetic observed difference (delta_z),9.821205539967501e-05,1.4566313438990619e-05,10000
+synthetic,"synth(10,7)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,1,synthetic observed difference (delta_z),2.0497289182827753e-05,3.0418302685575327e-06,10000
+synthetic,"synth(10,7)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,2,synthetic observed difference (delta_z),1.6152916279458915e-09,2.3940069371342076e-10,10000
+synthetic,"synth(10,7)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,5,synthetic observed difference (delta_z),2.3349560668969675e-07,3.4115927860511874e-08,10000
+synthetic,"synth(10,7)",not applicable,ssae_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1,diff,rms,7,synthetic observed difference (delta_z),2.2798581493240304e-07,3.361665790180268e-08,10000
+synthetic,"synth(10,7)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,0,synthetic observed difference (delta_z),5.179372728488172e-06,7.681782676627336e-07,10000
+synthetic,"synth(10,7)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,1,synthetic observed difference (delta_z),5.5895755527391735e-08,8.295018893988981e-09,10000
+synthetic,"synth(10,7)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,2,synthetic observed difference (delta_z),1.1636115387852954e-07,1.724576570438785e-08,10000
+synthetic,"synth(10,7)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,5,synthetic observed difference (delta_z),4.287198352653054e-06,6.264004355216457e-07,10000
+synthetic,"synth(10,7)",not applicable,affine,SSAE Affine (reconstruction-only control),SSAE,linear,penalized,none,diff,rms,7,synthetic observed difference (delta_z),2.6974056108042667e-06,3.9773422599864716e-07,10000

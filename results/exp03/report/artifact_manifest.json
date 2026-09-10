@@ -1,0 +1,399 @@
+{
+  "code_dependencies": [
+    {
+      "path": "experiments/common/reporting.py",
+      "role": "shared_result_helpers",
+      "sha256": "7939e92e772e230a3a44bb95f114c58c7f2b7d2e28eeb4aba57696c16ddf9d89",
+      "size_bytes": 14105
+    },
+    {
+      "path": "experiments/common/style.py",
+      "role": "shared_plot_style",
+      "sha256": "24d0c9155b2f354897736a72a9a36073ba3d1d353f414f32315025190572507d",
+      "size_bytes": 10562
+    },
+    {
+      "path": "ssae/model_spec.py",
+      "role": "canonical_model_identity",
+      "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345",
+      "size_bytes": 11206
+    },
+    {
+      "path": "experiments/common/__init__.py",
+      "role": "result_package_setup",
+      "sha256": "a6c17b00c4efe264e91d07197908fd8b26992ce7ae1eed4761a181a957983686",
+      "size_bytes": 365
+    }
+  ],
+  "commands": {
+    "build": "python3 -m experiments.exp03.report --build",
+    "check": "python3 -m experiments.exp03.report --check"
+  },
+  "conclusion": "The complete matrix contains 90/90 dataset \u00d7 LLM \u00d7 method cells. Positive steering exceeds baseline in 78/90 cells, negative steering falls below baseline in 87/90, and the expected signed ordering holds in 78/90; Gemma and Pythia are reported separately.",
+  "entry_point": "experiments.exp03.report",
+  "experiment_id": "exp03",
+  "figures": [
+    {
+      "caption": "Gemma-2-2B complete 5-dataset \u00d7 9-model signed endpoint matrix. Each model and dataset has one gray no-steering vertex. The red signed-positive ray ends at cos(z0 + \u03b1d, z1); the blue signed-negative control ends at cos(z0 \u2212 \u03b1d, z1). Both rays therefore share one origin and one target. Decoder selection, orientation, and least-squares scale use only concept-labeled cfc_train rows; cfc_test supplies every plotted endpoint. Values average concepts within seed and then three seeds. Population SD across seeds is retained in endpoint_summary.csv and deliberately omitted from this figure. Controls are retained in separate numeric tables to avoid overloading the rays.",
+      "id": "signed_endpoint_rays_gemma",
+      "title": "Gemma-2-2B signed endpoint steering",
+      "variants": [
+        "figures/signed-endpoint-rays-gemma.pdf"
+      ]
+    },
+    {
+      "caption": "Pythia-70M complete 5-dataset \u00d7 9-model signed endpoint matrix. Each model and dataset has one gray no-steering vertex. The red signed-positive ray ends at cos(z0 + \u03b1d, z1); the blue signed-negative control ends at cos(z0 \u2212 \u03b1d, z1). Both rays therefore share one origin and one target. Decoder selection, orientation, and least-squares scale use only concept-labeled cfc_train rows; cfc_test supplies every plotted endpoint. Values average concepts within seed and then three seeds. Population SD across seeds is retained in endpoint_summary.csv and deliberately omitted from this figure. Controls are retained in separate numeric tables to avoid overloading the rays.",
+      "id": "signed_endpoint_rays_pythia",
+      "title": "Pythia-70M signed endpoint steering",
+      "variants": [
+        "figures/signed-endpoint-rays-pythia.pdf"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/conclusion.txt",
+      "role": "conclusion",
+      "sha256": "802dff279071f9fff6aef20c990c0b51751f08c2cfa9d6b457d67bcdbf035912",
+      "size_bytes": 258
+    },
+    {
+      "path": "data/summary.json",
+      "role": "summary",
+      "sha256": "681c88cced3fed0d38aedfa9402e7c471eb270b227927bc4a1697f2a65eeff2c",
+      "size_bytes": 203027
+    },
+    {
+      "path": "figures/signed-endpoint-rays-gemma.pdf",
+      "role": "figure",
+      "sha256": "cc9f38f6ede6ac6c89c2f393b0cbb1c1b8dc8ef8249c3f963a27abbf94dcc220",
+      "size_bytes": 40448
+    },
+    {
+      "path": "figures/signed-endpoint-rays-pythia.pdf",
+      "role": "figure",
+      "sha256": "aa8acb89f364e705ad49089c5272b1131c40163317127bba9bff24901418852d",
+      "size_bytes": 39884
+    },
+    {
+      "path": "tables/endpoint_concept_seed_rows.csv",
+      "role": "table",
+      "sha256": "35f921cebe710b23f32e19eecba2b6f192b5471e6f200656fb2456999ea2ec5b",
+      "size_bytes": 412945
+    },
+    {
+      "path": "tables/endpoint_summary.csv",
+      "role": "table",
+      "sha256": "954a3b20bcd66abfa6ad3186e86a17d9d2fc4c3f14468dfb10e50ea54dc3e068",
+      "size_bytes": 55707
+    },
+    {
+      "path": "tables/matched_random_controls.csv",
+      "role": "table",
+      "sha256": "a70242b00c105232170d0ad4a0c15c5e800147bed00e7c22853e76f4dda44dc4",
+      "size_bytes": 41102
+    },
+    {
+      "path": "tables/mean_difference_controls.csv",
+      "role": "table",
+      "sha256": "bb9e6d0de052b3299c5f6f86e01e33a08e1fd5593032f0b2b1f8737a24a4ab87",
+      "size_bytes": 3875
+    },
+    {
+      "path": "tables/metric_definitions.csv",
+      "role": "table",
+      "sha256": "169b181e629794ef48b75ee1d61410816204a012ea71ed4b4fcdfd68b2dbb734",
+      "size_bytes": 1752
+    }
+  ],
+  "result_counts": {
+    "aggregate_cells": 90,
+    "checkpoint_count": 270,
+    "concept_seed_rows": 378,
+    "datasets": 5,
+    "llms": 2,
+    "matched_random_directions": 37800,
+    "methods": 9
+  },
+  "schema_version": "ssae-result-artifacts-v1",
+  "script": {
+    "path": "experiments/exp03/report.py",
+    "role": "result_builder",
+    "sha256": "1eb3ae27b5bf277d0b92cbf3647e8a21a1f22e72e17353594094ee446c11caec",
+    "size_bytes": 26776
+  },
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "source_provenance": {
+    "data_sources": [
+      {
+        "concept_counts": {
+          "language": {
+            "test_pair_count": 20,
+            "train_pair_count": 80
+          }
+        },
+        "dataset": "eng-french",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "gemma",
+        "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_gemma-2-2b-it_25_last_token.h5",
+        "representation_width": 2304,
+        "sha256": "8ff489b52b7ad03d0788394f6a9050bded48f35748a498018e577b4cd8d62460",
+        "test_labels_sha256": "3642d484d96bdd47b76844af33d4751cd7054d0f4351e7e3fe819f74011efb90",
+        "test_pair_count": 20,
+        "train_labels_sha256": "94656537f0a1231935b4b901dc09c6bafc3e9a3b627ea178d5a75e944b4cf3ae",
+        "train_pair_count": 80
+      },
+      {
+        "concept_counts": {
+          "language": {
+            "test_pair_count": 20,
+            "train_pair_count": 80
+          }
+        },
+        "dataset": "eng-french",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "pythia",
+        "path": "ssae-data://semisynth_heldout_2k_v1/eng-french/eng-french_pythia70m_5_last_token.h5",
+        "representation_width": 512,
+        "sha256": "fb492ded59db89732382abb67d0c080a4809802b5002ba8ad8da521737091e54",
+        "test_labels_sha256": "3642d484d96bdd47b76844af33d4751cd7054d0f4351e7e3fe819f74011efb90",
+        "test_pair_count": 20,
+        "train_labels_sha256": "94656537f0a1231935b4b901dc09c6bafc3e9a3b627ea178d5a75e944b4cf3ae",
+        "train_pair_count": 80
+      },
+      {
+        "concept_counts": {
+          "language": {
+            "test_pair_count": 19,
+            "train_pair_count": 80
+          }
+        },
+        "dataset": "eng-german",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "gemma",
+        "path": "ssae-data://semisynth_heldout_2k_v1/eng-german/eng-german_gemma-2-2b-it_25_last_token.h5",
+        "representation_width": 2304,
+        "sha256": "78525412d57f8c0c72dd9e3b572c6e4e294a47f30057eb2154fa3ac81e54454c",
+        "test_labels_sha256": "b8867aab7310f2815406f2da7d9950c30a714ad1cfec33570cc1cd1e9d095b5f",
+        "test_pair_count": 19,
+        "train_labels_sha256": "94656537f0a1231935b4b901dc09c6bafc3e9a3b627ea178d5a75e944b4cf3ae",
+        "train_pair_count": 80
+      },
+      {
+        "concept_counts": {
+          "language": {
+            "test_pair_count": 19,
+            "train_pair_count": 80
+          }
+        },
+        "dataset": "eng-german",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "pythia",
+        "path": "ssae-data://semisynth_heldout_2k_v1/eng-german/eng-german_pythia70m_5_last_token.h5",
+        "representation_width": 512,
+        "sha256": "630835d082e57ea13e2cadbf1cf756434d4501edd059630b91303b8ba82d895b",
+        "test_labels_sha256": "b8867aab7310f2815406f2da7d9950c30a714ad1cfec33570cc1cd1e9d095b5f",
+        "test_pair_count": 19,
+        "train_labels_sha256": "94656537f0a1231935b4b901dc09c6bafc3e9a3b627ea178d5a75e944b4cf3ae",
+        "train_pair_count": 80
+      },
+      {
+        "concept_counts": {
+          "gender": {
+            "test_pair_count": 20,
+            "train_pair_count": 77
+          }
+        },
+        "dataset": "masc-fem-eng",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "gemma",
+        "path": "ssae-data://semisynth_heldout_2k_v1/masc-fem-eng/masc-fem-eng_gemma-2-2b-it_25_last_token.h5",
+        "representation_width": 2304,
+        "sha256": "ce8f07b7c57970a7eeffd845f74153e09dccf3ec4e5ed7d76f1a3418b83c7b00",
+        "test_labels_sha256": "f21b5fb015b9412becf0d2069af1bf94c545ecdf2889f27fae1308bb89156137",
+        "test_pair_count": 20,
+        "train_labels_sha256": "ef3c3b6d848e7d4e2748b366099abf4cf22165fc0c2c982e828efc42d34c4414",
+        "train_pair_count": 77
+      },
+      {
+        "concept_counts": {
+          "gender": {
+            "test_pair_count": 20,
+            "train_pair_count": 77
+          }
+        },
+        "dataset": "masc-fem-eng",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "pythia",
+        "path": "ssae-data://semisynth_heldout_2k_v1/masc-fem-eng/masc-fem-eng_pythia70m_5_last_token.h5",
+        "representation_width": 512,
+        "sha256": "3f63b84fb93ccbee89eef99c30a41d4b7ad393151c38df03cc1c586dffe5a9cb",
+        "test_labels_sha256": "f21b5fb015b9412becf0d2069af1bf94c545ecdf2889f27fae1308bb89156137",
+        "test_pair_count": 20,
+        "train_labels_sha256": "ef3c3b6d848e7d4e2748b366099abf4cf22165fc0c2c982e828efc42d34c4414",
+        "train_pair_count": 77
+      },
+      {
+        "concept_counts": {
+          "gender": {
+            "test_pair_count": 36,
+            "train_pair_count": 231
+          },
+          "language": {
+            "test_pair_count": 35,
+            "train_pair_count": 231
+          }
+        },
+        "dataset": "2-binary",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "gemma",
+        "path": "ssae-data://semisynth_heldout_2k_v1/2-binary/2-binary_gemma-2-2b-it_25_last_token.h5",
+        "representation_width": 2304,
+        "sha256": "2ac7771f0c9f70f2f4a86955a0a1186bd39f41dd3554cfbc0eb3e1ba4be85048",
+        "test_labels_sha256": "bfe413d9aeb215cdd91dbe83a65a8443498be6757030af08ccb4316c7c3e62f6",
+        "test_pair_count": 71,
+        "train_labels_sha256": "25dabac0ca952b922e22ae6aba7385305bba11f13496253581dce8e150756aa4",
+        "train_pair_count": 385
+      },
+      {
+        "concept_counts": {
+          "gender": {
+            "test_pair_count": 36,
+            "train_pair_count": 231
+          },
+          "language": {
+            "test_pair_count": 35,
+            "train_pair_count": 231
+          }
+        },
+        "dataset": "2-binary",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "pythia",
+        "path": "ssae-data://semisynth_heldout_2k_v1/2-binary/2-binary_pythia70m_5_last_token.h5",
+        "representation_width": 512,
+        "sha256": "14e8083936ba18c651628032bb384e931901d697a24596a15ce333d62024be41",
+        "test_labels_sha256": "bfe413d9aeb215cdd91dbe83a65a8443498be6757030af08ccb4316c7c3e62f6",
+        "test_pair_count": 71,
+        "train_labels_sha256": "25dabac0ca952b922e22ae6aba7385305bba11f13496253581dce8e150756aa4",
+        "train_pair_count": 385
+      },
+      {
+        "concept_counts": {
+          "language_french": {
+            "test_pair_count": 20,
+            "train_pair_count": 80
+          },
+          "language_german": {
+            "test_pair_count": 19,
+            "train_pair_count": 80
+          }
+        },
+        "dataset": "corr-binary",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "gemma",
+        "path": "ssae-data://semisynth_heldout_2k_v1/corr-binary/corr-binary_gemma-2-2b-it_25_last_token.h5",
+        "representation_width": 2304,
+        "sha256": "1c7cda640cdc604c132598cb791da603d499aef4d4478267c25276472d51e2d4",
+        "test_labels_sha256": "c62d846d584ada4a19751d5dd1c0bfc4341396725759aa4ca7d7a7ef55f015d9",
+        "test_pair_count": 39,
+        "train_labels_sha256": "91edec48700a5bc6f7ca7d7de87ebda623737d1f711623dc1e870d308b8197bc",
+        "train_pair_count": 160
+      },
+      {
+        "concept_counts": {
+          "language_french": {
+            "test_pair_count": 20,
+            "train_pair_count": 80
+          },
+          "language_german": {
+            "test_pair_count": 19,
+            "train_pair_count": 80
+          }
+        },
+        "dataset": "corr-binary",
+        "endpoint_order": "canonical negative/source then positive/target",
+        "llm": "pythia",
+        "path": "ssae-data://semisynth_heldout_2k_v1/corr-binary/corr-binary_pythia70m_5_last_token.h5",
+        "representation_width": 512,
+        "sha256": "dcac1b994744fd857eb31426009d73dce4b05b8ca20e68efd0cc6ea1af17e35a",
+        "test_labels_sha256": "c62d846d584ada4a19751d5dd1c0bfc4341396725759aa4ca7d7a7ef55f015d9",
+        "test_pair_count": 39,
+        "train_labels_sha256": "91edec48700a5bc6f7ca7d7de87ebda623737d1f711623dc1e870d308b8197bc",
+        "train_pair_count": 160
+      }
+    ],
+    "inventory": {
+      "path": "results/shared/identification/ssae_rms_v3/results_bundle.json",
+      "protocol_id": "ssae_delta_rms_antipodal_v2",
+      "sha256": "496f393d26cfd4a30044ea2d9a628fbda84bab0147565fbde9f59db2b947d797",
+      "study_id": "ssae_rms_global_matrix_v3"
+    },
+    "llm_aggregation": "none",
+    "protocol": {
+      "concept_aggregation": "equal concept weight within seed",
+      "direction_selection": "within each persisted concept label, choose the decoder column and sign with maximum absolute cosine to the cfc_train mean delta",
+      "directionality_criterion": "positive cosine > baseline cosine > negative cosine",
+      "evaluation_split": "cfc_test",
+      "llm_aggregation": "none",
+      "negative_intervention": "z0 - calibrated vector, scored against z1",
+      "origin": "z0 for baseline, positive, and negative conditions",
+      "positive_intervention": "z0 + calibrated vector, scored against z1",
+      "random_control": "100 isotropic Gaussian directions independently matched to each learned calibrated-vector norm",
+      "random_seed": 20260902,
+      "scale": "concept-specific cfc_train least-squares scalar",
+      "seed_aggregation": "equal weight over seeds 0, 1, and 2",
+      "source_hash_verification_performed": true,
+      "source_split": "cfc_train",
+      "target": "paired z1 for baseline, positive, and negative conditions"
+    },
+    "study_id": "exp03_signed_endpoint_steering_v1",
+    "uncertainty": "population standard deviation across three concept-balanced seed means; reported in tables, intentionally omitted from the ray figure"
+  },
+  "sources": [
+    {
+      "path": "results/exp03/frozen/signed_endpoint_v1/bundle.json",
+      "role": "signed_endpoint_bundle",
+      "sha256": "419a2efcfb20ec0af0f61ff705586cb64374547d9413a22111e77725c371ae6f",
+      "size_bytes": 1271450
+    },
+    {
+      "path": "experiments/exp03/run.py",
+      "role": "signed_endpoint_evaluator",
+      "sha256": "41e35b816bf90ba4b92199aee9d7c36a3fafd03849719c1d39adb7c00c215d12",
+      "size_bytes": 29548
+    },
+    {
+      "path": "results/shared/identification/ssae_rms_v3/results_bundle.json",
+      "role": "frozen_checkpoint_inventory",
+      "sha256": "496f393d26cfd4a30044ea2d9a628fbda84bab0147565fbde9f59db2b947d797",
+      "size_bytes": 5535550
+    }
+  ],
+  "tables": [
+    {
+      "id": "endpoint_concept_seed_rows",
+      "path": "tables/endpoint_concept_seed_rows.csv"
+    },
+    {
+      "id": "endpoint_summary",
+      "path": "tables/endpoint_summary.csv"
+    },
+    {
+      "id": "mean_difference_controls",
+      "path": "tables/mean_difference_controls.csv"
+    },
+    {
+      "id": "matched_random_controls",
+      "path": "tables/matched_random_controls.csv"
+    },
+    {
+      "id": "metric_definitions",
+      "path": "tables/metric_definitions.csv"
+    }
+  ],
+  "title": "Complete held-out signed endpoint steering"
+}

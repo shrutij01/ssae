@@ -1,0 +1,337 @@
+dataset,llm,model_name,family,method,input_regime,term,left_seed,right_seed,cosine
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,1,0.981717900909988
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,2,0.980487312397056
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,1,2,0.9808867232551268
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,1,0.9916989458240548
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,2,0.9907938862080715
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,1,2,0.9909209676485158
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender × language,0,1,0.8893551695438152
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender × language,0,2,0.8873933612022363
+2-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender × language,1,2,0.8908075039887142
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,1,0.9999999132918481
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,2,0.9999999132924495
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,1,2,0.9999999132892392
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,1,0.9999998676691785
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,2,0.9999998676662628
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,1,2,1.0
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender × language,0,1,0.6689610310743829
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender × language,0,2,0.6361759748386097
+2-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender × language,1,2,0.6228180832823801
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,1,0.9397901287839792
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,2,0.9396234333890313
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,1,2,0.9432474704164798
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,1,0.8920615902753338
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,2,0.8932950838735799
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,1,2,0.8954114085221816
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender × language,0,1,0.831984608485041
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender × language,0,2,0.8393583232220263
+2-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender × language,1,2,0.8265162026616876
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,1,0.9999726329025179
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,2,0.9999553016748874
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,1,2,0.9999378346761355
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,1,0.9999974602730263
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,2,0.9999981658026892
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,1,2,0.9999978830444136
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender × language,0,1,0.8922996350995787
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender × language,0,2,0.9942821870069779
+2-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender × language,1,2,0.9235257154649615
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,1,0.7124577486025581
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,2,0.6695361968466602
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,1,2,0.6892610522150433
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,1,0.9059245876457527
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,2,0.8773530736549082
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,1,2,0.877851926638396
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender × language,0,1,0.28766109115853145
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender × language,0,2,0.22208369025558547
+2-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender × language,1,2,0.2972604632747967
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,1,0.9970115992639996
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,2,0.9976817466369617
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,1,2,0.9980520278684609
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,1,0.9998578118387704
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,2,0.9998439674107403
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,1,2,0.9998238419013883
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender × language,0,1,0.5553945179091431
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender × language,0,2,0.5943529688775054
+2-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender × language,1,2,0.5984014582630911
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,1,0.9988639164320399
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,2,0.9993293758247743
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,1,2,0.9976465578272421
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,1,0.9996452874197996
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,2,0.9996153502875289
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,1,2,0.9996902938739892
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender × language,0,1,0.9899246863210279
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender × language,0,2,0.9886555642676502
+2-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender × language,1,2,0.9840734093267522
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,1,0.9906377462059616
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,2,0.9910918548176205
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,1,2,0.9905853340102996
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,1,0.9953752173918254
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,2,0.9959889589350349
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,1,2,0.996108830856512
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender × language,0,1,0.6647787030919005
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender × language,0,2,0.6378795611471634
+2-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender × language,1,2,0.6685490001179362
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,1,0.9999997800510237
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,2,0.999999780042896
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,1,2,0.9999997800412511
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,1,0.9999999244808758
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,2,1.0000000755176186
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,1,2,1.0
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender × language,0,1,0.609471283520384
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender × language,0,2,0.5757595223187131
+2-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender × language,1,2,0.6084108141397244
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,1,0.9341084652354361
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,2,0.9381073032283009
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,1,2,0.9397327583591136
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,1,0.8980439246808947
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,2,0.9031597659673292
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,1,2,0.9106840528631945
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender × language,0,1,0.9558308268314915
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender × language,0,2,0.9532774912683704
+2-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender × language,1,2,0.9579098126484829
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,1,1.000000113596321
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,2,1.0
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,1,2,1.0
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,1,1.0
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,2,1.0
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,1,2,1.0000000780129112
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender × language,0,1,0.3529443833093735
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender × language,0,2,0.8763172499762419
+2-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender × language,1,2,0.5599875817527934
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,1,0.9537645080569848
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,2,0.9439992978669188
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,1,2,0.9508468648503815
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,1,0.9682170451502263
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,2,0.9635580907645666
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,1,2,0.9584805154841096
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender × language,0,1,0.24524307203844478
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender × language,0,2,0.36632336393535203
+2-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender × language,1,2,0.15435519941626388
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,1,0.9966250097357644
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,2,0.9962710409838303
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,1,2,0.9960712914010359
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,1,0.9991725991273854
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,2,0.9991519922325288
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,1,2,0.9987069180568451
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender × language,0,1,-0.09567137612652853
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender × language,0,2,0.17777297188001687
+2-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender × language,1,2,0.13692404260518623
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,1,0.9107028302550294
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,2,0.9009638745780262
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,1,2,0.8849033568892412
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,1,0.9476854435754513
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,2,0.9428132159537981
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,1,2,0.9337639559202614
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender × language,0,1,0.7598311645184578
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender × language,0,2,0.7206291982108124
+2-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender × language,1,2,0.7140297411724597
+corr-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_french,0,1,0.9438766848008243
+corr-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_french,0,2,0.9364529962613836
+corr-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_french,1,2,0.9340311389322834
+corr-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_german,0,1,0.9550642456268708
+corr-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_german,0,2,0.9415731984598946
+corr-binary,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_german,1,2,0.9440314529574241
+corr-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_french,0,1,1.0
+corr-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_french,0,2,1.0
+corr-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_french,1,2,1.0
+corr-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_german,0,1,1.0000000775246203
+corr-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_german,0,2,1.0
+corr-binary,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_german,1,2,1.000000077518875
+corr-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_french,0,1,0.9846467778039454
+corr-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_french,0,2,0.9845427286212554
+corr-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_french,1,2,0.9835890453859036
+corr-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_german,0,1,0.9856533316633038
+corr-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_german,0,2,0.9855408678442042
+corr-binary,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_german,1,2,0.9841014912955512
+corr-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_french,0,1,0.9999966185139021
+corr-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_french,0,2,0.9999993961001841
+corr-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_french,1,2,0.9999954692725156
+corr-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_german,0,1,0.9999938562857447
+corr-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_german,0,2,0.9999965580521788
+corr-binary,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_german,1,2,0.999994427702513
+corr-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_french,0,1,0.9346199972038726
+corr-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_french,0,2,0.8950233854747076
+corr-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_french,1,2,0.8787858372394225
+corr-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_german,0,1,0.8915282123797835
+corr-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_german,0,2,0.8612803903060002
+corr-binary,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_german,1,2,0.8726575184126284
+corr-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_french,0,1,0.9998807109079322
+corr-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_french,0,2,0.9997961452715016
+corr-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_french,1,2,0.9998217863637556
+corr-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_german,0,1,0.9998785679596395
+corr-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_german,0,2,0.9998144623369082
+corr-binary,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_german,1,2,0.9997946867203621
+corr-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_french,0,1,0.998986592911961
+corr-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_french,0,2,0.9989771977863782
+corr-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_french,1,2,0.998789997922413
+corr-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_german,0,1,0.9989106574130966
+corr-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_german,0,2,0.999425285735637
+corr-binary,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_german,1,2,0.999578555173013
+corr-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_french,0,1,0.9881919803416204
+corr-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_french,0,2,0.9889001990840391
+corr-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_french,1,2,0.9906831060143999
+corr-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_german,0,1,0.9875201977369744
+corr-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_german,0,2,0.9881893771377832
+corr-binary,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language_german,1,2,0.9896833742866564
+corr-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_french,0,1,0.9999999239211467
+corr-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_french,0,2,0.9999999239192482
+corr-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_french,1,2,0.9999999239197518
+corr-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_german,0,1,0.9999999219583887
+corr-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_german,0,2,0.999999843912453
+corr-binary,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language_german,1,2,0.9999999219582182
+corr-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_french,0,1,0.9911400652693972
+corr-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_french,0,2,0.9886231196730116
+corr-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_french,1,2,0.9894863783713557
+corr-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_german,0,1,0.9908135038636648
+corr-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_german,0,2,0.9886687929802295
+corr-binary,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language_german,1,2,0.9895291198881593
+corr-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_french,0,1,1.0
+corr-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_french,0,2,0.9999999217773317
+corr-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_french,1,2,1.0000000782226377
+corr-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_german,0,1,1.000000080271723
+corr-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_german,0,2,0.999999919724952
+corr-binary,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language_german,1,2,1.0
+corr-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_french,0,1,0.8493530228745819
+corr-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_french,0,2,0.7808331408098605
+corr-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_french,1,2,0.8210128437207767
+corr-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_german,0,1,0.8725962056817689
+corr-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_german,0,2,0.8756228735506808
+corr-binary,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language_german,1,2,0.8615660386088999
+corr-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_french,0,1,0.9998211650074162
+corr-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_french,0,2,0.999831194380432
+corr-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_french,1,2,0.999858461831291
+corr-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_german,0,1,0.9998813134602093
+corr-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_german,0,2,0.9997906682435596
+corr-binary,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language_german,1,2,0.999749074825684
+corr-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_french,0,1,0.9852074853400841
+corr-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_french,0,2,0.9829735419193961
+corr-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_french,1,2,0.983655751902662
+corr-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_german,0,1,0.9870002571385013
+corr-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_german,0,2,0.9837375679266043
+corr-binary,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language_german,1,2,0.9846534794867504
+eng-french,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,1,0.7578830529563523
+eng-french,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,2,0.7531326676308725
+eng-french,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,1,2,0.7526111820734703
+eng-french,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,1,0.9999998806091607
+eng-french,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,2,0.9999999403047336
+eng-french,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,1,2,0.9999998209151415
+eng-french,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,1,0.8930422672746339
+eng-french,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,2,0.8973232326219074
+eng-french,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,1,2,0.8960782976017825
+eng-french,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,1,0.9999914855753663
+eng-french,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,2,0.9999917987897411
+eng-french,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,1,2,0.9999914878387698
+eng-french,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,1,0.9797513409440862
+eng-french,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,2,0.9832523268059522
+eng-french,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,1,2,0.9822014980070782
+eng-french,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,1,0.9999182560998094
+eng-french,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,2,0.9999345131844696
+eng-french,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,1,2,0.9999035877901951
+eng-french,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,1,0.9993694633221456
+eng-french,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,2,0.999301251793312
+eng-french,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,1,2,0.9995565368755372
+eng-french,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,1,0.980497753220449
+eng-french,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,2,0.9807910722943513
+eng-french,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,1,2,0.9835961644513489
+eng-french,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,1,1.0
+eng-french,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,2,1.0
+eng-french,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,1,2,0.9999999238555122
+eng-french,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,1,0.9838391747857721
+eng-french,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,2,0.9873400124972983
+eng-french,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,1,2,0.9862107812894155
+eng-french,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,1,0.999999063422675
+eng-french,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,2,0.9999985948764042
+eng-french,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,1,2,0.9999984392161306
+eng-french,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,1,0.9198968706743271
+eng-french,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,2,0.9210254087078241
+eng-french,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,1,2,0.916352508855835
+eng-french,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,1,0.9999858277443088
+eng-french,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,2,0.9999960393511786
+eng-french,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,1,2,0.9999899396968663
+eng-french,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,1,0.8962711951478407
+eng-french,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,2,0.902835327826727
+eng-french,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,1,2,0.9339735072636622
+eng-german,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,1,0.8235569701481152
+eng-german,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,2,0.8326526783600731
+eng-german,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,1,2,0.8245464744548334
+eng-german,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,1,0.9999999256421157
+eng-german,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,2,0.9999998512841981
+eng-german,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,1,2,0.9999999256421267
+eng-german,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,1,0.9329756052125789
+eng-german,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,2,0.9247393975056631
+eng-german,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,1,2,0.9293772878455011
+eng-german,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,1,0.9999885988120906
+eng-german,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,2,0.9999887694674018
+eng-german,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,1,2,0.999988845494546
+eng-german,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,1,0.9828394584820882
+eng-german,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,2,0.9825702553362662
+eng-german,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,1,2,0.9813431325208449
+eng-german,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,1,0.9998956257808497
+eng-german,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,2,0.9999021636115842
+eng-german,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,1,2,0.9998787648560554
+eng-german,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,1,0.9997366741509062
+eng-german,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,2,0.9995463589126281
+eng-german,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,1,2,0.9995987434048256
+eng-german,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,1,0.9790183514004325
+eng-german,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,0,2,0.9790221371047432
+eng-german,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,language,1,2,0.9826185547003946
+eng-german,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,1,0.999999922026646
+eng-german,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,0,2,0.9999998440505439
+eng-german,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,language,1,2,0.9999999220232351
+eng-german,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,1,0.9797252140510658
+eng-german,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,0,2,0.9843188368470072
+eng-german,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,language,1,2,0.9814908914118414
+eng-german,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,1,0.9999942403584801
+eng-german,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,0,2,0.999994802840975
+eng-german,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,language,1,2,0.999999200818362
+eng-german,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,1,0.9064667660432919
+eng-german,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,0,2,0.9380240618959645
+eng-german,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,language,1,2,0.9130660831192835
+eng-german,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,1,0.9999971155335612
+eng-german,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,0,2,0.9999929798648484
+eng-german,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,language,1,2,0.9999925106933257
+eng-german,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,1,0.9856615012263411
+eng-german,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,0,2,0.987943106172288
+eng-german,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,language,1,2,0.9905730527185159
+masc-fem-eng,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,1,0.9088831773432698
+masc-fem-eng,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,2,0.9086382296947693
+masc-fem-eng,gemma-2-2b-it,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,1,2,0.9106751528665117
+masc-fem-eng,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,1,1.0
+masc-fem-eng,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,2,0.9999999174244283
+masc-fem-eng,gemma-2-2b-it,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,1,2,1.0
+masc-fem-eng,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,1,0.9691329840519284
+masc-fem-eng,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,2,0.967958964482968
+masc-fem-eng,gemma-2-2b-it,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,1,2,0.967798517913073
+masc-fem-eng,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,1,0.9996283968979444
+masc-fem-eng,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,2,0.9996283463547033
+masc-fem-eng,gemma-2-2b-it,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,1,2,0.9996190096230322
+masc-fem-eng,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,1,0.8724412478922297
+masc-fem-eng,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,2,0.8736960387903866
+masc-fem-eng,gemma-2-2b-it,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,1,2,0.8780966358821388
+masc-fem-eng,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,1,0.9978206412783318
+masc-fem-eng,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,2,0.997422026292439
+masc-fem-eng,gemma-2-2b-it,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,1,2,0.997122131090899
+masc-fem-eng,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,1,0.9838961201737924
+masc-fem-eng,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,2,0.9844715424170177
+masc-fem-eng,gemma-2-2b-it,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,1,2,0.9855191677887355
+masc-fem-eng,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,1,0.9672889851711681
+masc-fem-eng,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,0,2,0.9679114568338998
+masc-fem-eng,pythia-70m-deduped,sae_jumprelu_diff_g0.001_e2000_absolute_innone,SSAE,JumpReLU,diff,gender,1,2,0.9711903189453052
+masc-fem-eng,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,1,0.9999996187266958
+masc-fem-eng,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,0,2,0.9999995551728913
+masc-fem-eng,pythia-70m-deduped,sae_jumprelu_raw_g0.001_e2000_absolute_innone,SAE,JumpReLU,raw,gender,1,2,0.9999997458122892
+masc-fem-eng,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,1,0.9750529190648438
+masc-fem-eng,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,0,2,0.973966002858843
+masc-fem-eng,pythia-70m-deduped,sae_relu_diff_g0.001_e2000_absolute_innone,SSAE,ReLU,diff,gender,1,2,0.9767606447558085
+masc-fem-eng,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,1,0.9999969796119208
+masc-fem-eng,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,0,2,0.9999940219648776
+masc-fem-eng,pythia-70m-deduped,sae_relu_raw_g0.001_e2000_absolute_innone,SAE,ReLU,raw,gender,1,2,0.9999959950719689
+masc-fem-eng,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,1,0.9198412938490725
+masc-fem-eng,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,0,2,0.9225455595750447
+masc-fem-eng,pythia-70m-deduped,sae_topk_diff_g0.001_e2000_absolute_innone,SSAE,TopK,diff,gender,1,2,0.9259503871192076
+masc-fem-eng,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,1,0.9997805786834135
+masc-fem-eng,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,0,2,0.9996723843728623
+masc-fem-eng,pythia-70m-deduped,sae_topk_raw_g0.001_e2000_absolute_innone,SAE,TopK,raw,gender,1,2,0.9996182163550927
+masc-fem-eng,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,1,0.8840104312000353
+masc-fem-eng,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,0,2,0.8512377579545098
+masc-fem-eng,pythia-70m-deduped,ssae_l1_ln_t0.005_d2_e2000_absolute_instandardize,SSAE,Linear const.,diff,gender,1,2,0.8201085984302141

@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Held-out MCC-S for behavioral data (gemma).}
+\label{tab:behavioral-gemma-mcc-s}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+bias-in-bios & 0.224 ± 0.003 & 0.194 ± 0.000 & 0.205 ± 0.001 & 0.343 ± 0.003 & 0.147 ± 0.005 & 0.437 ± 0.005 & 0.419 ± 0.005 & 0.216 ± 0.002 & 0.393 ± 0.008 \\
+refusal & 0.586 ± 0.341 & 0.513 ± 0.310 & 0.792 ± 0.040 & 0.113 ± 0.136 & 0.685 ± 0.158 & 0.384 ± 0.076 & 0.620 ± 0.055 & 0.558 ± 0.099 & 0.381 ± 0.269 \\
+sycophancy & 0.353 ± 0.138 & 0.054 ± 0.039 & 0.671 ± 0.049 & 0.135 ± 0.100 & 0.177 ± 0.074 & 0.213 ± 0.140 & 0.187 ± 0.068 & 0.173 ± 0.122 & 0.154 ± 0.071 \\
+truthful-qa & 0.332 ± 0.108 & 0.646 ± 0.028 & 0.613 ± 0.039 & 0.126 ± 0.022 & 0.370 ± 0.091 & 0.419 ± 0.044 & 0.182 ± 0.027 & 0.484 ± 0.054 & 0.469 ± 0.061 \\
+\bottomrule
+\end{tabular}
+\end{table}

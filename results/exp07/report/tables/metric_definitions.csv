@@ -1,0 +1,9 @@
+metric,role,definition,direction
+target_self_cosine_mean,target preservation,Mean cosine between each original French activation and French + m(alpha d).,higher is better
+french_retention_accuracy,language retention,Fraction classified French by a fixed-C L2 logistic probe fit only on training endpoints.,higher is better
+french_probability_mean,language retention,Mean French probability from the train-only language probe.,higher is better
+semantic_pair_mrr,semantic proxy,Mean reciprocal rank of the paired English activation among held-out English endpoints by cosine.,higher is better
+semantic_geometry_correlation,semantic proxy,Correlation between original and steered within-French pairwise-cosine geometry.,higher is better
+semantic_geometry_mae,semantic proxy,Mean absolute change in within-French pairwise cosine geometry.,lower is better
+total_relative_drift,intervention magnitude,Shift norm divided by mean held-out French activation norm.,lower means less movement
+off_axis_relative_drift,off-target proxy,"Shift orthogonal to the train mean English-to-French axis, divided by mean French activation norm.",lower is better

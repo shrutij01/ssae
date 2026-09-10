@@ -1,0 +1,1 @@
+Across 39 separately scaled dataset, LLM, and reconstruction-target cells, SAE JumpReLU (penalized) has the lowest mean NMSE in 18; raw-activation and delta_z targets are never compared on one axis.

@@ -1,0 +1,13 @@
+{
+  "audited_at_utc": "2026-08-12T19:51:11.198697+00:00",
+  "completed_model_groups": 70,
+  "completed_workers": 210,
+  "expected_model_groups": 70,
+  "expected_workers": 210,
+  "schema_version": "semisynth-feature-atlas-study-v3",
+  "status": "complete",
+  "study_id": "semisynth_feature_atlas_v3",
+  "v2_artifacts_modified": false,
+  "zero_selected_groups": 1,
+  "zero_stable_atom_groups": 41
+}

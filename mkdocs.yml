@@ -1,0 +1,171 @@
+site_name: SSAE
+site_description: Sparse Shift Autoencoders learn identifiable concept directions from paired changes in language-model activations
+site_author: Shruti Joshi
+site_url: https://shrutij01.github.io/ssae/
+
+repo_url: https://github.com/shrutij01/ssae
+repo_name: shrutij01/ssae
+
+exclude_docs: |
+  # Internal compatibility stubs and protocols without code-backed results are
+  # intentionally absent from the public site. Keep them in the repository
+  # until their experiments satisfy the publication contract.
+  eval/concept-mapping.md
+  eval/diagnostics.md
+  eval/identifiability.md
+  eval/similarity.md
+  eval/axbench.md
+  eval/saebench.md
+  evidence/training-dynamics.md
+  notes/model-atlas.md
+  notes/representation-similarity.md
+  notes/text-generation.md
+  getting-started/cluster.md
+  guide/sae-baselines.md
+  guide/online-training.md
+  tutorials/first-ssae.md
+  tutorials/concept-probing.md
+  tutorials/comparison.md
+  block-graph-experiment.md
+  posthoc-ssae-block-discovery.md
+  step-l0-cross-dataset-progress.md
+  step-l0-estimator-progress.md
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/identifiability-guard.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - def_list
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+            heading_level: 3
+            docstring_style: google
+            docstring_options:
+              warn_missing_types: false
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/shrutij01/ssae
+      name: GitHub Repository
+
+nav:
+  - Home: index.md
+  - Results: results/index.md
+  - Repository Structure: STRUCTURE.md
+  - Guide:
+    - Guide Overview: guide/index.md
+    - Start Here:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quickstart.md
+    - The Method: guide/method.md
+    - Build an Experiment:
+      - Extracting Embeddings: guide/embeddings.md
+      - Semi-Synthetic Data: guide/semi-synthetic.md
+      - Training SSAEs: guide/training.md
+    - Metric Handbook:
+      - Choose a Metric: guide/metrics.md
+      - Concept Recovery: guide/metrics-concept-recovery.md
+      - Reconstruction & Geometry: guide/metrics-reconstruction.md
+      - Sparsity & Stability: guide/metrics-sparsity-stability.md
+    - Steering Walkthrough: tutorials/steering.md
+  - Design Notes:
+    - Overview: design-notes/index.md
+    - Antipodal Latents: design-notes/antipodal-latents.md
+    - Normalisation: design-notes/normalisation.md
+    - Constrained Optimisers: design-notes/constrained-optimisers.md
+    - Augmented Lagrangian: design-notes/augmented-lagrangian.md
+  - Evidence:
+    - Evidence Overview: eval/overview.md
+    - Reconstruction Error: evidence/reconstruction.md
+    - Recovering Concepts: notes/evaluating-identifiability.md
+    - Held-out Steering: evidence/heldout-steering.md
+    - OOD Steering Transfer: evidence/ood-transfer.md
+    - Feature Stability: evidence/feature-stability.md
+    - Synthetic Identification: evidence/synthetic-identification.md
+    - Target-side Overshoot: evidence/target-overshoot.md
+  - Findings:
+    - Normalization and Linear Identification: findings/normalization-and-linear-identification.md
+    - Nonlinear SSAE Realized Capacity: findings/nonlinear-ssae-realized-capacity.md
+  - Theory & Notes:
+    - Theory & Notes Overview: notes/index.md
+    - Why Learn a Shift?: theory/shift-observation-model.md
+    - Identifiability: theory/identifiability.md
+    - Sufficient Variability: theory/sufficient-variability.md
+    - Constrained Sparsity: theory/constrained-optimisation.md
+    - Limits & Open Questions: theory/limits-open-questions.md
+  - API Reference:
+    - ssae.model: api/model.md
+    - ssae.constraints: api/constraints.md
+    - ssae.training: api/training.md
+    - ssae.config: api/config.md
+    - ssae.data: api/data.md
+    - ssae.tracking: api/tracking.md
+    - eval.concept_mapping: api/concept-mapping.md
+    - eval.common: api/common.md

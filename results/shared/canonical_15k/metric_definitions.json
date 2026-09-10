@@ -1,0 +1,147 @@
+{
+  "mcc_p": {
+    "display_name": "MCC-P",
+    "higher_is_better": true,
+    "definition": "Hungarian-matched absolute Pearson correlation.",
+    "protocol": "code(raw cfc_test z) vs pooled base/counterfactual factor"
+  },
+  "mcc_s": {
+    "display_name": "MCC-S",
+    "higher_is_better": true,
+    "definition": "Hungarian-matched absolute Spearman correlation.",
+    "protocol": "code(raw cfc_test z) vs pooled base/counterfactual factor"
+  },
+  "dci_d": {
+    "display_name": "DCI-D",
+    "higher_is_better": true,
+    "definition": "DCI disentanglement from gradient-boosted-tree importances.",
+    "protocol": "80/20 seeded split within cfc_test; one factor makes DCI-D trivially 1"
+  },
+  "dci_c": {
+    "display_name": "DCI-C",
+    "higher_is_better": true,
+    "definition": "DCI completeness from gradient-boosted-tree importances.",
+    "protocol": "80/20 seeded split within cfc_test"
+  },
+  "dci_i": {
+    "display_name": "DCI-I",
+    "higher_is_better": true,
+    "definition": "DCI informativeness (held-out classification accuracy).",
+    "protocol": "80/20 seeded split within cfc_test"
+  },
+  "r2": {
+    "display_name": "R\u00b2",
+    "higher_is_better": true,
+    "definition": "Linear explicitness of factors from the full learned code.",
+    "protocol": "in-sample on cfc_test, matching the repository's canonical R2 metric",
+    "caveat": "With 2304 codes and fewer test rows, this can saturate at 1."
+  },
+  "sae_auc": {
+    "display_name": "SAE AUC",
+    "higher_is_better": true,
+    "definition": "Hungarian-matched feature ROC-AUC.",
+    "protocol": "code(raw cfc_test z) vs pooled base/counterfactual factor"
+  },
+  "decoder_projection_mcc_p": {
+    "display_name": "Decoder projection MCC-P",
+    "higher_is_better": true,
+    "definition": "Best Pearson MCC after projecting raw embeddings onto decoder atoms.",
+    "protocol": "raw cfc_test z"
+  },
+  "support_precision": {
+    "display_name": "Support precision",
+    "higher_is_better": true,
+    "definition": "Precision of the MCC-matched feature's binary support.",
+    "protocol": "raw cfc_test codes; |code| > 0.1"
+  },
+  "support_recall": {
+    "display_name": "Support recall",
+    "higher_is_better": true,
+    "definition": "Recall of the MCC-matched feature's binary support.",
+    "protocol": "raw cfc_test codes; |code| > 0.1"
+  },
+  "support_f1": {
+    "display_name": "Support F1",
+    "higher_is_better": true,
+    "definition": "F1 of the MCC-matched feature's binary support.",
+    "protocol": "raw cfc_test codes; |code| > 0.1"
+  },
+  "reconstruction_mse": {
+    "display_name": "Reconstruction MSE",
+    "higher_is_better": false,
+    "definition": "Mean squared reconstruction error.",
+    "protocol": "cfc_test inputs in the model's training regime (raw or delta-z)"
+  },
+  "reconstruction_nmse": {
+    "display_name": "Reconstruction NMSE",
+    "higher_is_better": false,
+    "definition": "MSE divided by mean squared input magnitude.",
+    "protocol": "cfc_test inputs in the model's training regime (raw or delta-z)"
+  },
+  "reconstruction_cosine": {
+    "display_name": "Reconstruction cosine",
+    "higher_is_better": true,
+    "definition": "Mean per-example cosine between input and reconstruction.",
+    "protocol": "cfc_test inputs in the model's training regime (raw or delta-z)"
+  },
+  "mean_l0": {
+    "display_name": "Mean L0",
+    "higher_is_better": null,
+    "definition": "Mean number of active code coordinates per example.",
+    "protocol": "in-regime cfc_test codes; |code| > 1e-08"
+  },
+  "mean_l1": {
+    "display_name": "Mean L1",
+    "higher_is_better": null,
+    "definition": "Mean per-example sum of absolute code values.",
+    "protocol": "in-regime cfc_test codes"
+  },
+  "mean_abs_code": {
+    "display_name": "Mean |code|",
+    "higher_is_better": null,
+    "definition": "Mean absolute code value over examples and coordinates.",
+    "protocol": "in-regime cfc_test codes"
+  },
+  "active_feature_fraction": {
+    "display_name": "Active feature fraction",
+    "higher_is_better": null,
+    "definition": "Fraction of coordinates active for at least one test example.",
+    "protocol": "in-regime cfc_test codes; |code| > 1e-08"
+  },
+  "dead_feature_fraction": {
+    "display_name": "Dead feature fraction",
+    "higher_is_better": false,
+    "definition": "Fraction of coordinates never active on the test inputs.",
+    "protocol": "in-regime cfc_test codes; |code| > 1e-08"
+  },
+  "decoder_diff_cosine": {
+    "display_name": "Decoder-diff cosine",
+    "higher_is_better": true,
+    "definition": "Best decoder atom's mean signed cosine with paired delta-z.",
+    "protocol": "cfc_test paired differences"
+  },
+  "dictionary_best_cosine": {
+    "display_name": "Dictionary best cosine",
+    "higher_is_better": true,
+    "definition": "Largest absolute cosine between a decoder atom and mean delta-z.",
+    "protocol": "cfc_test paired differences"
+  },
+  "dictionary_angular_error_deg": {
+    "display_name": "Dictionary angular error (deg)",
+    "higher_is_better": false,
+    "definition": "Angle corresponding to dictionary_best_cosine.",
+    "protocol": "cfc_test paired differences"
+  },
+  "dictionary_norm_ratio": {
+    "display_name": "Dictionary norm ratio",
+    "higher_is_better": null,
+    "definition": "Best atom norm divided by mean delta-z norm.",
+    "protocol": "cfc_test paired differences"
+  },
+  "dictionary_frac_close_0_9": {
+    "display_name": "Dictionary fraction cosine > 0.9",
+    "higher_is_better": true,
+    "definition": "Fraction of decoder atoms with |cos(mean delta-z)| > 0.9.",
+    "protocol": "cfc_test paired differences"
+  }
+}

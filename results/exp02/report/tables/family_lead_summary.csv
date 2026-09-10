@@ -1,0 +1,41 @@
+study_family,llm,metric,metric_label,dataset_cells,available_cells,ssae_leads,sae_leads,ties,unavailable_cells,most_frequent_best_ssae_variant,best_ssae_variant_cells,most_frequent_winning_ssae_variant,winning_ssae_variant_cells
+behavioral,gemma,dci_c,DCI-C,4,4,4,0,0,0,SSAE Linear (constrained Step-L0),2,SSAE Linear (constrained Step-L0),2
+behavioral,gemma,dci_i,DCI-I,4,4,2,2,0,0,SSAE Linear (constrained sigmoid-L0),2,SSAE ReLU (penalized),1
+behavioral,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,4,4,4,0,0,0,SSAE Linear (constrained Step-L0),2,SSAE Linear (constrained Step-L0),2
+behavioral,gemma,mcc_p,MCC-P,4,4,3,1,0,0,SSAE Linear (constrained Step-L0),2,SSAE Linear (constrained Step-L0),2
+behavioral,gemma,mcc_s,MCC-S,4,4,4,0,0,0,SSAE Linear (constrained sigmoid-L0),2,SSAE Linear (constrained sigmoid-L0),2
+behavioral,gemma,r2,R²,4,4,1,2,1,0,SSAE TopK (penalized),2,SSAE TopK (penalized),1
+behavioral,gemma,sae_auc,Feature ROC-AUC,4,1,0,1,0,3,SSAE TopK (penalized),1,,0
+behavioral,gemma,support_f1,Support F1,4,1,1,0,0,3,SSAE TopK (penalized),1,SSAE TopK (penalized),1
+behavioral,gemma,support_precision,Support precision,4,1,0,1,0,3,SSAE TopK (penalized),1,,0
+behavioral,gemma,support_recall,Support recall,4,1,1,0,0,3,SSAE JumpReLU (penalized),1,SSAE JumpReLU (penalized),1
+behavioral,pythia,dci_c,DCI-C,4,4,2,2,0,0,SSAE TopK (penalized),1,SSAE JumpReLU (penalized),1
+behavioral,pythia,dci_i,DCI-I,4,4,3,1,0,0,SSAE TopK (penalized),2,SSAE JumpReLU (penalized),2
+behavioral,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,4,4,2,2,0,0,SSAE JumpReLU (penalized),2,SSAE JumpReLU (penalized),1
+behavioral,pythia,mcc_p,MCC-P,4,4,2,2,0,0,SSAE Linear (constrained sigmoid-L0),2,SSAE JumpReLU (penalized),1
+behavioral,pythia,mcc_s,MCC-S,4,4,2,2,0,0,SSAE TopK (penalized),1,SSAE JumpReLU (penalized),1
+behavioral,pythia,r2,R²,4,4,1,2,1,0,SSAE ReLU (penalized),2,SSAE ReLU (penalized),1
+behavioral,pythia,sae_auc,Feature ROC-AUC,4,1,0,1,0,3,SSAE ReLU (penalized),1,,0
+behavioral,pythia,support_f1,Support F1,4,1,0,1,0,3,SSAE TopK (penalized),1,,0
+behavioral,pythia,support_precision,Support precision,4,1,1,0,0,3,SSAE TopK (penalized),1,SSAE TopK (penalized),1
+behavioral,pythia,support_recall,Support recall,4,1,1,0,0,3,SSAE JumpReLU (penalized),1,SSAE JumpReLU (penalized),1
+semi-synthetic,gemma,dci_c,DCI-C,5,5,4,1,0,0,SSAE Linear (constrained sigmoid-L0),2,SSAE Linear (constrained sigmoid-L0),2
+semi-synthetic,gemma,dci_i,DCI-I,5,5,4,0,1,0,SSAE Linear (constrained sigmoid-L0),3,SSAE Linear (constrained sigmoid-L0),3
+semi-synthetic,gemma,decoder_projection_mcc_p,Decoder-projection MCC-P,5,5,3,2,0,0,SSAE TopK (penalized),2,SSAE ReLU (penalized),1
+semi-synthetic,gemma,mcc_p,MCC-P,5,5,5,0,0,0,SSAE Linear (constrained sigmoid-L0),5,SSAE Linear (constrained sigmoid-L0),5
+semi-synthetic,gemma,mcc_s,MCC-S,5,5,5,0,0,0,SSAE JumpReLU (penalized),3,SSAE JumpReLU (penalized),3
+semi-synthetic,gemma,r2,R²,5,5,4,0,1,0,SSAE Linear (constrained sigmoid-L0),3,SSAE Linear (constrained sigmoid-L0),3
+semi-synthetic,gemma,sae_auc,Feature ROC-AUC,5,2,2,0,0,3,SSAE Linear (constrained sigmoid-L0),1,SSAE Linear (constrained sigmoid-L0),1
+semi-synthetic,gemma,support_f1,Support F1,5,2,2,0,0,3,SSAE TopK (penalized),2,SSAE TopK (penalized),2
+semi-synthetic,gemma,support_precision,Support precision,5,2,1,1,0,3,SSAE TopK (penalized),1,SSAE ReLU (penalized),1
+semi-synthetic,gemma,support_recall,Support recall,5,2,2,0,0,3,SSAE JumpReLU (penalized),2,SSAE JumpReLU (penalized),2
+semi-synthetic,pythia,dci_c,DCI-C,5,5,5,0,0,0,SSAE Linear (constrained sigmoid-L0),2,SSAE Linear (constrained sigmoid-L0),2
+semi-synthetic,pythia,dci_i,DCI-I,5,5,5,0,0,0,SSAE Linear (constrained sigmoid-L0),4,SSAE Linear (constrained sigmoid-L0),4
+semi-synthetic,pythia,decoder_projection_mcc_p,Decoder-projection MCC-P,5,5,4,1,0,0,SSAE Linear (constrained Step-L0),3,SSAE Linear (constrained Step-L0),3
+semi-synthetic,pythia,mcc_p,MCC-P,5,5,5,0,0,0,SSAE Linear (constrained sigmoid-L0),5,SSAE Linear (constrained sigmoid-L0),5
+semi-synthetic,pythia,mcc_s,MCC-S,5,5,5,0,0,0,SSAE Linear (constrained sigmoid-L0),3,SSAE Linear (constrained sigmoid-L0),3
+semi-synthetic,pythia,r2,R²,5,5,4,1,0,0,SSAE ReLU (penalized),2,SSAE ReLU (penalized),2
+semi-synthetic,pythia,sae_auc,Feature ROC-AUC,5,2,2,0,0,3,SSAE Linear (constrained sigmoid-L0),2,SSAE Linear (constrained sigmoid-L0),2
+semi-synthetic,pythia,support_f1,Support F1,5,2,2,0,0,3,SSAE JumpReLU (penalized),2,SSAE JumpReLU (penalized),2
+semi-synthetic,pythia,support_precision,Support precision,5,2,1,1,0,3,SSAE JumpReLU (penalized),1,SSAE JumpReLU (penalized),1
+semi-synthetic,pythia,support_recall,Support recall,5,2,2,0,0,3,SSAE Linear (constrained sigmoid-L0),1,SSAE Linear (constrained sigmoid-L0),1

@@ -1,0 +1,5 @@
+dataset,SSAE Linear (constrained L1),SSAE Linear (constrained Step-L0),SSAE Linear (constrained sigmoid-L0),SSAE ReLU (penalized),SSAE JumpReLU (penalized),SSAE TopK (penalized),SAE ReLU (penalized),SAE JumpReLU (penalized),SAE TopK (penalized)
+bias-in-bios,0.211 ± 0.015,0.096 ± 0.005,0.817 ± 0.043,0.478 ± 0.007,0.964 ± 0.005,0.600 ± 0.006,0.528 ± 0.005,0.934 ± 0.003,0.791 ± 0.025
+refusal,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+sycophancy,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable
+truthful-qa,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable,unavailable

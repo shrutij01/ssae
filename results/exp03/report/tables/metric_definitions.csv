@@ -1,0 +1,13 @@
+metric,definition,aggregation
+baseline_endpoint_cosine_mean,Mean cosine between the two held-out pair endpoints before steering.,"concepts within seed, then three seeds"
+baseline_endpoint_cosine_pair_std,Population SD across held-out pair-level baseline endpoint cosines.,"mean across concepts within seed, then three seeds"
+positive_endpoint_cosine_mean,Mean cosine of z0 + alpha*d to its paired positive endpoint z1.,"concepts within seed, then three seeds"
+positive_endpoint_cosine_pair_std,Population SD across pair-level positive-steering endpoint cosines.,"mean across concepts within seed, then three seeds"
+negative_endpoint_cosine_mean,Mean cosine of z0 - alpha*d to the same paired positive endpoint z1.,"concepts within seed, then three seeds"
+negative_endpoint_cosine_pair_std,Population SD across pair-level negative-steering endpoint cosines.,"mean across concepts within seed, then three seeds"
+positive_gain_mean,Positive-steering endpoint cosine minus the same-origin baseline.,"concepts within seed, then three seeds"
+negative_drop_mean,Same-origin baseline minus negative-steering endpoint cosine.,"concepts within seed, then three seeds"
+signed_separation_mean,Positive-steering cosine minus negative-steering cosine for the same origin and target.,"concepts within seed, then three seeds"
+positive_improved_pair_fraction,Fraction of held-out pairs whose positive-steering cosine exceeds baseline.,"concepts within seed, then three seeds"
+negative_degraded_pair_fraction,Fraction of held-out pairs whose negative-steering cosine falls below baseline.,"concepts within seed, then three seeds"
+ordered_pair_fraction,Fraction of held-out pairs satisfying positive > baseline > negative cosine.,"concepts within seed, then three seeds"

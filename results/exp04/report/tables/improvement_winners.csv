@@ -1,0 +1,7 @@
+regime,regime_label,regime_interpretation,regime_warning,llm,method,cosine_improvement_mean,cosine_improvement_std,n_runs
+binary_to_lang,2-binary → eng-french,semantic-domain OOD transfer,,gemma,Mean-difference control,0.11993257701396942,0.0,1
+binary_to_lang,2-binary → eng-french,semantic-domain OOD transfer,,pythia,SAE ReLU (penalized),0.004531260424604018,3.191050884327658e-06,3
+corr_to_lang,corr-binary → eng-french,pair-mixture diagnostic,Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.,gemma,Mean-difference control,0.14713025093078613,0.0,1
+corr_to_lang,corr-binary → eng-french,pair-mixture diagnostic,Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.,pythia,Mean-difference control,0.017865493893623352,0.0,1
+corr_occupation_to_lang,corr-binary-occupation → eng-french,clean lexically disjoint semantic-domain OOD transfer,,gemma,Mean-difference control,0.12350771576166153,0.0,1
+corr_occupation_to_lang,corr-binary-occupation → eng-french,clean lexically disjoint semantic-domain OOD transfer,,pythia,SSAE TopK (penalized),-0.0032991737437744937,0.006121301233925752,3

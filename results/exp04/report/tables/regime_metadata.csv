@@ -1,0 +1,4 @@
+regime,label,interpretation,warning
+binary_to_lang,2-binary → eng-french,semantic-domain OOD transfer,
+corr_to_lang,corr-binary → eng-french,pair-mixture diagnostic,Legacy corr-binary overlaps the eng-french household vocabulary; this is not clean semantic-domain OOD.
+corr_occupation_to_lang,corr-binary-occupation → eng-french,clean lexically disjoint semantic-domain OOD transfer,

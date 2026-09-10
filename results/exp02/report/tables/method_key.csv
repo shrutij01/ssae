@@ -1,0 +1,10 @@
+method_id,method,family,activation,optimization,constraint
+ssae_linear_l1,SSAE Linear (constrained L1),SSAE,linear,constrained,l1
+ssae_linear_step_l0,SSAE Linear (constrained Step-L0),SSAE,linear,constrained,step_l0
+ssae_linear_sigmoid_l0,SSAE Linear (constrained sigmoid-L0),SSAE,linear,constrained,sigmoid_l0
+ssae_relu,SSAE ReLU (penalized),SSAE,relu,penalized,none
+ssae_jumprelu,SSAE JumpReLU (penalized),SSAE,jumprelu,penalized,none
+ssae_topk,SSAE TopK (penalized),SSAE,topk,penalized,none
+sae_relu,SAE ReLU (penalized),SAE,relu,penalized,none
+sae_jumprelu,SAE JumpReLU (penalized),SAE,jumprelu,penalized,none
+sae_topk,SAE TopK (penalized),SAE,topk,penalized,none

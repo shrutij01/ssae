@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Held-out R² for behavioral data (gemma).}
+\label{tab:behavioral-gemma-r2}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+bias-in-bios & 0.285 ± 0.000 & 0.277 ± 0.000 & 0.263 ± 0.000 & 0.319 ± 0.001 & 0.274 ± 0.001 & 0.341 ± 0.003 & 0.280 ± 0.112 & 0.311 ± 0.002 & 0.373 ± 0.006 \\
+refusal & 0.747 ± 0.004 & 0.724 ± 0.003 & 0.656 ± 0.027 & 0.470 ± 0.041 & 0.650 ± 0.049 & 0.668 ± 0.013 & 0.496 ± 0.352 & 0.632 ± 0.022 & 0.774 ± 0.010 \\
+sycophancy & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.000 ± 0.000 \\
+truthful-qa & 0.527 ± 0.030 & 0.537 ± 0.017 & 0.150 ± 0.114 & 0.433 ± 0.018 & 0.274 ± 0.105 & 0.603 ± 0.007 & 0.000 ± 0.000 & 0.377 ± 0.037 & 0.588 ± 0.052 \\
+\bottomrule
+\end{tabular}
+\end{table}

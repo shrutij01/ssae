@@ -1,0 +1,3 @@
+C,baseline_french_probability_mean,baseline_french_retention_accuracy,class_weight,coefficient_sha256,intercept,llm,penalty,protocol,random_state,representation_width,solver,test_accuracy,test_endpoint_count,train_accuracy,train_endpoint_count
+1.0,0.9153299239149628,0.9,balanced,e5332563b0a99621221da3bbef9cfc6856d8b4cadbe4df3523373012cf0d482d,-0.6556545102670014,gemma,l2,StandardScaler plus fixed-C L2 logistic regression; train endpoints only,20260901,2304,liblinear,0.925,40,0.99375,160
+1.0,0.9254889676150443,0.95,balanced,a079d10c943dbc285aa5dd5a255881061def0f85ec92bc19cb40115180b18cb2,3.8174211179459507,pythia,l2,StandardScaler plus fixed-C L2 logistic regression; train endpoints only,20260901,512,liblinear,0.875,40,0.99375,160

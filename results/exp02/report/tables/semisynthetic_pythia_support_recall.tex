@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Held-out Support recall for semi-synthetic data (pythia).}
+\label{tab:semisynthetic-pythia-support-recall}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+eng-french & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+eng-german & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+masc-fem-eng & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+2-binary & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.967 ± 0.013 & 0.353 ± 0.012 & 0.953 ± 0.007 & 0.136 ± 0.064 & 0.427 ± 0.017 & 0.818 ± 0.058 & 0.296 ± 0.129 \\
+corr-binary & 0.000 ± 0.000 & 0.000 ± 0.000 & 0.923 ± 0.021 & 0.454 ± 0.013 & 0.923 ± 0.020 & 0.169 ± 0.058 & 0.393 ± 0.012 & 0.829 ± 0.011 & 0.399 ± 0.181 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Held-out Support recall for behavioral data (pythia).}
+\label{tab:behavioral-pythia-support-recall}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Dataset & SSAE Linear (constrained L1) & SSAE Linear (constrained Step-L0) & SSAE Linear (constrained sigmoid-L0) & SSAE ReLU (penalized) & SSAE JumpReLU (penalized) & SSAE TopK (penalized) & SAE ReLU (penalized) & SAE JumpReLU (penalized) & SAE TopK (penalized) \\
+\midrule
+bias-in-bios & 0.103 ± 0.011 & 0.000 ± 0.000 & 0.621 ± 0.065 & 0.723 ± 0.005 & 0.936 ± 0.008 & 0.225 ± 0.018 & 0.679 ± 0.009 & 0.922 ± 0.005 & 0.502 ± 0.004 \\
+refusal & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+sycophancy & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+truthful-qa & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable & unavailable \\
+\bottomrule
+\end{tabular}
+\end{table}

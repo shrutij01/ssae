@@ -1,0 +1,1928 @@
+{
+  "code_dependencies": [
+    {
+      "path": "experiments/common/reporting.py",
+      "role": "shared_result_helpers",
+      "sha256": "7939e92e772e230a3a44bb95f114c58c7f2b7d2e28eeb4aba57696c16ddf9d89",
+      "size_bytes": 14105
+    },
+    {
+      "path": "experiments/common/style.py",
+      "role": "shared_plot_style",
+      "sha256": "24d0c9155b2f354897736a72a9a36073ba3d1d353f414f32315025190572507d",
+      "size_bytes": 10562
+    },
+    {
+      "path": "ssae/model_spec.py",
+      "role": "canonical_model_identity",
+      "sha256": "ec2547ddff6345e9d38b52d8eeec8d64d68216f48e78679dd64dab11fb83a345",
+      "size_bytes": 11206
+    },
+    {
+      "path": "experiments/common/__init__.py",
+      "role": "result_package_setup",
+      "sha256": "a6c17b00c4efe264e91d07197908fd8b26992ce7ae1eed4761a181a957983686",
+      "size_bytes": 365
+    }
+  ],
+  "commands": {
+    "build": "python3 -m experiments.exp02.report --build",
+    "check": "python3 -m experiments.exp02.report --check"
+  },
+  "conclusion": "No method leads every available held-out identification cell: SSAE Linear (constrained sigmoid-L0) is the most frequent leader in 42/162 separately evaluated dataset, LLM, and metric cells. Direct best-family comparisons are gemma: SSAE 52, SAE 11, ties 3 across 66 best-family cells; most frequent within-SSAE leader SSAE Linear (constrained sigmoid-L0); matched nonlinear SSAE 93, SAE 96, ties 9, pythia: SSAE 49, SAE 16, ties 1 across 66 best-family cells; most frequent within-SSAE leader SSAE Linear (constrained sigmoid-L0); matched nonlinear SSAE 90, SAE 99, ties 9. LLM metric values are not pooled. Frozen nonlinear SSAE realized active-axis capacity is gemma mean 33.1%, range 8.7% (sycophancy, SSAE ReLU (penalized)) to 100.0% (bias-in-bios, SSAE JumpReLU (penalized)); pythia mean 83.1%, range 17.9% (sycophancy, SSAE TopK (penalized)) to 100.0% (bias-in-bios, SSAE JumpReLU (penalized)) across separately retained dataset and method cells.",
+  "entry_point": "experiments.exp02.report",
+  "experiment_id": "exp02",
+  "figures": [
+    {
+      "caption": "Dataset rows and method columns follow the compact comparison layout of Table 1 in the SSAE paper. Values are means \u00b1 population standard deviations across training seeds. Gemma and Pythia occupy separate tables and are never pooled; an em dash denotes an unavailable cell.",
+      "id": "mcc_p_table",
+      "title": "Held-out MCC-P across all datasets",
+      "variants": [
+        "figures/mcc_p_table.svg",
+        "figures/mcc_p_table.pdf"
+      ]
+    },
+    {
+      "caption": "Dataset rows and method columns follow the compact comparison layout of Table 1 in the SSAE paper. Values are means \u00b1 population standard deviations across training seeds. Gemma and Pythia occupy separate tables and are never pooled; an em dash denotes an unavailable cell.",
+      "id": "mcc_s_table",
+      "title": "Held-out MCC-S across all datasets",
+      "variants": [
+        "figures/mcc_s_table.svg",
+        "figures/mcc_s_table.pdf"
+      ]
+    },
+    {
+      "caption": "Dataset rows and method columns follow the compact comparison layout of Table 1 in the SSAE paper. Values are means \u00b1 population standard deviations across training seeds. Gemma and Pythia occupy separate tables and are never pooled; an em dash denotes an unavailable cell.",
+      "id": "dci_c_table",
+      "title": "Held-out DCI-C across all datasets",
+      "variants": [
+        "figures/dci_c_table.svg",
+        "figures/dci_c_table.pdf"
+      ]
+    },
+    {
+      "caption": "Dataset rows and method columns follow the compact comparison layout of Table 1 in the SSAE paper. Values are means \u00b1 population standard deviations across training seeds. Gemma and Pythia occupy separate tables and are never pooled; an em dash denotes an unavailable cell.",
+      "id": "dci_i_table",
+      "title": "Held-out DCI-I across all datasets",
+      "variants": [
+        "figures/dci_i_table.svg",
+        "figures/dci_i_table.pdf"
+      ]
+    },
+    {
+      "caption": "Dataset rows and method columns follow the compact comparison layout of Table 1 in the SSAE paper. Values are means \u00b1 population standard deviations across training seeds. Gemma and Pythia occupy separate tables and are never pooled; an em dash denotes an unavailable cell.",
+      "id": "r2_table",
+      "title": "Held-out R\u00b2 across all datasets",
+      "variants": [
+        "figures/r2_table.svg",
+        "figures/r2_table.pdf"
+      ]
+    },
+    {
+      "caption": "Held-out means with population standard deviation across training seeds. SSAE lines are solid and SAE lines dashed; unavailable cells are gaps.",
+      "id": "behavioral_feature_support",
+      "title": "Behavioral identifiability: feature/support",
+      "variants": [
+        "figures/behavioral_feature_support.svg",
+        "figures/behavioral_feature_support.pdf"
+      ]
+    },
+    {
+      "caption": "Held-out means with population standard deviation across training seeds. SSAE lines are solid and SAE lines dashed; unavailable cells are gaps.",
+      "id": "semisynthetic_feature_support",
+      "title": "Semi-synthetic identifiability: feature/support",
+      "variants": [
+        "figures/semisynthetic_feature_support.svg",
+        "figures/semisynthetic_feature_support.pdf"
+      ]
+    },
+    {
+      "caption": "Held-out means with population standard deviation across training seeds. SSAE lines are solid and SAE lines dashed; unavailable cells are gaps.",
+      "id": "synthetic_recovery",
+      "title": "Synthetic identifiability: recovery",
+      "variants": [
+        "figures/synthetic_recovery.svg",
+        "figures/synthetic_recovery.pdf"
+      ]
+    },
+    {
+      "caption": "Held-out means with population standard deviation across training seeds. SSAE lines are solid and SAE lines dashed; unavailable cells are gaps.",
+      "id": "synthetic_feature_support",
+      "title": "Synthetic identifiability: feature/support",
+      "variants": [
+        "figures/synthetic_feature_support.svg",
+        "figures/synthetic_feature_support.pdf"
+      ]
+    },
+    {
+      "caption": "Figure-4-style grouped, hatched bars. Bars are held-out means and error bars are population standard deviations across three training seeds. A latent response coordinate is selected for each concept by one-to-one Pearson/Hungarian matching on cfc_train; its corresponding decoder axis is oriented by the response-correlation sign and evaluated on cfc_test. No absolute value or decoder-only reselection is applied. Gemma and Pythia are never pooled.",
+      "id": "heldout_pair_cosine",
+      "title": "Steering-vector cosine across all datasets (higher is better)",
+      "variants": [
+        "figures/heldout_pair_cosine.svg",
+        "figures/heldout_pair_cosine.pdf",
+        "figures/heldout_pair_cosine_gemma.svg",
+        "figures/heldout_pair_cosine_gemma.pdf",
+        "figures/heldout_pair_cosine_pythia.svg",
+        "figures/heldout_pair_cosine_pythia.pdf"
+      ]
+    },
+    {
+      "caption": "Figure-4-style grouped, hatched bars. Bars are held-out means and error bars are population standard deviations across three training seeds. A latent response coordinate is selected for each concept by one-to-one Pearson/Hungarian matching on cfc_train; its corresponding decoder axis is oriented by the response-correlation sign and evaluated on cfc_test. No absolute value or decoder-only reselection is applied. Gemma and Pythia are never pooled.",
+      "id": "heldout_mean_delta_cosine",
+      "title": "Mean-direction cosine (diagnostic) across all datasets (higher is better)",
+      "variants": [
+        "figures/heldout_mean_delta_cosine.svg",
+        "figures/heldout_mean_delta_cosine.pdf",
+        "figures/heldout_mean_delta_cosine_gemma.svg",
+        "figures/heldout_mean_delta_cosine_gemma.pdf",
+        "figures/heldout_mean_delta_cosine_pythia.svg",
+        "figures/heldout_mean_delta_cosine_pythia.pdf"
+      ]
+    },
+    {
+      "caption": "Realized independent-axis count and fraction of nominal capacity at the frozen 0.01 activity threshold. Means and population standard deviations are across training seeds. Every line is a nonlinear SSAE variant; Gemma and Pythia are not pooled.",
+      "id": "behavioral_realized_active_axis_capacity",
+      "title": "Behavioral nonlinear SSAE realized active-axis capacity",
+      "variants": [
+        "figures/behavioral_realized_active_axis_capacity.svg",
+        "figures/behavioral_realized_active_axis_capacity.pdf"
+      ]
+    },
+    {
+      "caption": "Realized independent-axis count and fraction of nominal capacity at the frozen 0.01 activity threshold. Means and population standard deviations are across training seeds. Every line is a nonlinear SSAE variant; Gemma and Pythia are not pooled.",
+      "id": "semisynthetic_realized_active_axis_capacity",
+      "title": "Semi-synthetic nonlinear SSAE realized active-axis capacity",
+      "variants": [
+        "figures/semisynthetic_realized_active_axis_capacity.svg",
+        "figures/semisynthetic_realized_active_axis_capacity.pdf"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/conclusion.txt",
+      "role": "conclusion",
+      "sha256": "2ff4a930cdf62bceb882d049f59beb8cd4dc2fda306d7f647098ed0009314f34",
+      "size_bytes": 953
+    },
+    {
+      "path": "data/realized_active_axis_capacity_source.json",
+      "role": "frozen_source_copy",
+      "sha256": "49d28e8010c4cdc057a9459fa1dd5320d48f9f31c4bb8fe593d086510a6a3e02",
+      "size_bytes": 116857
+    },
+    {
+      "path": "data/summary.json",
+      "role": "summary",
+      "sha256": "2fa10db9bf2a928e47cefd0b14dd8e0e5ed77de4f2c4127673dc070b5e1a9954",
+      "size_bytes": 5989910
+    },
+    {
+      "path": "figures/behavioral_feature_support.pdf",
+      "role": "figure",
+      "sha256": "ac122b3dd2a45977e67eed693b7f2a6f7f8358b91a95302f7d59bf5356fb4af6",
+      "size_bytes": 50891
+    },
+    {
+      "path": "figures/behavioral_feature_support.svg",
+      "role": "figure",
+      "sha256": "83a655fec48d2ff134b8aac4f535b34584a2f373c95d6dada1c7037c52d444d4",
+      "size_bytes": 222018
+    },
+    {
+      "path": "figures/behavioral_realized_active_axis_capacity.pdf",
+      "role": "figure",
+      "sha256": "cccdac5d8a294f4c5f0bbb3d0c76e38cb403a342c31739bdbf3872c50ba7d829",
+      "size_bytes": 22089
+    },
+    {
+      "path": "figures/behavioral_realized_active_axis_capacity.svg",
+      "role": "figure",
+      "sha256": "7f787410ed922d02509c78e22a35f8739ca76223ed5032b1063cbe2fb7ed6c1d",
+      "size_bytes": 62628
+    },
+    {
+      "path": "figures/dci_c_table.pdf",
+      "role": "figure",
+      "sha256": "ab3a818457957105090f7db9825af9be962f001cfb3120932f41c000fbde0fd3",
+      "size_bytes": 29255
+    },
+    {
+      "path": "figures/dci_c_table.svg",
+      "role": "figure",
+      "sha256": "51518bbd667a33e96788c7bde5929e89426be937b7a3f1cb85e68c073c06c375",
+      "size_bytes": 101664
+    },
+    {
+      "path": "figures/dci_i_table.pdf",
+      "role": "figure",
+      "sha256": "2816cf7a84db88b0418464c49218ffaf0ef2fd42806ea73e467227b5d075c806",
+      "size_bytes": 29167
+    },
+    {
+      "path": "figures/dci_i_table.svg",
+      "role": "figure",
+      "sha256": "9568a8030d4e315d989434864dba51d5804207cda551fab4c6b586aa89b74209",
+      "size_bytes": 101664
+    },
+    {
+      "path": "figures/heldout_mean_delta_cosine.pdf",
+      "role": "figure",
+      "sha256": "79e1138509643b3659fb85a9f98642be7bc2bc61b2ea0ba13fe6c1cc4b13b53b",
+      "size_bytes": 92151
+    },
+    {
+      "path": "figures/heldout_mean_delta_cosine.svg",
+      "role": "figure",
+      "sha256": "b4cb13ce38034ae72c0544e48958c5a2790ffff15b565c30b5b29865a2bc9062",
+      "size_bytes": 380440
+    },
+    {
+      "path": "figures/heldout_mean_delta_cosine_gemma.pdf",
+      "role": "figure",
+      "sha256": "12fb09a6b9b807e9d04244d9948a0fa818b223b8933094f50076f7ade3a70cac",
+      "size_bytes": 81092
+    },
+    {
+      "path": "figures/heldout_mean_delta_cosine_gemma.svg",
+      "role": "figure",
+      "sha256": "fc1c5c30866503754ad9390a6d688f213f29b42494f40eafd92092b258732c80",
+      "size_bytes": 311632
+    },
+    {
+      "path": "figures/heldout_mean_delta_cosine_pythia.pdf",
+      "role": "figure",
+      "sha256": "c5692fd99a7d1fea6c2ae021d4c27899bf416c85c5c760d2642c4ac612189eeb",
+      "size_bytes": 81078
+    },
+    {
+      "path": "figures/heldout_mean_delta_cosine_pythia.svg",
+      "role": "figure",
+      "sha256": "ebe76f0584110b34e3db47eae8b820bcbb95b5249208f67f77623568c046e514",
+      "size_bytes": 311658
+    },
+    {
+      "path": "figures/heldout_pair_cosine.pdf",
+      "role": "figure",
+      "sha256": "6c1f8e66b6a10b69aabe492ee18c73a4c50689a412e32acb095757f361ab0941",
+      "size_bytes": 91557
+    },
+    {
+      "path": "figures/heldout_pair_cosine.svg",
+      "role": "figure",
+      "sha256": "8d7cda555904fb73f0eb572133dd5d20cc28baf3cfe1619fb396507dedc4958b",
+      "size_bytes": 373740
+    },
+    {
+      "path": "figures/heldout_pair_cosine_gemma.pdf",
+      "role": "figure",
+      "sha256": "f8ea72483c9b7f5d2bdacf9f010ba4173535ed09ef934d8ef5ab2480b308a55a",
+      "size_bytes": 80564
+    },
+    {
+      "path": "figures/heldout_pair_cosine_gemma.svg",
+      "role": "figure",
+      "sha256": "7c6f2c15d180099f9f9c51791c58671306870214710692f18ed641e01d71e938",
+      "size_bytes": 308291
+    },
+    {
+      "path": "figures/heldout_pair_cosine_pythia.pdf",
+      "role": "figure",
+      "sha256": "5950710d6ddfd10519d431e624399e7b1176d31adab6e735d1d0708e958311f3",
+      "size_bytes": 80670
+    },
+    {
+      "path": "figures/heldout_pair_cosine_pythia.svg",
+      "role": "figure",
+      "sha256": "69ecde509b3fe7072174a7e309e8a13ff6e518486adcdae8a92682dacf3ecdb5",
+      "size_bytes": 308277
+    },
+    {
+      "path": "figures/mcc_p_table.pdf",
+      "role": "figure",
+      "sha256": "c9e2a54e833b64fa546fe5780252c1655e74d56e1b9202f0781d2692f8f68373",
+      "size_bytes": 29704
+    },
+    {
+      "path": "figures/mcc_p_table.svg",
+      "role": "figure",
+      "sha256": "5a3d7c9118a000fea5ffab6e90668677c61e86cf6774ce25a1bfd0e8118e29bb",
+      "size_bytes": 101664
+    },
+    {
+      "path": "figures/mcc_s_table.pdf",
+      "role": "figure",
+      "sha256": "46dc1dde497660d7b6a40487e89fb9490dace3fd7267ca10b26c209a8f0dae95",
+      "size_bytes": 29556
+    },
+    {
+      "path": "figures/mcc_s_table.svg",
+      "role": "figure",
+      "sha256": "469dfa13e33f0930ebdf7e07c0c8d7fcb031b8dd15621231b562ac4c74f1eb9d",
+      "size_bytes": 101664
+    },
+    {
+      "path": "figures/r2_table.pdf",
+      "role": "figure",
+      "sha256": "51c5af799ef2ca8e7f971e3bf88ccf13db08a191eb593e1c79ddbe1b57419870",
+      "size_bytes": 29028
+    },
+    {
+      "path": "figures/r2_table.svg",
+      "role": "figure",
+      "sha256": "0f5aecd846601d509609147631a976ec35aebd12e59e1dc55a0a397b630a0f69",
+      "size_bytes": 101658
+    },
+    {
+      "path": "figures/semisynthetic_feature_support.pdf",
+      "role": "figure",
+      "sha256": "dac325e0e54c74b2122f6db57113dc991d6f2a9dca4cb2ef5cd6c56c3e78c85d",
+      "size_bytes": 55228
+    },
+    {
+      "path": "figures/semisynthetic_feature_support.svg",
+      "role": "figure",
+      "sha256": "6feb52f19ab882f44424d3028dbb5f4b94b4318d9e799177966b99a13be0cbc1",
+      "size_bytes": 277008
+    },
+    {
+      "path": "figures/semisynthetic_realized_active_axis_capacity.pdf",
+      "role": "figure",
+      "sha256": "93b9ffd1df94a4dd2ef30e4c2a53ba1621ac3ca187f4bc0135b803026babf555",
+      "size_bytes": 24043
+    },
+    {
+      "path": "figures/semisynthetic_realized_active_axis_capacity.svg",
+      "role": "figure",
+      "sha256": "99567ea54a88c539eccb72c3d8d5e5ee82908b3d4cd2c162f2104ad205183ed0",
+      "size_bytes": 83440
+    },
+    {
+      "path": "figures/synthetic_feature_support.pdf",
+      "role": "figure",
+      "sha256": "c81a6c83cd1b68ffc9d2aefd84ea5bdec681faf6a66c2e092d7589fb8a366ef9",
+      "size_bytes": 20989
+    },
+    {
+      "path": "figures/synthetic_feature_support.svg",
+      "role": "figure",
+      "sha256": "1360c9e9bfae7418e8e4e5eed81a4206fc039c84764e189a973f5a8dc3c31fd9",
+      "size_bytes": 58859
+    },
+    {
+      "path": "figures/synthetic_recovery.pdf",
+      "role": "figure",
+      "sha256": "9e5003d2f31b12aaf912c82efd925b9e2e23bc79f5738be8cb86fe9168555695",
+      "size_bytes": 20529
+    },
+    {
+      "path": "figures/synthetic_recovery.svg",
+      "role": "figure",
+      "sha256": "205af5cae34586d21bc19bde315c57d48d7a67f59a1000a50a45aadffd972996",
+      "size_bytes": 56275
+    },
+    {
+      "path": "tables/all_datasets_gemma_dci_c.csv",
+      "role": "table",
+      "sha256": "f4fc4474bcfc218af20a1f6748cfcc0627f00260def1a5c2b5517dd17bcbbf22",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_gemma_dci_c.tex",
+      "role": "table",
+      "sha256": "da6ad08bb8994d3b9745125fb728890d2e7b54599bcfce36733d4daacc32f5c1",
+      "size_bytes": 1992
+    },
+    {
+      "path": "tables/all_datasets_gemma_dci_i.csv",
+      "role": "table",
+      "sha256": "756bd0d17611212e685bf39048fb8d417ea677dfd1697e6b23b9c81ed7a2fbb7",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_gemma_dci_i.tex",
+      "role": "table",
+      "sha256": "27a7774e4e50273f64b7cdf4e7d17c692c14f875aca44480cccbfc80ebf80c97",
+      "size_bytes": 1992
+    },
+    {
+      "path": "tables/all_datasets_gemma_identifiability.csv",
+      "role": "table",
+      "sha256": "ca54bc2b010e143a428f27c1538a9c11ec7079fdd67920995932db99db412518",
+      "size_bytes": 7079
+    },
+    {
+      "path": "tables/all_datasets_gemma_mcc_p.csv",
+      "role": "table",
+      "sha256": "bedc0f725e48af0d1c78ba8542e9aaaf1e7ae48787d58a2ac542a5ee97721e07",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_gemma_mcc_p.tex",
+      "role": "table",
+      "sha256": "56d77670d78a250306ea45826d565d55bf16d13ad86b8916dbf5caffecc90805",
+      "size_bytes": 1992
+    },
+    {
+      "path": "tables/all_datasets_gemma_mcc_s.csv",
+      "role": "table",
+      "sha256": "17127bd2787ca0ec13cab7070f4a18130851390f31ac66e8a2743cac2b562954",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_gemma_mcc_s.tex",
+      "role": "table",
+      "sha256": "8fe2cc241d9d8853d910e35e3125ce7489f0f8ce61001a72bd191546eb06701d",
+      "size_bytes": 1992
+    },
+    {
+      "path": "tables/all_datasets_gemma_r2.csv",
+      "role": "table",
+      "sha256": "6ceb3e4685da42d81ac02caab5a9e94e141e3e2025ebc988e06ad4d52c16a81f",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_gemma_r2.tex",
+      "role": "table",
+      "sha256": "2147f5e4faed6681670cd390c3f5d4c3e077d176a8965f91b060b9512ef1ef6a",
+      "size_bytes": 1987
+    },
+    {
+      "path": "tables/all_datasets_pythia_dci_c.csv",
+      "role": "table",
+      "sha256": "39f14e79ec7d98844e3af35867c868b304aa56d6b85d71bd382373edcb784ae7",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_pythia_dci_c.tex",
+      "role": "table",
+      "sha256": "394b90fe05ed1ce2e19efb261899127cc2f16c8d377a42d91dd86c9631768eb9",
+      "size_bytes": 1994
+    },
+    {
+      "path": "tables/all_datasets_pythia_dci_i.csv",
+      "role": "table",
+      "sha256": "483adac069c33e574671956153c87f133a72c80b1ef8769a25c5ef3a2c30fbf4",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_pythia_dci_i.tex",
+      "role": "table",
+      "sha256": "943be71a22a20a95c52263bf7635ceb91e6705ff30144e0ab780a67149fac316",
+      "size_bytes": 1994
+    },
+    {
+      "path": "tables/all_datasets_pythia_identifiability.csv",
+      "role": "table",
+      "sha256": "3900da35b23320c33e8472f183155a2f89fe527d693ec176523cb4960a0a875a",
+      "size_bytes": 7079
+    },
+    {
+      "path": "tables/all_datasets_pythia_mcc_p.csv",
+      "role": "table",
+      "sha256": "e89341d3a985ca486636eeb96fadc1aadf12cd89226f9add1fadc6e16b0b5d0e",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_pythia_mcc_p.tex",
+      "role": "table",
+      "sha256": "810ef2b018b27e49956c2fdcf0492153ac689b81350d66619a421904518b15ea",
+      "size_bytes": 1994
+    },
+    {
+      "path": "tables/all_datasets_pythia_mcc_s.csv",
+      "role": "table",
+      "sha256": "dc05adcf86ba8b130f97e3ac6aa60f084bcf345787adf922989a02d5af127f05",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_pythia_mcc_s.tex",
+      "role": "table",
+      "sha256": "e38dd86cbf286bbf1980daf90f2b96ff8a4df9f7164cd709dde1c3ec99eb3423",
+      "size_bytes": 1994
+    },
+    {
+      "path": "tables/all_datasets_pythia_r2.csv",
+      "role": "table",
+      "sha256": "553ef43facea4d1d6ea1643bbf39beeb17cc65694ad201c78fb3d082e9c9bf63",
+      "size_bytes": 1560
+    },
+    {
+      "path": "tables/all_datasets_pythia_r2.tex",
+      "role": "table",
+      "sha256": "a18e169741302e4ddf5f1e6e77aa850db053104e48b2dcb89c155ad84d8532f3",
+      "size_bytes": 1989
+    },
+    {
+      "path": "tables/behavioral_gemma_dci_c.csv",
+      "role": "table",
+      "sha256": "5c0ed0819d40b0cee38853c277418134b64987e9e6a7b1e5c3cd90d2fed66f04",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_gemma_dci_c.tex",
+      "role": "table",
+      "sha256": "85aeb29e8c6d997e5e0b263299f94424c87ebd6c45d8d03f5be536d57a4095c6",
+      "size_bytes": 1135
+    },
+    {
+      "path": "tables/behavioral_gemma_dci_i.csv",
+      "role": "table",
+      "sha256": "b0a9510ecf6bf9acd915aac336a25387c775605f930ea2f57af5c984c3205709",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_gemma_dci_i.tex",
+      "role": "table",
+      "sha256": "79170ed276a6afeeb6bf6faf36806400ee95437d477f37e869608f862a0e74af",
+      "size_bytes": 1135
+    },
+    {
+      "path": "tables/behavioral_gemma_decoder_projection_mcc_p.csv",
+      "role": "table",
+      "sha256": "b7beb53e48f8d8524b3836a0fe8a4ea64b0cfdf71b0022b1968374dc22bcc0fc",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_gemma_decoder_projection_mcc_p.tex",
+      "role": "table",
+      "sha256": "f2b085a654352d42aa7887f2f773800a389619d5d206735dd3491387a503e418",
+      "size_bytes": 1173
+    },
+    {
+      "path": "tables/behavioral_gemma_identifiability.csv",
+      "role": "table",
+      "sha256": "754c4f876651417c54f12352abfbe7d32fac8a32f3a30a0651a08c69ff9c33a2",
+      "size_bytes": 6220
+    },
+    {
+      "path": "tables/behavioral_gemma_mcc_p.csv",
+      "role": "table",
+      "sha256": "111ed35e97de5e295e0f9d54d5b554e80a3a11981162b42a9f4d0fd78b5ea389",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_gemma_mcc_p.tex",
+      "role": "table",
+      "sha256": "25174e7674f829e79b5adf85da4e8381a5a623eac79469e8474bafcfd8e7d0c6",
+      "size_bytes": 1135
+    },
+    {
+      "path": "tables/behavioral_gemma_mcc_s.csv",
+      "role": "table",
+      "sha256": "5f010557671ca82f7a9494bf3d6cd6c5c66bc27f65e602d7cc4e82f3de17a256",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_gemma_mcc_s.tex",
+      "role": "table",
+      "sha256": "8c0c563f92d56518577fc22f885f5c6772275e0827f08f28179d002969ec0acb",
+      "size_bytes": 1135
+    },
+    {
+      "path": "tables/behavioral_gemma_r2.csv",
+      "role": "table",
+      "sha256": "ce57fa0fd78c97afdd604bb1de2700ee6d13a05e03fa387be6fb4becbca4d2ae",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_gemma_r2.tex",
+      "role": "table",
+      "sha256": "8c7424ed5721a015f9c0a180467a1d2c863baf4840206a81b916f044c6b006e8",
+      "size_bytes": 1130
+    },
+    {
+      "path": "tables/behavioral_gemma_realized_active_axis_capacity.csv",
+      "role": "table",
+      "sha256": "dc79a9a7adabea676d740b2a9c58f72a59277c49b82822ce86f9dbdf172b6d1e",
+      "size_bytes": 484
+    },
+    {
+      "path": "tables/behavioral_gemma_realized_active_axis_capacity.tex",
+      "role": "table",
+      "sha256": "750e8604e11ea9b7a4d8747d928d635589e5cb46804a9c758cc396bec0908d57",
+      "size_bytes": 859
+    },
+    {
+      "path": "tables/behavioral_gemma_sae_auc.csv",
+      "role": "table",
+      "sha256": "c7aec9d0b220c55a12ac0363d9b6e712841923878bc9408e6fdb879286655917",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_gemma_sae_auc.tex",
+      "role": "table",
+      "sha256": "b7e9bb6d9b787a64f119ac607c22f10653d0383acd0286cbf77898919b576928",
+      "size_bytes": 1066
+    },
+    {
+      "path": "tables/behavioral_gemma_support_f1.csv",
+      "role": "table",
+      "sha256": "482eab07795384444f1bdecd3f1743f2a24264551c5690d86d340df72ce14b9f",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_gemma_support_f1.tex",
+      "role": "table",
+      "sha256": "41738b9481b59cf06a8e62600b4cd6682e51bc1f2e501e2787aa8409cf7a7414",
+      "size_bytes": 1064
+    },
+    {
+      "path": "tables/behavioral_gemma_support_precision.csv",
+      "role": "table",
+      "sha256": "adadbed9d585cbb8b8fb16637bffc94e51152e92135b2a715267ab8935dc67a3",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_gemma_support_precision.tex",
+      "role": "table",
+      "sha256": "49f5b8da68628d0030947b3b4a1e969eb1cd9549d63417b4e2e4b7ea1925bd17",
+      "size_bytes": 1078
+    },
+    {
+      "path": "tables/behavioral_gemma_support_recall.csv",
+      "role": "table",
+      "sha256": "93b44ee84b84422f10c62ccf83687067a20df1123c8403f414ac5e4d17039724",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_gemma_support_recall.tex",
+      "role": "table",
+      "sha256": "0bf88ffa1a98d4ba9f8116a625fefd75e08342a1a56c36ae03b214bd6af91125",
+      "size_bytes": 1072
+    },
+    {
+      "path": "tables/behavioral_pythia_dci_c.csv",
+      "role": "table",
+      "sha256": "fbdbbe4a1e5e008401fdf773b67fd41727ad21c8851f5bb960d984e61b2bf023",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_pythia_dci_c.tex",
+      "role": "table",
+      "sha256": "c738fa47befaaa3ba697dc1f10f7444bd5318b1f2eb8069e305d109ca07ae285",
+      "size_bytes": 1137
+    },
+    {
+      "path": "tables/behavioral_pythia_dci_i.csv",
+      "role": "table",
+      "sha256": "749f85a74c24fa0a83cee1e0ce542f7d98a59370ca677cd8ced9c671520f1ade",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_pythia_dci_i.tex",
+      "role": "table",
+      "sha256": "8138c43ea56ec52085b052b9feb3e17b8af9aa45d9f998133433b01604311e38",
+      "size_bytes": 1137
+    },
+    {
+      "path": "tables/behavioral_pythia_decoder_projection_mcc_p.csv",
+      "role": "table",
+      "sha256": "066dc9ec1ac8a3e3f34e6bc42b32a223af4d3a163bb1d6619de7eed45c8195dd",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_pythia_decoder_projection_mcc_p.tex",
+      "role": "table",
+      "sha256": "0b5d1744f33485d47709a8f2f6899dbd49d447976d658c7ab74056601c4fb3cb",
+      "size_bytes": 1175
+    },
+    {
+      "path": "tables/behavioral_pythia_identifiability.csv",
+      "role": "table",
+      "sha256": "eade187c52e557adad1992e5d8f6ec7f5576bfdd029f4550ab4abefecdc87f52",
+      "size_bytes": 6220
+    },
+    {
+      "path": "tables/behavioral_pythia_mcc_p.csv",
+      "role": "table",
+      "sha256": "a976ca13f698b507383ee6334563e5ddece24d390b83c713fcbaed486b1dde5a",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_pythia_mcc_p.tex",
+      "role": "table",
+      "sha256": "c6d3e5e36cedf7ff02d18ee927b94660fe68163d4fc6518d9ff2d5fcf996a508",
+      "size_bytes": 1137
+    },
+    {
+      "path": "tables/behavioral_pythia_mcc_s.csv",
+      "role": "table",
+      "sha256": "33f4258ca4c935f32ed76c97db46015e18b6d6b04ddf051a598a707a6a7ac6e4",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_pythia_mcc_s.tex",
+      "role": "table",
+      "sha256": "88d24b0aa531aa0e27f44b2e71091f00fea2fa6c4bf48728ff784d48fcb852f0",
+      "size_bytes": 1137
+    },
+    {
+      "path": "tables/behavioral_pythia_r2.csv",
+      "role": "table",
+      "sha256": "46252db567f28efa08b6b887b97de25f0add06c16199a65f899c5998576fd002",
+      "size_bytes": 829
+    },
+    {
+      "path": "tables/behavioral_pythia_r2.tex",
+      "role": "table",
+      "sha256": "bede61db246170f099ea85dea8e5a45868a6dc73627b9b07ee9f0cd09fdbffaf",
+      "size_bytes": 1132
+    },
+    {
+      "path": "tables/behavioral_pythia_realized_active_axis_capacity.csv",
+      "role": "table",
+      "sha256": "9eabf478b587a149e4c8088af17e0dd657d35deffca397f444de4fa12dbd10f6",
+      "size_bytes": 476
+    },
+    {
+      "path": "tables/behavioral_pythia_realized_active_axis_capacity.tex",
+      "role": "table",
+      "sha256": "90d11fdd67f5261a3ce3817049c9e3d542a3d6b98278165bd0d1ad0c99231e30",
+      "size_bytes": 853
+    },
+    {
+      "path": "tables/behavioral_pythia_sae_auc.csv",
+      "role": "table",
+      "sha256": "9510f88fc0dd60a51a30b720698b80f93a7e87eb67e13a8de985028eeefe0db6",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_pythia_sae_auc.tex",
+      "role": "table",
+      "sha256": "ddeb0b4febcba0e23144cba0a1d85c5101b6856c0f7265379a2cc203f257a0af",
+      "size_bytes": 1068
+    },
+    {
+      "path": "tables/behavioral_pythia_support_f1.csv",
+      "role": "table",
+      "sha256": "636a23f4937628b2343f614dd19532c91e46a1beca06edf6d4b48b86fa3af972",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_pythia_support_f1.tex",
+      "role": "table",
+      "sha256": "a9f1a4d279de1ec85626581a9bc45eda1c8c28ffeead7c85879fab68bde232c4",
+      "size_bytes": 1066
+    },
+    {
+      "path": "tables/behavioral_pythia_support_precision.csv",
+      "role": "table",
+      "sha256": "9c148fd2acdb28a3254f772dcef7bc5d7a334ad906cda6819e54a19dfab4f2a7",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_pythia_support_precision.tex",
+      "role": "table",
+      "sha256": "d872a33019763ac62711193e8f1bb7d68faa88d7f602d109557279b0119b2c35",
+      "size_bytes": 1080
+    },
+    {
+      "path": "tables/behavioral_pythia_support_recall.csv",
+      "role": "table",
+      "sha256": "ceb9acf197c0e518c5c3fb2bc2a1faf353dae594e6fde8694959082517b25630",
+      "size_bytes": 748
+    },
+    {
+      "path": "tables/behavioral_pythia_support_recall.tex",
+      "role": "table",
+      "sha256": "57bfce996edf86f2e19701fc302ef5cdc824c2764043a6ebcb8f0ae39dc4ceff",
+      "size_bytes": 1074
+    },
+    {
+      "path": "tables/family_comparison.csv",
+      "role": "table",
+      "sha256": "83bbc42d111d3caeb1e84a54d446b3b8f82d4a027aefe18d2512fb92c88d6c4c",
+      "size_bytes": 41442
+    },
+    {
+      "path": "tables/family_lead_summary.csv",
+      "role": "table",
+      "sha256": "ed6230c388938222a57532dd1d5b9209941911ad776669d4650eebf8bef8748a",
+      "size_bytes": 4751
+    },
+    {
+      "path": "tables/identifiability_summary.csv",
+      "role": "table",
+      "sha256": "8a6bcd82b49c837f9388c5515cc54b7db4ed3fafb57df798dd500eb3a81657a2",
+      "size_bytes": 426808
+    },
+    {
+      "path": "tables/matched_activation_comparison.csv",
+      "role": "table",
+      "sha256": "9147d42c7e28232d119edffd91eb69210dde9541cc91a7c622681daa9843f4b9",
+      "size_bytes": 119500
+    },
+    {
+      "path": "tables/matched_activation_lead_summary.csv",
+      "role": "table",
+      "sha256": "f2c24b44c16ad06b26d5860a0201d6c0f06cb54856a1d9239ae770584fd6dcd4",
+      "size_bytes": 618
+    },
+    {
+      "path": "tables/method_key.csv",
+      "role": "table",
+      "sha256": "a2ca908ce78f70ec8d083704e736ecc320096a322fa30d2932f1bfbbbf4323fb",
+      "size_bytes": 668
+    },
+    {
+      "path": "tables/metric_definitions.csv",
+      "role": "table",
+      "sha256": "0562608cec05e8c0b394b5d508ab6208333191d4adb794e12504aa6b3aa24b40",
+      "size_bytes": 2087
+    },
+    {
+      "path": "tables/metric_winners.csv",
+      "role": "table",
+      "sha256": "c73a2ad5a83b4d80683d8530a48f29b3c25877d6c2f76ab9ce21309dd5b42421",
+      "size_bytes": 19802
+    },
+    {
+      "path": "tables/realized_active_axis_capacity.csv",
+      "role": "table",
+      "sha256": "a9ad5c4f3324a0e27ef97864ad26c9a21ff2eb83445a8e3e2422c3e39a0c4f66",
+      "size_bytes": 11908
+    },
+    {
+      "path": "tables/realized_active_axis_capacity_runs.csv",
+      "role": "table",
+      "sha256": "a256a9d7530142ac478037b54ed1a797ea5195fd51190b02e00c4691dc99004e",
+      "size_bytes": 26335
+    },
+    {
+      "path": "tables/representation_checks.csv",
+      "role": "table",
+      "sha256": "72901e8160bc0b82a0a6c328710d1ba085ae7e3e36209b854dcc1d126772fac4",
+      "size_bytes": 654077
+    },
+    {
+      "path": "tables/representation_diagnostics.csv",
+      "role": "table",
+      "sha256": "26a74ed434b163d6dc5495099f4f0a71638d38f7d8940d59eeb37b382f7a5e7f",
+      "size_bytes": 44243
+    },
+    {
+      "path": "tables/representation_summary.csv",
+      "role": "table",
+      "sha256": "2b3ce81504bdda18e24f4c915f891b245f5a6f2bb88466668e112c46fa2d71c9",
+      "size_bytes": 33208
+    },
+    {
+      "path": "tables/semisynthetic_gemma_dci_c.csv",
+      "role": "table",
+      "sha256": "75aeadeb12e405f482f3af799d0017ef32d7084254c9d1c84279fefc2b4c8204",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_gemma_dci_c.tex",
+      "role": "table",
+      "sha256": "f67b8787ac5434d4bacf40c2fb0ff9b63606816bf62a84664a08ed5961a8e832",
+      "size_bytes": 1310
+    },
+    {
+      "path": "tables/semisynthetic_gemma_dci_i.csv",
+      "role": "table",
+      "sha256": "2eef7bd3fab2fb7869bec10ea3498c5feb44b2974ec43e317ee06efa8bc91986",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_gemma_dci_i.tex",
+      "role": "table",
+      "sha256": "6c8ba7b50a36bd7a77be65db08f9e4776a00a16148f7e6c084e8c24cfa616960",
+      "size_bytes": 1310
+    },
+    {
+      "path": "tables/semisynthetic_gemma_decoder_projection_mcc_p.csv",
+      "role": "table",
+      "sha256": "00ef29f7183e06b39efe35612d53db70de6c15ae4c160bb0d9b330780d5cb8bb",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_gemma_decoder_projection_mcc_p.tex",
+      "role": "table",
+      "sha256": "8582dc44da6419293afc764d59377204c72b85a8d9208415f81aaf7364a9a1a4",
+      "size_bytes": 1348
+    },
+    {
+      "path": "tables/semisynthetic_gemma_identifiability.csv",
+      "role": "table",
+      "sha256": "f49b133ff1d58d3c81bbf85e46fedd10363ca04807e1c707c29cd79d7bc72440",
+      "size_bytes": 7803
+    },
+    {
+      "path": "tables/semisynthetic_gemma_mcc_p.csv",
+      "role": "table",
+      "sha256": "585b4209cf93199d4d72344ed7484f135ac4af6c7b2ded5304a16209854bb815",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_gemma_mcc_p.tex",
+      "role": "table",
+      "sha256": "7229216eb361d8d7ec305372fce6eae3fba949ab3304a2eb2474d829fcd65d30",
+      "size_bytes": 1310
+    },
+    {
+      "path": "tables/semisynthetic_gemma_mcc_s.csv",
+      "role": "table",
+      "sha256": "20135ecc432793c7c853f588cfb941bd59be7a0769bd620532b1ac11afbeb133",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_gemma_mcc_s.tex",
+      "role": "table",
+      "sha256": "fe06863e248fe01aa1e8578841951b95fa8722593cfaf82016d190f8ce08d503",
+      "size_bytes": 1310
+    },
+    {
+      "path": "tables/semisynthetic_gemma_r2.csv",
+      "role": "table",
+      "sha256": "651faf6a3be04cfc0aa9393a366fe2a2d9a524f93c5bfd65dfd0990c700c511f",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_gemma_r2.tex",
+      "role": "table",
+      "sha256": "db3c0b568fec895c148017857ac41eac90cfaf891761b5e8db17c8da182c8be5",
+      "size_bytes": 1305
+    },
+    {
+      "path": "tables/semisynthetic_gemma_realized_active_axis_capacity.csv",
+      "role": "table",
+      "sha256": "912c5a3733bdbee5f2b70cd5955251d3c232742a808b83a0fe4926b448d14cb0",
+      "size_bytes": 678
+    },
+    {
+      "path": "tables/semisynthetic_gemma_realized_active_axis_capacity.tex",
+      "role": "table",
+      "sha256": "1e90c24bd8b003f0591b2e4ce88e587ede6ef51a64eb55f886e3817ba0ac0021",
+      "size_bytes": 1090
+    },
+    {
+      "path": "tables/semisynthetic_gemma_sae_auc.csv",
+      "role": "table",
+      "sha256": "f36a9d583e6f943d163bad0105751af07ca46485a302f3d8568402d2a19e60d0",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_gemma_sae_auc.tex",
+      "role": "table",
+      "sha256": "208ae1abd91e1ebd0623d6f412dfffe6afab4d5a01f40137301e448e947ba567",
+      "size_bytes": 1241
+    },
+    {
+      "path": "tables/semisynthetic_gemma_support_f1.csv",
+      "role": "table",
+      "sha256": "3b01886e0e3939d0187264f2e6b98377f829f9c2888496d8f55f7b59eea8eaf1",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_gemma_support_f1.tex",
+      "role": "table",
+      "sha256": "129429acabf7994f84985a285cb7ea0eeb47aa9e568a82afc61d905f363b17f5",
+      "size_bytes": 1239
+    },
+    {
+      "path": "tables/semisynthetic_gemma_support_precision.csv",
+      "role": "table",
+      "sha256": "5ca1fc91ed1aec6138a559608d6b8c00fc64c4e3e2c0ba2a7524f61efcc4b0eb",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_gemma_support_precision.tex",
+      "role": "table",
+      "sha256": "b1bae282e0af15553142d86b3db38e977bbbebeb080b04540bdad1695abc3fbf",
+      "size_bytes": 1253
+    },
+    {
+      "path": "tables/semisynthetic_gemma_support_recall.csv",
+      "role": "table",
+      "sha256": "65f9eac4529e577217b670b883fd10a48854e43d51cafff2a78cf5cc2f84d14f",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_gemma_support_recall.tex",
+      "role": "table",
+      "sha256": "4aae8006fd888e0940ff20c04b8fcded0abc1e7ec9f7ef49ad45d6ddadcbd6f8",
+      "size_bytes": 1247
+    },
+    {
+      "path": "tables/semisynthetic_pythia_dci_c.csv",
+      "role": "table",
+      "sha256": "3a642d0c0a4570b298991dd6bab9c8b119ae14ef94285c40eabeb29d069d8603",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_pythia_dci_c.tex",
+      "role": "table",
+      "sha256": "d73d0c7a26550e1f1123c390f5a022ccbc10a8f4c1959b6be7c16b88513c023a",
+      "size_bytes": 1312
+    },
+    {
+      "path": "tables/semisynthetic_pythia_dci_i.csv",
+      "role": "table",
+      "sha256": "c33ee35af972fb94f03b162b221e5992c8f3f0c11e2c4f05cd1a0f0a0c9ba0db",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_pythia_dci_i.tex",
+      "role": "table",
+      "sha256": "93d025e5a1bd85d151c7010c8cbc9ca4b6202980735bd59ce51c71d32a8f24f2",
+      "size_bytes": 1312
+    },
+    {
+      "path": "tables/semisynthetic_pythia_decoder_projection_mcc_p.csv",
+      "role": "table",
+      "sha256": "5e1d9c34e287c3d440fdce813a956f1c433aaae0855347504dac9e72e1537829",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_pythia_decoder_projection_mcc_p.tex",
+      "role": "table",
+      "sha256": "c9e8ddb3a4c4f4c7f02235e0f8517a75c855b11b47fa167e590d4345e56ee583",
+      "size_bytes": 1350
+    },
+    {
+      "path": "tables/semisynthetic_pythia_identifiability.csv",
+      "role": "table",
+      "sha256": "dabde33adb7d916727f8ab41c2cf797a72d07252ec5c59e17507ef807be4fbe9",
+      "size_bytes": 7803
+    },
+    {
+      "path": "tables/semisynthetic_pythia_mcc_p.csv",
+      "role": "table",
+      "sha256": "df606b07133635bc7dce54365044ed38b48774ea3b983018d7aaa07cdaa4e0e1",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_pythia_mcc_p.tex",
+      "role": "table",
+      "sha256": "da087a8353ee4a0d4545229e21ee871f6a5a1cbe34aadadd4c949e013fe8c90b",
+      "size_bytes": 1312
+    },
+    {
+      "path": "tables/semisynthetic_pythia_mcc_s.csv",
+      "role": "table",
+      "sha256": "bf2473666a3236732c19ee56fa5ef2b341ed636af47e324775117ef841730749",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_pythia_mcc_s.tex",
+      "role": "table",
+      "sha256": "a3dab95602ad666dbfcf6497990354246c08f9647978e1e273d206a397997bcc",
+      "size_bytes": 1312
+    },
+    {
+      "path": "tables/semisynthetic_pythia_r2.csv",
+      "role": "table",
+      "sha256": "34e34ca36cbad21e7b25f36a61e1f117f9de84cc08a5a6f20c788bd3fa197088",
+      "size_bytes": 976
+    },
+    {
+      "path": "tables/semisynthetic_pythia_r2.tex",
+      "role": "table",
+      "sha256": "a41aaffd1fceb097319e46d47a8a075681900cab3451abe02320884c8b197e58",
+      "size_bytes": 1307
+    },
+    {
+      "path": "tables/semisynthetic_pythia_realized_active_axis_capacity.csv",
+      "role": "table",
+      "sha256": "74da06ba7911c6b13327d24e6cbfd7429c929ccc44270a1f96ae0bcef88725f9",
+      "size_bytes": 683
+    },
+    {
+      "path": "tables/semisynthetic_pythia_realized_active_axis_capacity.tex",
+      "role": "table",
+      "sha256": "be76025d5b3c36f1c3cc2a852cee9392634e58b0dfdfdc59f5a475541b0319eb",
+      "size_bytes": 1097
+    },
+    {
+      "path": "tables/semisynthetic_pythia_sae_auc.csv",
+      "role": "table",
+      "sha256": "972841a8d87dc7cc9ecb095cbd037d8f69fd9d9bb27e7e402f13f09e1d9bfe62",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_pythia_sae_auc.tex",
+      "role": "table",
+      "sha256": "de8c85ec76b98c57bb17ca1b4183aeee27ecd7ef7235fde092fc6550209892f6",
+      "size_bytes": 1243
+    },
+    {
+      "path": "tables/semisynthetic_pythia_support_f1.csv",
+      "role": "table",
+      "sha256": "871d1395348ad3799ca823b5119bcd3d95f442880cf64c856abdcfdf3aac1332",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_pythia_support_f1.tex",
+      "role": "table",
+      "sha256": "3cfd8175002dca037ce36f1808d1d02bd979f08fa477d73d3626dedae64d01d4",
+      "size_bytes": 1241
+    },
+    {
+      "path": "tables/semisynthetic_pythia_support_precision.csv",
+      "role": "table",
+      "sha256": "1518cc95e241fd7f597a08ef4e7fdcde9de791fb6f955857bb5324044c06937e",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_pythia_support_precision.tex",
+      "role": "table",
+      "sha256": "e70604cb46f0c6fccb13528b00bb7a4c1657203a5fa5e6b7d52efad9a0a10251",
+      "size_bytes": 1255
+    },
+    {
+      "path": "tables/semisynthetic_pythia_support_recall.csv",
+      "role": "table",
+      "sha256": "59cd3959afc481f38c37fc8e7d8fdc71db436ff092669ef457cac4b67b3f3d62",
+      "size_bytes": 895
+    },
+    {
+      "path": "tables/semisynthetic_pythia_support_recall.tex",
+      "role": "table",
+      "sha256": "1b3d2d379d26102ba74e8dd5c1ae9f817d4c932fd73651784d7df2b002bf005d",
+      "size_bytes": 1249
+    },
+    {
+      "path": "tables/synthetic_dci_c.csv",
+      "role": "table",
+      "sha256": "63ec8a766d896f685e6752ec7fd2675c6f6041929c6733821e661caaf5b5fa78",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_dci_c.tex",
+      "role": "table",
+      "sha256": "f202184225eec0312a2ead20443c35cd045ae600efa1fa9cf94b1d87f34c3dda",
+      "size_bytes": 409
+    },
+    {
+      "path": "tables/synthetic_dci_i.csv",
+      "role": "table",
+      "sha256": "a3bdc8b3d21b9c253b7bdc79619dcd7bc7b0bdd8aa6ffd8217996097c9d24434",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_dci_i.tex",
+      "role": "table",
+      "sha256": "1642ecefe679d4eab69a4662fdd2f8b1d1addd043a566f32d5e912562a15c2c9",
+      "size_bytes": 409
+    },
+    {
+      "path": "tables/synthetic_decoder_projection_mcc_p.csv",
+      "role": "table",
+      "sha256": "91a8f0ab0ff13fa1a46e5457daf2c70fa16b7865f0bb030b13f6632e73e7ee04",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_decoder_projection_mcc_p.tex",
+      "role": "table",
+      "sha256": "2538f47f621f6614a499394f2459d0383b866772ceb1f2df78922483876aaf09",
+      "size_bytes": 447
+    },
+    {
+      "path": "tables/synthetic_identifiability.csv",
+      "role": "table",
+      "sha256": "91100479fb522275727831dfadab926cca9bdfd3cacbddff31514a050d27f967",
+      "size_bytes": 1725
+    },
+    {
+      "path": "tables/synthetic_mcc_p.csv",
+      "role": "table",
+      "sha256": "b46a1a78fd8d08f52cf05974db4388ec54f2b430744da03274527a1aa7baa8aa",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_mcc_p.tex",
+      "role": "table",
+      "sha256": "c04a4b65d001082dbb808387f63575a5e4f86fb23c41eb9dbb6bb78e8f7ddbac",
+      "size_bytes": 409
+    },
+    {
+      "path": "tables/synthetic_mcc_s.csv",
+      "role": "table",
+      "sha256": "1ac213478442a2406bc12d84e78e7607dc04c95582de8624d904c8720c7a36c6",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_mcc_s.tex",
+      "role": "table",
+      "sha256": "de0a7850dbdf55b86aedb55102cefbaf83843694c5bfa214cc5e74bdb2546047",
+      "size_bytes": 409
+    },
+    {
+      "path": "tables/synthetic_r2.csv",
+      "role": "table",
+      "sha256": "dc906ab2595a8df3ab220216d384c670d403dfcbad750a1bbc372947ae8b6f32",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_r2.tex",
+      "role": "table",
+      "sha256": "78876b57fd5e9540d7ac1277f995c7d19f0e8ac8a862dec6637bfffa0606c945",
+      "size_bytes": 404
+    },
+    {
+      "path": "tables/synthetic_sae_auc.csv",
+      "role": "table",
+      "sha256": "ca8f911f7f578d7c423090b5291bb9085d8fb8395a76f87b2296f0f535673b81",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_sae_auc.tex",
+      "role": "table",
+      "sha256": "e73f6d6d73121aee408977f726a02c60af53c30d841fbf20ddfbacc735b86fd7",
+      "size_bytes": 421
+    },
+    {
+      "path": "tables/synthetic_support_f1.csv",
+      "role": "table",
+      "sha256": "e997c94a5e54129e4f6094a212f05c5009310f473f0ca8c16dd7def708123876",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_support_f1.tex",
+      "role": "table",
+      "sha256": "2a021d5b0cadcce17caf2de426c7b0d07ff29af4d5776ba92561007b0a12f3b3",
+      "size_bytes": 419
+    },
+    {
+      "path": "tables/synthetic_support_precision.csv",
+      "role": "table",
+      "sha256": "97e341b5bb1ed1799cefc1237e14b3e54419ab1ab1f8c29f08ae81046259fc3f",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_support_precision.tex",
+      "role": "table",
+      "sha256": "43366d458a41d5b3da09919da274f6863f5dfd13479fad8af0741a4c1c51a7f9",
+      "size_bytes": 433
+    },
+    {
+      "path": "tables/synthetic_support_recall.csv",
+      "role": "table",
+      "sha256": "545fb914020b3e0a794746d60869d17cd4bdc7f6b0f8f67cdf5f47274b85e13b",
+      "size_bytes": 209
+    },
+    {
+      "path": "tables/synthetic_support_recall.tex",
+      "role": "table",
+      "sha256": "e70175fedc95bc1032f476aff42802c12861e78251a295a46d3a335f12563f65",
+      "size_bytes": 427
+    }
+  ],
+  "result_counts": {
+    "direct_family_comparison_cells": 180,
+    "figures": 13,
+    "matched_activation_comparison_cells": 540,
+    "model_dataset_llm_cells": 168,
+    "realized_capacity_checkpoint_rows": 180,
+    "realized_capacity_dataset_llm_method_cells": 60,
+    "reported_metric_cells": 1680,
+    "representation_concept_seed_rows": 2106,
+    "source_runs": 516
+  },
+  "schema_version": "ssae-result-artifacts-v1",
+  "script": {
+    "path": "experiments/exp02/report.py",
+    "role": "result_builder",
+    "sha256": "d2be082f44ca6f62bb4d59d0ee99a8b5bae1befacc29f9956e7026b38dacb8d5",
+    "size_bytes": 83322
+  },
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "source_provenance": {
+    "aggregation": "mean within dataset, LLM, method, and training seed",
+    "family_comparison": "best SSAE versus best SAE within each dataset, LLM, and metric; uncertainty is the population standard deviation of paired-seed differences",
+    "heldout_evaluation": "ssae_rms_heldout_identification_v1",
+    "llm_aggregation": "none",
+    "matched_activation_comparison": "ReLU, JumpReLU, and TopK SSAE versus SAE within each dataset, LLM, metric, and paired training seed",
+    "missing_cells": "unavailable; never encoded as zero",
+    "realized_active_axis_capacity": "for nonlinear antipodal SSAEs, count independent axes whose absolute h_positive - h_negative coefficient reaches the frozen 0.01 activity threshold on cfc_train delta_z or its exact reverse; counts and fractions are aggregated only within dataset, LLM, method, and seed",
+    "representation_axis_selection": "one latent response coordinate per concept selected by train-only Pearson Hungarian matching; the corresponding decoder axis is then evaluated",
+    "representation_concept_weighting": "concepts averaged equally within each dataset-method-seed before seed uncertainty",
+    "representation_evaluation": "signed cosine with factor-times-delta_z on cfc_test only; negative values are retained as anti-alignment",
+    "representation_orientation": "orientation fixed by the sign of the latent-response train correlation, not by a separate decoder-projection fit",
+    "synthetic_study": "exp06_synthetic_identification",
+    "synthetic_support_target": "planted support (factor != 0)",
+    "uncertainty": "population standard deviation across training seeds"
+  },
+  "sources": [
+    {
+      "path": "results/shared/identification/ssae_rms_v3/results_bundle.json",
+      "role": "heldout_scalar_rms_metrics",
+      "sha256": "496f393d26cfd4a30044ea2d9a628fbda84bab0147565fbde9f59db2b947d797",
+      "size_bytes": 5535550
+    },
+    {
+      "path": "results/exp06/frozen/synthetic_identification_v1/bundle.json",
+      "role": "synthetic_metrics",
+      "sha256": "4b600d2e3ff5a6a0a0c5810027542304ee8c812bad4775732e8b390083ba9ef6",
+      "size_bytes": 475827
+    },
+    {
+      "path": "results/shared/identification/ssae_rms_v3/realized_active_axis_capacity_bundle.json",
+      "role": "nonlinear_ssae_realized_active_axis_capacity",
+      "sha256": "49d28e8010c4cdc057a9459fa1dd5320d48f9f31c4bb8fe593d086510a6a3e02",
+      "size_bytes": 116857
+    }
+  ],
+  "tables": [
+    {
+      "id": "identifiability_summary",
+      "path": "tables/identifiability_summary.csv"
+    },
+    {
+      "id": "metric_winners",
+      "path": "tables/metric_winners.csv"
+    },
+    {
+      "id": "family_comparison",
+      "path": "tables/family_comparison.csv"
+    },
+    {
+      "id": "family_lead_summary",
+      "path": "tables/family_lead_summary.csv"
+    },
+    {
+      "id": "matched_activation_comparison",
+      "path": "tables/matched_activation_comparison.csv"
+    },
+    {
+      "id": "matched_activation_lead_summary",
+      "path": "tables/matched_activation_lead_summary.csv"
+    },
+    {
+      "id": "metric_definitions",
+      "path": "tables/metric_definitions.csv"
+    },
+    {
+      "id": "method_key",
+      "path": "tables/method_key.csv"
+    },
+    {
+      "id": "all_datasets_gemma_identifiability",
+      "path": "tables/all_datasets_gemma_identifiability.csv"
+    },
+    {
+      "id": "all_datasets_gemma_mcc_p",
+      "path": "tables/all_datasets_gemma_mcc_p.csv"
+    },
+    {
+      "id": "all_datasets_gemma_mcc_p",
+      "path": "tables/all_datasets_gemma_mcc_p.tex"
+    },
+    {
+      "id": "all_datasets_gemma_mcc_s",
+      "path": "tables/all_datasets_gemma_mcc_s.csv"
+    },
+    {
+      "id": "all_datasets_gemma_mcc_s",
+      "path": "tables/all_datasets_gemma_mcc_s.tex"
+    },
+    {
+      "id": "all_datasets_gemma_dci_c",
+      "path": "tables/all_datasets_gemma_dci_c.csv"
+    },
+    {
+      "id": "all_datasets_gemma_dci_c",
+      "path": "tables/all_datasets_gemma_dci_c.tex"
+    },
+    {
+      "id": "all_datasets_gemma_dci_i",
+      "path": "tables/all_datasets_gemma_dci_i.csv"
+    },
+    {
+      "id": "all_datasets_gemma_dci_i",
+      "path": "tables/all_datasets_gemma_dci_i.tex"
+    },
+    {
+      "id": "all_datasets_gemma_r2",
+      "path": "tables/all_datasets_gemma_r2.csv"
+    },
+    {
+      "id": "all_datasets_gemma_r2",
+      "path": "tables/all_datasets_gemma_r2.tex"
+    },
+    {
+      "id": "all_datasets_pythia_identifiability",
+      "path": "tables/all_datasets_pythia_identifiability.csv"
+    },
+    {
+      "id": "all_datasets_pythia_mcc_p",
+      "path": "tables/all_datasets_pythia_mcc_p.csv"
+    },
+    {
+      "id": "all_datasets_pythia_mcc_p",
+      "path": "tables/all_datasets_pythia_mcc_p.tex"
+    },
+    {
+      "id": "all_datasets_pythia_mcc_s",
+      "path": "tables/all_datasets_pythia_mcc_s.csv"
+    },
+    {
+      "id": "all_datasets_pythia_mcc_s",
+      "path": "tables/all_datasets_pythia_mcc_s.tex"
+    },
+    {
+      "id": "all_datasets_pythia_dci_c",
+      "path": "tables/all_datasets_pythia_dci_c.csv"
+    },
+    {
+      "id": "all_datasets_pythia_dci_c",
+      "path": "tables/all_datasets_pythia_dci_c.tex"
+    },
+    {
+      "id": "all_datasets_pythia_dci_i",
+      "path": "tables/all_datasets_pythia_dci_i.csv"
+    },
+    {
+      "id": "all_datasets_pythia_dci_i",
+      "path": "tables/all_datasets_pythia_dci_i.tex"
+    },
+    {
+      "id": "all_datasets_pythia_r2",
+      "path": "tables/all_datasets_pythia_r2.csv"
+    },
+    {
+      "id": "all_datasets_pythia_r2",
+      "path": "tables/all_datasets_pythia_r2.tex"
+    },
+    {
+      "id": "behavioral_gemma_identifiability",
+      "path": "tables/behavioral_gemma_identifiability.csv"
+    },
+    {
+      "id": "behavioral_gemma_mcc_p",
+      "path": "tables/behavioral_gemma_mcc_p.csv"
+    },
+    {
+      "id": "behavioral_gemma_mcc_p",
+      "path": "tables/behavioral_gemma_mcc_p.tex"
+    },
+    {
+      "id": "behavioral_gemma_mcc_s",
+      "path": "tables/behavioral_gemma_mcc_s.csv"
+    },
+    {
+      "id": "behavioral_gemma_mcc_s",
+      "path": "tables/behavioral_gemma_mcc_s.tex"
+    },
+    {
+      "id": "behavioral_gemma_dci_c",
+      "path": "tables/behavioral_gemma_dci_c.csv"
+    },
+    {
+      "id": "behavioral_gemma_dci_c",
+      "path": "tables/behavioral_gemma_dci_c.tex"
+    },
+    {
+      "id": "behavioral_gemma_dci_i",
+      "path": "tables/behavioral_gemma_dci_i.csv"
+    },
+    {
+      "id": "behavioral_gemma_dci_i",
+      "path": "tables/behavioral_gemma_dci_i.tex"
+    },
+    {
+      "id": "behavioral_gemma_r2",
+      "path": "tables/behavioral_gemma_r2.csv"
+    },
+    {
+      "id": "behavioral_gemma_r2",
+      "path": "tables/behavioral_gemma_r2.tex"
+    },
+    {
+      "id": "behavioral_gemma_sae_auc",
+      "path": "tables/behavioral_gemma_sae_auc.csv"
+    },
+    {
+      "id": "behavioral_gemma_sae_auc",
+      "path": "tables/behavioral_gemma_sae_auc.tex"
+    },
+    {
+      "id": "behavioral_gemma_decoder_projection_mcc_p",
+      "path": "tables/behavioral_gemma_decoder_projection_mcc_p.csv"
+    },
+    {
+      "id": "behavioral_gemma_decoder_projection_mcc_p",
+      "path": "tables/behavioral_gemma_decoder_projection_mcc_p.tex"
+    },
+    {
+      "id": "behavioral_gemma_support_precision",
+      "path": "tables/behavioral_gemma_support_precision.csv"
+    },
+    {
+      "id": "behavioral_gemma_support_precision",
+      "path": "tables/behavioral_gemma_support_precision.tex"
+    },
+    {
+      "id": "behavioral_gemma_support_recall",
+      "path": "tables/behavioral_gemma_support_recall.csv"
+    },
+    {
+      "id": "behavioral_gemma_support_recall",
+      "path": "tables/behavioral_gemma_support_recall.tex"
+    },
+    {
+      "id": "behavioral_gemma_support_f1",
+      "path": "tables/behavioral_gemma_support_f1.csv"
+    },
+    {
+      "id": "behavioral_gemma_support_f1",
+      "path": "tables/behavioral_gemma_support_f1.tex"
+    },
+    {
+      "id": "behavioral_pythia_identifiability",
+      "path": "tables/behavioral_pythia_identifiability.csv"
+    },
+    {
+      "id": "behavioral_pythia_mcc_p",
+      "path": "tables/behavioral_pythia_mcc_p.csv"
+    },
+    {
+      "id": "behavioral_pythia_mcc_p",
+      "path": "tables/behavioral_pythia_mcc_p.tex"
+    },
+    {
+      "id": "behavioral_pythia_mcc_s",
+      "path": "tables/behavioral_pythia_mcc_s.csv"
+    },
+    {
+      "id": "behavioral_pythia_mcc_s",
+      "path": "tables/behavioral_pythia_mcc_s.tex"
+    },
+    {
+      "id": "behavioral_pythia_dci_c",
+      "path": "tables/behavioral_pythia_dci_c.csv"
+    },
+    {
+      "id": "behavioral_pythia_dci_c",
+      "path": "tables/behavioral_pythia_dci_c.tex"
+    },
+    {
+      "id": "behavioral_pythia_dci_i",
+      "path": "tables/behavioral_pythia_dci_i.csv"
+    },
+    {
+      "id": "behavioral_pythia_dci_i",
+      "path": "tables/behavioral_pythia_dci_i.tex"
+    },
+    {
+      "id": "behavioral_pythia_r2",
+      "path": "tables/behavioral_pythia_r2.csv"
+    },
+    {
+      "id": "behavioral_pythia_r2",
+      "path": "tables/behavioral_pythia_r2.tex"
+    },
+    {
+      "id": "behavioral_pythia_sae_auc",
+      "path": "tables/behavioral_pythia_sae_auc.csv"
+    },
+    {
+      "id": "behavioral_pythia_sae_auc",
+      "path": "tables/behavioral_pythia_sae_auc.tex"
+    },
+    {
+      "id": "behavioral_pythia_decoder_projection_mcc_p",
+      "path": "tables/behavioral_pythia_decoder_projection_mcc_p.csv"
+    },
+    {
+      "id": "behavioral_pythia_decoder_projection_mcc_p",
+      "path": "tables/behavioral_pythia_decoder_projection_mcc_p.tex"
+    },
+    {
+      "id": "behavioral_pythia_support_precision",
+      "path": "tables/behavioral_pythia_support_precision.csv"
+    },
+    {
+      "id": "behavioral_pythia_support_precision",
+      "path": "tables/behavioral_pythia_support_precision.tex"
+    },
+    {
+      "id": "behavioral_pythia_support_recall",
+      "path": "tables/behavioral_pythia_support_recall.csv"
+    },
+    {
+      "id": "behavioral_pythia_support_recall",
+      "path": "tables/behavioral_pythia_support_recall.tex"
+    },
+    {
+      "id": "behavioral_pythia_support_f1",
+      "path": "tables/behavioral_pythia_support_f1.csv"
+    },
+    {
+      "id": "behavioral_pythia_support_f1",
+      "path": "tables/behavioral_pythia_support_f1.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_identifiability",
+      "path": "tables/semisynthetic_gemma_identifiability.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_mcc_p",
+      "path": "tables/semisynthetic_gemma_mcc_p.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_mcc_p",
+      "path": "tables/semisynthetic_gemma_mcc_p.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_mcc_s",
+      "path": "tables/semisynthetic_gemma_mcc_s.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_mcc_s",
+      "path": "tables/semisynthetic_gemma_mcc_s.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_dci_c",
+      "path": "tables/semisynthetic_gemma_dci_c.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_dci_c",
+      "path": "tables/semisynthetic_gemma_dci_c.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_dci_i",
+      "path": "tables/semisynthetic_gemma_dci_i.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_dci_i",
+      "path": "tables/semisynthetic_gemma_dci_i.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_r2",
+      "path": "tables/semisynthetic_gemma_r2.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_r2",
+      "path": "tables/semisynthetic_gemma_r2.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_sae_auc",
+      "path": "tables/semisynthetic_gemma_sae_auc.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_sae_auc",
+      "path": "tables/semisynthetic_gemma_sae_auc.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_decoder_projection_mcc_p",
+      "path": "tables/semisynthetic_gemma_decoder_projection_mcc_p.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_decoder_projection_mcc_p",
+      "path": "tables/semisynthetic_gemma_decoder_projection_mcc_p.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_support_precision",
+      "path": "tables/semisynthetic_gemma_support_precision.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_support_precision",
+      "path": "tables/semisynthetic_gemma_support_precision.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_support_recall",
+      "path": "tables/semisynthetic_gemma_support_recall.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_support_recall",
+      "path": "tables/semisynthetic_gemma_support_recall.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_support_f1",
+      "path": "tables/semisynthetic_gemma_support_f1.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_support_f1",
+      "path": "tables/semisynthetic_gemma_support_f1.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_identifiability",
+      "path": "tables/semisynthetic_pythia_identifiability.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_mcc_p",
+      "path": "tables/semisynthetic_pythia_mcc_p.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_mcc_p",
+      "path": "tables/semisynthetic_pythia_mcc_p.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_mcc_s",
+      "path": "tables/semisynthetic_pythia_mcc_s.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_mcc_s",
+      "path": "tables/semisynthetic_pythia_mcc_s.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_dci_c",
+      "path": "tables/semisynthetic_pythia_dci_c.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_dci_c",
+      "path": "tables/semisynthetic_pythia_dci_c.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_dci_i",
+      "path": "tables/semisynthetic_pythia_dci_i.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_dci_i",
+      "path": "tables/semisynthetic_pythia_dci_i.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_r2",
+      "path": "tables/semisynthetic_pythia_r2.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_r2",
+      "path": "tables/semisynthetic_pythia_r2.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_sae_auc",
+      "path": "tables/semisynthetic_pythia_sae_auc.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_sae_auc",
+      "path": "tables/semisynthetic_pythia_sae_auc.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_decoder_projection_mcc_p",
+      "path": "tables/semisynthetic_pythia_decoder_projection_mcc_p.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_decoder_projection_mcc_p",
+      "path": "tables/semisynthetic_pythia_decoder_projection_mcc_p.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_support_precision",
+      "path": "tables/semisynthetic_pythia_support_precision.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_support_precision",
+      "path": "tables/semisynthetic_pythia_support_precision.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_support_recall",
+      "path": "tables/semisynthetic_pythia_support_recall.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_support_recall",
+      "path": "tables/semisynthetic_pythia_support_recall.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_support_f1",
+      "path": "tables/semisynthetic_pythia_support_f1.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_support_f1",
+      "path": "tables/semisynthetic_pythia_support_f1.tex"
+    },
+    {
+      "id": "synthetic_identifiability",
+      "path": "tables/synthetic_identifiability.csv"
+    },
+    {
+      "id": "synthetic_mcc_p",
+      "path": "tables/synthetic_mcc_p.csv"
+    },
+    {
+      "id": "synthetic_mcc_p",
+      "path": "tables/synthetic_mcc_p.tex"
+    },
+    {
+      "id": "synthetic_mcc_s",
+      "path": "tables/synthetic_mcc_s.csv"
+    },
+    {
+      "id": "synthetic_mcc_s",
+      "path": "tables/synthetic_mcc_s.tex"
+    },
+    {
+      "id": "synthetic_dci_c",
+      "path": "tables/synthetic_dci_c.csv"
+    },
+    {
+      "id": "synthetic_dci_c",
+      "path": "tables/synthetic_dci_c.tex"
+    },
+    {
+      "id": "synthetic_dci_i",
+      "path": "tables/synthetic_dci_i.csv"
+    },
+    {
+      "id": "synthetic_dci_i",
+      "path": "tables/synthetic_dci_i.tex"
+    },
+    {
+      "id": "synthetic_r2",
+      "path": "tables/synthetic_r2.csv"
+    },
+    {
+      "id": "synthetic_r2",
+      "path": "tables/synthetic_r2.tex"
+    },
+    {
+      "id": "synthetic_sae_auc",
+      "path": "tables/synthetic_sae_auc.csv"
+    },
+    {
+      "id": "synthetic_sae_auc",
+      "path": "tables/synthetic_sae_auc.tex"
+    },
+    {
+      "id": "synthetic_decoder_projection_mcc_p",
+      "path": "tables/synthetic_decoder_projection_mcc_p.csv"
+    },
+    {
+      "id": "synthetic_decoder_projection_mcc_p",
+      "path": "tables/synthetic_decoder_projection_mcc_p.tex"
+    },
+    {
+      "id": "synthetic_support_precision",
+      "path": "tables/synthetic_support_precision.csv"
+    },
+    {
+      "id": "synthetic_support_precision",
+      "path": "tables/synthetic_support_precision.tex"
+    },
+    {
+      "id": "synthetic_support_recall",
+      "path": "tables/synthetic_support_recall.csv"
+    },
+    {
+      "id": "synthetic_support_recall",
+      "path": "tables/synthetic_support_recall.tex"
+    },
+    {
+      "id": "synthetic_support_f1",
+      "path": "tables/synthetic_support_f1.csv"
+    },
+    {
+      "id": "synthetic_support_f1",
+      "path": "tables/synthetic_support_f1.tex"
+    },
+    {
+      "id": "representation_checks",
+      "path": "tables/representation_checks.csv"
+    },
+    {
+      "id": "representation_summary",
+      "path": "tables/representation_summary.csv"
+    },
+    {
+      "id": "representation_diagnostics",
+      "path": "tables/representation_diagnostics.csv"
+    },
+    {
+      "id": "realized_active_axis_capacity_runs",
+      "path": "tables/realized_active_axis_capacity_runs.csv"
+    },
+    {
+      "id": "realized_active_axis_capacity",
+      "path": "tables/realized_active_axis_capacity.csv"
+    },
+    {
+      "id": "behavioral_gemma_realized_active_axis_capacity",
+      "path": "tables/behavioral_gemma_realized_active_axis_capacity.csv"
+    },
+    {
+      "id": "behavioral_gemma_realized_active_axis_capacity",
+      "path": "tables/behavioral_gemma_realized_active_axis_capacity.tex"
+    },
+    {
+      "id": "behavioral_pythia_realized_active_axis_capacity",
+      "path": "tables/behavioral_pythia_realized_active_axis_capacity.csv"
+    },
+    {
+      "id": "behavioral_pythia_realized_active_axis_capacity",
+      "path": "tables/behavioral_pythia_realized_active_axis_capacity.tex"
+    },
+    {
+      "id": "semisynthetic_gemma_realized_active_axis_capacity",
+      "path": "tables/semisynthetic_gemma_realized_active_axis_capacity.csv"
+    },
+    {
+      "id": "semisynthetic_gemma_realized_active_axis_capacity",
+      "path": "tables/semisynthetic_gemma_realized_active_axis_capacity.tex"
+    },
+    {
+      "id": "semisynthetic_pythia_realized_active_axis_capacity",
+      "path": "tables/semisynthetic_pythia_realized_active_axis_capacity.csv"
+    },
+    {
+      "id": "semisynthetic_pythia_realized_active_axis_capacity",
+      "path": "tables/semisynthetic_pythia_realized_active_axis_capacity.tex"
+    }
+  ],
+  "title": "Identifiability and representation checks"
+}
