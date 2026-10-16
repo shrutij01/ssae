@@ -115,7 +115,23 @@ def load_dataset(
     cfc_train_metadata = None
     cfc_test_metadata = None
 
-    if dataset_name == "truthful-qa":
+    from data.v4_pairs import V4_DATASETS
+
+    if dataset_name in V4_DATASETS:
+        # v4 designs (docs/v4/dataset-brief.md): materialised by
+        # ``python -m experiments.v4.build_datasets``; grouped train/val/test
+        # splits. The legacy two-split API returns train and test pairs.
+        from data.v4_pairs import load_text_pairs
+
+        (
+            cfc_train_tuples,
+            cfc_train_labels,
+            cfc_train_metadata,
+        ) = load_text_pairs(dataset_name, "train")
+        cfc_test_tuples, cfc_test_labels, cfc_test_metadata = load_text_pairs(
+            dataset_name, "test"
+        )
+    elif dataset_name == "truthful-qa":
         hf_dataset_name = "truthfulqa/truthful_qa"
         dataset_params = {
             "split": "validation",

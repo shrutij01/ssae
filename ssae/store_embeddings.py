@@ -79,8 +79,13 @@ def extract_embeddings(
                 # For left padding, last token is always at the rightmost position
                 pooled_embeddings = hidden_states[:, -1, :]
             elif pooling_method == "sum":
-                # Sum pooling across sequence dimension
+                # Sum pooling across sequence dimension (length-dependent; kept
+                # for historical runs — prefer "mean", dataset brief item 3)
                 pooled_embeddings = hidden_states.sum(dim=1)
+            elif pooling_method == "mean":
+                # Mean over real (non-padding) tokens.
+                mask = tokens["attention_mask"].unsqueeze(-1).to(hidden_states.dtype)
+                pooled_embeddings = (hidden_states * mask).sum(1) / mask.sum(1).clamp_min(1)
             else:
                 raise ValueError(f"Unknown pooling method: {pooling_method}")
 

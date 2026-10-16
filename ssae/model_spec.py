@@ -28,6 +28,9 @@ class ModelFamily(str, Enum):
 class Optimization(str, Enum):
     PENALIZED = "penalized"
     CONSTRAINED = "constrained"
+    # v4 budget-free solver: exact reconstruction on the top-r subspace by
+    # construction, smoothed count minimised (no constraint, no penalty weight).
+    SUBSPACE = "subspace"
 
 
 class Constraint(str, Enum):
@@ -35,6 +38,8 @@ class Constraint(str, Enum):
     L1 = "l1"
     STEP_L0 = "step_l0"
     SIGMOID_L0 = "sigmoid_l0"
+    # v4: exact per-pair count of gated codes (proxy-Lagrangian dual update).
+    COUNT = "count"
 
 
 def _enum_value(enum_type, value, aliases: dict[str, str] | None = None):
@@ -81,15 +86,16 @@ class ModelSpec:
                 },
             ),
         )
-        if self.optimization is Optimization.PENALIZED:
+        if self.optimization in (Optimization.PENALIZED, Optimization.SUBSPACE):
             if self.constraint is not Constraint.NONE:
                 raise ValueError(
-                    "penalized models must use constraint='none'; a penalty or "
-                    "structural gate is not a constrained-optimization constraint"
+                    f"{self.optimization.value} models must use constraint='none'; "
+                    "a penalty, structural gate or budget-free solver is not a "
+                    "constrained-optimization constraint"
                 )
         elif self.constraint is Constraint.NONE:
             raise ValueError(
-                "constrained models require L1, Step-L0, or sigmoid-L0"
+                "constrained models require L1, Step-L0, sigmoid-L0, or count"
             )
 
     @property
@@ -117,6 +123,8 @@ class ModelSpec:
             ActivationKind.JUMPRELU: "JumpReLU",
             ActivationKind.SPARSEMAX: "Sparsemax",
             ActivationKind.MATCHING_PURSUIT: "Matching Pursuit",
+            ActivationKind.SIGNED_HARD: "Signed-hard",
+            ActivationKind.SIGNED_BATCHTOPK: "Signed BatchTopK",
         }
         name = f"{self.family.value} {activations[self.activation]}"
         if self.optimization is Optimization.CONSTRAINED:
@@ -124,8 +132,11 @@ class ModelSpec:
                 Constraint.L1: "L1",
                 Constraint.STEP_L0: "Step-L0",
                 Constraint.SIGMOID_L0: "sigmoid-L0",
+                Constraint.COUNT: "count",
             }[self.constraint]
             return f"{name} (constrained {constraint})"
+        if self.optimization is Optimization.SUBSPACE:
+            return f"{name} (subspace)"
         return f"{name} (penalized)"
 
     @property

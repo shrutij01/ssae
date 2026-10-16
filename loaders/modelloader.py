@@ -53,6 +53,38 @@ def load_gemmascope_checkpoint(hf_token: str | None = None):
     return (decoder_weight, decoder_bias, encoder_weight, encoder_bias)
 
 
+def load_gemmascope_sae(
+    hidden_state_index: int,
+    average_l0: int,
+    width: str = "16k",
+    hf_token: str | None = None,
+    local_dir: str | None = None,
+):
+    """Load the GemmaScope residual SAE that matches ``hidden_states[i]``.
+
+    HF ``hidden_states[i]`` is the output of block ``i-1``, so it matches
+    GemmaScope ``layer_{i-1}`` (dataset brief, item 1; the historical
+    :func:`load_gemmascope_checkpoint` loads ``layer_25`` for data read at
+    ``hidden_states[25]``, i.e. one block too deep). Returns the raw arrays,
+    including the JumpReLU ``threshold``: ``encode(x) = JumpReLU(x W_enc + b_enc)``.
+    """
+    import numpy as np
+
+    if hidden_state_index < 1:
+        raise ValueError("hidden_states[0] is the embedding output; no SAE")
+    layer = hidden_state_index - 1
+    filepath = hf_hub_download(
+        repo_id="google/gemma-scope-2b-pt-res",
+        filename=f"layer_{layer}/width_{width}/average_l0_{average_l0}/params.npz",
+        local_dir=local_dir,
+        token=hf_token or os.environ.get("HF_TOKEN"),
+    )
+    data = np.load(filepath)
+    return {key: data[key] for key in ("W_enc", "b_enc", "threshold", "W_dec", "b_dec")} | {
+        "layer": layer, "hidden_state_index": hidden_state_index,
+    }
+
+
 def load_ssae_models(modeldirs):
     """Load SSAE models from multiple directories → (folded) weights & biases.
 

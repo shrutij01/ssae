@@ -15,7 +15,6 @@ site/
 *.npz
 /scripts/checkpoints/
 /scripts/gemma-2-2b-it/
-/data/behavioral/refusal.json
 /data/oodprobe/**/*.csv
 /data/oodprobe/*.csv
 

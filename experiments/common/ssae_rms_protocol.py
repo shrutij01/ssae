@@ -351,3 +351,119 @@ def validate_protocol() -> None:
 
 
 validate_protocol()
+
+
+# ----------------------------------------------------------------------------
+# Protocol ssae_rms_v4 (docs/v4). The v3 matrix above is frozen and unchanged;
+# v4 adds label-free per-pair sparsity with linear, signed, un-normalised codes
+# and writes to new result directories only (results/v4, $SCRATCH/ssae_v4).
+# ----------------------------------------------------------------------------
+
+PROTOCOL_ID_V4 = "ssae_rms_v4"
+V4_SEEDS = (0, 1, 2, 3, 4)
+V4_LAYERS = (6, 9, 12, 15, 18, 21, 24)  # HF hidden_states indices
+V4_TAUS = (0.0, 0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4)
+V4_BETAS = (0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 6.0)
+V4_TOPK_KS = (1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 64)
+V4_BETA_MARGIN = 1.25
+V4_R_MAX = 64
+
+
+@dataclass(frozen=True)
+class V4Method:
+    """One row of the v4 comparison. ``supervised`` rows use labels."""
+
+    method_id: str
+    label: str
+    role: str  # primary | ssae | ssae_ablation | unsupervised | supervised
+    supervised: bool
+    sparsity_selection: str
+
+
+V4_METHODS = (
+    V4Method("ssae_gated_count", "SSAE gated count (primary; warm start)", "primary", False,
+             "beta: elbow x 1.25 of warm-started sweep; tau: energy rule + planted 0.25x recovery"),
+    V4Method("ssae_subspace", "SSAE subspace (budget-free solver)", "ssae", False,
+             "r: PCA elbow; tau: energy rule + planted 0.25x recovery (shared with the gated variants)"),
+    V4Method("ssae_signed_batchtopk", "SSAE signed BatchTopK (warm start)", "ssae", False,
+             "beta: elbow x 1.25 of warm-started sweep"),
+    V4Method("ssae_linear_l1", "SSAE linear, v3 constrained L1 (ablation, width d)", "ssae_ablation", False,
+             "v3 frozen target 0.005 (fraction of hid)"),
+    V4Method("ssae_linear_step_l0", "SSAE linear, v3 constrained Step-L0 (ablation, width d)", "ssae_ablation", False,
+             "v3 frozen target 0.005 (fraction of hid)"),
+    V4Method("ssae_linear_sigmoid_l0", "SSAE linear, v3 constrained sigmoid-L0 (ablation, width d)", "ssae_ablation",
+             False, "v3 frozen target 0.005 (fraction of hid)"),
+    V4Method("pca", "PCA of shifts (r = SSAE r)", "unsupervised", False, "r shared with SSAE"),
+    V4Method("ica", "FastICA of shifts (r = SSAE r)", "unsupervised", False, "r shared with SSAE"),
+    V4Method("gemmascope", "SAE: GemmaScope 16k, encode(h~) - encode(h)", "unsupervised", False,
+             "average-L0 variant chosen by validation MCC"),
+    V4Method("topk_sae", "TopK SAE on shifts", "unsupervised", False,
+             "k: elbow x 1.25 of held-out error over V4_TOPK_KS"),
+    V4Method("sae_relu", "SAE ReLU (activations, pooled; elbow)", "unsupervised", False,
+             "lambda: elbow x 1.25 of validation reconstruction vs L0"),
+    V4Method("sae_jumprelu", "SAE JumpReLU (activations, pooled; elbow)", "unsupervised", False,
+             "lambda: elbow x 1.25 of validation reconstruction vs L0"),
+    V4Method("sae_topk", "SAE TopK (activations, pooled; elbow)", "unsupervised", False,
+             "k: elbow x 1.25 of validation reconstruction vs L0"),
+    V4Method("sae_relu_v3", "SAE ReLU (activations, v3 settings)", "unsupervised", False, "v3: gamma 1e-3"),
+    V4Method("sae_jumprelu_v3", "SAE JumpReLU (activations, v3 settings)", "unsupervised", False, "v3: gamma 1e-3"),
+    V4Method("sae_topk_v3", "SAE TopK (activations, v3 settings)", "unsupervised", False, "v3: k = 72"),
+    V4Method("ssae_relu", "SSAE ReLU (v3 penalized trainer on shifts, antipodal, width r)", "ssae", False,
+             "lambda: elbow x 1.25"),
+    V4Method("ssae_jumprelu", "SSAE JumpReLU (v3 penalized trainer on shifts, antipodal, width r)", "ssae", False,
+             "lambda: elbow x 1.25"),
+    V4Method("ssae_topk", "SSAE TopK (v3 penalized trainer on shifts, antipodal, width r)", "ssae", False,
+             "k: elbow x 1.25 (k <= r)"),
+    V4Method("diffmean", "DiffMean / CAA per factor (supervised)", "supervised", True,
+             "none (regression direction if a factor never changes alone)"),
+    V4Method("regression", "Multi-label least squares (supervised)", "supervised", True, "none"),
+)
+V4_METHOD_BY_ID = {row.method_id: row for row in V4_METHODS}
+
+
+def v4_protocol_metadata(method_id: str) -> dict[str, object]:
+    """Machine-readable v4 identity for a run record."""
+    row = V4_METHOD_BY_ID[method_id]
+    return {
+        "protocol_id": PROTOCOL_ID_V4,
+        "method_id": row.method_id,
+        "method_label": row.label,
+        "role": row.role,
+        "supervised": row.supervised,
+        "sparsity_selection": row.sparsity_selection,
+        "input_norm": V4_INPUT_NORM.get(row.method_id, "none"),
+        "reverse_difference_augmentation": True,
+        "budget_units": "per_pair" if row.method_id in {"ssae_gated_count", "ssae_signed_batchtopk"} else None,
+        **({"subspace_restarts": V4_SUBSPACE_RESTARTS, "subspace_init_mode": V4_SUBSPACE_INIT_MODE,
+            "tau_rule": V4_TAU_RULE, "tau_planted": V4_TAU_PLANTED}
+           if row.method_id in {"ssae_subspace", "ssae_gated_count", "ssae_signed_batchtopk"} else {}),
+    }
+
+
+V4_INPUT_NORM = {
+    **{m: "unit" for m in ("ssae_subspace", "ssae_gated_count", "ssae_signed_batchtopk")},
+    **{m: "rms" for m in ("ssae_linear_l1", "ssae_linear_step_l0", "ssae_linear_sigmoid_l0", "ssae_relu",
+                          "ssae_jumprelu", "ssae_topk", "sae_relu", "sae_jumprelu", "sae_topk", "sae_relu_v3",
+                          "sae_jumprelu_v3", "sae_topk_v3")},
+    **{m: "unit_rows" for m in ("pca", "ica", "topk_sae")},
+    "gemmascope": "none (pretrained on raw activations)",
+}
+
+
+def validate_protocol_v4() -> None:
+    if len(V4_METHOD_BY_ID) != len(V4_METHODS):
+        raise ValueError("v4 method matrix contains duplicate method IDs")
+    if V4_METHODS[0].method_id != "ssae_gated_count" or V4_METHODS[0].role != "primary":
+        raise ValueError("ssae_gated_count must be the primary v4 method (amendment 4)")
+
+
+validate_protocol_v4()
+
+
+# Subspace-solver settings used by the v4 runner. Changed only through the user's
+# amendment decision rules (DIAGNOSTICS.md; DEVIATIONS #19-20, #27): the D3 rule triggered
+# (32 restarts + PCA/ICA initialisations) and amendment 4 fixed the tau rule of the gated variants.
+V4_SUBSPACE_RESTARTS = 32
+V4_SUBSPACE_INIT_MODE = "random+pca+ica"   # "random" | "random+pca+ica"
+V4_TAU_RULE = "energy"                     # "tolerance" (brief) | "energy" (<= 2% in-subspace energy)
+V4_TAU_PLANTED = (0.25, 0.9)               # lower tau until planted recovery at 0.25x has min cos >= 0.9; None = off
