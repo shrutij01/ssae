@@ -29,6 +29,8 @@ class ActivationKind(str, Enum):
     JUMPRELU = "jumprelu"
     SPARSEMAX = "sparsemax"
     MATCHING_PURSUIT = "matching_pursuit"
+    SIGNED_HARD = "signed_hard"
+    SIGNED_BATCHTOPK = "signed_batchtopk"
 
 
 class _JumpReLUFunction(torch.autograd.Function):
@@ -121,6 +123,66 @@ class JumpReLUGate(nn.Module):
         )
 
 
+class SignedHardGate(nn.Module):
+    """Signed hard gate at ``tau``: forward ``h * 1[|h| > tau]`` (exact zeros),
+    backward identity (straight-through), so gated-off latents still receive the
+    reconstruction gradient. Odd in ``h``: ``gate(-h) = -gate(h)``."""
+
+    def __init__(self, tau: float) -> None:
+        super().__init__()
+        if tau < 0:
+            raise ValueError("signed_hard tau must be non-negative")
+        self.tau = float(tau)
+
+    def forward(self, x: Tensor) -> Tensor:
+        mask = (x.abs() > self.tau).to(x.dtype)
+        return x + (x * mask - x).detach()
+
+    def extra_repr(self) -> str:
+        return f"tau={self.tau:g}"
+
+
+class SignedBatchTopKGate(nn.Module):
+    """Signed BatchTopK: keep the ``round(beta * B)`` largest ``|h|`` of a batch.
+
+    This is the Euclidean projection onto the batch version of
+    ``E||h||_0 <= beta`` (``beta`` in codes per pair), so no multiplier is needed.
+    Training tracks an EMA of the batch threshold, ``theta`` (a buffer saved in the
+    state dict); evaluation uses ``h * 1[|h| > theta]``.
+    """
+
+    def __init__(self, beta: float, momentum: float = 0.99) -> None:
+        super().__init__()
+        if beta <= 0:
+            raise ValueError("signed_batchtopk beta must be positive")
+        if not 0.0 <= momentum < 1.0:
+            raise ValueError("signed_batchtopk momentum must be in [0, 1)")
+        self.beta = float(beta)
+        self.momentum = float(momentum)
+        self.register_buffer("theta", torch.tensor(float("nan")))
+
+    def forward(self, x: Tensor) -> Tensor:
+        if self.training:
+            k = min(max(1, int(round(self.beta * x.shape[0]))), x.numel())
+            flat = x.reshape(-1)
+            idx = torch.topk(flat.detach().abs(), k).indices
+            mask = torch.zeros_like(flat)
+            mask[idx] = 1.0
+            with torch.no_grad():
+                thr = flat.detach().abs()[idx].min()
+                if torch.isnan(self.theta):
+                    self.theta.copy_(thr)
+                else:
+                    self.theta.mul_(self.momentum).add_((1.0 - self.momentum) * thr)
+            return x * mask.view_as(x)
+        if torch.isnan(self.theta):
+            raise RuntimeError("SignedBatchTopKGate has no threshold; train it first")
+        return x * (x.abs() > self.theta.to(x.dtype)).to(x.dtype)
+
+    def extra_repr(self) -> str:
+        return f"beta={self.beta:g}, momentum={self.momentum:g}"
+
+
 @dataclass(frozen=True)
 class Linear:
     """Signed linear codes (the legacy ``activation='none'`` setting)."""
@@ -171,7 +233,38 @@ class JumpReLU:
         return JumpReLUGate(hid, self.threshold_init, self.bandwidth)
 
 
-Activation: TypeAlias = Linear | ReLU | SoftShrink | TopK | JumpReLU
+@dataclass(frozen=True)
+class SignedHard:
+    """v4 gate: exact zeros below ``tau`` (relative to the pair length when the
+    model uses ``input_norm='unit'``), straight-through gradient."""
+
+    tau: float = 0.05
+    kind = ActivationKind.SIGNED_HARD
+
+    def build(self, hid: int) -> nn.Module:
+        del hid
+        return SignedHardGate(self.tau)
+
+
+@dataclass(frozen=True)
+class SignedBatchTopK:
+    """v4 gate: keep ``round(beta * batch)`` largest ``|h|``; EMA threshold at eval."""
+
+    beta: float = 1.0
+    momentum: float = 0.99
+    kind = ActivationKind.SIGNED_BATCHTOPK
+
+    def build(self, hid: int) -> nn.Module:
+        del hid
+        return SignedBatchTopKGate(self.beta, self.momentum)
+
+
+Activation: TypeAlias = (
+    Linear | ReLU | SoftShrink | TopK | JumpReLU | SignedHard | SignedBatchTopK
+)
+_ACTIVATION_TYPES = (
+    Linear, ReLU, SoftShrink, TopK, JumpReLU, SignedHard, SignedBatchTopK
+)
 
 
 _ACTIVATION_ALIASES = {
@@ -189,6 +282,9 @@ _ACTIVATION_ALIASES = {
     "sparsemax_dist": ActivationKind.SPARSEMAX,
     "mp": ActivationKind.MATCHING_PURSUIT,
     "matching_pursuit": ActivationKind.MATCHING_PURSUIT,
+    "signed_hard": ActivationKind.SIGNED_HARD,
+    "signed_batchtopk": ActivationKind.SIGNED_BATCHTOPK,
+    "signed_batch_topk": ActivationKind.SIGNED_BATCHTOPK,
 }
 
 
@@ -197,7 +293,7 @@ def activation_kind(value: Activation | ActivationKind | str) -> ActivationKind:
 
     if isinstance(value, ActivationKind):
         return value
-    if isinstance(value, (Linear, ReLU, SoftShrink, TopK, JumpReLU)):
+    if isinstance(value, _ACTIVATION_TYPES):
         return value.kind
     token = str(value).strip().lower().replace("-", "_")
     try:
@@ -225,10 +321,13 @@ def resolve_activation(
     topk_k: int = 10,
     jumprelu_threshold_init: float = 1e-3,
     jumprelu_bandwidth: float = 1e-3,
+    signed_hard_tau: float = 0.05,
+    batchtopk_beta: float = 1.0,
+    batchtopk_momentum: float = 0.99,
 ) -> Activation:
     """Return a configured canonical activation specification."""
 
-    if isinstance(value, (Linear, ReLU, SoftShrink, TopK, JumpReLU)):
+    if isinstance(value, _ACTIVATION_TYPES):
         return value
     kind = activation_kind(value)
     if kind is ActivationKind.LINEAR:
@@ -241,6 +340,10 @@ def resolve_activation(
         return TopK(topk_k)
     if kind is ActivationKind.JUMPRELU:
         return JumpReLU(jumprelu_threshold_init, jumprelu_bandwidth)
+    if kind is ActivationKind.SIGNED_HARD:
+        return SignedHard(signed_hard_tau)
+    if kind is ActivationKind.SIGNED_BATCHTOPK:
+        return SignedBatchTopK(batchtopk_beta, batchtopk_momentum)
     raise ValueError(
         f"{kind.value!r} is supported only by the historical SAE backend"
     )

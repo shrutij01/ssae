@@ -5,6 +5,7 @@ Configuration dataclass and CLI/YAML parsing for SSAE training.
 import argparse
 import hashlib
 import json
+import warnings
 from collections.abc import Mapping
 from dataclasses import asdict, dataclass, field, fields, is_dataclass
 from enum import Enum
@@ -80,11 +81,16 @@ class Cfg:
     n_concepts: int = 1
     norm: str = "ln"
     # ``none`` is retained as the CLI/config spelling of canonical ``linear``.
+    # v4 adds signed_hard | signed_batchtopk (odd gates, exact zeros).
     activation: str = "none"  # none | relu | softshrink | topk | jumprelu
     soft_threshold_init: float = 0.01  # softshrink per-latent threshold init
     topk_k: int = 10
     jumprelu_threshold_init: float = 1e-3
     jumprelu_bandwidth: float = 1e-3
+    # v4 gates. signed_hard_tau is also the per-pair count threshold.
+    signed_hard_tau: float = 0.05
+    batchtopk_beta: float = 1.0
+    batchtopk_momentum: float = 0.99
     train_on_raw: bool = False  # train on raw z instead of paired diffs Δz
     # Keep delta_z=0 at the architectural origin. The tensors stay in the state
     # dict for checkpoint compatibility but are frozen at zero when enabled.
@@ -118,7 +124,12 @@ class Cfg:
     schedule: int = 5_000
     schedule_unit: str = "epochs"  # epochs | updates
     target: float = 0.1
-    sparsity_type: str = "l1"  # l1 | step_l0 | sigmoid_l0
+    sparsity_type: str = "l1"  # l1 | step_l0 | sigmoid_l0 | count (v4)
+    # Units of ``target``: ``fraction`` of hid (historical) or ``per_pair``
+    # (v4: concepts per pair, not divided by hid).
+    budget_units: str = "fraction"
+    # Temperature of the zero-baseline smooth count (default tau / 4).
+    count_temperature: float | None = None
     # Retained in saved configs/run hashes for backward compatibility. The only
     # supported semantics are an inequality upper bound.
     constraint_mode: str = "inequality"
@@ -154,6 +165,9 @@ class Cfg:
     # Exact isolated checkpoint directory for frozen studies. When set, the
     # trainer refuses to replace any non-empty directory.
     output_dir: Path | None = None
+    # v4 warm start: run directory (cfg.yaml + weights.pth) whose encoder and
+    # decoder initialise this model (e.g. the exported subspace solution).
+    init_from: Path | None = None
 
     # Extra keys from YAML (read-only, not part of the frozen hash)
     extra: dict[str, Any] = field(default_factory=dict, init=False)
@@ -192,8 +206,36 @@ class Cfg:
                 raise ValueError("jumprelu_threshold_init must be positive")
             if self.jumprelu_bandwidth <= 0:
                 raise ValueError("jumprelu_bandwidth must be positive")
-        if self.input_norm not in {"rms", "standardize", "none"}:
-            raise ValueError("input_norm must be 'rms', 'standardize', or 'none'")
+        if self.input_norm not in {"rms", "standardize", "none", "unit"}:
+            raise ValueError(
+                "input_norm must be 'rms', 'standardize', 'none', or 'unit'"
+            )
+        if self.budget_units not in {"fraction", "per_pair"}:
+            raise ValueError("budget_units must be 'fraction' or 'per_pair'")
+        if self.sparsity_type == "count" and self.budget_units != "per_pair":
+            raise ValueError("sparsity_type='count' requires budget_units='per_pair'")
+        if self.activation == "signed_hard" and self.signed_hard_tau < 0:
+            raise ValueError("signed_hard_tau must be non-negative")
+        if self.activation == "signed_batchtopk" and self.batchtopk_beta <= 0:
+            raise ValueError("batchtopk_beta must be positive")
+        if self.input_norm == "unit":
+            if self.norm != "none":
+                raise ValueError("input_norm='unit' requires --norm none")
+            if not self.zero_biases:
+                raise ValueError("input_norm='unit' requires --zero-biases")
+        if (
+            self.input_norm == "standardize"
+            and not self.augment_reverse_diffs
+            and not self.train_on_raw
+        ):
+            # Centering is only safe for shifts when the data are closed under
+            # delta -> -delta; otherwise the mean shift leaks into every code.
+            warnings.warn(
+                "input_norm='standardize' subtracts a mean shift; enable "
+                "--augment-reverse-diffs (reversed copies) to keep delta=0 at "
+                "the origin",
+                stacklevel=2,
+            )
         if self.max_updates is not None and self.max_updates <= 0:
             raise ValueError("max_updates must be positive when provided")
         if self.schedule_unit not in {"epochs", "updates"}:
@@ -240,6 +282,20 @@ def hash_cfg(cfg: Cfg) -> str:
         filtered["schedule_unit"] = cfg_dict.get("schedule_unit")
     if cfg_dict.get("renorm_updates", 0):
         filtered["renorm_updates"] = cfg_dict["renorm_updates"]
+    # v4 (protocol ssae_rms_v4) run-identity fields. They participate only when
+    # they differ from the historical behaviour, so v3 hashes are unchanged.
+    if cfg_dict.get("activation") == "signed_hard":
+        filtered["signed_hard_tau"] = cfg_dict.get("signed_hard_tau")
+    elif cfg_dict.get("activation") == "signed_batchtopk":
+        filtered["batchtopk_beta"] = cfg_dict.get("batchtopk_beta")
+        filtered["batchtopk_momentum"] = cfg_dict.get("batchtopk_momentum")
+    if cfg_dict.get("budget_units", "fraction") != "fraction":
+        filtered["budget_units"] = cfg_dict["budget_units"]
+    if cfg_dict.get("sparsity_type") == "count":
+        filtered["count_threshold"] = cfg_dict.get("signed_hard_tau")
+        filtered["count_temperature"] = cfg_dict.get("count_temperature")
+    if cfg_dict.get("init_from") is not None:
+        filtered["init_from"] = str(cfg_dict["init_from"])
     if hasattr(cfg, "extra") and hasattr(cfg.extra, "model"):
         filtered["model"] = cfg.extra.model
 
@@ -275,7 +331,10 @@ def parse_cfg() -> Cfg:
              "parameters. Signed codes are still generally nonzero.")
     add(
         "--activation",
-        choices=["none", "relu", "softshrink", "topk", "jumprelu"],
+        choices=[
+            "none", "relu", "softshrink", "topk", "jumprelu",
+            "signed_hard", "signed_batchtopk",
+        ],
         default="none",
         help="Code gate. 'none' is the legacy spelling for signed linear; "
              "nonlinear constrained ablations may use ReLU, SoftShrink, TopK, "
@@ -290,6 +349,13 @@ def parse_cfg() -> Cfg:
         help="Initial learned threshold for --activation jumprelu.")
     add("--jumprelu-bandwidth", type=float, default=1e-3,
         help="STE bandwidth for the JumpReLU activation threshold.")
+    add("--signed-hard-tau", type=float, default=0.05,
+        help="v4 signed_hard gate threshold (relative to the pair length with "
+             "--input-norm unit); also the per-pair count threshold.")
+    add("--batchtopk-beta", type=float, default=1.0,
+        help="v4 signed_batchtopk budget: mean kept codes per pair.")
+    add("--batchtopk-momentum", type=float, default=0.99,
+        help="EMA momentum of the signed_batchtopk inference threshold.")
     add("--train-on-raw", action="store_true", default=False,
         help="Train the SSAE on RAW per-sample embeddings instead of paired "
              "differences Δz (ablation: isolates diff-input from the gate).")
@@ -343,9 +409,15 @@ def parse_cfg() -> Cfg:
     add("--ind-th", type=float, default=0.1,
         help="Threshold used only to report l0_sparsity/p_sparsity for non-"
              "step_l0 runs; set it equal to --step-l0-threshold for comparisons")
-    add("--sparsity-type", choices=["l1", "step_l0", "sigmoid_l0"], default="l1",
+    add("--sparsity-type", choices=["l1", "step_l0", "sigmoid_l0", "count"],
+        default="l1",
         help="Sparsity constraint: l1 (mean |h|), step_l0 (hard fraction via "
              "STE), or sigmoid_l0 (smooth occupancy proxy)")
+    add("--budget-units", choices=["fraction", "per_pair"], default="fraction",
+        help="Units of --target: 'fraction' of hid (historical) or 'per_pair' "
+             "(v4: concepts per pair, count of |h| > tau not divided by hid).")
+    add("--count-temperature", type=float, default=None,
+        help="Temperature of the zero-baseline smooth count (default tau/4).")
     add("--constraint-mode", choices=["inequality"], default="inequality",
         help="Constraint mode (inequality only): target is an upper-bound ceiling")
     add("--step-l0-surrogate", choices=["rectangle", "active_only"],
@@ -401,7 +473,7 @@ def parse_cfg() -> Cfg:
         help="Regularisation for whitening covariance matrix")
     add("--skip-input-norm", action="store_true",
         help="Force --input-norm none (raw input; use when whitening is enabled)")
-    add("--input-norm", choices=["rms", "standardize", "none"],
+    add("--input-norm", choices=["rms", "standardize", "none", "unit"],
         default="rms",
         help="Input normalisation the decoder reconstructs INTO — the loss "
              "scores x_hat against input_norm(Δz), not raw Δz. 'rms' divides "
@@ -411,6 +483,9 @@ def parse_cfg() -> Cfg:
     add("--output-dir", type=Path, default=None,
         help="Exact isolated checkpoint directory. Refuses to overwrite a "
              "non-empty directory. If omitted, use the legacy run_out layout.")
+    add("--init-from", type=Path, default=None,
+        help="v4 warm start: run directory whose weights initialise the model "
+             "(e.g. the exported ssae.subspace_trainer solution).")
 
     cli: dict[str, Any] = vars(p.parse_args())
 

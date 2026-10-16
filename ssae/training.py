@@ -253,9 +253,41 @@ def make_model(cfg: Cfg) -> DictLinearAE:
             cfg, "jumprelu_threshold_init", 1e-3
         ),
         jumprelu_bandwidth=getattr(cfg, "jumprelu_bandwidth", 1e-3),
+        signed_hard_tau=getattr(cfg, "signed_hard_tau", 0.05),
+        batchtopk_beta=getattr(cfg, "batchtopk_beta", 1.0),
+        batchtopk_momentum=getattr(cfg, "batchtopk_momentum", 0.99),
         optimization=Optimization.CONSTRAINED,
         constraint=Constraint(getattr(cfg, "sparsity_type", "l1")),
     )
+
+
+@torch.no_grad()
+def warm_start_(model: nn.Module, run_dir: Path) -> nn.Module:
+    """Initialise ``model`` from a saved run (v4 ``--init-from``).
+
+    Copies the encoder and decoder weights (and zero biases) of the saved run,
+    e.g. the ``ssae.subspace_trainer`` export. Shapes must match; decoder
+    columns are renormalised so the unit-norm invariant holds from step 0.
+    Gate state (thresholds) is not copied: the gate is configured by the
+    current run.
+    """
+    state = torch.load(Path(run_dir) / "weights.pth", map_location="cpu", weights_only=True)
+    for key in ("encoder.weight", "decoder.weight"):
+        target = model.state_dict()[key]
+        if tuple(state[key].shape) != tuple(target.shape):
+            raise ValueError(
+                f"--init-from {run_dir}: {key} shape {tuple(state[key].shape)} "
+                f"does not match model {tuple(target.shape)}"
+            )
+    model.encoder.weight.copy_(state["encoder.weight"])
+    model.decoder.weight.copy_(state["decoder.weight"])
+    for key in ("encoder.bias", "decoder.bias"):
+        if key in state and not getattr(model, "zero_biases", False):
+            getattr(model, key.split(".")[0]).bias.copy_(state[key])
+    norms = model.decoder.weight.norm(dim=0, keepdim=True).clamp_min(1e-12)
+    model.encoder.weight.mul_(norms.T)
+    model.decoder.weight.div_(norms)
+    return model
 
 
 def make_constrained_problem(
@@ -278,6 +310,9 @@ def make_constrained_problem(
         sigmoid_l0_temperature=getattr(cfg, "sigmoid_l0_temperature", 1e-3),
         formulation=cfg.formulation,
         penalty_coeff=cfg.penalty_coeff,
+        budget_units=getattr(cfg, "budget_units", "fraction"),
+        count_threshold=getattr(cfg, "signed_hard_tau", 0.05),
+        count_temperature=getattr(cfg, "count_temperature", None),
     )
 
 
@@ -623,6 +658,8 @@ def _format_training_progress(
             f"  sigmoid_occupancy {metrics['constraint_value']:.6g}"
             f"  temperature {cfg.sigmoid_l0_temperature:.6g}"
         )
+    elif cfg.sparsity_type == "count":
+        progress += f"  codes_per_pair {metrics['constraint_value']:.6g}"
     return f"{progress}{dead_str}"
 
 
@@ -668,6 +705,10 @@ def main():
             f"{len(dataloader.dataset)} train shifts (no mean subtraction)"
         )
 
+    if getattr(cfg, "init_from", None) is not None:
+        warm_start_(model, cfg.init_from)
+        print(f"[init-from] warm-started encoder/decoder from {cfg.init_from}")
+
     enhanced_config = Logger.prepare_config(cfg, dataloader, dev, model)
     logger = Logger(
         entity=os.environ.get("WANDB_ENTITY", "causalrepl"),
@@ -680,11 +721,14 @@ def main():
 
     from ssae.tracking import DeadLatentTracker, DiversityTracker, SparsityTracker
 
-    count_th = (
-        cfg.step_l0_threshold
-        if cfg.sparsity_type in {"step_l0", "sigmoid_l0"}
-        else cfg.ind_th
-    )
+    if cfg.sparsity_type == "count" or cfg.activation == "signed_hard":
+        count_th = cfg.signed_hard_tau
+    else:
+        count_th = (
+            cfg.step_l0_threshold
+            if cfg.sparsity_type in {"step_l0", "sigmoid_l0"}
+            else cfg.ind_th
+        )
     rectangle_bandwidth = (
         cfg.step_l0_bandwidth
         if (
@@ -780,7 +824,10 @@ def main():
         completed_epoch = ep
         sp = sparsity_tracker.get_metrics()
 
-        if cfg.sparsity_type == "step_l0":
+        if cfg.sparsity_type == "count":
+            # Exact mean count per pair, recovered from the strict violation.
+            constraint_value = total_sparsity / num_batches + ssae.level
+        elif cfg.sparsity_type == "step_l0":
             constraint_value = sp["p_sparsity"]
         elif cfg.sparsity_type == "sigmoid_l0":
             # Unlike hard Step-L0, thresholded p_sparsity is only a reporting
@@ -847,6 +894,8 @@ def main():
         print(_format_training_progress(ep, metrics, cfg, dead_str))
 
     with torch.no_grad():
+        if cfg.activation == "signed_batchtopk":
+            model.eval()  # the zero-input probe must not move the EMA threshold
         zero = torch.zeros(
             1,
             dataloader.dataset.data.shape[-1],

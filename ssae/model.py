@@ -177,7 +177,13 @@ class DictLinearAE(nn.Module):
             RMS without mean subtraction; ``"standardize"`` = historical fixed per-dim
             ``(x−μ)/σ`` from ``cfc_train`` (keeps magnitude, invertible —
             set via :meth:`set_input_norm_stats`); ``"none"`` = raw input
-            (Identity).  ``"layernorm"`` was removed: its per-sample
+            (Identity); ``"unit"`` (v4) = per-pair length normalisation inside
+            :meth:`forward`: ``s = ||x||``, ``u = x / s``, ``h = s * gate(E u)``,
+            ``x_hat = D h``. Codes and reconstructions stay in raw units, the
+            gate is relative to each pair's length, the ``relative`` loss equals
+            the unit-norm loss, and nothing is folded (requires
+            ``norm_type="none"`` and ``zero_biases=True``).
+            ``"layernorm"`` was removed: its per-sample
             normalisation is non-invertible, so decoder columns cannot be
             mapped back to raw residual-stream directions for steering.
         zero_biases: Freeze encoder and decoder offsets at zero while retaining
@@ -200,8 +206,23 @@ class DictLinearAE(nn.Module):
         topk_k: int = 10,
         jumprelu_threshold_init: float = 1e-3,
         jumprelu_bandwidth: float = 1e-3,
+        signed_hard_tau: float = 0.05,
+        batchtopk_beta: float = 1.0,
+        batchtopk_momentum: float = 0.99,
+        unit_eps: float = 1e-12,
     ) -> None:
         super().__init__()
+        if input_norm == "unit" and not skip_input_norm:
+            if norm_type != "none":
+                raise ValueError(
+                    "input_norm='unit' requires norm_type='none' (no code "
+                    "normalisation: LN/GN/BN would break the per-pair count)"
+                )
+            if not zero_biases:
+                raise ValueError("input_norm='unit' requires zero_biases=True")
+        self.unit_eps = float(unit_eps)
+        self.last_unit_preactivation: Tensor | None = None
+        self.last_unit_codes: Tensor | None = None
         self.encoder = nn.Linear(rep_dim, hid, bias=True)
         # Controllable encoder weight init (decoder is tied to encoder.T below,
         # then unit-norm-column-renormed, so the scheme acts through the encoder).
@@ -229,11 +250,12 @@ class DictLinearAE(nn.Module):
             self.input_norm = Standardizer(rep_dim)
         elif input_norm == "rms":
             self.input_norm = ScalarRMSNormalizer()
-        elif input_norm == "none":
+        elif input_norm in {"none", "unit"}:
+            # ``unit`` reconstructs raw x; its normalisation lives in forward().
             self.input_norm = nn.Identity()
         else:
             raise ValueError(
-                f"input_norm {input_norm!r} not in rms/standardize/none"
+                f"input_norm {input_norm!r} not in rms/standardize/none/unit"
             )
         self.enc_norm = {
             "ln": nn.LayerNorm(hid),
@@ -257,6 +279,9 @@ class DictLinearAE(nn.Module):
             topk_k=topk_k,
             jumprelu_threshold_init=jumprelu_threshold_init,
             jumprelu_bandwidth=jumprelu_bandwidth,
+            signed_hard_tau=signed_hard_tau,
+            batchtopk_beta=batchtopk_beta,
+            batchtopk_momentum=batchtopk_momentum,
         )
         self.activation = self.activation_spec.build(hid)
 
@@ -387,6 +412,9 @@ class DictLinearAE(nn.Module):
                 "jumprelu_threshold_init", 1e-3
             ),
             jumprelu_bandwidth=cfg.get("jumprelu_bandwidth", 1e-3),
+            signed_hard_tau=cfg.get("signed_hard_tau", 0.05),
+            batchtopk_beta=cfg.get("batchtopk_beta", 1.0),
+            batchtopk_momentum=cfg.get("batchtopk_momentum", 0.99),
         )
         model.load_state_dict(state)
         if model.zero_biases:
@@ -411,9 +439,28 @@ class DictLinearAE(nn.Module):
         Returns:
             ``(x_hat, h)`` — reconstruction (of ``x_norm``) and hidden codes.
         """
+        if self.input_norm_type == "unit":
+            return self._forward_unit(x)
         x_norm = self.input_norm(x)
         x_biased = x_norm - self.decoder.bias
         h = self.activation(self.enc_norm(self.encoder(x_biased)))
+        x_hat = self.decoder(h)
+        return x_hat, h
+
+    def _forward_unit(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        """``input_norm='unit'``: gate relative to each pair's length.
+
+        ``s = ||x||`` (clamped at ``unit_eps``), ``u = x / s``, ``h_u = gate(E u)``,
+        ``h = s * h_u``, ``x_hat = D h``. The unit-scale pre-activation and gated
+        codes are cached for the per-pair count constraint and trackers.
+        """
+        s = x.norm(dim=-1, keepdim=True).clamp_min(self.unit_eps)
+        u = x / s
+        pre = self.enc_norm(self.encoder(u - self.decoder.bias))
+        h_u = self.activation(pre)
+        self.last_unit_preactivation = pre
+        self.last_unit_codes = h_u
+        h = s * h_u
         x_hat = self.decoder(h)
         return x_hat, h
 
